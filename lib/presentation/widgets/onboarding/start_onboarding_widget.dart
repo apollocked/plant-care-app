@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:mock_plant_care_app/presentation/widgets/onboarding/glass_card.dart';
 
 class StartOnboardingWidget extends StatelessWidget {
@@ -12,26 +13,17 @@ class StartOnboardingWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(
-            Icons.shutter_speed_rounded,
-            size: 80,
-            color: theme.colorScheme.secondary,
+          SizedBox(
+            width: double.infinity,
+            child: Lottie.asset('assets/animations/byscle.json'),
           ),
-          const SizedBox(height: 30),
           myGlassCard(
             context,
             child: Column(
               children: [
                 Text(
-                  'Fast. Secure. Local.',
-                  style: theme.textTheme.headlineSmall?.copyWith(
-                    fontWeight: FontWeight.w800,
-                  ),
-                ),
-                const SizedBox(height: 15),
-                Text(
-                  'Your data stays on your device. High-performance tracking powered by Hive & MVVM.',
-                  textAlign: TextAlign.center,
+                  'Enjoy the benefits of a modern approach to keeping your plants alive and thriving with Plant Care.',
+                  textAlign: TextAlign.start,
                   style: theme.textTheme.bodyMedium,
                 ),
                 const Padding(

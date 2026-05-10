@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mock_plant_care_app/view/widgets/glass_container.dart';
-import 'package:mock_plant_care_app/viewmodel/plant_viewmodel.dart';
+import 'package:mock_plant_care_app/presentation/widgets/glass_container.dart';
+import 'package:mock_plant_care_app/logic/plant_viewmodel.dart';
 
 class StatsRow extends StatelessWidget {
   const StatsRow({super.key, required this.plantVm});

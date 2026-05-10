@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mock_plant_care_app/model/plant_model.dart';
-import 'package:mock_plant_care_app/view/widgets/add/identity_section.dart';
-import 'package:mock_plant_care_app/view/widgets/add/schedule_section.dart';
-import 'package:mock_plant_care_app/view/widgets/add/reminder_section.dart';
-import 'package:mock_plant_care_app/viewmodel/plant_viewmodel.dart';
+import 'package:mock_plant_care_app/data/model/plant_model.dart';
+import 'package:mock_plant_care_app/presentation/widgets/add/identity_section.dart';
+import 'package:mock_plant_care_app/presentation/widgets/add/schedule_section.dart';
+import 'package:mock_plant_care_app/presentation/widgets/add/reminder_section.dart';
+import 'package:mock_plant_care_app/logic/plant_viewmodel.dart';
 import 'package:provider/provider.dart';
 
 class AddPlantPage extends StatefulWidget {
@@ -46,7 +46,7 @@ class _AddPlantPageState extends State<AddPlantPage> {
   Future<void> _savePlant() async {
     if (!_formKey.currentState!.validate()) return;
     setState(() => _isSaving = true);
-    
+
     try {
       final PlantModel plant = PlantModel(
         id: DateTime.now().microsecondsSinceEpoch.toString(),
@@ -62,14 +62,14 @@ class _AddPlantPageState extends State<AddPlantPage> {
         feedReminderMinute: _feedTime.minute,
         remindersEnabled: _remindersEnabled,
       );
-      
+
       await context.read<PlantViewModel>().addPlant(plant);
       if (mounted) Navigator.of(context).pop();
     } catch (e) {
       if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Failed to save plant: $e')),
-        );
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text('Failed to save plant: $e')));
       }
     } finally {
       if (mounted) setState(() => _isSaving = false);

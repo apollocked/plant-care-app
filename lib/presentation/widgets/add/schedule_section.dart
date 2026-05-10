@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mock_plant_care_app/view/widgets/glass_container.dart';
+import 'package:mock_plant_care_app/presentation/widgets/glass_container.dart';
 import 'form_helpers.dart';
 
 class CareScheduleSection extends StatelessWidget {

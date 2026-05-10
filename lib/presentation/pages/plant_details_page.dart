@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:mock_plant_care_app/model/plant_model.dart';
-import 'package:mock_plant_care_app/view/widgets/details/action_bar.dart';
-import 'package:mock_plant_care_app/view/widgets/details/care_info_tab.dart';
-import 'package:mock_plant_care_app/view/widgets/details/plant_hero_card.dart';
-import 'package:mock_plant_care_app/view/widgets/details/schedule_tab.dart';
-import 'package:mock_plant_care_app/viewmodel/plant_viewmodel.dart';
+import 'package:mock_plant_care_app/data/model/plant_model.dart';
+import 'package:mock_plant_care_app/presentation/widgets/details/action_bar.dart';
+import 'package:mock_plant_care_app/presentation/widgets/details/care_info_tab.dart';
+import 'package:mock_plant_care_app/presentation/widgets/details/plant_hero_card.dart';
+import 'package:mock_plant_care_app/presentation/widgets/details/schedule_tab.dart';
+import 'package:mock_plant_care_app/logic/plant_viewmodel.dart';
 import 'package:provider/provider.dart';
 
 class PlantDetailsPage extends StatefulWidget {

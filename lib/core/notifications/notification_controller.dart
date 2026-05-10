@@ -3,8 +3,8 @@ import 'dart:io';
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
 import 'package:mock_plant_care_app/main.dart';
-import 'package:mock_plant_care_app/view/pages/home_page.dart';
-import 'package:mock_plant_care_app/view/pages/plant_details_page.dart';
+import 'package:mock_plant_care_app/presentation/pages/home_page.dart';
+import 'package:mock_plant_care_app/presentation/pages/plant_details_page.dart';
 
 class NotificationController {
   @pragma("vm:entry-point")

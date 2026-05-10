@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mock_plant_care_app/model/plant_model.dart';
-import 'package:mock_plant_care_app/view/widgets/glass_container.dart';
-import 'package:mock_plant_care_app/view/widgets/home/plant_card_components.dart';
+import 'package:mock_plant_care_app/data/model/plant_model.dart';
+import 'package:mock_plant_care_app/presentation/widgets/glass_container.dart';
+import 'package:mock_plant_care_app/presentation/widgets/home/plant_card_components.dart';
 
 class PlantCard extends StatefulWidget {
   const PlantCard({

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mock_plant_care_app/services/storage_service.dart';
+import 'package:mock_plant_care_app/data/services/storage_service.dart';
 
 class ThemeViewModel extends ChangeNotifier {
   ThemeViewModel(this._storageService);

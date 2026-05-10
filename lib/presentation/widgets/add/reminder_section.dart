@@ -1,7 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
-import 'package:mock_plant_care_app/view/widgets/glass_container.dart';
+import 'package:mock_plant_care_app/presentation/widgets/glass_container.dart';
 import 'form_helpers.dart';
 
 class ReminderSection extends StatelessWidget {

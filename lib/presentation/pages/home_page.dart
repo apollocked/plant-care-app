@@ -1,18 +1,18 @@
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
-import 'package:mock_plant_care_app/model/plant_model.dart';
+import 'package:mock_plant_care_app/data/model/plant_model.dart';
 import 'package:mock_plant_care_app/core/notifications/notification_controller.dart';
-import 'package:mock_plant_care_app/view/pages/plant_details_page.dart';
-import 'package:mock_plant_care_app/view/widgets/home/add_plant_fab.dart';
-import 'package:mock_plant_care_app/view/widgets/home/empty_state.dart';
-import 'package:mock_plant_care_app/view/widgets/home/hero_banner.dart';
-import 'package:mock_plant_care_app/view/widgets/home/home_header.dart';
-import 'package:mock_plant_care_app/view/widgets/home/plant_card.dart';
-import 'package:mock_plant_care_app/view/widgets/home/stats_row.dart';
-import 'package:mock_plant_care_app/view/widgets/home/urgent_banner.dart';
-import 'package:mock_plant_care_app/view/widgets/notfication_handler.dart';
-import 'package:mock_plant_care_app/viewmodel/plant_viewmodel.dart';
-import 'package:mock_plant_care_app/viewmodel/theme_viewmodel.dart';
+import 'package:mock_plant_care_app/presentation/pages/plant_details_page.dart';
+import 'package:mock_plant_care_app/presentation/widgets/home/add_plant_fab.dart';
+import 'package:mock_plant_care_app/presentation/widgets/home/empty_state.dart';
+import 'package:mock_plant_care_app/presentation/widgets/home/hero_banner.dart';
+import 'package:mock_plant_care_app/presentation/widgets/home/home_header.dart';
+import 'package:mock_plant_care_app/presentation/widgets/home/plant_card.dart';
+import 'package:mock_plant_care_app/presentation/widgets/home/stats_row.dart';
+import 'package:mock_plant_care_app/presentation/widgets/home/urgent_banner.dart';
+import 'package:mock_plant_care_app/presentation/widgets/notfication_handler.dart';
+import 'package:mock_plant_care_app/logic/plant_viewmodel.dart';
+import 'package:mock_plant_care_app/logic/theme_viewmodel.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {

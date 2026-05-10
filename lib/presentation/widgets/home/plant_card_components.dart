@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mock_plant_care_app/model/plant_model.dart';
+import 'package:mock_plant_care_app/data/model/plant_model.dart';
 import 'quick_action_button.dart';
 
 class CardHeader extends StatelessWidget {

@@ -36,6 +36,8 @@ class EmptyPlantState extends StatelessWidget {
               child: Image.asset(
                 'assets/icons/plant_icon.png',
                 fit: BoxFit.contain,
+                cacheWidth: 240,
+                cacheHeight: 240,
               ),
             ),
             const SizedBox(height: 24),

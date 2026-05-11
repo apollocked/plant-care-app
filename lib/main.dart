@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
 import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 import 'package:mock_plant_care_app/core/l10n/l10n.dart';
 import 'package:mock_plant_care_app/core/theme/app_theme.dart';
@@ -22,7 +21,6 @@ Future<void> main() async {
   final NotificationService notificationService = NotificationService();
   await storageService.init();
   await notificationService.initialize();
-  final Box box = await Hive.openBox('settings');
   final PlantViewModel plantViewModel = PlantViewModel(
     storageService,
     notificationService,
@@ -31,7 +29,7 @@ Future<void> main() async {
   final LanguageService languageService = LanguageService();
   await plantViewModel.loadPlants();
   await themeViewModel.loadThemeMode();
-  bool isFirstTime = box.get('isFirstTime', defaultValue: true);
+  final bool isFirstTime = storageService.getIsFirstTime();
   runApp(
     MultiProvider(
       providers: [

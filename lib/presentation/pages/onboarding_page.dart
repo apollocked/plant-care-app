@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
+import 'package:mock_plant_care_app/data/services/storage_service.dart';
 import 'package:mock_plant_care_app/logic/theme_viewmodel.dart';
 import 'package:mock_plant_care_app/presentation/pages/home_page.dart';
 import 'package:mock_plant_care_app/presentation/widgets/home/home_header.dart';
@@ -93,7 +94,10 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     ),
                     child: ElevatedButton(
                       onPressed: () {
-                        Hive.box('settings').put('isFirstTime', false);
+                        // Use the same box that StorageService manages so
+                        // there is only one settings file on disk.
+                        Hive.box(StorageService.settingsBoxName)
+                            .put(StorageService.firstTimeKey, false);
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(

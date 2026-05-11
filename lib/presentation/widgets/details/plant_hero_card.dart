@@ -121,6 +121,8 @@ class _HealthRing extends StatelessWidget {
           child: Image.asset(
             'assets/icons/plant_icon.png',
             fit: BoxFit.contain,
+            cacheWidth: 112,
+            cacheHeight: 112,
           ),
         ),
       ],

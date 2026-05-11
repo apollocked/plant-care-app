@@ -117,7 +117,7 @@ class AppLocalizationsKu extends AppLocalizations {
   String get healthThriving => 'گەشاوە';
 
   @override
-  String get healthNeedsCare => 'پێویستی بە چاودێرییە';
+  String get healthNeedsCare => 'پێویستی بە چاودێريیە';
 
   @override
   String get healthUrgent => 'بەپەلە!';
@@ -417,4 +417,27 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get onboardingStartCta => 'ئامادەی بۆ دەستپێکردنی گەشتەکەت؟';
+
+  @override
+  String notifWaterTitle(String name) {
+    return 'ئاودانی $name';
+  }
+
+  @override
+  String notifFeedTitle(String name) {
+    return 'خۆراکدانی $name';
+  }
+
+  @override
+  String notifWaterBody(String name) {
+    return '$name ئێستا پێویستی بە ئاوە.';
+  }
+
+  @override
+  String notifFeedBody(String name) {
+    return '$name ئامادەیە بۆ وەرگرتنی خۆراک.';
+  }
+
+  @override
+  String get notifActionMarkDone => 'تەواو';
 }

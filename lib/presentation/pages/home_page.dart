@@ -141,9 +141,10 @@ class _HomePageState extends State<HomePage>
                         ),
                         onWaterTap: () => context
                             .read<PlantViewModel>()
-                            .markPlantWatered(p.id),
-                        onFeedTap: () =>
-                            context.read<PlantViewModel>().markPlantFed(p.id),
+                            .markPlantWatered(p.id, context),
+                        onFeedTap: () => context
+                            .read<PlantViewModel>()
+                            .markPlantFed(p.id, context),
                       );
                     },
                     separatorBuilder: (_, _) => const SizedBox(height: 12),

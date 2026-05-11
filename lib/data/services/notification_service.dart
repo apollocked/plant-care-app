@@ -39,7 +39,10 @@ class NotificationService {
     }
   }
 
-  Future<void> scheduleDailyWaterReminder(PlantModel plant) async {
+  Future<void> scheduleDailyWaterReminder(
+    PlantModel plant,
+    BuildContext context,
+  ) async {
     await createPlantReminderNotification(
       id: notificationIdForPlant(plant.id, PlantReminderType.water),
       plantId: plant.id,
@@ -47,11 +50,16 @@ class NotificationService {
       type: PlantReminderType.water,
       hour: plant.waterReminderHour,
       minute: plant.waterReminderMinute,
+      context: context,
     );
   }
 
-  Future<void> scheduleDailyFeedReminder(PlantModel plant) async {
+  Future<void> scheduleDailyFeedReminder(
+    PlantModel plant,
+    BuildContext context,
+  ) async {
     await createPlantReminderNotification(
+      context: context,
       id: notificationIdForPlant(plant.id, PlantReminderType.food),
       plantId: plant.id,
       plantName: plant.name,

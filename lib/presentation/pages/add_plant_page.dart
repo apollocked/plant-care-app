@@ -64,7 +64,7 @@ class _AddPlantPageState extends State<AddPlantPage> {
         remindersEnabled: _remindersEnabled,
       );
 
-      await context.read<PlantViewModel>().addPlant(plant);
+      await context.read<PlantViewModel>().addPlant(plant, context);
       if (mounted) Navigator.of(context).pop();
     } catch (e) {
       if (mounted) {

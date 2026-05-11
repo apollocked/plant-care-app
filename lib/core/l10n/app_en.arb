@@ -1,9 +1,7 @@
 {
   "@@locale": "en",
-
   "appTitle": "Plant Care",
   "appSubtitle": "Your green dashboard",
-
   "addNewPlant": "Add New Plant",
   "savePlant": "Save Plant",
   "failedToSavePlant": "Failed to save plant: {error}",
@@ -12,7 +10,6 @@
       "error": { "type": "String" }
     }
   },
-
   "plantDetails": "Plant Details",
   "plantNotFound": "Plant not found",
   "tabCareInfo": "🌿 Care Info",
@@ -26,14 +23,11 @@
   },
   "cancel": "Cancel",
   "remove": "Remove",
-
   "getStarted": "Get Started",
   "skip": "Skip",
   "next": "Next",
-
   "myPlants": "My Plants",
   "plantCare": "PlantCare",
-
   "heroBannerUrgent": "🔔 {count} {count, plural, one{plant needs} other{plants need}} attention",
   "@heroBannerUrgent": {
     "placeholders": {
@@ -42,7 +36,6 @@
   },
   "heroBannerAllGood": "✅ All plants are happy",
   "heroBannerHeading": "Your Green\nSanctuary 🌿",
-
   "urgentBannerTitle": "{count} {count, plural, one{plant} other{plants}} need care",
   "@urgentBannerTitle": {
     "placeholders": {
@@ -50,18 +43,14 @@
     }
   },
   "urgentBannerSubtitle": "Tap a plant card to take action",
-
   "statTotal": "Total",
   "statHealthy": "Healthy",
   "statWater": "Water",
   "statFeed": "Feed",
-
   "noPlantsYet": "No Plants Yet",
   "noPlantsDesc": "Add your first plant and start tracking its care schedule with daily reminders.",
   "noPlantsHint": "🌱 Tap \"Add Plant\" to get started",
-
   "addPlant": "Add Plant",
-
   "unknownSpecies": "Unknown species",
   "healthThriving": "Thriving",
   "healthNeedsCare": "Needs care",
@@ -70,14 +59,12 @@
   "waterOk": "Water ok",
   "feedNow": "Feed Now",
   "feedOk": "Food ok",
-
   "sectionPlantIdentity": "Plant Identity",
   "labelPlantName": "Plant Name",
   "hintPlantName": "e.g. My Fiddle Leaf",
   "labelSpecies": "Species (Optional)",
   "hintSpecies": "e.g. Monstera Deliciosa",
   "validatorEnterName": "Please enter a name",
-
   "sectionCareSchedule": "Care Schedule",
   "labelWaterEvery": "Water every",
   "labelFeedEvery": "Feed every",
@@ -87,12 +74,10 @@
   "tipFeed": "Feed: 7-14 days during growing season, rare in winter.",
   "validatorRequired": "Required",
   "validatorMustBePositive": "Must be > 0",
-
   "sectionReminders": "Reminders",
   "labelWateringReminder": "Watering Reminder",
   "labelFeedingReminder": "Feeding Reminder",
   "remindersDisabled": "Reminders are disabled for this plant.",
-
   "careCardWatering": "Watering",
   "careCardFeeding": "Feeding",
   "careCardWatered": "Watered ✓",
@@ -146,7 +131,6 @@
       "n": { "type": "int" }
     }
   },
-
   "scheduleCardIntervals": "🔁 Care Intervals",
   "scheduleCardReminders": "⏰ Reminder Times",
   "scheduleCardUpcoming": "📅 Upcoming Dates",
@@ -163,13 +147,11 @@
     }
   },
   "overdue": "Overdue!",
-
   "healthThriving2": "Thriving 🌟",
   "healthNeedsCare2": "Needs Care",
   "healthUrgent2": "Urgent! 🚨",
   "remindersOn": "🔔 Reminders on",
   "remindersOff": "🔕 Off",
-
   "actionWatered": "Watered!",
   "actionFed": "Fed!",
   "snackWatered": "💧 {name} has been watered!",
@@ -184,7 +166,6 @@
       "name": { "type": "String" }
     }
   },
-
   "pushReminders": "Push Reminders",
   "notificationsActive": "Daily notifications are active",
   "tapToEnableNotifications": "Tap to enable notifications",
@@ -200,14 +181,12 @@
       "name": { "type": "String" }
     }
   },
-
   "editCareSchedule": "Edit Care Schedule",
   "labelWateringInterval": "Watering Interval (Days)",
   "labelFeedingInterval": "Feeding Interval (Days)",
   "labelWateringTime": "Watering Time",
   "labelFeedingTime": "Feeding Time",
   "saveChanges": "Save Changes",
-
   "notifDialogTitle": "Stay on top of\nyour plant care! 🌿",
   "notifDialogBody": "Enable notifications so we can remind you when your plants need watering or fertilizing.",
   "allowNotifications": "Allow Notifications",
@@ -215,7 +194,6 @@
   "pillWater": "Water",
   "pillFeed": "Feed",
   "pillLight": "Light",
-
   "onboardingWelcomeTitle": "Grow Your\nUrban Jungle",
   "onboardingWelcomeBody": "A modern approach to keeping your plants alive and thriving.",
   "onboardingInfoTitle1": "Never Miss a Drop",
@@ -223,5 +201,23 @@
   "onboardingInfoTitle2": "Data Privacy",
   "onboardingInfoBody2": "Your data stays on your device.\nHigh performance tracking allows you to get the most out of your plant.",
   "onboardingStartBody": "Enjoy the benefits of a modern approach to keeping your plants alive and thriving with Plant Care.",
-  "onboardingStartCta": "Ready to start your journey?"
+  "onboardingStartCta": "Ready to start your journey?",
+
+  "notifWaterTitle": "Water {name}",
+  "@notifWaterTitle": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+  "notifFeedTitle": "Feed {name}",
+  "@notifFeedTitle": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+  "notifWaterBody": "{name} needs water now.",
+  "@notifWaterBody": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+  "notifFeedBody": "{name} is ready for plant food.",
+  "@notifFeedBody": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+  "notifActionMarkDone": "Mark Done"
 }

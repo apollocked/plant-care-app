@@ -444,4 +444,27 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get onboardingStartCta => 'هل أنت مستعد لبدء رحلتك؟';
+
+  @override
+  String notifWaterTitle(String name) {
+    return 'اسقِ $name';
+  }
+
+  @override
+  String notifFeedTitle(String name) {
+    return 'أطعِم $name';
+  }
+
+  @override
+  String notifWaterBody(String name) {
+    return '$name يحتاج إلى الماء الآن.';
+  }
+
+  @override
+  String notifFeedBody(String name) {
+    return '$name جاهز للحصول على الغذاء.';
+  }
+
+  @override
+  String get notifActionMarkDone => 'تم الإنجاز';
 }

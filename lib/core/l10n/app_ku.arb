@@ -1,83 +1,50 @@
 {
   "@@locale": "ku",
-
   "appTitle": "چاودێری ڕووەک",
   "appSubtitle": "داشبۆردە سەوزەکەت",
-
   "addNewPlant": "زیادکردنی ڕووەکێکی نوێ",
   "savePlant": "هەڵگرتنی ڕووەک",
   "failedToSavePlant": "هەڵگرتنی ڕووەک سەرنەکەوت: {error}",
-  "@failedToSavePlant": {
-    "placeholders": {
-      "error": { "type": "String" }
-    }
-  },
-
   "plantDetails": "وردەکارییەکانی ڕووەک",
   "plantNotFound": "ڕووەک نەدۆزرایەوە",
   "tabCareInfo": "🌿 زانیاری چاودێری",
   "tabSchedule": "📋 خشتە",
   "removePlant": "لابردنی ڕووەک",
   "removePlantConfirm": "دەتەوێت \"{name}\" لە باخچەکەت لاببەیت؟",
-  "@removePlantConfirm": {
-    "placeholders": {
-      "name": { "type": "String" }
-    }
-  },
   "cancel": "هەڵوەشاندنەوە",
   "remove": "لابردن",
-
   "getStarted": "دەستپێکردن",
   "skip": "تێپەڕاندن",
   "next": "دواتر",
-
   "myPlants": "ڕووەکەکانم",
   "plantCare": "چاودێری ڕووەک",
-
   "heroBannerUrgent": "🔔 {count} ڕووەک پێویستی بە سەرنجە",
-  "@heroBannerUrgent": {
-    "placeholders": {
-      "count": { "type": "int" }
-    }
-  },
   "heroBannerAllGood": "✅ هەموو ڕووەکەکان تەندروستن",
   "heroBannerHeading": "پەناگە سەوزەکەت 🌿",
-
   "urgentBannerTitle": "{count} ڕووەک پێویستی بە چاودێرییە",
-  "@urgentBannerTitle": {
-    "placeholders": {
-      "count": { "type": "int" }
-    }
-  },
   "urgentBannerSubtitle": "کرتە لە کارتی ڕووەکێک بکە بۆ کاردانەوە",
-
   "statTotal": "کۆی گشتی",
   "statHealthy": "تەندروست",
   "statWater": "ئاو",
   "statFeed": "خۆراک",
-
   "noPlantsYet": "هیچ ڕووەکێک نییە",
   "noPlantsDesc": "یەکەم ڕووەکت زیاد بکە و بەدواداچوون بۆ خشتەی چاودێرییەکەی بکە لەگەڵ بیرخستنەوەی ڕۆژانە.",
   "noPlantsHint": "🌱 کرتە لە \"زیادکردنی ڕووەک\" بکە بۆ دەستپێکردن",
-
   "addPlant": "زیادکردنی ڕووەک",
-
   "unknownSpecies": "جۆری نەناسراو",
   "healthThriving": "گەشاوە",
-  "healthNeedsCare": "پێویستی بە چاودێرییە",
+  "healthNeedsCare": "پێویستی بە چاودێريیە",
   "healthUrgent": "بەپەلە!",
   "waterNow": "ئێستا ئاوی بدە",
   "waterOk": "ئاو باشە",
   "feedNow": "ئێستا خۆراکی پێبدە",
   "feedOk": "خۆراک باشە",
-
   "sectionPlantIdentity": "ناسنامەی ڕووەک",
   "labelPlantName": "ناوی ڕووەک",
   "hintPlantName": "بۆ نموونە: فیدل لیف",
   "labelSpecies": "جۆر (ئارەزوومەندانە)",
   "hintSpecies": "بۆ نموونە: مۆنستێرا دەلیسیۆسا",
   "validatorEnterName": "تکایە ناوێک بنووسە",
-
   "sectionCareSchedule": "خشتەی چاودێری",
   "labelWaterEvery": "ئاودان هەموو",
   "labelFeedEvery": "خۆراکدان هەموو",
@@ -87,12 +54,10 @@
   "tipFeed": "خۆراکدان: ٧-١٤ ڕۆژ لە وەرزی گەشەکردندا، دەگمەن لە زستاندا.",
   "validatorRequired": "پێویستە",
   "validatorMustBePositive": "دەبێت لە ٠ گەورەتر بێت",
-
   "sectionReminders": "بیرخستنەوەکان",
   "labelWateringReminder": "بیرخستنەوەی ئاودان",
   "labelFeedingReminder": "بیرخستنەوەی خۆراکدان",
   "remindersDisabled": "بیرخستنەوەکان بۆ ئەم ڕووەکە ناچالاکن.",
-
   "careCardWatering": "ئاودان",
   "careCardFeeding": "خۆراکدان",
   "careCardWatered": "ئاودرا ✓",
@@ -100,53 +65,17 @@
   "careCardWaterNow": "ئێستا ئاوی بدە!",
   "careCardFeedNow": "ئێستا خۆراکی پێبدە!",
   "lastWatered": "دواین ئاودان {time}",
-  "@lastWatered": {
-    "placeholders": {
-      "time": { "type": "String" }
-    }
-  },
   "lastFed": "دواین خۆراکدان {time}",
-  "@lastFed": {
-    "placeholders": {
-      "time": { "type": "String" }
-    }
-  },
   "everyNDays": "هەموو {n} ڕۆژێک",
-  "@everyNDays": {
-    "placeholders": {
-      "n": { "type": "int" }
-    }
-  },
   "justNow": "هەر ئێستا",
   "hoursAgo": "پێش {h} کاتژمێر",
-  "@hoursAgo": {
-    "placeholders": {
-      "h": { "type": "int" }
-    }
-  },
   "daysAgo": "پێش {d} ڕۆژ",
-  "@daysAgo": {
-    "placeholders": {
-      "d": { "type": "int" }
-    }
-  },
   "careTipsHeading": "💡 ئامۆژگارییەکانی چاودێری",
   "tipSunlight": "دڵنیابە لە پێدانی تیشکی خۆری ناڕاستەوخۆی پێویست هەموو ڕۆژێک.",
   "tipTemperature": "پلەی گەرمی بە جێگیری بهێڵەوە — لە هەوای سارد و گەرمای ڕاستەوخۆ بەدووربە.",
   "tipPests": "بەردەوام پشکنین بۆ مێرووە زیانبەخشەکان بکە و گەڵاکان بسڕەوە بۆ باشترکردنی ڕۆشنەپێکهاتن.",
   "tipWaterInterval": "هەموو {n} ڕۆژ ئاوی بدە بۆ باشترین ئەنجام.",
-  "@tipWaterInterval": {
-    "placeholders": {
-      "n": { "type": "int" }
-    }
-  },
   "tipFeedInterval": "هەموو {n} ڕۆژ خۆراکی پێبدە بۆ ئەوەی بەهێزتر گەشە بکات.",
-  "@tipFeedInterval": {
-    "placeholders": {
-      "n": { "type": "int" }
-    }
-  },
-
   "scheduleCardIntervals": "🔁 ماوەکانی چاودێری",
   "scheduleCardReminders": "⏰ کاتەکانی بیرخستنەوە",
   "scheduleCardUpcoming": "📅 بەروارەکانی داهاتوو",
@@ -157,57 +86,27 @@
   "scheduleNextWatering": "ئاودانی داهاتوو",
   "scheduleNextFeeding": "خۆراکدانی داهاتوو",
   "scheduleEveryNDays": "هەموو {n} ڕۆژێک",
-  "@scheduleEveryNDays": {
-    "placeholders": {
-      "n": { "type": "int" }
-    }
-  },
   "overdue": "دواکەوتووە!",
-
   "healthThriving2": "گەشاوە 🌟",
   "healthNeedsCare2": "پێویستی بە چاودێرییە",
   "healthUrgent2": "بەپەلە! 🚨",
   "remindersOn": "🔔 بیرخستنەوەکان چالاکن",
   "remindersOff": "🔕 ناچالاکن",
-
   "actionWatered": "ئاودرا!",
   "actionFed": "خۆراکی پێدرا!",
   "snackWatered": "💧 {name} ئاودراوە!",
-  "@snackWatered": {
-    "placeholders": {
-      "name": { "type": "String" }
-    }
-  },
   "snackFed": "🌿 {name} خۆراکی پێدراوە!",
-  "@snackFed": {
-    "placeholders": {
-      "name": { "type": "String" }
-    }
-  },
-
   "pushReminders": "بیرخستنەوەکان",
   "notificationsActive": "ئاگادارکردنەوەی ڕۆژانە چالاکە",
   "tapToEnableNotifications": "کرتە بکە بۆ چالاککردنی ئاگادارکردنەوەکان",
   "snackRemindersOn": "🔔 بیرخستنەوەکان بۆ {name} چالاک کران",
-  "@snackRemindersOn": {
-    "placeholders": {
-      "name": { "type": "String" }
-    }
-  },
   "snackRemindersOff": "🔕 بیرخستنەوەکان بۆ {name} ناچالاک کران",
-  "@snackRemindersOff": {
-    "placeholders": {
-      "name": { "type": "String" }
-    }
-  },
-
   "editCareSchedule": "دەستکاریکردنی خشتەی چاودێری",
   "labelWateringInterval": "ماوەی ئاودان (ڕۆژ)",
   "labelFeedingInterval": "ماوەی خۆراکدان (ڕۆژ)",
   "labelWateringTime": "کاتی ئاودان",
   "labelFeedingTime": "کاتی خۆراکدان",
   "saveChanges": "هەڵگرتنی گۆڕانکارییەکان",
-
   "notifDialogTitle": "ئاگاداری ڕووەکەکانت بە! 🌿",
   "notifDialogBody": "ئاگادارکردنەوەکان چالاک بکە بۆ ئەوەی کاتێک ڕووەکەکانت پێویستیان بە ئاو یان پەینە، بیرت بخەینەوە.",
   "allowNotifications": "ڕێگەدان بە ئاگادارکردنەوە",
@@ -215,7 +114,6 @@
   "pillWater": "ئاو",
   "pillFeed": "خۆراک",
   "pillLight": "ڕووناکی",
-
   "onboardingWelcomeTitle": "جیهانە سەوزەکەت\nگەشە پێبدە",
   "onboardingWelcomeBody": "ڕێگەیەکی سەردەمیانە بۆ هێشتنەوەی ڕووەکەکانت بە زیندوویی و گەشاوەیی.",
   "onboardingInfoTitle1": "هەرگیز دڵۆپێک لەدەست مەدە",
@@ -223,5 +121,11 @@
   "onboardingInfoTitle2": "پاراستنی زانیارییەکان",
   "onboardingInfoBody2": "داتاکەت لەسەر ئامێرەکەت دەمێنێتەوە.\nبەدواداچوونی ئاستبەرز ڕێگەت پێدەدات زۆرترین سوود لە ڕووەکەکەت وەربگریت.",
   "onboardingStartBody": "چێژ لە سوودەکانی ڕێگەیەکی سەردەمیانە وەربگرە بۆ هێشتنەوەی ڕووەکەکانت بە زیندوویی و گەشاوەیی لەگەڵ چاودێری ڕووەک.",
-  "onboardingStartCta": "ئامادەی بۆ دەستپێکردنی گەشتەکەت؟"
+  "onboardingStartCta": "ئامادەی بۆ دەستپێکردنی گەشتەکەت؟",
+
+  "notifWaterTitle": "ئاودانی {name}",
+  "notifFeedTitle": "خۆراکدانی {name}",
+  "notifWaterBody": "{name} ئێستا پێویستی بە ئاوە.",
+  "notifFeedBody": "{name} ئامادەیە بۆ وەرگرتنی خۆراک.",
+  "notifActionMarkDone": "تەواو"
 }

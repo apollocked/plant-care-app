@@ -43,7 +43,7 @@ class _EditScheduleDialogState extends State<EditScheduleDialog> {
     widget.plant.waterReminderTime = _waterTime;
     widget.plant.feedReminderTime = _feedTime;
 
-    await widget.vm.updatePlant(widget.plant);
+    await widget.vm.updatePlant(widget.plant, context);
     if (mounted) Navigator.pop(context);
   }
 
@@ -79,10 +79,7 @@ class _EditScheduleDialogState extends State<EditScheduleDialog> {
           onPressed: () => Navigator.pop(context),
           child: Text(loc.cancel),
         ),
-        ElevatedButton(
-          onPressed: _save,
-          child: Text(loc.saveChanges),
-        ),
+        ElevatedButton(onPressed: _save, child: Text(loc.saveChanges)),
       ],
     );
   }

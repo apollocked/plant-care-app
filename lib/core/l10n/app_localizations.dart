@@ -831,6 +831,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Ready to start your journey?'**
   String get onboardingStartCta;
+
+  /// No description provided for @notifWaterTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Water {name}'**
+  String notifWaterTitle(String name);
+
+  /// No description provided for @notifFeedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Feed {name}'**
+  String notifFeedTitle(String name);
+
+  /// No description provided for @notifWaterBody.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} needs water now.'**
+  String notifWaterBody(String name);
+
+  /// No description provided for @notifFeedBody.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} is ready for plant food.'**
+  String notifFeedBody(String name);
+
+  /// No description provided for @notifActionMarkDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark Done'**
+  String get notifActionMarkDone;
 }
 
 class _AppLocalizationsDelegate

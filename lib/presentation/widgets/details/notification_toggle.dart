@@ -20,7 +20,7 @@ class NotificationToggleCard extends StatelessWidget {
 
   Future<void> _toggle(BuildContext context) async {
     plant.remindersEnabled = !plant.remindersEnabled;
-    await vm.updatePlant(plant);
+    await vm.updatePlant(plant, context);
     if (context.mounted) {
       final loc = AppLocalizations.of(context)!;
       ScaffoldMessenger.of(context).showSnackBar(

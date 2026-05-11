@@ -53,7 +53,7 @@ class DetailsActionBar extends StatelessWidget {
               colors: <Color>[Colors.blue.shade400, Colors.blue.shade700],
               shadowColor: Colors.blue,
               onTap: () async {
-                await vm.markPlantWatered(plant.id);
+                await vm.markPlantWatered(plant.id, context);
                 if (context.mounted) {
                   _snack(
                     context,
@@ -71,7 +71,7 @@ class DetailsActionBar extends StatelessWidget {
               colors: <Color>[Colors.green.shade500, Colors.teal.shade600],
               shadowColor: Colors.green,
               onTap: () async {
-                await vm.markPlantFed(plant.id);
+                await vm.markPlantFed(plant.id, context);
                 if (context.mounted) {
                   _snack(
                     context,

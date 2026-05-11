@@ -1,4 +1,6 @@
 import 'package:awesome_notifications/awesome_notifications.dart';
+import 'package:flutter/material.dart';
+import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 
 const String basicChannelKey = 'basic_channel';
 const String scheduledChannelKey = 'scheduled_channel';
@@ -14,6 +16,7 @@ int notificationIdForPlant(String plantId, PlantReminderType type) {
 }
 
 Future<void> createPlantReminderNotification({
+  required BuildContext context, // Added context to get current localization
   required int id,
   required String plantId,
   required String plantName,
@@ -22,21 +25,31 @@ Future<void> createPlantReminderNotification({
   required int minute,
 }) async {
   final bool isWater = type == PlantReminderType.water;
+  final l10n = AppLocalizations.of(context)!;
+
+  // Localized Strings
+  final String title = isWater
+      ? '${Emojis.icon_sweat_droplets} ${l10n.notifWaterTitle(plantName)}'
+      : '${Emojis.plant_cactus} ${l10n.notifFeedTitle(plantName)}';
+
+  final String body = isWater
+      ? l10n.notifWaterBody(plantName)
+      : l10n.notifFeedBody(plantName);
+
   await AwesomeNotifications().createNotification(
     content: NotificationContent(
       id: id,
       channelKey: scheduledChannelKey,
-      title: isWater
-          ? '${Emojis.wheater_droplet} Water $plantName'
-          : '${Emojis.plant_cactus} Feed $plantName',
-      body: isWater
-          ? '$plantName needs water now.'
-          : '$plantName is ready for plant food.',
+      title: title,
+      body: body,
       notificationLayout: NotificationLayout.Default,
       payload: <String, String>{'plantId': plantId, 'reminderType': type.name},
     ),
     actionButtons: [
-      NotificationActionButton(key: 'MARK_DONE', label: 'Mark Done'),
+      NotificationActionButton(
+        key: 'MARK_DONE',
+        label: l10n.notifActionMarkDone,
+      ),
     ],
     schedule: NotificationCalendar(
       hour: hour,

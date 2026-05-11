@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 import 'package:mock_plant_care_app/data/model/plant_model.dart';
 import 'quick_action_button.dart';
 
@@ -20,6 +21,7 @@ class CardHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     return Row(
       children: <Widget>[
         Stack(
@@ -65,7 +67,7 @@ class CardHeader extends StatelessWidget {
               ),
               const SizedBox(height: 2),
               Text(
-                plant.species ?? 'Unknown species',
+                plant.species ?? loc.unknownSpecies,
                 style: TextStyle(
                   fontSize: 12,
                   color: onSurface.withValues(alpha: 0.6),
@@ -125,11 +127,12 @@ class CardActions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     return Row(
       children: <Widget>[
         Expanded(
           child: QuickActionButton(
-            label: plant.needsWaterNow ? 'Water Now' : 'Water ok',
+            label: plant.needsWaterNow ? loc.waterNow : loc.waterOk,
             icon: Icons.water_drop_outlined,
             color: plant.needsWaterNow ? Colors.blue : scheme.primary,
             urgent: plant.needsWaterNow,
@@ -139,7 +142,7 @@ class CardActions extends StatelessWidget {
         const SizedBox(width: 10),
         Expanded(
           child: QuickActionButton(
-            label: plant.needsFoodNow ? 'Feed Now' : 'Food ok',
+            label: plant.needsFoodNow ? loc.feedNow : loc.feedOk,
             icon: Icons.grass_outlined,
             color: plant.needsFoodNow ? Colors.orange : Colors.green,
             urgent: plant.needsFoodNow,

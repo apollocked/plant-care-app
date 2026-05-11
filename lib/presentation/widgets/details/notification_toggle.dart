@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 import 'package:mock_plant_care_app/data/model/plant_model.dart';
 import 'package:mock_plant_care_app/presentation/widgets/glass_container.dart';
 import 'package:mock_plant_care_app/logic/plant_viewmodel.dart';
@@ -21,12 +22,13 @@ class NotificationToggleCard extends StatelessWidget {
     plant.remindersEnabled = !plant.remindersEnabled;
     await vm.updatePlant(plant);
     if (context.mounted) {
+      final loc = AppLocalizations.of(context)!;
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(
             plant.remindersEnabled
-                ? '🔔 Reminders turned ON for ${plant.name}'
-                : '🔕 Reminders turned OFF for ${plant.name}',
+                ? loc.snackRemindersOn(plant.name)
+                : loc.snackRemindersOff(plant.name),
           ),
           behavior: SnackBarBehavior.floating,
           shape: RoundedRectangleBorder(
@@ -40,6 +42,7 @@ class NotificationToggleCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     final bool on = plant.remindersEnabled;
     return GlassContainer(
       borderRadius: 18,
@@ -68,7 +71,7 @@ class NotificationToggleCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  'Push Reminders',
+                  loc.pushReminders,
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w700,
@@ -76,9 +79,7 @@ class NotificationToggleCard extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  on
-                      ? 'Daily notifications are active'
-                      : 'Tap to enable notifications',
+                  on ? loc.notificationsActive : loc.tapToEnableNotifications,
                   style: TextStyle(
                     fontSize: 12,
                     color: onSurface.withValues(alpha: 0.55),

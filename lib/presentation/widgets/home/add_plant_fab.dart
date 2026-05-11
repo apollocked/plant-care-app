@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 import 'package:mock_plant_care_app/presentation/pages/add_plant_page.dart';
 
 class AddPlantFAB extends StatelessWidget {
@@ -9,6 +10,7 @@ class AddPlantFAB extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     return ScaleTransition(
       scale: CurvedAnimation(parent: animation, curve: Curves.elasticOut),
       child: GestureDetector(
@@ -35,14 +37,14 @@ class AddPlantFAB extends StatelessWidget {
               ),
             ],
           ),
-          child: const Row(
+          child: Row(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              Icon(Icons.add_rounded, color: Colors.white, size: 22),
-              SizedBox(width: 8),
+              const Icon(Icons.add_rounded, color: Colors.white, size: 22),
+              const SizedBox(width: 8),
               Text(
-                'Add Plant',
-                style: TextStyle(
+                loc.addPlant,
+                style: const TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w600,
                   fontSize: 15,

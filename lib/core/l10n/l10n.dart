@@ -19,3 +19,25 @@ class L10n {
     }
   }
 }
+
+class KurdishMaterialLocalizations extends DefaultMaterialLocalizations {
+  const KurdishMaterialLocalizations();
+
+  static const LocalizationsDelegate<MaterialLocalizations> delegate =
+      _KurdishMaterialLocalizationsDelegate();
+}
+
+class _KurdishMaterialLocalizationsDelegate
+    extends LocalizationsDelegate<MaterialLocalizations> {
+  const _KurdishMaterialLocalizationsDelegate();
+
+  @override
+  bool isSupported(Locale locale) => locale.languageCode == 'ku';
+
+  @override
+  Future<MaterialLocalizations> load(Locale locale) async =>
+      const KurdishMaterialLocalizations();
+
+  @override
+  bool shouldReload(_KurdishMaterialLocalizationsDelegate old) => false;
+}

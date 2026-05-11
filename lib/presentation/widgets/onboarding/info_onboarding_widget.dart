@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 import 'package:mock_plant_care_app/presentation/widgets/onboarding/glass_card.dart';
 
 class InfoOnboardingWidget extends StatefulWidget {
@@ -22,12 +23,12 @@ class _InfoOnboardingWidgetState extends State<InfoOnboardingWidget>
   @override
   void dispose() {
     controller.dispose();
-
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -58,18 +59,17 @@ class _InfoOnboardingWidgetState extends State<InfoOnboardingWidget>
                     context,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
-
                       children: [
                         Text(
-                          'Never Miss a Drop',
+                          loc.onboardingInfoTitle1,
                           style: theme.textTheme.headlineSmall?.copyWith(
                             fontWeight: FontWeight.bold,
                             color: theme.colorScheme.primary,
                           ),
                         ),
-                        Divider(),
+                        const Divider(),
                         Text(
-                          'Set custom reminders for watering, fertilizing, and repotting. Your plants will thank you.',
+                          loc.onboardingInfoBody1,
                           textAlign: TextAlign.center,
                           style: theme.textTheme.labelMedium,
                         ),
@@ -83,18 +83,17 @@ class _InfoOnboardingWidgetState extends State<InfoOnboardingWidget>
                     context,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
-
                       children: [
                         Text(
-                          'Data Privacy',
+                          loc.onboardingInfoTitle2,
                           style: theme.textTheme.headlineSmall?.copyWith(
                             fontWeight: FontWeight.bold,
                             color: theme.colorScheme.primary,
                           ),
                         ),
-                        Divider(),
+                        const Divider(),
                         Text(
-                          'Your data stays on your device.\nHigh performance tracking allows you to get the most out of your plant.',
+                          loc.onboardingInfoBody2,
                           style: theme.textTheme.labelMedium,
                         ),
                       ],

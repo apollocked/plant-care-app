@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 import 'package:mock_plant_care_app/data/model/plant_model.dart';
 import 'package:mock_plant_care_app/presentation/widgets/details/action_bar.dart';
 import 'package:mock_plant_care_app/presentation/widgets/details/care_info_tab.dart';
@@ -33,13 +34,14 @@ class _PlantDetailsPageState extends State<PlantDetailsPage>
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     final PlantViewModel vm = context.watch<PlantViewModel>();
     final PlantModel? plant = vm.getPlantById(widget.plantId);
 
     if (plant == null) {
       return Scaffold(
-        appBar: AppBar(title: const Text('Plant Details')),
-        body: const Center(child: Text('Plant not found')),
+        appBar: AppBar(title: Text(loc.plantDetails)),
+        body: Center(child: Text(loc.plantNotFound)),
       );
     }
 
@@ -140,6 +142,7 @@ class _PlantDetailsPageState extends State<PlantDetailsPage>
     bool isDark,
     Color onSurface,
   ) {
+    final loc = AppLocalizations.of(context)!;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: ClipRRect(
@@ -180,9 +183,9 @@ class _PlantDetailsPageState extends State<PlantDetailsPage>
               fontWeight: FontWeight.w600,
               fontSize: 13,
             ),
-            tabs: const <Tab>[
-              Tab(text: '🌿 Care Info'),
-              Tab(text: '📋 Schedule'),
+            tabs: <Tab>[
+              Tab(text: loc.tabCareInfo),
+              Tab(text: loc.tabSchedule),
             ],
           ),
         ),
@@ -195,19 +198,20 @@ class _PlantDetailsPageState extends State<PlantDetailsPage>
     PlantModel plant,
     PlantViewModel vm,
   ) {
+    final loc = AppLocalizations.of(context)!;
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        title: const Text(
-          'Remove Plant',
-          style: TextStyle(fontWeight: FontWeight.w700),
+        title: Text(
+          loc.removePlant,
+          style: const TextStyle(fontWeight: FontWeight.w700),
         ),
-        content: Text('Remove "${plant.name}" from your garden?'),
+        content: Text(loc.removePlantConfirm(plant.name)),
         actions: <Widget>[
           TextButton(
             onPressed: () => Navigator.pop(ctx),
-            child: const Text('Cancel'),
+            child: Text(loc.cancel),
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
@@ -222,7 +226,7 @@ class _PlantDetailsPageState extends State<PlantDetailsPage>
               await vm.deletePlant(plant.id);
               if (context.mounted) Navigator.pop(context);
             },
-            child: const Text('Remove'),
+            child: Text(loc.remove),
           ),
         ],
       ),

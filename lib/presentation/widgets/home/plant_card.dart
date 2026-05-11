@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 import 'package:mock_plant_care_app/data/model/plant_model.dart';
 import 'package:mock_plant_care_app/presentation/widgets/glass_container.dart';
 import 'package:mock_plant_care_app/presentation/widgets/home/plant_card_components.dart';
@@ -56,15 +57,16 @@ class _PlantCardState extends State<PlantCard>
     return Colors.red;
   }
 
-  String _healthLabel() {
+  String _healthLabel(AppLocalizations loc) {
     final double s = _healthScore();
-    if (s >= 0.9) return 'Thriving';
-    if (s >= 0.5) return 'Needs care';
-    return 'Urgent!';
+    if (s >= 0.9) return loc.healthThriving;
+    if (s >= 0.5) return loc.healthNeedsCare;
+    return loc.healthUrgent;
   }
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     final ColorScheme scheme = Theme.of(context).colorScheme;
     return AnimatedBuilder(
       animation: _controller,
@@ -87,7 +89,7 @@ class _PlantCardState extends State<PlantCard>
                   plant: widget.plant,
                   healthScore: _healthScore(),
                   healthColor: _healthColor(),
-                  healthLabel: _healthLabel(),
+                  healthLabel: _healthLabel(loc),
                   onSurface: scheme.onSurface,
                 ),
                 const SizedBox(height: 14),

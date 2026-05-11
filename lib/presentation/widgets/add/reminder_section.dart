@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 import 'package:mock_plant_care_app/presentation/widgets/glass_container.dart';
 import 'form_helpers.dart';
 
@@ -26,6 +27,7 @@ class ReminderSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     final ColorScheme scheme = Theme.of(context).colorScheme;
     return GlassContainer(
       borderRadius: 20,
@@ -38,7 +40,7 @@ class ReminderSection extends StatelessWidget {
             children: <Widget>[
               FormSectionHeader(
                 icon: '🔔',
-                label: 'Reminders',
+                label: loc.sectionReminders,
                 onSurface: onSurface,
               ),
               Switch.adaptive(
@@ -51,7 +53,7 @@ class ReminderSection extends StatelessWidget {
           if (remindersEnabled) ...<Widget>[
             const SizedBox(height: 12),
             _TimeTile(
-              label: 'Watering Reminder',
+              label: loc.labelWateringReminder,
               time: waterTime,
               onTap: onPickWaterTime,
               icon: Icons.water_drop_rounded,
@@ -60,7 +62,7 @@ class ReminderSection extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             _TimeTile(
-              label: 'Feeding Reminder',
+              label: loc.labelFeedingReminder,
               time: feedTime,
               onTap: onPickFeedTime,
               icon: Icons.grass_rounded,
@@ -71,7 +73,7 @@ class ReminderSection extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 8),
               child: Text(
-                'Reminders are disabled for this plant.',
+                loc.remindersDisabled,
                 style: TextStyle(
                   fontSize: 12,
                   color: onSurface.withValues(alpha: 0.4),

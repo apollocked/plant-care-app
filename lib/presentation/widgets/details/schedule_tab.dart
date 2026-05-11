@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 import 'package:mock_plant_care_app/data/model/plant_model.dart';
 import 'package:mock_plant_care_app/presentation/widgets/glass_container.dart';
 import 'package:mock_plant_care_app/logic/plant_viewmodel.dart';
@@ -14,6 +15,7 @@ class ScheduleTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     final ColorScheme scheme = Theme.of(context).colorScheme;
     final Color onSurface = scheme.onSurface;
 
@@ -23,7 +25,7 @@ class ScheduleTab extends StatelessWidget {
       child: Column(
         children: <Widget>[
           _EditableScheduleCard(
-            title: '🔁 Care Intervals',
+            title: loc.scheduleCardIntervals,
             onSurface: onSurface,
             onEdit: () => showDialog(
               context: context,
@@ -33,25 +35,23 @@ class ScheduleTab extends StatelessWidget {
               ScheduleRow(
                 icon: Icons.water_drop_outlined,
                 color: Colors.blue,
-                label: 'Watering',
-                value:
-                    'Every ${plant.waterIntervalDays} day${plant.waterIntervalDays > 1 ? 's' : ''}',
+                label: loc.scheduleWatering,
+                value: loc.scheduleEveryNDays(plant.waterIntervalDays),
                 onSurface: onSurface,
               ),
               const Divider(height: 20),
               ScheduleRow(
                 icon: Icons.grass_outlined,
                 color: Colors.orange,
-                label: 'Feeding',
-                value:
-                    'Every ${plant.feedIntervalDays} day${plant.feedIntervalDays > 1 ? 's' : ''}',
+                label: loc.scheduleFeeding,
+                value: loc.scheduleEveryNDays(plant.feedIntervalDays),
                 onSurface: onSurface,
               ),
             ],
           ),
           const SizedBox(height: 12),
           _EditableScheduleCard(
-            title: '⏰ Reminder Times',
+            title: loc.scheduleCardReminders,
             onSurface: onSurface,
             onEdit: () => showDialog(
               context: context,
@@ -61,7 +61,7 @@ class ScheduleTab extends StatelessWidget {
               ScheduleRow(
                 icon: Icons.water_drop_outlined,
                 color: Colors.blue,
-                label: 'Water Reminder',
+                label: loc.scheduleWaterReminder,
                 value: plant.waterReminderTime.format(context),
                 onSurface: onSurface,
               ),
@@ -69,7 +69,7 @@ class ScheduleTab extends StatelessWidget {
               ScheduleRow(
                 icon: Icons.grass_outlined,
                 color: Colors.orange,
-                label: 'Feed Reminder',
+                label: loc.scheduleFeedReminder,
                 value: plant.feedReminderTime.format(context),
                 onSurface: onSurface,
               ),
@@ -77,13 +77,13 @@ class ScheduleTab extends StatelessWidget {
           ),
           const SizedBox(height: 12),
           _ScheduleInfoCard(
-            title: '📅 Upcoming Dates',
+            title: loc.scheduleCardUpcoming,
             onSurface: onSurface,
             children: <Widget>[
               UpcomingDateRow(
                 icon: Icons.water_drop_outlined,
                 color: Colors.blue,
-                label: 'Next watering',
+                label: loc.scheduleNextWatering,
                 date: plant.nextWaterDue,
                 isOverdue: plant.needsWaterNow,
                 onSurface: onSurface,
@@ -92,7 +92,7 @@ class ScheduleTab extends StatelessWidget {
               UpcomingDateRow(
                 icon: Icons.grass_outlined,
                 color: Colors.orange,
-                label: 'Next feeding',
+                label: loc.scheduleNextFeeding,
                 date: plant.nextFoodDue,
                 isOverdue: plant.needsFoodNow,
                 onSurface: onSurface,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:awesome_notifications/awesome_notifications.dart';
+import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 
 class PlantIconCircle extends StatelessWidget {
   const PlantIconCircle({super.key, required this.scheme});
@@ -29,32 +30,72 @@ class PlantIconCircle extends StatelessWidget {
   }
 }
 
+class NotifDialogContent extends StatelessWidget {
+  const NotifDialogContent({
+    super.key,
+    required this.textColor,
+    required this.subtextColor,
+  });
+  final Color textColor;
+  final Color subtextColor;
+
+  @override
+  Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
+    return Column(
+      children: [
+        Text(
+          loc.notifDialogTitle,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 22,
+            fontWeight: FontWeight.w700,
+            color: textColor,
+            height: 1.3,
+          ),
+        ),
+        const SizedBox(height: 12),
+        Text(
+          loc.notifDialogBody,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 14,
+            color: subtextColor,
+            height: 1.5,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
 class FeaturePillsRow extends StatelessWidget {
   const FeaturePillsRow({super.key, required this.isDark});
   final bool isDark;
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         _Pill(
           icon: Icons.water_drop_outlined,
-          label: 'Water',
+          label: loc.pillWater,
           color: Colors.blue,
           isDark: isDark,
         ),
         const SizedBox(width: 8),
         _Pill(
           icon: Icons.grass_outlined,
-          label: 'Feed',
+          label: loc.pillFeed,
           color: Colors.green,
           isDark: isDark,
         ),
         const SizedBox(width: 8),
         _Pill(
           icon: Icons.wb_sunny_outlined,
-          label: 'Light',
+          label: loc.pillLight,
           color: Colors.orange,
           isDark: isDark,
         ),
@@ -109,6 +150,7 @@ class AllowButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     return SizedBox(
       width: double.infinity,
       child: DecoratedBox(
@@ -142,14 +184,17 @@ class AllowButton extends StatelessWidget {
             Navigator.of(context).pop();
             AwesomeNotifications().requestPermissionToSendNotifications();
           },
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Icon(Icons.notifications_active_outlined, size: 20),
-              SizedBox(width: 8),
+              const Icon(Icons.notifications_active_outlined, size: 20),
+              const SizedBox(width: 8),
               Text(
-                'Allow Notifications',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                loc.allowNotifications,
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
             ],
           ),
@@ -170,6 +215,7 @@ class LaterButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     return SizedBox(
       width: double.infinity,
       child: TextButton(
@@ -182,7 +228,7 @@ class LaterButton extends StatelessWidget {
         ),
         onPressed: () => Navigator.of(context).pop(),
         child: Text(
-          'Maybe Later',
+          loc.maybeLater,
           style: TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.w500,

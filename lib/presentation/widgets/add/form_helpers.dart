@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 
 class FormSectionHeader extends StatelessWidget {
   const FormSectionHeader({
@@ -32,9 +33,9 @@ class FormSectionHeader extends StatelessWidget {
   }
 }
 
-String? validatePositiveInt(String? v) {
-  if (v == null || v.isEmpty) return 'Required';
+String? validatePositiveInt(String? v, AppLocalizations loc) {
+  if (v == null || v.isEmpty) return loc.validatorRequired;
   final int? val = int.tryParse(v);
-  if (val == null || val <= 0) return 'Must be > 0';
+  if (val == null || val <= 0) return loc.validatorMustBePositive;
   return null;
 }

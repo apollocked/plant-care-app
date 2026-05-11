@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 import 'package:mock_plant_care_app/data/model/plant_model.dart';
 import 'package:mock_plant_care_app/logic/plant_viewmodel.dart';
 
@@ -16,6 +17,7 @@ class DetailsActionBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     return Container(
       padding: EdgeInsets.fromLTRB(
         16,
@@ -46,14 +48,17 @@ class DetailsActionBar extends StatelessWidget {
         children: <Widget>[
           Expanded(
             child: GradientActionButton(
-              label: 'Watered!',
+              label: loc.actionWatered,
               icon: Icons.water_drop_rounded,
               colors: <Color>[Colors.blue.shade400, Colors.blue.shade700],
               shadowColor: Colors.blue,
               onTap: () async {
                 await vm.markPlantWatered(plant.id);
                 if (context.mounted) {
-                  _snack(context, '💧 ${plant.name} has been watered!');
+                  _snack(
+                    context,
+                    AppLocalizations.of(context)!.snackWatered(plant.name),
+                  );
                 }
               },
             ),
@@ -61,14 +66,17 @@ class DetailsActionBar extends StatelessWidget {
           const SizedBox(width: 12),
           Expanded(
             child: GradientActionButton(
-              label: 'Fed!',
+              label: loc.actionFed,
               icon: Icons.grass_rounded,
               colors: <Color>[Colors.green.shade500, Colors.teal.shade600],
               shadowColor: Colors.green,
               onTap: () async {
                 await vm.markPlantFed(plant.id);
                 if (context.mounted) {
-                  _snack(context, '🌿 ${plant.name} has been fed!');
+                  _snack(
+                    context,
+                    AppLocalizations.of(context)!.snackFed(plant.name),
+                  );
                 }
               },
             ),

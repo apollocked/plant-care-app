@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 
 class EmptyPlantState extends StatelessWidget {
   const EmptyPlantState({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     final bool isDark = Theme.of(context).brightness == Brightness.dark;
     final ColorScheme scheme = Theme.of(context).colorScheme;
 
@@ -38,7 +40,7 @@ class EmptyPlantState extends StatelessWidget {
             ),
             const SizedBox(height: 24),
             Text(
-              'No Plants Yet',
+              loc.noPlantsYet,
               style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.w700,
@@ -47,7 +49,7 @@ class EmptyPlantState extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             Text(
-              'Add your first plant and start tracking its care schedule with daily reminders.',
+              loc.noPlantsDesc,
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 14,
@@ -73,7 +75,7 @@ class EmptyPlantState extends StatelessWidget {
                 ),
               ),
               child: Text(
-                '🌱 Tap "Add Plant" to get started',
+                loc.noPlantsHint,
                 style: TextStyle(
                   color: scheme.primary,
                   fontWeight: FontWeight.w500,

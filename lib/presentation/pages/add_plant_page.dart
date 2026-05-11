@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 import 'package:mock_plant_care_app/data/model/plant_model.dart';
 import 'package:mock_plant_care_app/presentation/widgets/add/identity_section.dart';
 import 'package:mock_plant_care_app/presentation/widgets/add/schedule_section.dart';
@@ -67,9 +68,13 @@ class _AddPlantPageState extends State<AddPlantPage> {
       if (mounted) Navigator.of(context).pop();
     } catch (e) {
       if (mounted) {
-        ScaffoldMessenger.of(
-          context,
-        ).showSnackBar(SnackBar(content: Text('Failed to save plant: $e')));
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(
+              AppLocalizations.of(context)!.failedToSavePlant(e.toString()),
+            ),
+          ),
+        );
       }
     } finally {
       if (mounted) setState(() => _isSaving = false);
@@ -78,6 +83,7 @@ class _AddPlantPageState extends State<AddPlantPage> {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     final bool isDark = Theme.of(context).brightness == Brightness.dark;
     final ColorScheme scheme = Theme.of(context).colorScheme;
     final Color onSurface = scheme.onSurface;
@@ -93,7 +99,7 @@ class _AddPlantPageState extends State<AddPlantPage> {
             Image.asset('assets/icons/plant_icon.png', width: 28, height: 28),
             const SizedBox(width: 10),
             Text(
-              'Add New Plant',
+              loc.addNewPlant,
               style: TextStyle(
                 color: onSurface,
                 fontWeight: FontWeight.w700,
@@ -147,7 +153,6 @@ class _AddPlantPageState extends State<AddPlantPage> {
                     onSurface: onSurface,
                   ),
                   const SizedBox(height: 28),
-                  // Gradient save button
                   GestureDetector(
                     onTap: _isSaving ? null : _savePlant,
                     child: Container(
@@ -179,18 +184,18 @@ class _AddPlantPageState extends State<AddPlantPage> {
                                   color: Colors.white,
                                 ),
                               )
-                            : const Row(
+                            : Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
-                                  Icon(
+                                  const Icon(
                                     Icons.local_florist_outlined,
                                     color: Colors.white,
                                     size: 20,
                                   ),
-                                  SizedBox(width: 10),
+                                  const SizedBox(width: 10),
                                   Text(
-                                    'Save Plant',
-                                    style: TextStyle(
+                                    loc.savePlant,
+                                    style: const TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.w700,
                                       fontSize: 16,

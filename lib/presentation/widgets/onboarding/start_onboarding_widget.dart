@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 import 'package:mock_plant_care_app/presentation/widgets/onboarding/glass_card.dart';
 
 class StartOnboardingWidget extends StatelessWidget {
@@ -7,6 +8,7 @@ class StartOnboardingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -22,7 +24,7 @@ class StartOnboardingWidget extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  'Enjoy the benefits of a modern approach to keeping your plants alive and thriving with Plant Care.',
+                  loc.onboardingStartBody,
                   textAlign: TextAlign.start,
                   style: theme.textTheme.bodyMedium,
                 ),
@@ -31,7 +33,7 @@ class StartOnboardingWidget extends StatelessWidget {
                   child: Divider(),
                 ),
                 Text(
-                  'Ready to start your journey?',
+                  loc.onboardingStartCta,
                   style: theme.textTheme.titleMedium?.copyWith(
                     color: theme.colorScheme.primary,
                     fontWeight: FontWeight.bold,

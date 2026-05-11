@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 import 'package:mock_plant_care_app/presentation/widgets/onboarding/glass_card.dart';
 
 class WellcomeWidget extends StatelessWidget {
@@ -6,6 +7,7 @@ class WellcomeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -16,10 +18,10 @@ class WellcomeWidget extends StatelessWidget {
             context,
             child: Column(
               children: [
-                Text('🌿', style: TextStyle(fontSize: 50)),
+                const Text('🌿', style: TextStyle(fontSize: 50)),
                 const SizedBox(height: 20),
                 Text(
-                  'Grow Your\nUrban Jungle',
+                  loc.onboardingWelcomeTitle,
                   textAlign: TextAlign.center,
                   style: theme.textTheme.displaySmall?.copyWith(
                     fontWeight: FontWeight.w900,
@@ -29,7 +31,7 @@ class WellcomeWidget extends StatelessWidget {
                 ),
                 const SizedBox(height: 15),
                 Text(
-                  'A modern approach to keeping your plants alive and thriving.',
+                  loc.onboardingWelcomeBody,
                   textAlign: TextAlign.center,
                   style: theme.textTheme.bodyLarge?.copyWith(
                     color: theme.colorScheme.onSurfaceVariant,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 import 'package:mock_plant_care_app/presentation/widgets/glass_container.dart';
 import 'package:mock_plant_care_app/logic/plant_viewmodel.dart';
 
@@ -9,6 +10,7 @@ class StatsRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     final int total = plantVm.plants.length;
     final int needWater = plantVm.plants.where((p) => p.needsWaterNow).length;
     final int needFood = plantVm.plants.where((p) => p.needsFoodNow).length;
@@ -22,7 +24,7 @@ class StatsRow extends StatelessWidget {
         Expanded(
           child: _StatCard(
             value: '$total',
-            label: 'Total',
+            label: loc.statTotal,
             icon: Icons.local_florist_outlined,
             color: primary,
           ),
@@ -31,7 +33,7 @@ class StatsRow extends StatelessWidget {
         Expanded(
           child: _StatCard(
             value: '$happy',
-            label: 'Healthy',
+            label: loc.statHealthy,
             icon: Icons.favorite_outline_rounded,
             color: Colors.green,
           ),
@@ -40,7 +42,7 @@ class StatsRow extends StatelessWidget {
         Expanded(
           child: _StatCard(
             value: '$needWater',
-            label: 'Water',
+            label: loc.statWater,
             icon: Icons.water_drop_outlined,
             color: Colors.blue,
           ),
@@ -49,7 +51,7 @@ class StatsRow extends StatelessWidget {
         Expanded(
           child: _StatCard(
             value: '$needFood',
-            label: 'Feed',
+            label: loc.statFeed,
             icon: Icons.grass_outlined,
             color: Colors.orange,
           ),

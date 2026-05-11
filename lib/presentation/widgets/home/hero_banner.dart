@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 
 class HeroBanner extends StatelessWidget {
   const HeroBanner({super.key, required this.urgentCount});
@@ -7,6 +8,7 @@ class HeroBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     return ClipRRect(
       borderRadius: BorderRadius.circular(24),
       child: Stack(
@@ -53,8 +55,8 @@ class HeroBanner extends StatelessWidget {
                   ),
                   child: Text(
                     urgentCount > 0
-                        ? '🔔 $urgentCount plant${urgentCount > 1 ? 's need' : ' needs'} attention'
-                        : '✅ All plants are happy',
+                        ? loc.heroBannerUrgent(urgentCount)
+                        : loc.heroBannerAllGood,
                     style: const TextStyle(
                       color: Colors.white,
                       fontSize: 12,
@@ -63,9 +65,9 @@ class HeroBanner extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 8),
-                const Text(
-                  'Your Green\nSanctuary 🌿',
-                  style: TextStyle(
+                Text(
+                  loc.heroBannerHeading,
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 24,
                     fontWeight: FontWeight.w800,

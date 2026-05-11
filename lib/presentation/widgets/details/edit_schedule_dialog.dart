@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 import 'package:mock_plant_care_app/data/model/plant_model.dart';
 import 'package:mock_plant_care_app/logic/plant_viewmodel.dart';
 
@@ -48,24 +49,25 @@ class _EditScheduleDialogState extends State<EditScheduleDialog> {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     return AlertDialog(
-      title: const Text('Edit Care Schedule'),
+      title: Text(loc.editCareSchedule),
       content: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            _buildIntervalField('Watering Interval (Days)', _waterIntervalCtrl),
+            _buildIntervalField(loc.labelWateringInterval, _waterIntervalCtrl),
             const SizedBox(height: 12),
-            _buildIntervalField('Feeding Interval (Days)', _feedIntervalCtrl),
+            _buildIntervalField(loc.labelFeedingInterval, _feedIntervalCtrl),
             const Divider(height: 32),
             _buildTimeTile(
-              'Watering Time',
+              loc.labelWateringTime,
               _waterTime,
               (t) => setState(() => _waterTime = t),
             ),
             const SizedBox(height: 8),
             _buildTimeTile(
-              'Feeding Time',
+              loc.labelFeedingTime,
               _feedTime,
               (t) => setState(() => _feedTime = t),
             ),
@@ -75,9 +77,12 @@ class _EditScheduleDialogState extends State<EditScheduleDialog> {
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(context),
-          child: const Text('Cancel'),
+          child: Text(loc.cancel),
         ),
-        ElevatedButton(onPressed: _save, child: const Text('Save Changes')),
+        ElevatedButton(
+          onPressed: _save,
+          child: Text(loc.saveChanges),
+        ),
       ],
     );
   }

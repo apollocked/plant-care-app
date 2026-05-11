@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 import 'package:mock_plant_care_app/presentation/widgets/glass_container.dart';
 import 'form_helpers.dart';
 
@@ -17,6 +18,7 @@ class CareScheduleSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     final ColorScheme scheme = Theme.of(context).colorScheme;
     return GlassContainer(
       borderRadius: 20,
@@ -26,7 +28,7 @@ class CareScheduleSection extends StatelessWidget {
         children: <Widget>[
           FormSectionHeader(
             icon: '📅',
-            label: 'Care Schedule',
+            label: loc.sectionCareSchedule,
             onSurface: onSurface,
           ),
           const SizedBox(height: 16),
@@ -41,15 +43,15 @@ class CareScheduleSection extends StatelessWidget {
                   ],
                   style: TextStyle(color: onSurface),
                   decoration: InputDecoration(
-                    labelText: 'Water every',
-                    suffixText: 'days',
+                    labelText: loc.labelWaterEvery,
+                    suffixText: loc.suffixDays,
                     prefixIcon: Icon(
                       Icons.water_drop_outlined,
                       color: Colors.blue.shade400,
                       size: 20,
                     ),
                   ),
-                  validator: validatePositiveInt,
+                  validator: (v) => validatePositiveInt(v, loc),
                 ),
               ),
               const SizedBox(width: 12),
@@ -62,15 +64,15 @@ class CareScheduleSection extends StatelessWidget {
                   ],
                   style: TextStyle(color: onSurface),
                   decoration: InputDecoration(
-                    labelText: 'Feed every',
-                    suffixText: 'days',
+                    labelText: loc.labelFeedEvery,
+                    suffixText: loc.suffixDays,
                     prefixIcon: Icon(
                       Icons.grass_outlined,
                       color: Colors.green.shade600,
                       size: 20,
                     ),
                   ),
-                  validator: validatePositiveInt,
+                  validator: (v) => validatePositiveInt(v, loc),
                 ),
               ),
             ],
@@ -90,6 +92,7 @@ class _ScheduleTips extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
@@ -109,7 +112,7 @@ class _ScheduleTips extends StatelessWidget {
               ),
               const SizedBox(width: 6),
               Text(
-                'Common Care Tips',
+                loc.commonCareTips,
                 style: TextStyle(
                   fontSize: 12,
                   fontWeight: FontWeight.w700,
@@ -119,17 +122,9 @@ class _ScheduleTips extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 8),
-          _TipRow(
-            icon: '💧',
-            text: 'Water: 2-3 days for succulents, 5-7 for tropicals.',
-            onSurface: onSurface,
-          ),
+          _TipRow(icon: '💧', text: loc.tipWater, onSurface: onSurface),
           const SizedBox(height: 4),
-          _TipRow(
-            icon: '🧪',
-            text: 'Feed: 7-14 days during growing season, rare in winter.',
-            onSurface: onSurface,
-          ),
+          _TipRow(icon: '🧪', text: loc.tipFeed, onSurface: onSurface),
         ],
       ),
     );

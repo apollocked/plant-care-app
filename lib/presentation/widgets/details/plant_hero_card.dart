@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 import 'package:mock_plant_care_app/data/model/plant_model.dart';
 import 'package:mock_plant_care_app/presentation/widgets/glass_container.dart';
 
@@ -20,15 +21,16 @@ class PlantHeroCard extends StatelessWidget {
     return Colors.red;
   }
 
-  String _healthLabel() {
+  String _healthLabel(AppLocalizations loc) {
     final double s = _healthScore();
-    if (s >= 0.9) return 'Thriving 🌟';
-    if (s >= 0.5) return 'Needs Care';
-    return 'Urgent! 🚨';
+    if (s >= 0.9) return loc.healthThriving2;
+    if (s >= 0.5) return loc.healthNeedsCare2;
+    return loc.healthUrgent2;
   }
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     final ColorScheme scheme = Theme.of(context).colorScheme;
     final Color onSurface = scheme.onSurface;
 
@@ -55,7 +57,7 @@ class PlantHeroCard extends StatelessWidget {
                 Text(
                   plant.species?.isNotEmpty == true
                       ? plant.species!
-                      : 'Unknown species',
+                      : loc.unknownSpecies,
                   style: TextStyle(
                     fontSize: 13,
                     color: onSurface.withValues(alpha: 0.6),
@@ -66,11 +68,14 @@ class PlantHeroCard extends StatelessWidget {
                   spacing: 8,
                   runSpacing: 6,
                   children: <Widget>[
-                    StatusPill(label: _healthLabel(), color: _healthColor()),
+                    StatusPill(
+                      label: _healthLabel(loc),
+                      color: _healthColor(),
+                    ),
                     StatusPill(
                       label: plant.remindersEnabled
-                          ? '🔔 Reminders on'
-                          : '🔕 Off',
+                          ? loc.remindersOn
+                          : loc.remindersOff,
                       color: scheme.primary,
                     ),
                   ],

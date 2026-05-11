@@ -1,3 +1,227 @@
 {
+  "@@locale": "en",
 
+  "appTitle": "Plant Care",
+  "appSubtitle": "Your green dashboard",
+
+  "addNewPlant": "Add New Plant",
+  "savePlant": "Save Plant",
+  "failedToSavePlant": "Failed to save plant: {error}",
+  "@failedToSavePlant": {
+    "placeholders": {
+      "error": { "type": "String" }
+    }
+  },
+
+  "plantDetails": "Plant Details",
+  "plantNotFound": "Plant not found",
+  "tabCareInfo": "🌿 Care Info",
+  "tabSchedule": "📋 Schedule",
+  "removePlant": "Remove Plant",
+  "removePlantConfirm": "Remove \"{name}\" from your garden?",
+  "@removePlantConfirm": {
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+  "cancel": "Cancel",
+  "remove": "Remove",
+
+  "getStarted": "Get Started",
+  "skip": "Skip",
+  "next": "Next",
+
+  "myPlants": "My Plants",
+  "plantCare": "PlantCare",
+
+  "heroBannerUrgent": "🔔 {count} {count, plural, one{plant needs} other{plants need}} attention",
+  "@heroBannerUrgent": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "heroBannerAllGood": "✅ All plants are happy",
+  "heroBannerHeading": "Your Green\nSanctuary 🌿",
+
+  "urgentBannerTitle": "{count} {count, plural, one{plant} other{plants}} need care",
+  "@urgentBannerTitle": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "urgentBannerSubtitle": "Tap a plant card to take action",
+
+  "statTotal": "Total",
+  "statHealthy": "Healthy",
+  "statWater": "Water",
+  "statFeed": "Feed",
+
+  "noPlantsYet": "No Plants Yet",
+  "noPlantsDesc": "Add your first plant and start tracking its care schedule with daily reminders.",
+  "noPlantsHint": "🌱 Tap \"Add Plant\" to get started",
+
+  "addPlant": "Add Plant",
+
+  "unknownSpecies": "Unknown species",
+  "healthThriving": "Thriving",
+  "healthNeedsCare": "Needs care",
+  "healthUrgent": "Urgent!",
+  "waterNow": "Water Now",
+  "waterOk": "Water ok",
+  "feedNow": "Feed Now",
+  "feedOk": "Food ok",
+
+  "sectionPlantIdentity": "Plant Identity",
+  "labelPlantName": "Plant Name",
+  "hintPlantName": "e.g. My Fiddle Leaf",
+  "labelSpecies": "Species (Optional)",
+  "hintSpecies": "e.g. Monstera Deliciosa",
+  "validatorEnterName": "Please enter a name",
+
+  "sectionCareSchedule": "Care Schedule",
+  "labelWaterEvery": "Water every",
+  "labelFeedEvery": "Feed every",
+  "suffixDays": "days",
+  "commonCareTips": "Common Care Tips",
+  "tipWater": "Water: 2-3 days for succulents, 5-7 for tropicals.",
+  "tipFeed": "Feed: 7-14 days during growing season, rare in winter.",
+  "validatorRequired": "Required",
+  "validatorMustBePositive": "Must be > 0",
+
+  "sectionReminders": "Reminders",
+  "labelWateringReminder": "Watering Reminder",
+  "labelFeedingReminder": "Feeding Reminder",
+  "remindersDisabled": "Reminders are disabled for this plant.",
+
+  "careCardWatering": "Watering",
+  "careCardFeeding": "Feeding",
+  "careCardWatered": "Watered ✓",
+  "careCardFed": "Fed ✓",
+  "careCardWaterNow": "Water Now!",
+  "careCardFeedNow": "Feed Now!",
+  "lastWatered": "Last watered {time}",
+  "@lastWatered": {
+    "placeholders": {
+      "time": { "type": "String" }
+    }
+  },
+  "lastFed": "Last fed {time}",
+  "@lastFed": {
+    "placeholders": {
+      "time": { "type": "String" }
+    }
+  },
+  "everyNDays": "Every {n}d",
+  "@everyNDays": {
+    "placeholders": {
+      "n": { "type": "int" }
+    }
+  },
+  "justNow": "just now",
+  "hoursAgo": "{h}h ago",
+  "@hoursAgo": {
+    "placeholders": {
+      "h": { "type": "int" }
+    }
+  },
+  "daysAgo": "{d}d ago",
+  "@daysAgo": {
+    "placeholders": {
+      "d": { "type": "int" }
+    }
+  },
+  "careTipsHeading": "💡 Care Tips",
+  "tipSunlight": "Ensure adequate indirect sunlight every day.",
+  "tipTemperature": "Keep temperature stable — avoid cold drafts and direct heat.",
+  "tipPests": "Check for pests regularly and wipe leaves for better photosynthesis.",
+  "tipWaterInterval": "Water every {n} {n, plural, one{day} other{days}} for best results.",
+  "@tipWaterInterval": {
+    "placeholders": {
+      "n": { "type": "int" }
+    }
+  },
+  "tipFeedInterval": "Feed every {n} {n, plural, one{day} other{days}} to keep it growing strong.",
+  "@tipFeedInterval": {
+    "placeholders": {
+      "n": { "type": "int" }
+    }
+  },
+
+  "scheduleCardIntervals": "🔁 Care Intervals",
+  "scheduleCardReminders": "⏰ Reminder Times",
+  "scheduleCardUpcoming": "📅 Upcoming Dates",
+  "scheduleWatering": "Watering",
+  "scheduleFeeding": "Feeding",
+  "scheduleWaterReminder": "Water Reminder",
+  "scheduleFeedReminder": "Feed Reminder",
+  "scheduleNextWatering": "Next watering",
+  "scheduleNextFeeding": "Next feeding",
+  "scheduleEveryNDays": "Every {n} {n, plural, one{day} other{days}}",
+  "@scheduleEveryNDays": {
+    "placeholders": {
+      "n": { "type": "int" }
+    }
+  },
+  "overdue": "Overdue!",
+
+  "healthThriving2": "Thriving 🌟",
+  "healthNeedsCare2": "Needs Care",
+  "healthUrgent2": "Urgent! 🚨",
+  "remindersOn": "🔔 Reminders on",
+  "remindersOff": "🔕 Off",
+
+  "actionWatered": "Watered!",
+  "actionFed": "Fed!",
+  "snackWatered": "💧 {name} has been watered!",
+  "@snackWatered": {
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+  "snackFed": "🌿 {name} has been fed!",
+  "@snackFed": {
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+
+  "pushReminders": "Push Reminders",
+  "notificationsActive": "Daily notifications are active",
+  "tapToEnableNotifications": "Tap to enable notifications",
+  "snackRemindersOn": "🔔 Reminders turned ON for {name}",
+  "@snackRemindersOn": {
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+  "snackRemindersOff": "🔕 Reminders turned OFF for {name}",
+  "@snackRemindersOff": {
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+
+  "editCareSchedule": "Edit Care Schedule",
+  "labelWateringInterval": "Watering Interval (Days)",
+  "labelFeedingInterval": "Feeding Interval (Days)",
+  "labelWateringTime": "Watering Time",
+  "labelFeedingTime": "Feeding Time",
+  "saveChanges": "Save Changes",
+
+  "notifDialogTitle": "Stay on top of\nyour plant care! 🌿",
+  "notifDialogBody": "Enable notifications so we can remind you when your plants need watering or fertilizing.",
+  "allowNotifications": "Allow Notifications",
+  "maybeLater": "Maybe Later",
+  "pillWater": "Water",
+  "pillFeed": "Feed",
+  "pillLight": "Light",
+
+  "onboardingWelcomeTitle": "Grow Your\nUrban Jungle",
+  "onboardingWelcomeBody": "A modern approach to keeping your plants alive and thriving.",
+  "onboardingInfoTitle1": "Never Miss a Drop",
+  "onboardingInfoBody1": "Set custom reminders for watering, fertilizing, and repotting. Your plants will thank you.",
+  "onboardingInfoTitle2": "Data Privacy",
+  "onboardingInfoBody2": "Your data stays on your device.\nHigh performance tracking allows you to get the most out of your plant.",
+  "onboardingStartBody": "Enjoy the benefits of a modern approach to keeping your plants alive and thriving with Plant Care.",
+  "onboardingStartCta": "Ready to start your journey?"
 }

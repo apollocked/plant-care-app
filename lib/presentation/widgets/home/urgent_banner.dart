@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 
 class UrgentBanner extends StatelessWidget {
   const UrgentBanner({super.key, required this.urgentCount});
@@ -7,6 +8,7 @@ class UrgentBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     final bool isDark = Theme.of(context).brightness == Brightness.dark;
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
@@ -40,7 +42,7 @@ class UrgentBanner extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  '$urgentCount plant${urgentCount > 1 ? 's' : ''} need care',
+                  loc.urgentBannerTitle(urgentCount),
                   style: const TextStyle(
                     fontWeight: FontWeight.w600,
                     fontSize: 13,
@@ -48,7 +50,7 @@ class UrgentBanner extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  'Tap a plant card to take action',
+                  loc.urgentBannerSubtitle,
                   style: TextStyle(
                     fontSize: 11,
                     color: Colors.orange.withValues(alpha: 0.7),

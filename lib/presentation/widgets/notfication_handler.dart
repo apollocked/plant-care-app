@@ -60,25 +60,9 @@ class _PermissionDialog extends StatelessWidget {
               children: <Widget>[
                 PlantIconCircle(scheme: scheme),
                 const SizedBox(height: 24),
-                Text(
-                  'Stay on top of\nyour plant care! 🌿',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 22,
-                    fontWeight: FontWeight.w700,
-                    color: textColor,
-                    height: 1.3,
-                  ),
-                ),
-                const SizedBox(height: 12),
-                Text(
-                  'Enable notifications so we can remind you when your plants need watering or fertilizing.',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: subtextColor,
-                    height: 1.5,
-                  ),
+                NotifDialogContent(
+                  textColor: textColor,
+                  subtextColor: subtextColor,
                 ),
                 const SizedBox(height: 16),
                 FeaturePillsRow(isDark: isDark),

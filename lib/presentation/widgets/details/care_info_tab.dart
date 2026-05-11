@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 import 'package:mock_plant_care_app/data/model/plant_model.dart';
 import 'package:mock_plant_care_app/presentation/widgets/glass_container.dart';
 
@@ -8,38 +9,24 @@ class CareInfoTab extends StatelessWidget {
 
   final PlantModel plant;
 
-  String _timeAgo(DateTime dt) {
+  String _timeAgo(DateTime dt, AppLocalizations loc) {
     final Duration d = DateTime.now().difference(dt);
-    if (d.inDays > 0) return '${d.inDays}d ago';
-    if (d.inHours > 0) return '${d.inHours}h ago';
-    return 'just now';
+    if (d.inDays > 0) return loc.daysAgo(d.inDays);
+    if (d.inHours > 0) return loc.hoursAgo(d.inHours);
+    return loc.justNow;
   }
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     final Color onSurface = Theme.of(context).colorScheme.onSurface;
 
     final List<Map<String, String>> tips = <Map<String, String>>[
-      {
-        'icon': '💧',
-        'text':
-            'Water every ${plant.waterIntervalDays} day${plant.waterIntervalDays > 1 ? 's' : ''} for best results.',
-      },
-      {
-        'icon': '🌿',
-        'text':
-            'Feed every ${plant.feedIntervalDays} day${plant.feedIntervalDays > 1 ? 's' : ''} to keep it growing strong.',
-      },
-      {'icon': '☀️', 'text': 'Ensure adequate indirect sunlight every day.'},
-      {
-        'icon': '🌡️',
-        'text': 'Keep temperature stable — avoid cold drafts and direct heat.',
-      },
-      {
-        'icon': '🪴',
-        'text':
-            'Check for pests regularly and wipe leaves for better photosynthesis.',
-      },
+      {'icon': '💧', 'text': loc.tipWaterInterval(plant.waterIntervalDays)},
+      {'icon': '🌿', 'text': loc.tipFeedInterval(plant.feedIntervalDays)},
+      {'icon': '☀️', 'text': loc.tipSunlight},
+      {'icon': '🌡️', 'text': loc.tipTemperature},
+      {'icon': '🪴', 'text': loc.tipPests},
     ];
 
     return SingleChildScrollView(
@@ -51,33 +38,33 @@ class CareInfoTab extends StatelessWidget {
           CareStatusCard(
             icon: Icons.water_drop_outlined,
             color: Colors.blue,
-            title: 'Watering',
-            okLabel: 'Watered ✓',
-            urgentLabel: 'Water Now!',
+            title: loc.careCardWatering,
+            okLabel: loc.careCardWatered,
+            urgentLabel: loc.careCardWaterNow,
             isUrgent: plant.needsWaterNow,
-            lastActionLabel: 'Last watered ${_timeAgo(plant.lastWateredAt)}',
+            lastActionLabel: loc.lastWatered(_timeAgo(plant.lastWateredAt, loc)),
             nextDueLabel:
                 'Next: ${DateFormat('MMM d, h:mm a').format(plant.nextWaterDue)}',
-            intervalLabel: 'Every ${plant.waterIntervalDays}d',
+            intervalLabel: loc.everyNDays(plant.waterIntervalDays),
             onSurface: onSurface,
           ),
           const SizedBox(height: 12),
           CareStatusCard(
             icon: Icons.grass_outlined,
             color: Colors.orange,
-            title: 'Feeding',
-            okLabel: 'Fed ✓',
-            urgentLabel: 'Feed Now!',
+            title: loc.careCardFeeding,
+            okLabel: loc.careCardFed,
+            urgentLabel: loc.careCardFeedNow,
             isUrgent: plant.needsFoodNow,
-            lastActionLabel: 'Last fed ${_timeAgo(plant.lastFedAt)}',
+            lastActionLabel: loc.lastFed(_timeAgo(plant.lastFedAt, loc)),
             nextDueLabel:
                 'Next: ${DateFormat('MMM d, h:mm a').format(plant.nextFoodDue)}',
-            intervalLabel: 'Every ${plant.feedIntervalDays}d',
+            intervalLabel: loc.everyNDays(plant.feedIntervalDays),
             onSurface: onSurface,
           ),
           const SizedBox(height: 20),
           Text(
-            '💡 Care Tips',
+            loc.careTipsHeading,
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w700,

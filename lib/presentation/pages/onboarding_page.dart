@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
+import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 import 'package:mock_plant_care_app/logic/theme_viewmodel.dart';
 import 'package:mock_plant_care_app/presentation/pages/home_page.dart';
 import 'package:mock_plant_care_app/presentation/widgets/home/home_header.dart';
@@ -33,6 +34,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     final ThemeViewModel themeVm = context.watch<ThemeViewModel>();
     final bool isDark = themeVm.isDarkMode;
 
@@ -80,8 +82,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
           ),
           isLastPage
               ? Align(
-                  key: Key('button'),
-                  alignment: Alignment(0, 0.6),
+                  key: const Key('button'),
+                  alignment: const Alignment(0, 0.6),
                   child: Container(
                     height: 45,
                     width: MediaQuery.of(context).size.width / 2,
@@ -99,7 +101,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                           ),
                         );
                       },
-                      child: Center(child: const Text('Get Started')),
+                      child: Center(child: Text(loc.getStarted)),
                     ),
                   ),
                 )
@@ -122,7 +124,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                             duration: const Duration(milliseconds: 200),
                           ),
                           child: Text(
-                            'Skip',
+                            loc.skip,
                             style: TextStyle(color: theme.colorScheme.outline),
                           ),
                         ),
@@ -147,8 +149,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                             curve: Curves.easeInOut,
                           ),
                           child: Text(
-                            key: Key('button'),
-                            'Next',
+                            key: const Key('button'),
+                            loc.next,
                             style: const TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),

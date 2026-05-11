@@ -8,6 +8,12 @@
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
 	<string>Plant Care</string>
+	<key>CFBundleLocalizations</key>
+	<array>
+	        <string>en</string>
+			<string>ar</string>
+			<string>ckb</string>
+	</array>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>

@@ -61,8 +61,10 @@ class AppWidget extends StatelessWidget {
       title: 'Plant Care',
       locale: langService.locale,
       localizationsDelegates: [
+        KurdishMaterialLocalizations.delegate,
+        KurdishWidgetsLocalizations.delegate,
+        KurdishCupertinoLocalizations.delegate,
         ...AppLocalizations.localizationsDelegates,
-        KurdishMaterialLocalizations.delegate, // Add this!
       ],
       supportedLocales: AppLocalizations.supportedLocales,
       home: isFerstTime ? const OnboardingPage() : const HomePage(),

@@ -9,27 +9,27 @@ class AppLocalizationsKu extends AppLocalizations {
   AppLocalizationsKu([String locale = 'ku']) : super(locale);
 
   @override
-  String get appTitle => 'چاودێری رووەک';
+  String get appTitle => 'چاودێری ڕووەک';
 
   @override
-  String get appSubtitle => 'داشبۆردی سەوزەکەت';
+  String get appSubtitle => 'داشبۆردە سەوزەکەت';
 
   @override
-  String get addNewPlant => 'زیادکردنی رووەکێکی نوێ';
+  String get addNewPlant => 'زیادکردنی ڕووەکێکی نوێ';
 
   @override
-  String get savePlant => 'پاشەکەوتکردنی رووەک';
+  String get savePlant => 'هەڵگرتنی ڕووەک';
 
   @override
   String failedToSavePlant(String error) {
-    return 'پاشەکەوتکردنی رووەک سەرنەکەوت: $error';
+    return 'هەڵگرتنی ڕووەک سەرنەکەوت: $error';
   }
 
   @override
-  String get plantDetails => 'وردەکارییەکانی رووەک';
+  String get plantDetails => 'وردەکارییەکانی ڕووەک';
 
   @override
-  String get plantNotFound => 'رووەک نەدۆزرایەوە';
+  String get plantNotFound => 'ڕووەک نەدۆزرایەوە';
 
   @override
   String get tabCareInfo => '🌿 زانیاری چاودێری';
@@ -38,52 +38,52 @@ class AppLocalizationsKu extends AppLocalizations {
   String get tabSchedule => '📋 خشتە';
 
   @override
-  String get removePlant => 'لابردنی رووەک';
+  String get removePlant => 'لابردنی ڕووەک';
 
   @override
   String removePlantConfirm(String name) {
-    return 'ئایا دەتەوێت \"$name\" لە بەستانەکەت لابببەیت؟';
+    return 'دەتەوێت \"$name\" لە باخچەکەت لاببەیت؟';
   }
 
   @override
-  String get cancel => 'پاشگەزبوونەوە';
+  String get cancel => 'هەڵوەشاندنەوە';
 
   @override
   String get remove => 'لابردن';
 
   @override
-  String get getStarted => 'دەستپێبکە';
+  String get getStarted => 'دەستپێکردن';
 
   @override
-  String get skip => 'تێپەڕین';
+  String get skip => 'تێپەڕاندن';
 
   @override
   String get next => 'دواتر';
 
   @override
-  String get myPlants => 'رووەکەکانم';
+  String get myPlants => 'ڕووەکەکانم';
 
   @override
-  String get plantCare => 'چاودێری رووەک';
+  String get plantCare => 'چاودێری ڕووەک';
 
   @override
   String heroBannerUrgent(int count) {
-    return '🔔 $count رووەک پێویستی ئامادەبوون هەیە';
+    return '🔔 $count ڕووەک پێویستی بە سەرنجە';
   }
 
   @override
-  String get heroBannerAllGood => '✅ هەموو رووەکەکان باشن';
+  String get heroBannerAllGood => '✅ هەموو ڕووەکەکان تەندروستن';
 
   @override
-  String get heroBannerHeading => 'پەنایگای سەوزەکەت 🌿';
+  String get heroBannerHeading => 'پەناگە سەوزەکەت 🌿';
 
   @override
   String urgentBannerTitle(int count) {
-    return '$count رووەک پێویستی چاودێری هەیە';
+    return '$count ڕووەک پێویستی بە چاودێرییە';
   }
 
   @override
-  String get urgentBannerSubtitle => 'تەختەی رووەکێک بپەڕێنە بۆ کردارەکەی';
+  String get urgentBannerSubtitle => 'کرتە لە کارتی ڕووەکێک بکە بۆ کاردانەوە';
 
   @override
   String get statTotal => 'کۆی گشتی';
@@ -95,56 +95,56 @@ class AppLocalizationsKu extends AppLocalizations {
   String get statWater => 'ئاو';
 
   @override
-  String get statFeed => 'خواردن';
+  String get statFeed => 'خۆراک';
 
   @override
-  String get noPlantsYet => 'هیچ رووەکێک نییە';
+  String get noPlantsYet => 'هیچ ڕووەکێک نییە';
 
   @override
   String get noPlantsDesc =>
-      'یەکەم رووەکەت زیاد بکە و خشتەی چاودێریەکەی بشوێنە بە ئاگاداریکردنەوەی ڕۆژانە.';
+      'یەکەم ڕووەکت زیاد بکە و بەدواداچوون بۆ خشتەی چاودێرییەکەی بکە لەگەڵ بیرخستنەوەی ڕۆژانە.';
 
   @override
-  String get noPlantsHint => '🌱 \"زیادکردنی رووەک\" بپەڕێنە بۆ دەستپێکردن';
+  String get noPlantsHint => '🌱 کرتە لە \"زیادکردنی ڕووەک\" بکە بۆ دەستپێکردن';
 
   @override
-  String get addPlant => 'زیادکردنی رووەک';
+  String get addPlant => 'زیادکردنی ڕووەک';
 
   @override
   String get unknownSpecies => 'جۆری نەناسراو';
 
   @override
-  String get healthThriving => 'گەشەسەندوو';
+  String get healthThriving => 'گەشاوە';
 
   @override
-  String get healthNeedsCare => 'پێویستی چاودێری هەیە';
+  String get healthNeedsCare => 'پێویستی بە چاودێرییە';
 
   @override
-  String get healthUrgent => 'فریاکەوتن!';
+  String get healthUrgent => 'بەپەلە!';
 
   @override
   String get waterNow => 'ئێستا ئاوی بدە';
 
   @override
-  String get waterOk => 'ئاوی دراوە';
+  String get waterOk => 'ئاو باشە';
 
   @override
-  String get feedNow => 'ئێستا بیخوێنە';
+  String get feedNow => 'ئێستا خۆراکی پێبدە';
 
   @override
-  String get feedOk => 'خواردنی دراوە';
+  String get feedOk => 'خۆراک باشە';
 
   @override
-  String get sectionPlantIdentity => 'ناسنامەی رووەک';
+  String get sectionPlantIdentity => 'ناسنامەی ڕووەک';
 
   @override
-  String get labelPlantName => 'ناوی رووەک';
+  String get labelPlantName => 'ناوی ڕووەک';
 
   @override
   String get hintPlantName => 'بۆ نموونە: فیدل لیف';
 
   @override
-  String get labelSpecies => 'جۆر (ئارەزوومەند)';
+  String get labelSpecies => 'جۆر (ئارەزوومەندانە)';
 
   @override
   String get hintSpecies => 'بۆ نموونە: مۆنستێرا دەلیسیۆسا';
@@ -156,76 +156,78 @@ class AppLocalizationsKu extends AppLocalizations {
   String get sectionCareSchedule => 'خشتەی چاودێری';
 
   @override
-  String get labelWaterEvery => 'ئاوی بدە هەموو';
+  String get labelWaterEvery => 'ئاودان هەموو';
 
   @override
-  String get labelFeedEvery => 'بیخوێنە هەموو';
+  String get labelFeedEvery => 'خۆراکدان هەموو';
 
   @override
   String get suffixDays => 'ڕۆژ';
 
   @override
-  String get commonCareTips => 'ئامۆژگارییە باوەکان';
+  String get commonCareTips => 'ئامۆژگارییە باوەکانی چاودێری';
 
   @override
-  String get tipWater => 'ئاوداندن: 2-3 ڕۆژ بۆ کاکتوس، 5-7 بۆ تڕۆپیکال.';
+  String get tipWater =>
+      'ئاودان: ٢-٣ ڕۆژ بۆ کاکتۆس، ٥-٧ بۆ ڕووەکە خولگەییەکان.';
 
   @override
-  String get tipFeed => 'خوراندن: 7-14 ڕۆژ لە مەوسەمی گەشەکردن، کەم لە زستان.';
+  String get tipFeed =>
+      'خۆراکدان: ٧-١٤ ڕۆژ لە وەرزی گەشەکردندا، دەگمەن لە زستاندا.';
 
   @override
   String get validatorRequired => 'پێویستە';
 
   @override
-  String get validatorMustBePositive => 'دەبێت > 0 بێت';
+  String get validatorMustBePositive => 'دەبێت لە ٠ گەورەتر بێت';
 
   @override
-  String get sectionReminders => 'ئاگاداریکردنەوەکان';
+  String get sectionReminders => 'بیرخستنەوەکان';
 
   @override
-  String get labelWateringReminder => 'ئاگاداریکردنەوەی ئاوداندن';
+  String get labelWateringReminder => 'بیرخستنەوەی ئاودان';
 
   @override
-  String get labelFeedingReminder => 'ئاگاداریکردنەوەی خوراندن';
+  String get labelFeedingReminder => 'بیرخستنەوەی خۆراکدان';
 
   @override
-  String get remindersDisabled => 'ئاگاداریکردنەوەکان بۆ ئەم رووەکە ناچالاکن.';
+  String get remindersDisabled => 'بیرخستنەوەکان بۆ ئەم ڕووەکە ناچالاکن.';
 
   @override
-  String get careCardWatering => 'ئاوداندن';
+  String get careCardWatering => 'ئاودان';
 
   @override
-  String get careCardFeeding => 'خوراندن';
+  String get careCardFeeding => 'خۆراکدان';
 
   @override
-  String get careCardWatered => 'ئاوی درا ✓';
+  String get careCardWatered => 'ئاودرا ✓';
 
   @override
-  String get careCardFed => 'خواردنی درا ✓';
+  String get careCardFed => 'خۆراکی پێدرا ✓';
 
   @override
   String get careCardWaterNow => 'ئێستا ئاوی بدە!';
 
   @override
-  String get careCardFeedNow => 'ئێستا بیخوێنە!';
+  String get careCardFeedNow => 'ئێستا خۆراکی پێبدە!';
 
   @override
   String lastWatered(String time) {
-    return 'دوایین ئاوداندن $time';
+    return 'دواین ئاودان $time';
   }
 
   @override
   String lastFed(String time) {
-    return 'دوایین خوراندن $time';
+    return 'دواین خۆراکدان $time';
   }
 
   @override
   String everyNDays(int n) {
-    return 'هەموو $nڕ';
+    return 'هەموو $n ڕۆژێک';
   }
 
   @override
-  String get justNow => 'ئێستا';
+  String get justNow => 'هەر ئێستا';
 
   @override
   String hoursAgo(int h) {
@@ -238,19 +240,19 @@ class AppLocalizationsKu extends AppLocalizations {
   }
 
   @override
-  String get careTipsHeading => '💡 ئامۆژگارییەکان';
+  String get careTipsHeading => '💡 ئامۆژگارییەکانی چاودێری';
 
   @override
   String get tipSunlight =>
-      'دڵنیابە لە وەرگرتنی ڕووناکی ناڕاستەوخۆی پێویست هەموو ڕۆژ.';
+      'دڵنیابە لە پێدانی تیشکی خۆری ناڕاستەوخۆی پێویست هەموو ڕۆژێک.';
 
   @override
   String get tipTemperature =>
-      'پلەی گەرمی جێگیر بپارێزە — لە هەوای سارد و گەرمای ڕاستەوخۆ دووربە.';
+      'پلەی گەرمی بە جێگیری بهێڵەوە — لە هەوای سارد و گەرمای ڕاستەوخۆ بەدووربە.';
 
   @override
   String get tipPests =>
-      'بەرپرسانەوار مامناوەند بپشکنە و پەلەکان بسووچێنە بۆ باشترکردنی فۆتۆسینتیز.';
+      'بەردەوام پشکنین بۆ مێرووە زیانبەخشەکان بکە و گەڵاکان بسڕەوە بۆ باشترکردنی ڕۆشنەپێکهاتن.';
 
   @override
   String tipWaterInterval(int n) {
@@ -259,160 +261,160 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String tipFeedInterval(int n) {
-    return 'هەموو $n ڕۆژ بیخوێنە بۆ ئەوەی بەهێزتر گەشە بکات.';
+    return 'هەموو $n ڕۆژ خۆراکی پێبدە بۆ ئەوەی بەهێزتر گەشە بکات.';
   }
 
   @override
   String get scheduleCardIntervals => '🔁 ماوەکانی چاودێری';
 
   @override
-  String get scheduleCardReminders => '⏰ کاتەکانی ئاگاداریکردنەوە';
+  String get scheduleCardReminders => '⏰ کاتەکانی بیرخستنەوە';
 
   @override
-  String get scheduleCardUpcoming => '📅 بەرواری داهاتوو';
+  String get scheduleCardUpcoming => '📅 بەروارەکانی داهاتوو';
 
   @override
-  String get scheduleWatering => 'ئاوداندن';
+  String get scheduleWatering => 'ئاودان';
 
   @override
-  String get scheduleFeeding => 'خوراندن';
+  String get scheduleFeeding => 'خۆراکدان';
 
   @override
-  String get scheduleWaterReminder => 'ئاگاداریکردنەوەی ئاوداندن';
+  String get scheduleWaterReminder => 'بیرخستنەوەی ئاودان';
 
   @override
-  String get scheduleFeedReminder => 'ئاگاداریکردنەوەی خوراندن';
+  String get scheduleFeedReminder => 'بیرخستنەوەی خۆراکدان';
 
   @override
-  String get scheduleNextWatering => 'ئاوداندنی داهاتوو';
+  String get scheduleNextWatering => 'ئاودانی داهاتوو';
 
   @override
-  String get scheduleNextFeeding => 'خوراندنی داهاتوو';
+  String get scheduleNextFeeding => 'خۆراکدانی داهاتوو';
 
   @override
   String scheduleEveryNDays(int n) {
-    return 'هەموو $n ڕۆژ';
+    return 'هەموو $n ڕۆژێک';
   }
 
   @override
-  String get overdue => 'دواخراوە!';
+  String get overdue => 'دواکەوتووە!';
 
   @override
-  String get healthThriving2 => 'گەشەسەندوو 🌟';
+  String get healthThriving2 => 'گەشاوە 🌟';
 
   @override
-  String get healthNeedsCare2 => 'پێویستی چاودێری هەیە';
+  String get healthNeedsCare2 => 'پێویستی بە چاودێرییە';
 
   @override
-  String get healthUrgent2 => 'فریاکەوتن! 🚨';
+  String get healthUrgent2 => 'بەپەلە! 🚨';
 
   @override
-  String get remindersOn => '🔔 ئاگاداریکردنەوەکان چالاکن';
+  String get remindersOn => '🔔 بیرخستنەوەکان چالاکن';
 
   @override
-  String get remindersOff => '🔕 ناچالاک';
+  String get remindersOff => '🔕 ناچالاکن';
 
   @override
-  String get actionWatered => 'ئاوی درا!';
+  String get actionWatered => 'ئاودرا!';
 
   @override
-  String get actionFed => 'خواردنی درا!';
+  String get actionFed => 'خۆراکی پێدرا!';
 
   @override
   String snackWatered(String name) {
-    return '💧 $name ئاوی دراوە!';
+    return '💧 $name ئاودراوە!';
   }
 
   @override
   String snackFed(String name) {
-    return '🌿 $name خواردنی دراوە!';
+    return '🌿 $name خۆراکی پێدراوە!';
   }
 
   @override
-  String get pushReminders => 'ئاگاداریکردنەوەی فووری';
+  String get pushReminders => 'بیرخستنەوەکان';
 
   @override
-  String get notificationsActive => 'ئاگاداریکردنەوەی ڕۆژانە چالاکە';
+  String get notificationsActive => 'ئاگادارکردنەوەی ڕۆژانە چالاکە';
 
   @override
   String get tapToEnableNotifications =>
-      'بپەڕێنە بۆ چالاککردنی ئاگاداریکردنەوەکان';
+      'کرتە بکە بۆ چالاککردنی ئاگادارکردنەوەکان';
 
   @override
   String snackRemindersOn(String name) {
-    return '🔔 ئاگاداریکردنەوەکان بۆ $name چالاک کران';
+    return '🔔 بیرخستنەوەکان بۆ $name چالاک کران';
   }
 
   @override
   String snackRemindersOff(String name) {
-    return '🔕 ئاگاداریکردنەوەکان بۆ $name ناچالاک کران';
+    return '🔕 بیرخستنەوەکان بۆ $name ناچالاک کران';
   }
 
   @override
   String get editCareSchedule => 'دەستکاریکردنی خشتەی چاودێری';
 
   @override
-  String get labelWateringInterval => 'ماوەی ئاوداندن (ڕۆژ)';
+  String get labelWateringInterval => 'ماوەی ئاودان (ڕۆژ)';
 
   @override
-  String get labelFeedingInterval => 'ماوەی خوراندن (ڕۆژ)';
+  String get labelFeedingInterval => 'ماوەی خۆراکدان (ڕۆژ)';
 
   @override
-  String get labelWateringTime => 'کاتی ئاوداندن';
+  String get labelWateringTime => 'کاتی ئاودان';
 
   @override
-  String get labelFeedingTime => 'کاتی خوراندن';
+  String get labelFeedingTime => 'کاتی خۆراکدان';
 
   @override
-  String get saveChanges => 'پاشەکەوتکردنی گۆڕانکاریەکان';
+  String get saveChanges => 'هەڵگرتنی گۆڕانکارییەکان';
 
   @override
-  String get notifDialogTitle => 'لەسەر چاودێری\nرووەکەکانت بمێنەوە! 🌿';
+  String get notifDialogTitle => 'ئاگاداری ڕووەکەکانت بە! 🌿';
 
   @override
   String get notifDialogBody =>
-      'ئاگاداریکردنەوەکان چالاک بکە تا کاتێک رووەکەکانت پێویستی ئاو یان کۆد هەبوون ئاگادارت بکەینەوە.';
+      'ئاگادارکردنەوەکان چالاک بکە بۆ ئەوەی کاتێک ڕووەکەکانت پێویستیان بە ئاو یان پەینە، بیرت بخەینەوە.';
 
   @override
-  String get allowNotifications => 'ڕێگەدان بە ئاگاداریکردنەوەکان';
+  String get allowNotifications => 'ڕێگەدان بە ئاگادارکردنەوە';
 
   @override
-  String get maybeLater => 'دواتر';
+  String get maybeLater => 'لەوانەیە دواتر';
 
   @override
   String get pillWater => 'ئاو';
 
   @override
-  String get pillFeed => 'خواردن';
+  String get pillFeed => 'خۆراک';
 
   @override
   String get pillLight => 'ڕووناکی';
 
   @override
-  String get onboardingWelcomeTitle => 'دەستەی شارستانی\nخۆت بچێژاندنەوە';
+  String get onboardingWelcomeTitle => 'جیهانە سەوزەکەت\nگەشە پێبدە';
 
   @override
   String get onboardingWelcomeBody =>
-      'نزیکترین ڕێگە بۆ زیندەهێشتنی رووەکەکانت.';
+      'ڕێگەیەکی سەردەمیانە بۆ هێشتنەوەی ڕووەکەکانت بە زیندوویی و گەشاوەیی.';
 
   @override
-  String get onboardingInfoTitle1 => 'قەتری وەرمەگرە';
+  String get onboardingInfoTitle1 => 'هەرگیز دڵۆپێک لەدەست مەدە';
 
   @override
   String get onboardingInfoBody1 =>
-      'ئاگاداریکردنەوەی تایبەت دابنێ بۆ ئاوداندن و تەقنەکردن و گواستنەوە. رووەکەکانت سوپاست دەکەن.';
+      'بیرخستنەوەی تایبەت دابنێ بۆ ئاودان، پەیندان و گۆڕینی گۆزە. ڕووەکەکانت سوپاست دەکەن.';
 
   @override
-  String get onboardingInfoTitle2 => 'پاراستنی داتا';
+  String get onboardingInfoTitle2 => 'پاراستنی زانیارییەکان';
 
   @override
   String get onboardingInfoBody2 =>
-      'داتاکەت لەسەر ئامێرەکەت دەمێنێتەوە.\nشوێنکەوتنی بەرجەستە ڕێگەی پێ دەدات زیاترین سوود لە رووەکەکەت وەربگریت.';
+      'داتاکەت لەسەر ئامێرەکەت دەمێنێتەوە.\nبەدواداچوونی ئاستبەرز ڕێگەت پێدەدات زۆرترین سوود لە ڕووەکەکەت وەربگریت.';
 
   @override
   String get onboardingStartBody =>
-      'چێژی ئامرازی دیجیتاڵی نوێ بۆ زیندەهێشتنی رووەکەکانت وەربگرە لەگەڵ چاودێری رووەک.';
+      'چێژ لە سوودەکانی ڕێگەیەکی سەردەمیانە وەربگرە بۆ هێشتنەوەی ڕووەکەکانت بە زیندوویی و گەشاوەیی لەگەڵ چاودێری ڕووەک.';
 
   @override
-  String get onboardingStartCta => 'ئامادەی دەستپێکردنی گەشتەکەتی؟';
+  String get onboardingStartCta => 'ئامادەی بۆ دەستپێکردنی گەشتەکەت؟';
 }

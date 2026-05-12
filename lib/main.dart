@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 import 'package:mock_plant_care_app/core/l10n/l10n.dart';
 import 'package:mock_plant_care_app/core/theme/app_theme.dart';
@@ -16,20 +17,32 @@ final GlobalKey<ScaffoldMessengerState> snackbarKey =
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+  // Initialize Flutter bindings and preserve the native splash screen
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+
+  // 1. Initialize Services
   final StorageService storageService = StorageService();
   final NotificationService notificationService = NotificationService();
+
   await storageService.init();
   await notificationService.initialize();
+
+  // 2. Initialize ViewModels
   final PlantViewModel plantViewModel = PlantViewModel(
     storageService,
     notificationService,
   );
   final ThemeViewModel themeViewModel = ThemeViewModel(storageService);
   final LanguageService languageService = LanguageService();
+
+  // 3. Load Data
   await plantViewModel.loadPlants();
   await themeViewModel.loadThemeMode();
+  FlutterNativeSplash.remove();
+
   final bool isFirstTime = storageService.getIsFirstTime();
+
   runApp(
     MultiProvider(
       providers: [
@@ -45,10 +58,12 @@ Future<void> main() async {
 class AppWidget extends StatelessWidget {
   const AppWidget({super.key, required this.isFerstTime});
   final bool isFerstTime;
+
   @override
   Widget build(BuildContext context) {
     final ThemeViewModel themeVm = context.watch<ThemeViewModel>();
     final LanguageService langService = context.watch<LanguageService>();
+
     return MaterialApp(
       navigatorKey: navigatorKey,
       scaffoldMessengerKey: snackbarKey,

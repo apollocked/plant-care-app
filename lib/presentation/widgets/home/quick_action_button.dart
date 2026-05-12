@@ -36,7 +36,7 @@ class QuickActionButton extends StatelessWidget {
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
+          children: [
             Icon(icon, size: 14, color: color),
             const SizedBox(width: 5),
             Flexible(

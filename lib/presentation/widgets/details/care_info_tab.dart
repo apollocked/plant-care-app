@@ -34,7 +34,7 @@ class CareInfoTab extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(16, 0, 16, 24),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
+        children: [
           CareStatusCard(
             icon: Icons.water_drop_outlined,
             color: Colors.blue,
@@ -42,7 +42,9 @@ class CareInfoTab extends StatelessWidget {
             okLabel: loc.careCardWatered,
             urgentLabel: loc.careCardWaterNow,
             isUrgent: plant.needsWaterNow,
-            lastActionLabel: loc.lastWatered(_timeAgo(plant.lastWateredAt, loc)),
+            lastActionLabel: loc.lastWatered(
+              _timeAgo(plant.lastWateredAt, loc),
+            ),
             nextDueLabel:
                 'Next: ${DateFormat('MMM d, h:mm a').format(plant.nextWaterDue)}',
             intervalLabel: loc.everyNDays(plant.waterIntervalDays),
@@ -82,7 +84,7 @@ class CareInfoTab extends StatelessWidget {
                   vertical: 12,
                 ),
                 child: Row(
-                  children: <Widget>[
+                  children: [
                     Text(t['icon']!, style: const TextStyle(fontSize: 16)),
                     const SizedBox(width: 10),
                     Expanded(
@@ -140,9 +142,9 @@ class CareStatusCard extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
+        children: [
           Row(
-            children: <Widget>[
+            children: [
               Container(
                 padding: const EdgeInsets.all(9),
                 decoration: BoxDecoration(
@@ -188,13 +190,13 @@ class CareStatusCard extends StatelessWidget {
             child: LinearProgressIndicator(
               value: isUrgent ? 1.0 : 0.55,
               backgroundColor: active.withValues(alpha: 0.1),
-              valueColor: AlwaysStoppedAnimation<Color>(active),
+              valueColor: AlwaysStoppedAnimation(active),
               minHeight: 6,
             ),
           ),
           const SizedBox(height: 12),
           Row(
-            children: <Widget>[
+            children: [
               Icon(
                 Icons.history_rounded,
                 size: 13,

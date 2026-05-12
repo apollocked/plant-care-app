@@ -84,7 +84,7 @@ class _PlantCardState extends State<PlantCard>
             padding: const EdgeInsets.all(16),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
+              children: [
                 CardHeader(
                   plant: widget.plant,
                   healthScore: _healthScore(),

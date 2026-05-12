@@ -26,12 +26,12 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: Colors.transparent,
       elevation: 0,
       title: Row(
-        children: <Widget>[
+        children: [
           Image.asset('assets/icons/plant_icon.png', width: 32, height: 32),
           const SizedBox(width: 10),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
+            children: [
               Text(
                 loc.plantCare,
                 style: TextStyle(
@@ -52,7 +52,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
         ],
       ),
-      actions: <Widget>[
+      actions: [
         Padding(
           padding: const EdgeInsetsDirectional.only(end: 8),
           child: Row(
@@ -69,7 +69,9 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
                         : Colors.black.withValues(alpha: 0.06),
                   ),
                   child: Icon(
-                    isDark ? Icons.light_mode_outlined : Icons.dark_mode_outlined,
+                    isDark
+                        ? Icons.light_mode_outlined
+                        : Icons.dark_mode_outlined,
                     size: 20,
                     color: onSurface.withValues(alpha: 0.8),
                   ),
@@ -105,14 +107,16 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
                     itemBuilder: (BuildContext context) {
                       return L10n.all.map((Locale locale) {
                         final bool isSelected = langService.locale == locale;
-                        return PopupMenuItem<Locale>(
+                        return PopupMenuItem(
                           value: locale,
                           child: Row(
                             children: [
                               Text(
                                 L10n.getNativeName(locale.languageCode),
                                 style: TextStyle(
-                                  fontWeight: isSelected ? FontWeight.bold : null,
+                                  fontWeight: isSelected
+                                      ? FontWeight.bold
+                                      : null,
                                   color: isSelected
                                       ? Theme.of(context).colorScheme.primary
                                       : null,
@@ -160,7 +164,7 @@ class SectionHeader extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.fromLTRB(16, 20, 16, 8),
       child: Row(
-        children:[
+        children: [
           Text(
             loc.myPlants,
             style: TextStyle(

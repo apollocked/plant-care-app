@@ -23,7 +23,7 @@ class ScheduleTab extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       padding: const EdgeInsets.fromLTRB(16, 0, 16, 24),
       child: Column(
-        children: <Widget>[
+        children: [
           _EditableScheduleCard(
             title: loc.scheduleCardIntervals,
             onSurface: onSurface,
@@ -31,7 +31,7 @@ class ScheduleTab extends StatelessWidget {
               context: context,
               builder: (_) => EditScheduleDialog(plant: plant, vm: vm),
             ),
-            children: <Widget>[
+            children: [
               ScheduleRow(
                 icon: Icons.water_drop_outlined,
                 color: Colors.blue,
@@ -57,7 +57,7 @@ class ScheduleTab extends StatelessWidget {
               context: context,
               builder: (_) => EditScheduleDialog(plant: plant, vm: vm),
             ),
-            children: <Widget>[
+            children: [
               ScheduleRow(
                 icon: Icons.water_drop_outlined,
                 color: Colors.blue,
@@ -79,7 +79,7 @@ class ScheduleTab extends StatelessWidget {
           _ScheduleInfoCard(
             title: loc.scheduleCardUpcoming,
             onSurface: onSurface,
-            children: <Widget>[
+            children: [
               UpcomingDateRow(
                 icon: Icons.water_drop_outlined,
                 color: Colors.blue,
@@ -132,7 +132,7 @@ class _EditableScheduleCard extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
+        children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -182,7 +182,7 @@ class _ScheduleInfoCard extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
+        children: [
           Text(
             title,
             style: TextStyle(

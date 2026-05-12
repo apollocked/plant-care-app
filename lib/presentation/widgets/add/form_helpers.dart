@@ -16,7 +16,7 @@ class FormSectionHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: <Widget>[
+      children: [
         Text(icon, style: const TextStyle(fontSize: 16)),
         const SizedBox(width: 8),
         Text(

@@ -23,7 +23,7 @@ class PlantIdentitySection extends StatelessWidget {
       padding: const EdgeInsets.all(18),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
+        children: [
           FormSectionHeader(
             icon: '🌱',
             label: loc.sectionPlantIdentity,

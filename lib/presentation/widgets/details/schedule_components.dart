@@ -28,7 +28,7 @@ class ScheduleRow extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 4),
         child: Row(
-          children: <Widget>[
+          children: [
             Container(
               padding: const EdgeInsets.all(7),
               decoration: BoxDecoration(
@@ -92,7 +92,7 @@ class UpcomingDateRow extends StatelessWidget {
     final loc = AppLocalizations.of(context)!;
     final Color active = isOverdue ? Colors.red : color;
     return Row(
-      children: <Widget>[
+      children: [
         Container(
           padding: const EdgeInsets.all(7),
           decoration: BoxDecoration(
@@ -105,7 +105,7 @@ class UpcomingDateRow extends StatelessWidget {
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
+            children: [
               Text(
                 label,
                 style: TextStyle(

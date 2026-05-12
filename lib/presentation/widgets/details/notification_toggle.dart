@@ -48,7 +48,7 @@ class NotificationToggleCard extends StatelessWidget {
       borderRadius: 18,
       padding: const EdgeInsets.all(16),
       child: Row(
-        children: <Widget>[
+        children: [
           Container(
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
@@ -69,7 +69,7 @@ class NotificationToggleCard extends StatelessWidget {
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
+              children: [
                 Text(
                   loc.pushReminders,
                   style: TextStyle(

@@ -38,13 +38,13 @@ class PlantHeroCard extends StatelessWidget {
       borderRadius: 22,
       padding: const EdgeInsets.all(18),
       child: Row(
-        children: <Widget>[
+        children: [
           _HealthRing(healthScore: _healthScore(), healthColor: _healthColor()),
           const SizedBox(width: 16),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
+              children: [
                 Text(
                   plant.name,
                   style: TextStyle(
@@ -67,11 +67,8 @@ class PlantHeroCard extends StatelessWidget {
                 Wrap(
                   spacing: 8,
                   runSpacing: 6,
-                  children: <Widget>[
-                    StatusPill(
-                      label: _healthLabel(loc),
-                      color: _healthColor(),
-                    ),
+                  children: [
+                    StatusPill(label: _healthLabel(loc), color: _healthColor()),
                     StatusPill(
                       label: plant.remindersEnabled
                           ? loc.remindersOn
@@ -99,7 +96,7 @@ class _HealthRing extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       alignment: Alignment.center,
-      children: <Widget>[
+      children: [
         SizedBox(
           width: 72,
           height: 72,

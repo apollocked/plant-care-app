@@ -15,7 +15,7 @@ class UrgentBanner extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
         gradient: LinearGradient(
-          colors: <Color>[
+          colors: [
             Colors.orange.withValues(alpha: isDark ? 0.25 : 0.15),
             Colors.red.withValues(alpha: isDark ? 0.15 : 0.08),
           ],
@@ -23,7 +23,7 @@ class UrgentBanner extends StatelessWidget {
         border: Border.all(color: Colors.orange.withValues(alpha: 0.35)),
       ),
       child: Row(
-        children: <Widget>[
+        children: [
           Container(
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
@@ -40,7 +40,7 @@ class UrgentBanner extends StatelessWidget {
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
+              children: [
                 Text(
                   loc.urgentBannerTitle(urgentCount),
                   style: const TextStyle(

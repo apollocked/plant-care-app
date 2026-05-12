@@ -81,8 +81,8 @@ class _HomePageState extends State<HomePage>
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            stops: const <double>[0.0, 0.45, 1.0],
-            colors: <Color>[
+            stops: const [0.0, 0.45, 1.0],
+            colors: [
               scheme.primary.withValues(alpha: isDark ? 0.25 : 0.18),
               scheme.primary.withValues(alpha: isDark ? 0.08 : 0.05),
               Theme.of(context).scaffoldBackgroundColor,
@@ -92,7 +92,7 @@ class _HomePageState extends State<HomePage>
         child: SafeArea(
           child: CustomScrollView(
             physics: const BouncingScrollPhysics(),
-            slivers: <Widget>[
+            slivers: [
               SliverToBoxAdapter(
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(16, 12, 16, 0),

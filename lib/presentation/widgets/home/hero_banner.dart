@@ -12,7 +12,7 @@ class HeroBanner extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(24),
       child: Stack(
-        children: <Widget>[
+        children: [
           SizedBox(
             height: 190,
             width: double.infinity,
@@ -40,7 +40,7 @@ class HeroBanner extends StatelessWidget {
             bottom: 20,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
+              children: [
                 Container(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 10,

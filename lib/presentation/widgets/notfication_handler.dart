@@ -46,7 +46,7 @@ class _PermissionDialog extends StatelessWidget {
                     : scheme.primary.withValues(alpha: 0.12),
                 width: 1.2,
               ),
-              boxShadow: <BoxShadow>[
+              boxShadow: [
                 BoxShadow(
                   color: Colors.black.withValues(alpha: isDark ? 0.35 : 0.1),
                   blurRadius: 40,
@@ -57,7 +57,7 @@ class _PermissionDialog extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(28, 36, 28, 28),
             child: Column(
               mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
+              children: [
                 PlantIconCircle(scheme: scheme),
                 const SizedBox(height: 24),
                 NotifDialogContent(

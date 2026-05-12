@@ -55,7 +55,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 stops: const <double>[0.0, 0.4, 1.0],
-                colors: <Color>[
+                colors: [
                   theme.colorScheme.primary.withValues(alpha: 0.25),
                   theme.colorScheme.primary.withValues(alpha: 0.08),
                   Theme.of(context).scaffoldBackgroundColor,
@@ -96,8 +96,9 @@ class _OnboardingPageState extends State<OnboardingPage> {
                       onPressed: () {
                         // Use the same box that StorageService manages so
                         // there is only one settings file on disk.
-                        Hive.box(StorageService.settingsBoxName)
-                            .put(StorageService.firstTimeKey, false);
+                        Hive.box(
+                          StorageService.settingsBoxName,
+                        ).put(StorageService.firstTimeKey, false);
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(

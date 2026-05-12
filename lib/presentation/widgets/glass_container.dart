@@ -2,7 +2,6 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-
 class GlassContainer extends StatelessWidget {
   const GlassContainer({
     super.key,
@@ -27,7 +26,6 @@ class GlassContainer extends StatelessWidget {
           );
   }
 }
-
 
 class _DarkGlass extends StatelessWidget {
   const _DarkGlass({
@@ -77,7 +75,6 @@ class _DarkGlass extends StatelessWidget {
   }
 }
 
-
 class _LightCard extends StatelessWidget {
   const _LightCard({
     required this.borderRadius,
@@ -100,7 +97,7 @@ class _LightCard extends StatelessWidget {
           color: const Color(0xFF2E7D52).withValues(alpha: 0.08),
           width: 1,
         ),
-        boxShadow: <BoxShadow>[
+        boxShadow: [
           BoxShadow(
             color: const Color(0xFF2E7D52).withValues(alpha: 0.07),
             blurRadius: 16,

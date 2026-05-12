@@ -95,7 +95,7 @@ class _AddPlantPageState extends State<AddPlantPage> {
         elevation: 0,
         iconTheme: IconThemeData(color: onSurface),
         title: Row(
-          children: <Widget>[
+          children: [
             Image.asset('assets/icons/plant_icon.png', width: 28, height: 28),
             const SizedBox(width: 10),
             Text(
@@ -115,7 +115,7 @@ class _AddPlantPageState extends State<AddPlantPage> {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             stops: const <double>[0.0, 0.4, 1.0],
-            colors: <Color>[
+            colors: [
               scheme.primary.withValues(alpha: isDark ? 0.25 : 0.1),
               scheme.primary.withValues(alpha: isDark ? 0.08 : 0.03),
               Theme.of(context).scaffoldBackgroundColor,
@@ -129,7 +129,7 @@ class _AddPlantPageState extends State<AddPlantPage> {
               physics: const BouncingScrollPhysics(),
               padding: const EdgeInsets.fromLTRB(16, 12, 16, 32),
               child: Column(
-                children: <Widget>[
+                children: [
                   PlantIdentitySection(
                     nameCtrl: _nameCtrl,
                     speciesCtrl: _speciesCtrl,
@@ -161,12 +161,12 @@ class _AddPlantPageState extends State<AddPlantPage> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
                         gradient: LinearGradient(
-                          colors: <Color>[
+                          colors: [
                             scheme.primary,
                             Color.lerp(scheme.primary, Colors.teal, 0.45)!,
                           ],
                         ),
-                        boxShadow: <BoxShadow>[
+                        boxShadow: [
                           BoxShadow(
                             color: scheme.primary.withValues(alpha: 0.4),
                             blurRadius: 18,
@@ -186,7 +186,7 @@ class _AddPlantPageState extends State<AddPlantPage> {
                               )
                             : Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
+                                children: [
                                   const Icon(
                                     Icons.local_florist_outlined,
                                     color: Colors.white,

@@ -24,12 +24,12 @@ class AddPlantFAB extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(28),
             gradient: LinearGradient(
-              colors: <Color>[
+              colors: [
                 scheme.primary,
                 Color.lerp(scheme.primary, Colors.teal, 0.5)!,
               ],
             ),
-            boxShadow: <BoxShadow>[
+            boxShadow: [
               BoxShadow(
                 color: scheme.primary.withValues(alpha: 0.45),
                 blurRadius: 20,
@@ -39,7 +39,7 @@ class AddPlantFAB extends StatelessWidget {
           ),
           child: Row(
             mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
+            children: [
               const Icon(Icons.add_rounded, color: Colors.white, size: 22),
               const SizedBox(width: 8),
               Text(

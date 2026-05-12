@@ -14,7 +14,7 @@ class PlantIconCircle extends StatelessWidget {
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         gradient: RadialGradient(
-          colors: <Color>[
+          colors: [
             scheme.primary.withValues(alpha: 0.15),
             scheme.primary.withValues(alpha: 0.04),
           ],
@@ -58,11 +58,7 @@ class NotifDialogContent extends StatelessWidget {
         Text(
           loc.notifDialogBody,
           textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 14,
-            color: subtextColor,
-            height: 1.5,
-          ),
+          style: TextStyle(fontSize: 14, color: subtextColor, height: 1.5),
         ),
       ],
     );
@@ -78,7 +74,7 @@ class FeaturePillsRow extends StatelessWidget {
     final loc = AppLocalizations.of(context)!;
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
+      children: [
         _Pill(
           icon: Icons.water_drop_outlined,
           label: loc.pillWater,
@@ -127,7 +123,7 @@ class _Pill extends StatelessWidget {
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
+        children: [
           Icon(icon, size: 14, color: color),
           const SizedBox(width: 4),
           Text(
@@ -157,12 +153,12 @@ class AllowButton extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
           gradient: LinearGradient(
-            colors: <Color>[
+            colors: [
               scheme.primary,
               Color.lerp(scheme.primary, Colors.teal, 0.5)!,
             ],
           ),
-          boxShadow: <BoxShadow>[
+          boxShadow: [
             BoxShadow(
               color: scheme.primary.withValues(alpha: 0.38),
               blurRadius: 16,
@@ -186,7 +182,7 @@ class AllowButton extends StatelessWidget {
           },
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
+            children: [
               const Icon(Icons.notifications_active_outlined, size: 20),
               const SizedBox(width: 8),
               Text(

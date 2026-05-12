@@ -20,7 +20,7 @@ class StatsRow extends StatelessWidget {
     final Color primary = Theme.of(context).colorScheme.primary;
 
     return Row(
-      children: <Widget>[
+      children: [
         Expanded(
           child: _StatCard(
             value: '$total',
@@ -83,7 +83,7 @@ class _StatCard extends StatelessWidget {
       borderRadius: 16,
       padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
       child: Column(
-        children: <Widget>[
+        children: [
           Container(
             padding: const EdgeInsets.all(6),
             decoration: BoxDecoration(

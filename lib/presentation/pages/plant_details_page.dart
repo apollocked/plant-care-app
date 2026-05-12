@@ -58,7 +58,7 @@ class _PlantDetailsPageState extends State<PlantDetailsPage>
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             stops: const <double>[0.0, 0.4, 1.0],
-            colors: <Color>[
+            colors: [
               scheme.primary.withValues(alpha: isDark ? 0.25 : 0.18),
               scheme.primary.withValues(alpha: isDark ? 0.08 : 0.05),
               Theme.of(context).scaffoldBackgroundColor,
@@ -67,7 +67,7 @@ class _PlantDetailsPageState extends State<PlantDetailsPage>
         ),
         child: SafeArea(
           child: Column(
-            children: <Widget>[
+            children: [
               Padding(
                 padding: const EdgeInsets.fromLTRB(16, 12, 16, 0),
                 child: PlantHeroCard(plant: plant),
@@ -78,7 +78,7 @@ class _PlantDetailsPageState extends State<PlantDetailsPage>
               Expanded(
                 child: TabBarView(
                   controller: _tabController,
-                  children: <Widget>[
+                  children: [
                     CareInfoTab(plant: plant),
                     ScheduleTab(plant: plant, vm: vm),
                   ],
@@ -115,7 +115,7 @@ class _PlantDetailsPageState extends State<PlantDetailsPage>
           fontSize: 18,
         ),
       ),
-      actions: <Widget>[
+      actions: [
         GestureDetector(
           onTap: () => _confirmDelete(context, plant, vm),
           child: Container(
@@ -165,7 +165,7 @@ class _PlantDetailsPageState extends State<PlantDetailsPage>
                   Color.lerp(scheme.primary, Colors.teal, 0.45)!,
                 ],
               ),
-              boxShadow: <BoxShadow>[
+              boxShadow: [
                 BoxShadow(
                   color: scheme.primary.withValues(alpha: 0.35),
                   blurRadius: 10,
@@ -183,7 +183,7 @@ class _PlantDetailsPageState extends State<PlantDetailsPage>
               fontWeight: FontWeight.w600,
               fontSize: 13,
             ),
-            tabs: <Tab>[
+            tabs: [
               Tab(text: loc.tabCareInfo),
               Tab(text: loc.tabSchedule),
             ],
@@ -208,7 +208,7 @@ class _PlantDetailsPageState extends State<PlantDetailsPage>
           style: const TextStyle(fontWeight: FontWeight.w700),
         ),
         content: Text(loc.removePlantConfirm(plant.name)),
-        actions: <Widget>[
+        actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx),
             child: Text(loc.cancel),

@@ -34,10 +34,10 @@ class ReminderSection extends StatelessWidget {
       padding: const EdgeInsets.all(18),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
+        children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
+            children: [
               FormSectionHeader(
                 icon: '🔔',
                 label: loc.sectionReminders,
@@ -50,7 +50,7 @@ class ReminderSection extends StatelessWidget {
               ),
             ],
           ),
-          if (remindersEnabled) ...<Widget>[
+          if (remindersEnabled) ...[
             const SizedBox(height: 12),
             _TimeTile(
               label: loc.labelWateringReminder,
@@ -120,7 +120,7 @@ class _TimeTile extends StatelessWidget {
               : Colors.black.withValues(alpha: 0.02),
         ),
         child: Row(
-          children: <Widget>[
+          children: [
             Icon(icon, size: 18, color: color),
             const SizedBox(width: 12),
             Expanded(

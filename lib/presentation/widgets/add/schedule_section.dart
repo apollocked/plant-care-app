@@ -25,7 +25,7 @@ class CareScheduleSection extends StatelessWidget {
       padding: const EdgeInsets.all(18),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
+        children: [
           FormSectionHeader(
             icon: '📅',
             label: loc.sectionCareSchedule,
@@ -33,7 +33,7 @@ class CareScheduleSection extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           Row(
-            children: <Widget>[
+            children: [
               Expanded(
                 child: TextFormField(
                   controller: waterDaysCtrl,
@@ -59,9 +59,7 @@ class CareScheduleSection extends StatelessWidget {
                 child: TextFormField(
                   controller: feedDaysCtrl,
                   keyboardType: TextInputType.number,
-                  inputFormatters: <TextInputFormatter>[
-                    FilteringTextInputFormatter.digitsOnly,
-                  ],
+                  inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                   style: TextStyle(color: onSurface),
                   decoration: InputDecoration(
                     labelText: loc.labelFeedEvery,
@@ -102,9 +100,9 @@ class _ScheduleTips extends StatelessWidget {
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
+        children: [
           Row(
-            children: <Widget>[
+            children: [
               Icon(
                 Icons.lightbulb_outline_rounded,
                 size: 14,
@@ -144,7 +142,7 @@ class _TipRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: <Widget>[
+      children: [
         Text(icon, style: const TextStyle(fontSize: 10)),
         const SizedBox(width: 6),
         Expanded(

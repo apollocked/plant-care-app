@@ -36,7 +36,7 @@ class DetailsActionBar extends StatelessWidget {
                 : Colors.black.withValues(alpha: 0.07),
           ),
         ),
-        boxShadow: <BoxShadow>[
+        boxShadow: [
           BoxShadow(
             color: Colors.black.withValues(alpha: isDark ? 0.3 : 0.07),
             blurRadius: 20,
@@ -45,12 +45,12 @@ class DetailsActionBar extends StatelessWidget {
         ],
       ),
       child: Row(
-        children: <Widget>[
+        children: [
           Expanded(
             child: GradientActionButton(
               label: loc.actionWatered,
               icon: Icons.water_drop_rounded,
-              colors: <Color>[Colors.blue.shade400, Colors.blue.shade700],
+              colors: [Colors.blue.shade400, Colors.blue.shade700],
               shadowColor: Colors.blue,
               onTap: () async {
                 await vm.markPlantWatered(plant.id, context);
@@ -68,7 +68,7 @@ class DetailsActionBar extends StatelessWidget {
             child: GradientActionButton(
               label: loc.actionFed,
               icon: Icons.grass_rounded,
-              colors: <Color>[Colors.green.shade500, Colors.teal.shade600],
+              colors: [Colors.green.shade500, Colors.teal.shade600],
               shadowColor: Colors.green,
               onTap: () async {
                 await vm.markPlantFed(plant.id, context);
@@ -123,7 +123,7 @@ class GradientActionButton extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
           gradient: LinearGradient(colors: colors),
-          boxShadow: <BoxShadow>[
+          boxShadow: [
             BoxShadow(
               color: shadowColor.withValues(alpha: 0.35),
               blurRadius: 14,
@@ -133,7 +133,7 @@ class GradientActionButton extends StatelessWidget {
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+          children: [
             Icon(icon, color: Colors.white, size: 20),
             const SizedBox(width: 8),
             Text(

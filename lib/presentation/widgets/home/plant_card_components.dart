@@ -23,10 +23,10 @@ class CardHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context)!;
     return Row(
-      children: <Widget>[
+      children: [
         Stack(
           alignment: Alignment.center,
-          children: <Widget>[
+          children: [
             SizedBox(
               width: 52,
               height: 52,
@@ -56,7 +56,7 @@ class CardHeader extends StatelessWidget {
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
+            children: [
               Text(
                 plant.name,
                 style: TextStyle(
@@ -85,7 +85,7 @@ class CardHeader extends StatelessWidget {
           ),
           child: Row(
             mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
+            children: [
               Container(
                 width: 6,
                 height: 6,
@@ -129,7 +129,7 @@ class CardActions extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context)!;
     return Row(
-      children: <Widget>[
+      children: [
         Expanded(
           child: QuickActionButton(
             label: plant.needsWaterNow ? loc.waterNow : loc.waterOk,

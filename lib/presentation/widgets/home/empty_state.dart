@@ -15,14 +15,14 @@ class EmptyPlantState extends StatelessWidget {
         padding: const EdgeInsets.all(32),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+          children: [
             Container(
               width: 120,
               height: 120,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 gradient: RadialGradient(
-                  colors: <Color>[
+                  colors: [
                     scheme.primary.withValues(alpha: 0.15),
                     scheme.primary.withValues(alpha: 0.03),
                   ],
@@ -67,7 +67,7 @@ class EmptyPlantState extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
                 gradient: LinearGradient(
-                  colors: <Color>[
+                  colors: [
                     scheme.primary.withValues(alpha: 0.15),
                     scheme.primary.withValues(alpha: 0.05),
                   ],

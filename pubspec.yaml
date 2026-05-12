@@ -38,12 +38,16 @@ flutter_launcher_icons:
 
 # 2. Native Splash Configuration (Root Level - Moved out of the flutter block)
 flutter_native_splash:
-  color: "#2E7D52"
+  color: "#F2F7F4"
   image: assets/images/splash.png
   ios_content_mode: scaleAspectFill
   android_12:
     image: assets/icons/plant_icon.png
-    color: "#2E7D52"
+    color: "#F2F7F4"
+    icon_background_color: "#F2F7F4"
+    image_dark: assets/icons/plant_icon.png
+    color_dark: "#0B1A16"
+    icon_background_color_dark: "#0B1A16"
   fullscreen: true
 
 flutter:

@@ -12,6 +12,8 @@ class PlantViewModel extends ChangeNotifier {
   final NotificationService _notificationService;
   final List<PlantModel> _plants = <PlantModel>[];
 
+  StorageService get storageService => _storageService;
+  NotificationService get notificationService => _notificationService;
   List<PlantModel> get plants => List<PlantModel>.unmodifiable(_plants);
 
   Future<void> loadPlants() async {

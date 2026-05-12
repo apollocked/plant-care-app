@@ -7,6 +7,8 @@ class AppTheme {
   static const Color _lightText = Color(0xFF1A2E25);
   static const Color _lightSubtext = Color(0xFF4A6355);
   static ThemeData get lightTheme => ThemeData(
+    fontFamily: 'bahij',
+
     brightness: Brightness.light,
     colorScheme: ColorScheme.fromSeed(
       seedColor: _primaryGreen,
@@ -90,6 +92,7 @@ class AppTheme {
   );
 
   static ThemeData get darkTheme => ThemeData(
+    fontFamily: 'bahij',
     brightness: Brightness.dark,
     colorScheme: ColorScheme.fromSeed(
       seedColor: _primaryGreen,

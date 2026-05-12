@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 import 'package:mock_plant_care_app/presentation/widgets/glass_container.dart';
 import 'form_helpers.dart';
+import 'time_tile.dart';
 
 class ReminderSection extends StatelessWidget {
   const ReminderSection({
@@ -52,7 +53,7 @@ class ReminderSection extends StatelessWidget {
           ),
           if (remindersEnabled) ...[
             const SizedBox(height: 12),
-            _TimeTile(
+            TimeTile(
               label: loc.labelWateringReminder,
               time: waterTime,
               onTap: onPickWaterTime,
@@ -61,7 +62,7 @@ class ReminderSection extends StatelessWidget {
               onSurface: onSurface,
             ),
             const SizedBox(height: 8),
-            _TimeTile(
+            TimeTile(
               label: loc.labelFeedingReminder,
               time: feedTime,
               onTap: onPickFeedTime,
@@ -82,73 +83,6 @@ class ReminderSection extends StatelessWidget {
               ),
             ),
         ],
-      ),
-    );
-  }
-}
-
-class _TimeTile extends StatelessWidget {
-  const _TimeTile({
-    required this.label,
-    required this.time,
-    required this.onTap,
-    required this.icon,
-    required this.color,
-    required this.onSurface,
-  });
-
-  final String label;
-  final TimeOfDay time;
-  final VoidCallback onTap;
-  final IconData icon;
-  final Color color;
-  final Color onSurface;
-
-  @override
-  Widget build(BuildContext context) {
-    final bool isDark = Theme.of(context).brightness == Brightness.dark;
-    return InkWell(
-      onTap: onTap,
-      borderRadius: BorderRadius.circular(12),
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: onSurface.withValues(alpha: 0.1)),
-          color: isDark
-              ? Colors.white.withValues(alpha: 0.03)
-              : Colors.black.withValues(alpha: 0.02),
-        ),
-        child: Row(
-          children: [
-            Icon(icon, size: 18, color: color),
-            const SizedBox(width: 12),
-            Expanded(
-              child: Text(
-                label,
-                style: TextStyle(
-                  fontSize: 13,
-                  fontWeight: FontWeight.w500,
-                  color: onSurface,
-                ),
-              ),
-            ),
-            Text(
-              time.format(context),
-              style: TextStyle(
-                fontSize: 13,
-                fontWeight: FontWeight.w700,
-                color: color,
-              ),
-            ),
-            const SizedBox(width: 4),
-            Icon(
-              Icons.edit_calendar_rounded,
-              size: 14,
-              color: onSurface.withValues(alpha: 0.3),
-            ),
-          ],
-        ),
       ),
     );
   }

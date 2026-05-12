@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
-import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
-import 'package:mock_plant_care_app/data/services/storage_service.dart';
 import 'package:mock_plant_care_app/logic/theme_viewmodel.dart';
-import 'package:mock_plant_care_app/presentation/pages/home_page.dart';
 import 'package:mock_plant_care_app/presentation/widgets/home/home_header.dart';
 import 'package:mock_plant_care_app/presentation/widgets/onboarding/info_onboarding_widget.dart';
 import 'package:mock_plant_care_app/presentation/widgets/onboarding/start_onboarding_widget.dart';
 import 'package:mock_plant_care_app/presentation/widgets/onboarding/wellcome_onboarding_widget.dart';
+import 'package:mock_plant_care_app/presentation/widgets/onboarding/onboarding_bottom_controls.dart';
+import 'package:mock_plant_care_app/presentation/widgets/onboarding/onboarding_get_started_button.dart';
 import 'package:provider/provider.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingPage extends StatefulWidget {
   const OnboardingPage({super.key});
@@ -19,14 +16,21 @@ class OnboardingPage extends StatefulWidget {
 }
 
 class _OnboardingPageState extends State<OnboardingPage> {
+  late PageController _controller;
   bool isLastPage = false;
-  List<Widget> pages = [
-    WellcomeWidget(),
-    InfoOnboardingWidget(),
-    StartOnboardingWidget(),
+
+  final List<Widget> pages = [
+    const WellcomeWidget(),
+    const InfoOnboardingWidget(),
+    const StartOnboardingWidget(),
   ];
 
-  final PageController _controller = PageController();
+  @override
+  void initState() {
+    super.initState();
+    _controller = PageController();
+  }
+
   @override
   void dispose() {
     _controller.dispose();
@@ -35,11 +39,10 @@ class _OnboardingPageState extends State<OnboardingPage> {
 
   @override
   Widget build(BuildContext context) {
-    final loc = AppLocalizations.of(context)!;
     final ThemeViewModel themeVm = context.watch<ThemeViewModel>();
     final bool isDark = themeVm.isDarkMode;
-
     final theme = Theme.of(context);
+
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: HomeAppBar(
@@ -49,121 +52,53 @@ class _OnboardingPageState extends State<OnboardingPage> {
       ),
       body: Stack(
         children: [
-          Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                stops: const <double>[0.0, 0.4, 1.0],
-                colors: [
-                  theme.colorScheme.primary.withValues(alpha: 0.25),
-                  theme.colorScheme.primary.withValues(alpha: 0.08),
-                  Theme.of(context).scaffoldBackgroundColor,
-                ],
-              ),
-            ),
-          ),
-          Positioned(
-            top: -100,
-            right: -50,
-            child: Container(
-              width: 300,
-              height: 300,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: theme.colorScheme.primary.withOpacity(0.08),
-              ),
-            ),
-          ),
+          _buildGradient(context, theme),
+          _buildDecorativeCircle(theme),
           PageView.builder(
             itemCount: pages.length,
-            itemBuilder: (context, index) => pages[index],
+            itemBuilder: (_, i) => pages[i],
             controller: _controller,
             onPageChanged: (i) => setState(() => isLastPage = i == 2),
           ),
-          isLastPage
-              ? Align(
-                  key: const Key('button'),
-                  alignment: const Alignment(0, 0.6),
-                  child: Container(
-                    height: 45,
-                    width: MediaQuery.of(context).size.width / 2,
-                    decoration: BoxDecoration(
-                      color: theme.colorScheme.primary,
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    child: ElevatedButton(
-                      onPressed: () {
-                        // Use the same box that StorageService manages so
-                        // there is only one settings file on disk.
-                        Hive.box(
-                          StorageService.settingsBoxName,
-                        ).put(StorageService.firstTimeKey, false);
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const HomePage(),
-                          ),
-                        );
-                      },
-                      child: Center(child: Text(loc.getStarted)),
-                    ),
-                  ),
-                )
-              : const SizedBox(),
-          Positioned(
-            bottom: 50,
-            left: 20,
-            right: 20,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                SizedBox(
-                  width: 70,
-                  child: isLastPage
-                      ? const SizedBox()
-                      : TextButton(
-                          onPressed: () => _controller.animateToPage(
-                            pages.length - 1,
-                            curve: Curves.easeInOutCubic,
-                            duration: const Duration(milliseconds: 200),
-                          ),
-                          child: Text(
-                            loc.skip,
-                            style: TextStyle(color: theme.colorScheme.outline),
-                          ),
-                        ),
-                ),
-                SmoothPageIndicator(
-                  controller: _controller,
-                  count: 3,
-                  effect: ExpandingDotsEffect(
-                    activeDotColor: theme.colorScheme.primary,
-                    dotHeight: 8,
-                    dotWidth: 8,
-                  ),
-                ),
-                SizedBox(
-                  width: 70,
-                  height: 55,
-                  child: isLastPage
-                      ? const SizedBox.shrink()
-                      : TextButton(
-                          onPressed: () => _controller.nextPage(
-                            duration: const Duration(milliseconds: 500),
-                            curve: Curves.easeInOut,
-                          ),
-                          child: Text(
-                            key: const Key('button'),
-                            loc.next,
-                            style: const TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                ),
-              ],
-            ),
+          if (isLastPage) OnboardingGetStartedButton(theme: theme),
+          OnboardingBottomControls(
+            isLastPage: isLastPage,
+            controller: _controller,
+            theme: theme,
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildGradient(BuildContext context, ThemeData theme) {
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          stops: const <double>[0.0, 0.4, 1.0],
+          colors: [
+            theme.colorScheme.primary.withValues(alpha: 0.25),
+            theme.colorScheme.primary.withValues(alpha: 0.08),
+            Theme.of(context).scaffoldBackgroundColor,
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildDecorativeCircle(ThemeData theme) {
+    return Positioned(
+      top: -100,
+      right: -50,
+      child: Container(
+        width: 300,
+        height: 300,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: theme.colorScheme.primary.withOpacity(0.08),
+        ),
       ),
     );
   }

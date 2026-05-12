@@ -10,6 +10,7 @@ import 'package:mock_plant_care_app/presentation/widgets/home/home_header.dart';
 import 'package:mock_plant_care_app/presentation/widgets/home/plant_card.dart';
 import 'package:mock_plant_care_app/presentation/widgets/home/stats_row.dart';
 import 'package:mock_plant_care_app/presentation/widgets/home/urgent_banner.dart';
+import 'package:mock_plant_care_app/presentation/widgets/home/section_header.dart';
 import 'package:mock_plant_care_app/presentation/widgets/notfication_handler.dart';
 import 'package:mock_plant_care_app/logic/plant_viewmodel.dart';
 import 'package:mock_plant_care_app/logic/theme_viewmodel.dart';

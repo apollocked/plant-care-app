@@ -27,7 +27,7 @@ class HeroBanner extends StatelessWidget {
               gradient: LinearGradient(
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
-                colors: <Color>[
+                colors: [
                   Colors.black.withValues(alpha: 0.1),
                   Colors.black.withValues(alpha: 0.62),
                 ],

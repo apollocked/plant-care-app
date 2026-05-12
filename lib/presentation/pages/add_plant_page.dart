@@ -1,85 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
-import 'package:mock_plant_care_app/data/model/plant_model.dart';
 import 'package:mock_plant_care_app/presentation/widgets/add/identity_section.dart';
 import 'package:mock_plant_care_app/presentation/widgets/add/schedule_section.dart';
 import 'package:mock_plant_care_app/presentation/widgets/add/reminder_section.dart';
+import 'package:mock_plant_care_app/presentation/widgets/add/add_plant_button.dart';
+import 'package:mock_plant_care_app/logic/add_plant_viewmodel.dart';
 import 'package:mock_plant_care_app/logic/plant_viewmodel.dart';
 import 'package:provider/provider.dart';
 
-class AddPlantPage extends StatefulWidget {
+class AddPlantPage extends StatelessWidget {
   const AddPlantPage({super.key});
-
-  @override
-  State<AddPlantPage> createState() => _AddPlantPageState();
-}
-
-class _AddPlantPageState extends State<AddPlantPage> {
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  final TextEditingController _nameCtrl = TextEditingController();
-  final TextEditingController _speciesCtrl = TextEditingController();
-  final TextEditingController _waterDaysCtrl = TextEditingController(text: '2');
-  final TextEditingController _feedDaysCtrl = TextEditingController(text: '7');
-
-  TimeOfDay _waterTime = const TimeOfDay(hour: 9, minute: 0);
-  TimeOfDay _feedTime = const TimeOfDay(hour: 10, minute: 0);
-  bool _remindersEnabled = true;
-  bool _isSaving = false;
-
-  @override
-  void dispose() {
-    _nameCtrl.dispose();
-    _speciesCtrl.dispose();
-    _waterDaysCtrl.dispose();
-    _feedDaysCtrl.dispose();
-    super.dispose();
-  }
-
-  Future<void> _pickTime({required bool water}) async {
-    final TimeOfDay? picked = await showTimePicker(
-      context: context,
-      initialTime: water ? _waterTime : _feedTime,
-    );
-    if (picked == null) return;
-    setState(() => water ? _waterTime = picked : _feedTime = picked);
-  }
-
-  Future<void> _savePlant() async {
-    if (!_formKey.currentState!.validate()) return;
-    setState(() => _isSaving = true);
-
-    try {
-      final PlantModel plant = PlantModel(
-        id: DateTime.now().microsecondsSinceEpoch.toString(),
-        name: _nameCtrl.text.trim(),
-        species: _speciesCtrl.text.trim().isEmpty
-            ? null
-            : _speciesCtrl.text.trim(),
-        waterIntervalDays: int.parse(_waterDaysCtrl.text),
-        feedIntervalDays: int.parse(_feedDaysCtrl.text),
-        waterReminderHour: _waterTime.hour,
-        waterReminderMinute: _waterTime.minute,
-        feedReminderHour: _feedTime.hour,
-        feedReminderMinute: _feedTime.minute,
-        remindersEnabled: _remindersEnabled,
-      );
-
-      await context.read<PlantViewModel>().addPlant(plant, context);
-      if (mounted) Navigator.of(context).pop();
-    } catch (e) {
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(
-              AppLocalizations.of(context)!.failedToSavePlant(e.toString()),
-            ),
-          ),
-        );
-      }
-    } finally {
-      if (mounted) setState(() => _isSaving = false);
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -88,28 +18,56 @@ class _AddPlantPageState extends State<AddPlantPage> {
     final ColorScheme scheme = Theme.of(context).colorScheme;
     final Color onSurface = scheme.onSurface;
 
-    return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        iconTheme: IconThemeData(color: onSurface),
-        title: Row(
-          children: [
-            Image.asset('assets/icons/plant_icon.png', width: 28, height: 28),
-            const SizedBox(width: 10),
-            Text(
-              loc.addNewPlant,
-              style: TextStyle(
-                color: onSurface,
-                fontWeight: FontWeight.w700,
-                fontSize: 17,
+    return ChangeNotifierProvider(
+      create: (ctx) => AddPlantViewModel(
+        ctx.read<PlantViewModel>().storageService,
+        ctx.read<PlantViewModel>().notificationService,
+      ),
+      child: Scaffold(
+        extendBodyBehindAppBar: true,
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          iconTheme: IconThemeData(color: onSurface),
+          title: Row(
+            children: [
+              Image.asset('assets/icons/plant_icon.png', width: 28, height: 28),
+              const SizedBox(width: 10),
+              Text(
+                loc.addNewPlant,
+                style: TextStyle(
+                  color: onSurface,
+                  fontWeight: FontWeight.w700,
+                  fontSize: 17,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
+        ),
+        body: _BuilderContent(
+          isDark: isDark,
+          scheme: scheme,
+          onSurface: onSurface,
         ),
       ),
-      body: Container(
+    );
+  }
+}
+
+class _BuilderContent extends StatelessWidget {
+  const _BuilderContent({
+    required this.isDark,
+    required this.scheme,
+    required this.onSurface,
+  });
+  final bool isDark;
+  final ColorScheme scheme;
+  final Color onSurface;
+
+  @override
+  Widget build(BuildContext context) {
+    return Consumer<AddPlantViewModel>(
+      builder: (ctx, vm, _) => Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
@@ -124,88 +82,35 @@ class _AddPlantPageState extends State<AddPlantPage> {
         ),
         child: SafeArea(
           child: Form(
-            key: _formKey,
+            key: vm.formKey,
             child: SingleChildScrollView(
               physics: const BouncingScrollPhysics(),
               padding: const EdgeInsets.fromLTRB(16, 12, 16, 32),
               child: Column(
                 children: [
                   PlantIdentitySection(
-                    nameCtrl: _nameCtrl,
-                    speciesCtrl: _speciesCtrl,
+                    nameCtrl: vm.nameCtrl,
+                    speciesCtrl: vm.speciesCtrl,
                     onSurface: onSurface,
                   ),
                   const SizedBox(height: 16),
                   CareScheduleSection(
-                    waterDaysCtrl: _waterDaysCtrl,
-                    feedDaysCtrl: _feedDaysCtrl,
+                    waterDaysCtrl: vm.waterDaysCtrl,
+                    feedDaysCtrl: vm.feedDaysCtrl,
                     onSurface: onSurface,
                   ),
                   const SizedBox(height: 16),
                   ReminderSection(
-                    remindersEnabled: _remindersEnabled,
-                    waterTime: _waterTime,
-                    feedTime: _feedTime,
-                    onToggleReminders: (bool v) =>
-                        setState(() => _remindersEnabled = v),
-                    onPickWaterTime: () => _pickTime(water: true),
-                    onPickFeedTime: () => _pickTime(water: false),
+                    remindersEnabled: vm.remindersEnabled,
+                    waterTime: vm.waterTime,
+                    feedTime: vm.feedTime,
+                    onToggleReminders: vm.toggleReminders,
+                    onPickWaterTime: () => _pickTime(context, vm, true),
+                    onPickFeedTime: () => _pickTime(context, vm, false),
                     onSurface: onSurface,
                   ),
                   const SizedBox(height: 28),
-                  GestureDetector(
-                    onTap: _isSaving ? null : _savePlant,
-                    child: Container(
-                      width: double.infinity,
-                      height: 54,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(16),
-                        gradient: LinearGradient(
-                          colors: [
-                            scheme.primary,
-                            Color.lerp(scheme.primary, Colors.teal, 0.45)!,
-                          ],
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: scheme.primary.withValues(alpha: 0.4),
-                            blurRadius: 18,
-                            offset: const Offset(0, 7),
-                          ),
-                        ],
-                      ),
-                      child: Center(
-                        child: _isSaving
-                            ? const SizedBox(
-                                width: 22,
-                                height: 22,
-                                child: CircularProgressIndicator(
-                                  strokeWidth: 2.5,
-                                  color: Colors.white,
-                                ),
-                              )
-                            : Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  const Icon(
-                                    Icons.local_florist_outlined,
-                                    color: Colors.white,
-                                    size: 20,
-                                  ),
-                                  const SizedBox(width: 10),
-                                  Text(
-                                    loc.savePlant,
-                                    style: const TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w700,
-                                      fontSize: 16,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                      ),
-                    ),
-                  ),
+                  AddPlantButton(vm: vm, scheme: scheme),
                 ],
               ),
             ),
@@ -213,5 +118,19 @@ class _AddPlantPageState extends State<AddPlantPage> {
         ),
       ),
     );
+  }
+
+  Future<void> _pickTime(
+    BuildContext context,
+    AddPlantViewModel vm,
+    bool isWater,
+  ) async {
+    final TimeOfDay? picked = await showTimePicker(
+      context: context,
+      initialTime: isWater ? vm.waterTime : vm.feedTime,
+    );
+    if (picked != null) {
+      isWater ? vm.updateWaterTime(picked) : vm.updateFeedTime(picked);
+    }
   }
 }

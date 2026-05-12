@@ -1,6 +1,10 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'permission_dialog_components.dart';
+import 'permission/plant_icon_circle.dart';
+import 'permission/notif_dialog_content.dart';
+import 'permission/feature_pills_row.dart';
+import 'permission/allow_button.dart';
+import 'permission/later_button.dart';
 
 class NotificationPermissionHandler {
   static void showPermissionDialog(BuildContext context) {

@@ -17,18 +17,15 @@ final GlobalKey<ScaffoldMessengerState> snackbarKey =
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 Future<void> main() async {
-  // Initialize Flutter bindings and preserve the native splash screen
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
-  // 1. Initialize Services
   final StorageService storageService = StorageService();
   final NotificationService notificationService = NotificationService();
 
   await storageService.init();
   await notificationService.initialize();
 
-  // 2. Initialize ViewModels
   final PlantViewModel plantViewModel = PlantViewModel(
     storageService,
     notificationService,
@@ -36,7 +33,6 @@ Future<void> main() async {
   final ThemeViewModel themeViewModel = ThemeViewModel(storageService);
   final LanguageService languageService = LanguageService();
 
-  // 3. Load Data
   await plantViewModel.loadPlants();
   await themeViewModel.loadThemeMode();
   FlutterNativeSplash.remove();

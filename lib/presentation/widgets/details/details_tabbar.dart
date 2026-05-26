@@ -9,6 +9,7 @@ class DetailsTabBar extends StatelessWidget {
     required this.isDark,
     required this.onSurface,
   });
+
   final TabController controller;
   final ColorScheme scheme;
   final bool isDark;
@@ -34,7 +35,7 @@ class DetailsTabBar extends StatelessWidget {
             indicator: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
               gradient: LinearGradient(
-                colors: <Color>[
+                colors: [
                   scheme.primary,
                   Color.lerp(scheme.primary, Colors.teal, 0.45)!,
                 ],

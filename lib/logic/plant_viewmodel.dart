@@ -7,7 +7,6 @@ import 'package:mock_plant_care_app/data/services/storage_service.dart';
 
 class PlantViewModel extends ChangeNotifier {
   PlantViewModel(this._storageService, this._notificationService);
-
   final StorageService _storageService;
   final NotificationService _notificationService;
   final List<PlantModel> _plants = <PlantModel>[];

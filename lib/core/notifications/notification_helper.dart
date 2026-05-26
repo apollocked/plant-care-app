@@ -16,7 +16,7 @@ int notificationIdForPlant(String plantId, PlantReminderType type) {
 }
 
 Future<void> createPlantReminderNotification({
-  required BuildContext context, // Added context to get current localization
+  required BuildContext context,
   required int id,
   required String plantId,
   required String plantName,
@@ -26,8 +26,6 @@ Future<void> createPlantReminderNotification({
 }) async {
   final bool isWater = type == PlantReminderType.water;
   final l10n = AppLocalizations.of(context)!;
-
-  // Localized Strings
   final String title = isWater
       ? '${Emojis.icon_sweat_droplets} ${l10n.notifWaterTitle(plantName)}'
       : '${Emojis.plant_cactus} ${l10n.notifFeedTitle(plantName)}';

@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
 class AppTheme {
-  static const Color _lightBg = Color(0xFFF2F7F4);
+  static const Color _lightBg = Color(0xFFEBF0EC);
+  static const Color _lightSurface = Color(0xFFF7FAF8);
   static const Color _darkBg = Color(0xFF0B1A16);
   static const Color _primaryGreen = Color(0xFF2E7D52);
   static const Color _lightText = Color(0xFF1A2E25);
   static const Color _lightSubtext = Color(0xFF4A6355);
+
   static ThemeData get lightTheme => ThemeData(
     fontFamily: 'bahij',
 
@@ -15,7 +17,7 @@ class AppTheme {
       brightness: Brightness.light,
       primary: _primaryGreen,
       onPrimary: Colors.white,
-      surface: Colors.white,
+      surface: _lightSurface,
       onSurface: _lightText,
     ),
     useMaterial3: true,
@@ -48,11 +50,11 @@ class AppTheme {
       labelMedium: TextStyle(color: _lightSubtext),
       labelSmall: TextStyle(color: _lightSubtext),
     ),
-    cardColor: Colors.white,
+    cardColor: _lightSurface,
     dividerColor: const Color(0xFF2E7D52).withValues(alpha: 0.12),
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
-      fillColor: Colors.white,
+      fillColor: _lightSurface,
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(14),
         borderSide: BorderSide(color: _primaryGreen.withValues(alpha: 0.2)),

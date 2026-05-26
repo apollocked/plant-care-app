@@ -33,7 +33,6 @@ class _DarkGlass extends StatelessWidget {
     this.padding,
     required this.child,
   });
-
   final double borderRadius;
   final EdgeInsetsGeometry? padding;
   final Widget child;

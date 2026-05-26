@@ -39,16 +39,16 @@ class PlantDetailsAppBar extends StatelessWidget
         GestureDetector(
           onTap: onDelete,
           child: Container(
-            margin: const EdgeInsets.only(right: 16),
+            margin: const EdgeInsets.symmetric(horizontal: 16),
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: Colors.red.withValues(alpha: isDark ? 0.15 : 0.08),
             ),
-            child: Icon(
+            child: const Icon(
               Icons.delete_outline_rounded,
               size: 20,
-              color: Colors.red.shade400,
+              color: Colors.red,
             ),
           ),
         ),

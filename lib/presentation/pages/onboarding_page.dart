@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 import 'package:mock_plant_care_app/logic/theme_viewmodel.dart';
 import 'package:mock_plant_care_app/presentation/widgets/home/home_header.dart';
 import 'package:mock_plant_care_app/presentation/widgets/onboarding/info_onboarding_widget.dart';
@@ -18,6 +21,7 @@ class OnboardingPage extends StatefulWidget {
 class _OnboardingPageState extends State<OnboardingPage> {
   late PageController _controller;
   bool isLastPage = false;
+  Timer? _timer;
 
   final List<Widget> pages = [
     const WellcomeWidget(),
@@ -29,10 +33,29 @@ class _OnboardingPageState extends State<OnboardingPage> {
   void initState() {
     super.initState();
     _controller = PageController();
+    _startAutoPlay();
+  }
+
+  void _startAutoPlay() {
+    _timer = Timer.periodic(const Duration(seconds: 5), (timer) {
+      if (_controller.hasClients) {
+        int nextPage = _controller.page!.round() + 1;
+        if (nextPage < pages.length) {
+          _controller.animateToPage(
+            nextPage,
+            duration: const Duration(milliseconds: 1500),
+            curve: Curves.easeInOut,
+          );
+        } else {
+          _timer?.cancel();
+        }
+      }
+    });
   }
 
   @override
   void dispose() {
+    _timer?.cancel();
     _controller.dispose();
     super.dispose();
   }
@@ -42,6 +65,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
     final ThemeViewModel themeVm = context.watch<ThemeViewModel>();
     final bool isDark = themeVm.isDarkMode;
     final theme = Theme.of(context);
+    final loc = AppLocalizations.of(context)!;
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -54,6 +78,35 @@ class _OnboardingPageState extends State<OnboardingPage> {
         children: [
           _buildGradient(context, theme),
           _buildDecorativeCircle(theme),
+          Positioned(
+            top: 130,
+            left: 0,
+            right: 0,
+            child: TweenAnimationBuilder<double>(
+              tween: Tween<double>(begin: 0.0, end: 1.0),
+              duration: const Duration(milliseconds: 4000),
+              curve: Curves.easeOutCubic,
+              builder: (context, value, child) {
+                return Opacity(
+                  opacity: value,
+                  child: Transform.translate(
+                    offset: Offset(0, 190 * (1 - value)),
+                    child: child,
+                  ),
+                );
+              },
+              child: Text(
+                loc.wellcome,
+                style: theme.textTheme.displaySmall?.copyWith(
+                  fontWeight: FontWeight.w900,
+                  color: theme.colorScheme.primary,
+                  letterSpacing: -1,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ),
+          const SizedBox(height: 15),
           PageView.builder(
             itemCount: pages.length,
             itemBuilder: (_, i) => pages[i],

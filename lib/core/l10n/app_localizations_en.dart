@@ -26,6 +26,9 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get wellcome => 'Wellcome';
+
+  @override
   String get plantDetails => 'Plant Details';
 
   @override

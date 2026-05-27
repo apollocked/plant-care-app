@@ -26,6 +26,9 @@ class AppLocalizationsKu extends AppLocalizations {
   }
 
   @override
+  String get wellcome => 'بەخێربێیت';
+
+  @override
   String get plantDetails => 'وردەکارییەکانی ڕووەک';
 
   @override
@@ -395,10 +398,10 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get onboardingWelcomeBody =>
-      'ڕێگەیەکی سەردەمیانە بۆ هێشتنەوەی ڕووەکەکانت بە زیندوویی و گەشاوەیی.';
+      'ئەپێکی سەردەمیانە بۆ هێشتنەوەی ڕووەکەکانت بە زیندوویی و گەشاوەیی.';
 
   @override
-  String get onboardingInfoTitle1 => 'هەرگیز دڵۆپێک لەدەست مەدە';
+  String get onboardingInfoTitle1 => 'هەرگیز دڵۆپێک لەبیر مەکە';
 
   @override
   String get onboardingInfoBody1 =>

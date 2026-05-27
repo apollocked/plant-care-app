@@ -10,6 +10,7 @@
       "error": { "type": "String" }
     }
   },
+  "wellcome": "Wellcome",
   "plantDetails": "Plant Details",
   "plantNotFound": "Plant not found",
   "tabCareInfo": "🌿 Care Info",

@@ -26,6 +26,9 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
+  String get wellcome => 'مرحبا بك';
+
+  @override
   String get plantDetails => 'تفاصيل النبات';
 
   @override

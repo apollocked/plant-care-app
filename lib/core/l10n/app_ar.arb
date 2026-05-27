@@ -3,6 +3,7 @@
   "appTitle": "رعاية النبات",
   "appSubtitle": "لوحة تحكم خضراء",
   "addNewPlant": "إضافة نبات جديد",
+  "wellcome": "مرحبا بك",
   "savePlant": "حفظ النبات",
   "failedToSavePlant": "فشل حفظ النبات: {error}",
   "plantDetails": "تفاصيل النبات",

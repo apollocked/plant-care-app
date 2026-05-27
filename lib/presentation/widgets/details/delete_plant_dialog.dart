@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 import 'package:mock_plant_care_app/data/model/plant_model.dart';
+import 'package:mock_plant_care_app/data/services/notification_service.dart';
 import 'package:mock_plant_care_app/logic/plant_viewmodel.dart';
+import 'package:mock_plant_care_app/logic/widget_manager_viewmodel.dart';
 
 class DeletePlantDialog extends StatelessWidget {
   const DeletePlantDialog({super.key, required this.plant, required this.vm});
@@ -10,8 +12,12 @@ class DeletePlantDialog extends StatelessWidget {
   final PlantViewModel vm;
 
   void _performDelete(BuildContext context) async {
+    final NotificationService notificationService = NotificationService();
     Navigator.pop(context);
     await vm.deletePlant(plant.id);
+
+    await WidgetManager.updateHomeScreenWidget(vm.plants);
+    notificationService.cancelPlantReminders(plant.id);
     if (context.mounted) Navigator.pop(context);
   }
 

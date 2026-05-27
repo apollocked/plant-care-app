@@ -21,7 +21,6 @@ class NotificationController {
     if (plantId == null || plantId.isEmpty) {
       navigatorKey.currentState?.pushAndRemoveUntil(
         MaterialPageRoute(
-          // Pass the singleton service directly without needing BuildContext
           builder: (_) => HomePage(storageService: StorageService()),
         ),
         (route) => route.isFirst,

@@ -37,7 +37,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
   }
 
   void _startAutoPlay() {
-    _timer = Timer.periodic(const Duration(seconds: 5), (timer) {
+    _timer = Timer.periodic(const Duration(seconds: 8), (timer) {
       if (_controller.hasClients) {
         int nextPage = _controller.page!.round() + 1;
         if (nextPage < pages.length) {

@@ -1,5 +1,7 @@
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:mock_plant_care_app/data/model/plant_model.dart';
+import 'package:mock_plant_care_app/data/services/notification_service.dart';
+import 'package:mock_plant_care_app/logic/widget_manager_viewmodel.dart';
 
 class StorageService {
   static final StorageService _instance = StorageService._internal();
@@ -13,6 +15,7 @@ class StorageService {
   static const String themeKey = 'theme_mode';
   static const String firstTimeKey = 'isFirstTime';
   static const int _compactThreshold = 15;
+  final NotificationService _notificationService = NotificationService();
   int _operationCount = 0;
 
   Future<void> init() async {
@@ -62,6 +65,8 @@ class StorageService {
       await _plantsBox.compact();
       _operationCount = 0;
     }
+    await _notificationService.cancelPlantReminders(plantId);
+    await WidgetManager.updateHomeScreenWidget(getPlants());
   }
 
   String? getThemeMode() => _settingsBox.get(themeKey) as String?;

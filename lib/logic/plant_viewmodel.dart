@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:mock_plant_care_app/data/model/plant_model.dart';
 import 'package:mock_plant_care_app/data/services/notification_service.dart';
 import 'package:mock_plant_care_app/data/services/storage_service.dart';
+import 'package:mock_plant_care_app/logic/widget_manager_viewmodel.dart';
 
 class PlantViewModel extends ChangeNotifier {
   PlantViewModel(this._storageService, this._notificationService);
@@ -19,6 +20,8 @@ class PlantViewModel extends ChangeNotifier {
     _plants
       ..clear()
       ..addAll(_storageService.getPlants());
+
+    await WidgetManager.updateHomeScreenWidget(_plants);
     notifyListeners();
   }
 
@@ -34,6 +37,8 @@ class PlantViewModel extends ChangeNotifier {
     _plants.add(plant);
     await _storageService.savePlant(plant);
     await _reschedulePlant(plant, context);
+
+    await WidgetManager.updateHomeScreenWidget(_plants);
     notifyListeners();
   }
 
@@ -45,6 +50,8 @@ class PlantViewModel extends ChangeNotifier {
     _plants[index] = plant;
     await _storageService.savePlant(plant);
     await _reschedulePlant(plant, context);
+
+    await WidgetManager.updateHomeScreenWidget(_plants);
     notifyListeners();
   }
 
@@ -52,6 +59,8 @@ class PlantViewModel extends ChangeNotifier {
     _plants.removeWhere((PlantModel p) => p.id == plantId);
     await _storageService.deletePlant(plantId);
     await _notificationService.cancelPlantReminders(plantId);
+
+    await WidgetManager.updateHomeScreenWidget(_plants);
     notifyListeners();
   }
 
@@ -63,6 +72,8 @@ class PlantViewModel extends ChangeNotifier {
     plant.lastWateredAt = DateTime.now();
     await _storageService.savePlant(plant);
     await _reschedulePlant(plant, context);
+
+    await WidgetManager.updateHomeScreenWidget(_plants);
     notifyListeners();
   }
 
@@ -74,6 +85,8 @@ class PlantViewModel extends ChangeNotifier {
     plant.lastFedAt = DateTime.now();
     await _storageService.savePlant(plant);
     await _reschedulePlant(plant, context);
+
+    await WidgetManager.updateHomeScreenWidget(_plants);
     notifyListeners();
   }
 

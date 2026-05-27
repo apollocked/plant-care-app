@@ -1,3 +1,4 @@
+import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
@@ -10,7 +11,9 @@ import 'package:mock_plant_care_app/presentation/pages/home_page.dart';
 import 'package:mock_plant_care_app/logic/plant_viewmodel.dart';
 import 'package:mock_plant_care_app/logic/theme_viewmodel.dart';
 import 'package:mock_plant_care_app/presentation/pages/onboarding_page.dart';
+import 'package:mock_plant_care_app/presentation/widgets/notfication_handler.dart';
 import 'package:provider/provider.dart';
+import 'package:showcaseview/showcaseview.dart';
 
 final GlobalKey<ScaffoldMessengerState> snackbarKey =
     GlobalKey<ScaffoldMessengerState>();
@@ -42,18 +45,40 @@ Future<void> main() async {
   runApp(
     MultiProvider(
       providers: [
+        Provider<StorageService>.value(value: storageService),
         ChangeNotifierProvider<PlantViewModel>.value(value: plantViewModel),
         ChangeNotifierProvider<ThemeViewModel>.value(value: themeViewModel),
         ChangeNotifierProvider<LanguageService>.value(value: languageService),
       ],
-      child: AppWidget(isFerstTime: isFirstTime),
+      child: AppWidget(
+        isFirstTime: isFirstTime,
+        storageService: storageService,
+      ),
     ),
   );
 }
 
 class AppWidget extends StatelessWidget {
-  const AppWidget({super.key, required this.isFerstTime});
-  final bool isFerstTime;
+  const AppWidget({
+    super.key,
+    required this.isFirstTime,
+    required this.storageService,
+  });
+
+  final bool isFirstTime;
+  final StorageService storageService;
+
+  void _onShowcaseFinished() {
+    Future.delayed(const Duration(seconds: 5), () {
+      final BuildContext? ctx = navigatorKey.currentContext;
+      if (ctx == null) return;
+      AwesomeNotifications().isNotificationAllowed().then((bool allowed) {
+        if (!allowed && ctx.mounted) {
+          NotificationPermissionHandler.showPermissionDialog(ctx);
+        }
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +101,12 @@ class AppWidget extends StatelessWidget {
         ...AppLocalizations.localizationsDelegates,
       ],
       supportedLocales: AppLocalizations.supportedLocales,
-      home: isFerstTime ? const OnboardingPage() : const HomePage(),
+      home: isFirstTime
+          ? const OnboardingPage()
+          : ShowCaseWidget(
+              onFinish: _onShowcaseFinished,
+              builder: (context) => HomePage(storageService: storageService),
+            ),
     );
   }
 }

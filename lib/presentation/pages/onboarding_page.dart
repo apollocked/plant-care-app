@@ -43,8 +43,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
         if (nextPage < pages.length) {
           _controller.animateToPage(
             nextPage,
-            duration: const Duration(milliseconds: 1500),
-            curve: Curves.easeInOut,
+            duration: const Duration(milliseconds: 1250),
+            curve: Curves.easeOutBack,
           );
         } else {
           _timer?.cancel();

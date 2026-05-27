@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
+import 'package:mock_plant_care_app/data/services/storage_service.dart';
 import 'package:mock_plant_care_app/main.dart';
 import 'package:mock_plant_care_app/presentation/pages/home_page.dart';
 import 'package:mock_plant_care_app/presentation/pages/plant_details_page.dart';
@@ -14,14 +15,20 @@ class NotificationController {
       int badgeCount = await AwesomeNotifications().getGlobalBadgeCounter();
       await AwesomeNotifications().setGlobalBadgeCounter(badgeCount - 1);
     }
+
     final String? plantId = receivedAction.payload?['plantId'];
+
     if (plantId == null || plantId.isEmpty) {
       navigatorKey.currentState?.pushAndRemoveUntil(
-        MaterialPageRoute(builder: (_) => const HomePage()),
+        MaterialPageRoute(
+          // Pass the singleton service directly without needing BuildContext
+          builder: (_) => HomePage(storageService: StorageService()),
+        ),
         (route) => route.isFirst,
       );
       return;
     }
+
     navigatorKey.currentState?.push(
       MaterialPageRoute(builder: (_) => PlantDetailsPage(plantId: plantId)),
     );
@@ -31,10 +38,12 @@ class NotificationController {
   static Future<void> onNotificationCreatedMethod(
     ReceivedNotification n,
   ) async {}
+
   @pragma("vm:entry-point")
   static Future<void> onNotificationDisplayedMethod(
     ReceivedNotification n,
   ) async {}
+
   @pragma("vm:entry-point")
   static Future<void> onDismissActionReceivedMethod(ReceivedAction a) async {}
 }

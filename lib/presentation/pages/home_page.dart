@@ -14,10 +14,62 @@ import 'package:mock_plant_care_app/presentation/widgets/home/section_header.dar
 import 'package:mock_plant_care_app/presentation/widgets/notfication_handler.dart';
 import 'package:mock_plant_care_app/logic/plant_viewmodel.dart';
 import 'package:mock_plant_care_app/logic/theme_viewmodel.dart';
+import 'package:mock_plant_care_app/data/services/storage_service.dart';
 import 'package:provider/provider.dart';
+import 'package:showcaseview/showcaseview.dart';
+
+const Color _kTooltipBg = Color(0xFF1B4332); // deep botanical green
+const Color _kTooltipBgDark = Color(0xFF0D2B1F);
+const Color _kOverlayColor = Color(0xFF000000);
+const double _kOverlayOpacity = 0.78;
+
+Widget _buildShowcase({
+  required GlobalKey key,
+  required String title,
+  required String description,
+  required Widget child,
+  required bool isDark,
+  BorderRadius? targetBorderRadius,
+  ShapeBorder? targetShapeBorder,
+}) {
+  final Color bg = isDark ? _kTooltipBgDark : _kTooltipBg;
+
+  return Showcase(
+    key: key,
+
+    title: title,
+    description: description,
+
+    tooltipBackgroundColor: bg,
+    tooltipBorderRadius: BorderRadius.circular(20),
+    textColor: Colors.white,
+    titleTextStyle: const TextStyle(
+      color: Colors.white,
+      fontSize: 15,
+      fontWeight: FontWeight.w800,
+      letterSpacing: -0.2,
+    ),
+    descTextStyle: TextStyle(
+      color: Colors.white.withValues(alpha: 0.82),
+      fontSize: 13,
+      height: 1.45,
+      fontWeight: FontWeight.w400,
+    ),
+
+    targetBorderRadius: targetBorderRadius ?? BorderRadius.circular(16),
+    targetShapeBorder: targetShapeBorder ?? const RoundedRectangleBorder(),
+
+    overlayColor: _kOverlayColor,
+    overlayOpacity: _kOverlayOpacity,
+
+    movingAnimationDuration: const Duration(milliseconds: 550),
+    child: child,
+  );
+}
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  const HomePage({super.key, required this.storageService});
+  final StorageService storageService;
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -26,6 +78,13 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
   late AnimationController _fabAnim;
+
+  // GlobalKeys for the 5 showcase sections.
+  final GlobalKey _bannerKey = GlobalKey();
+  final GlobalKey _statsKey = GlobalKey();
+  final GlobalKey _sectionHeaderKey = GlobalKey();
+  final GlobalKey _emptyStateKey = GlobalKey();
+  final GlobalKey _fabKey = GlobalKey();
 
   @override
   void initState() {
@@ -36,11 +95,7 @@ class _HomePageState extends State<HomePage>
     )..forward();
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      AwesomeNotifications().isNotificationAllowed().then((bool allowed) {
-        if (!allowed && mounted) {
-          NotificationPermissionHandler.showPermissionDialog(context);
-        }
-      });
+      _startTourOrRequestPermission();
     });
 
     AwesomeNotifications().setListeners(
@@ -52,6 +107,44 @@ class _HomePageState extends State<HomePage>
       onDismissActionReceivedMethod:
           NotificationController.onDismissActionReceivedMethod,
     );
+  }
+
+  void _startTourOrRequestPermission() {
+    if (!mounted) return;
+
+    if (!widget.storageService.hasSeenHomeTour()) {
+      _startShowcaseTour();
+      widget.storageService.setSeenHomeTour();
+    } else {
+      _scheduleNotificationPermissionCheck(delay: const Duration(seconds: 2));
+    }
+  }
+
+  void _startShowcaseTour() {
+    if (!mounted) return;
+    final PlantViewModel plantVm = context.read<PlantViewModel>();
+
+    final List<GlobalKey> keys = [
+      _bannerKey,
+      _statsKey,
+      _sectionHeaderKey,
+      if (plantVm.plants.isEmpty) _emptyStateKey, // ← conditional key fix
+      _fabKey,
+    ];
+
+    ShowCaseWidget.of(context).startShowCase(keys);
+  }
+
+  /// Checks notification permission and shows the dialog if not granted.
+  void _scheduleNotificationPermissionCheck({Duration delay = Duration.zero}) {
+    Future.delayed(delay, () {
+      if (!mounted) return;
+      AwesomeNotifications().isNotificationAllowed().then((bool allowed) {
+        if (!allowed && mounted) {
+          NotificationPermissionHandler.showPermissionDialog(context);
+        }
+      });
+    });
   }
 
   @override
@@ -97,15 +190,33 @@ class _HomePageState extends State<HomePage>
               SliverToBoxAdapter(
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(16, 12, 16, 0),
-                  child: HeroBanner(urgentCount: urgent),
+                  child: _buildShowcase(
+                    key: _bannerKey,
+                    title: 'پەناگە سەوزەکەت 🌿',
+                    description:
+                        'لێرەدا کورتەیەک لە دۆخی گشتی باخچەکەت دەبینیت.',
+                    isDark: isDark,
+                    targetBorderRadius: BorderRadius.circular(24),
+                    child: HeroBanner(urgentCount: urgent),
+                  ),
                 ),
               ),
+
               SliverToBoxAdapter(
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(16, 14, 16, 0),
-                  child: StatsRow(plantVm: plantVm),
+                  child: _buildShowcase(
+                    key: _statsKey,
+                    title: 'ئامارە زیندوەکان 📊',
+                    description:
+                        'چاودێری کۆی گشتی ڕووەکەکان، ئاودان، و پێدانی کود بکە بە شێوەیەکی خێرا.',
+                    isDark: isDark,
+                    targetBorderRadius: BorderRadius.circular(16),
+                    child: StatsRow(plantVm: plantVm),
+                  ),
                 ),
               ),
+
               if (urgent > 0)
                 SliverToBoxAdapter(
                   child: Padding(
@@ -113,17 +224,33 @@ class _HomePageState extends State<HomePage>
                     child: UrgentBanner(urgentCount: urgent),
                   ),
                 ),
+
               SliverToBoxAdapter(
-                child: SectionHeader(
-                  count: plantVm.plants.length,
-                  onSurface: scheme.onSurface,
-                  scheme: scheme,
+                child: _buildShowcase(
+                  key: _sectionHeaderKey,
+                  title: 'ڕووەکەکانم 🪴',
+                  description:
+                      'لێرەوە دەتوانیت سەیری لیستی تەواوی ڕووەکە تۆمارکراوەکانت بکەیت.',
+                  isDark: isDark,
+                  child: SectionHeader(
+                    count: plantVm.plants.length,
+                    onSurface: scheme.onSurface,
+                    scheme: scheme,
+                  ),
                 ),
               ),
+
               if (plantVm.plants.isEmpty)
-                const SliverFillRemaining(
+                SliverFillRemaining(
                   hasScrollBody: false,
-                  child: EmptyPlantState(),
+                  child: _buildShowcase(
+                    key: _emptyStateKey,
+                    title: 'باخچەکەت خاڵییە 🌱',
+                    description:
+                        'ئێستا هیچ ڕووەکێک لێرە نییە. یەکەم ڕووەکت زیادبکە بۆ دەستپێکردنی خشتەی چاودێری.',
+                    isDark: isDark,
+                    child: const EmptyPlantState(),
+                  ),
                 )
               else
                 SliverPadding(
@@ -155,7 +282,16 @@ class _HomePageState extends State<HomePage>
           ),
         ),
       ),
-      floatingActionButton: AddPlantFAB(animation: _fabAnim, scheme: scheme),
+
+      floatingActionButton: _buildShowcase(
+        key: _fabKey,
+        title: 'زیادکردنی ڕووەک ✨',
+        description:
+            'لەم دوگمەیەوە دەتوانیت جۆرە جیاوازەکانی ڕووەک لای خۆت تۆمار بکەیت.',
+        isDark: isDark,
+        targetBorderRadius: BorderRadius.circular(28),
+        child: AddPlantFAB(animation: _fabAnim, scheme: scheme),
+      ),
     );
   }
 }

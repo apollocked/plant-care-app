@@ -2,6 +2,12 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:mock_plant_care_app/data/model/plant_model.dart';
 
 class StorageService {
+  static final StorageService _instance = StorageService._internal();
+
+  factory StorageService() => _instance;
+
+  StorageService._internal();
+
   static const String plantsBoxName = 'plants_box';
   static const String settingsBoxName = 'settings_box';
   static const String themeKey = 'theme_mode';
@@ -17,6 +23,22 @@ class StorageService {
 
   Box<Map> get _plantsBox => Hive.box<Map>(plantsBoxName);
   Box get _settingsBox => Hive.box(settingsBoxName);
+
+  bool getIsFirstTime() {
+    return _settingsBox.get('is_first_time', defaultValue: true);
+  }
+
+  Future<void> setNotFirstTime() async {
+    await _settingsBox.put('is_first_time', false);
+  }
+
+  bool hasSeenHomeTour() {
+    return _settingsBox.get('seen_home_tour', defaultValue: false);
+  }
+
+  void setSeenHomeTour() {
+    _settingsBox.put('seen_home_tour', true);
+  }
 
   List<PlantModel> getPlants() {
     return _plantsBox.values
@@ -47,9 +69,6 @@ class StorageService {
   Future<void> saveThemeMode(String modeName) async {
     await _settingsBox.put(themeKey, modeName);
   }
-
-  bool getIsFirstTime() =>
-      _settingsBox.get(firstTimeKey, defaultValue: true) as bool;
 
   Future<void> setIsFirstTime(bool value) async {
     await _settingsBox.put(firstTimeKey, value);

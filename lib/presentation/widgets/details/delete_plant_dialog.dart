@@ -6,6 +6,7 @@ import 'package:mock_plant_care_app/logic/plant_viewmodel.dart';
 class DeletePlantDialog extends StatelessWidget {
   const DeletePlantDialog({super.key, required this.plant, required this.vm});
   final PlantModel plant;
+
   final PlantViewModel vm;
 
   void _performDelete(BuildContext context) async {

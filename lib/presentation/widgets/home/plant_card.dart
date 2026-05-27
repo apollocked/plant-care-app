@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 import 'package:mock_plant_care_app/data/model/plant_model.dart';
+import 'package:mock_plant_care_app/logic/plant_viewmodel.dart';
+import 'package:mock_plant_care_app/presentation/widgets/details/delete_plant_dialog.dart';
 import 'package:mock_plant_care_app/presentation/widgets/glass_container.dart';
 import 'package:mock_plant_care_app/presentation/widgets/home/plant_card_components.dart';
+import 'package:provider/provider.dart';
 
 class PlantCard extends StatefulWidget {
   const PlantCard({
@@ -67,6 +70,7 @@ class _PlantCardState extends State<PlantCard>
   @override
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context)!;
+    final viewModel = context.read<PlantViewModel>();
     final ColorScheme scheme = Theme.of(context).colorScheme;
     return AnimatedBuilder(
       animation: _controller,
@@ -76,6 +80,17 @@ class _PlantCardState extends State<PlantCard>
         borderRadius: 20,
         child: InkWell(
           borderRadius: BorderRadius.circular(20),
+
+          onLongPress: () => _controller.reverse(),
+
+          onLongPressUp: () {
+            _controller.forward();
+            showDialog(
+              context: context,
+              builder: (_) =>
+                  DeletePlantDialog(plant: widget.plant, vm: viewModel),
+            );
+          },
           onTap: widget.onTap,
           onTapDown: (_) => _controller.reverse(),
           onTapUp: (_) => _controller.forward(),

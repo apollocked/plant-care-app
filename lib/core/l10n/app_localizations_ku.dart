@@ -38,18 +38,18 @@ class AppLocalizationsKu extends AppLocalizations {
   String get tabSchedule => '📋 خشتە';
 
   @override
-  String get removePlant => 'لابردنی ڕووەک';
+  String get removePlant => 'سڕینەوەی ڕووەک';
 
   @override
   String removePlantConfirm(String name) {
-    return 'دەتەوێت \"$name\" لە باخچەکەت لاببەیت؟';
+    return 'دەتەوێت \"$name\" لە باخچەکەت بسڕیتەوە؟';
   }
 
   @override
   String get cancel => 'هەڵوەشاندنەوە';
 
   @override
-  String get remove => 'لابردن';
+  String get remove => 'سڕینەوە';
 
   @override
   String get getStarted => 'دەستپێکردن';

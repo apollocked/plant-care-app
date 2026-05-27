@@ -1,5 +1,6 @@
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
+import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 import 'package:mock_plant_care_app/data/model/plant_model.dart';
 import 'package:mock_plant_care_app/core/notifications/notification_controller.dart';
 import 'package:mock_plant_care_app/presentation/pages/plant_details_page.dart';
@@ -22,6 +23,7 @@ import 'package:showcaseview/showcaseview.dart';
 class HomePage extends StatefulWidget {
   const HomePage({super.key, required this.storageService});
   final StorageService storageService;
+
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -30,6 +32,7 @@ class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
   late AnimationController _fabAnim;
 
+  final GlobalKey _settingsKey = GlobalKey();
   final GlobalKey _bannerKey = GlobalKey();
   final GlobalKey _statsKey = GlobalKey();
   final GlobalKey _sectionHeaderKey = GlobalKey();
@@ -61,7 +64,6 @@ class _HomePageState extends State<HomePage>
 
   void _startTourOrRequestPermission() {
     if (!mounted) return;
-
     if (!widget.storageService.hasSeenHomeTour()) {
       _startShowcaseTour();
       widget.storageService.setSeenHomeTour();
@@ -74,15 +76,14 @@ class _HomePageState extends State<HomePage>
     if (!mounted) return;
     final PlantViewModel plantVm = context.read<PlantViewModel>();
 
-    final List<GlobalKey> keys = [
+    ShowCaseWidget.of(context).startShowCase([
+      _settingsKey,
       _bannerKey,
       _statsKey,
       _sectionHeaderKey,
       if (plantVm.plants.isEmpty) _emptyStateKey,
       _fabKey,
-    ];
-
-    ShowCaseWidget.of(context).startShowCase(keys);
+    ]);
   }
 
   void _scheduleNotificationPermissionCheck({Duration delay = Duration.zero}) {
@@ -108,17 +109,24 @@ class _HomePageState extends State<HomePage>
     final ThemeViewModel themeVm = context.watch<ThemeViewModel>();
     final bool isDark = themeVm.isDarkMode;
     final ColorScheme scheme = Theme.of(context).colorScheme;
+    final loc = AppLocalizations.of(context)!;
+
     final int urgent = plantVm.plants
         .where((p) => p.needsWaterNow || p.needsFoodNow)
         .length;
 
     return Scaffold(
       extendBodyBehindAppBar: true,
+
       appBar: HomeAppBar(
         isDark: isDark,
         onToggleTheme: themeVm.toggleTheme,
         onSurface: scheme.onSurface,
+        showcaseKey: _settingsKey,
+        showcaseTitle: loc.tourSettingsTitle,
+        showcaseDesc: loc.tourSettingsDesc,
       ),
+
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -141,28 +149,25 @@ class _HomePageState extends State<HomePage>
                   padding: const EdgeInsets.fromLTRB(16, 12, 16, 0),
                   child: buildShowcase(
                     key: _bannerKey,
-                    title: 'پەناگە سەوزەکەت 🌿',
-                    description:
-                        'لێرەدا کورتەیەک لە دۆخی گشتی باخچەکەت دەبینیت.',
+                    title: loc.tourBannerTitle,
+                    description: loc.tourBannerDesc,
                     isDark: isDark,
                     targetBorderRadius: BorderRadius.circular(24),
                     child: HeroBanner(urgentCount: urgent),
-                    context: context,
                   ),
                 ),
               ),
+
               SliverToBoxAdapter(
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(16, 14, 16, 0),
                   child: buildShowcase(
                     key: _statsKey,
-                    title: 'ئامارە زیندوەکان 📊',
-                    description:
-                        'چاودێری کۆی گشتی ڕووەکەکان، ئاودان، و پێدانی کود بکە بە شێوەیەکی خێرا.',
+                    title: loc.tourStatsTitle,
+                    description: loc.tourStatsDesc,
                     isDark: isDark,
                     targetBorderRadius: BorderRadius.circular(16),
                     child: StatsRow(plantVm: plantVm),
-                    context: context,
                   ),
                 ),
               ),
@@ -178,9 +183,8 @@ class _HomePageState extends State<HomePage>
               SliverToBoxAdapter(
                 child: buildShowcase(
                   key: _sectionHeaderKey,
-                  title: 'ڕووەکەکانم 🪴',
-                  description:
-                      'لێرەوە دەتوانیت سەیری لیستی تەواوی ڕووەکە تۆمارکراوەکانت بکەیت.',
+                  title: loc.tourSectionTitle,
+                  description: loc.tourSectionDesc,
                   isDark: isDark,
                   child: SectionHeader(
                     count: plantVm.plants.length,
@@ -195,9 +199,8 @@ class _HomePageState extends State<HomePage>
                   hasScrollBody: false,
                   child: buildShowcase(
                     key: _emptyStateKey,
-                    title: 'باخچەکەت خاڵییە 🌱',
-                    description:
-                        'ئێستا هیچ ڕووەکێک لێرە نییە. یەکەم ڕووەکت زیادبکە بۆ دەستپێکردنی خشتەی چاودێری.',
+                    title: loc.tourEmptyTitle,
+                    description: loc.tourEmptyDesc,
                     isDark: isDark,
                     child: const EmptyPlantState(),
                   ),
@@ -235,9 +238,8 @@ class _HomePageState extends State<HomePage>
 
       floatingActionButton: buildShowcase(
         key: _fabKey,
-        title: 'زیادکردنی ڕووەک ✨',
-        description:
-            'لەم دوگمەیەوە دەتوانیت جۆرە جیاوازەکانی ڕووەک لای خۆت تۆمار بکەیت.',
+        title: loc.tourFabTitle,
+        description: loc.tourFabDesc,
         isDark: isDark,
         targetBorderRadius: BorderRadius.circular(28),
         child: AddPlantFAB(animation: _fabAnim, scheme: scheme),

@@ -867,6 +867,78 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Mark Done'**
   String get notifActionMarkDone;
+
+  /// No description provided for @tourSettingsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Theme & Language ⚙️'**
+  String get tourSettingsTitle;
+
+  /// No description provided for @tourSettingsDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Switch between light and dark mode, or change the app language from here.'**
+  String get tourSettingsDesc;
+
+  /// No description provided for @tourBannerTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Green Sanctuary 🌿'**
+  String get tourBannerTitle;
+
+  /// No description provided for @tourBannerDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'A quick overview of your garden\'s current status at a glance.'**
+  String get tourBannerDesc;
+
+  /// No description provided for @tourStatsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Live Statistics 📊'**
+  String get tourStatsTitle;
+
+  /// No description provided for @tourStatsDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Track your total plants, healthy count, and upcoming watering and feeding needs.'**
+  String get tourStatsDesc;
+
+  /// No description provided for @tourSectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'My Plants 🪴'**
+  String get tourSectionTitle;
+
+  /// No description provided for @tourSectionDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Browse the full list of all your registered plants right here.'**
+  String get tourSectionDesc;
+
+  /// No description provided for @tourEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Empty Garden 🌱'**
+  String get tourEmptyTitle;
+
+  /// No description provided for @tourEmptyDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'No plants yet! Add your first plant to start your care schedule.'**
+  String get tourEmptyDesc;
+
+  /// No description provided for @tourFabTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a Plant ✨'**
+  String get tourFabTitle;
+
+  /// No description provided for @tourFabDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap here to register a new plant and set up its care reminders.'**
+  String get tourFabDesc;
 }
 
 class _AppLocalizationsDelegate

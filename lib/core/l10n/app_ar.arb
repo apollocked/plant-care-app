@@ -123,10 +123,21 @@
   "onboardingInfoBody2": "تبقى بياناتك على جهازك.\nيتيح لك التتبع عالي الأداء الاستفادة القصوى من نباتاتك.",
   "onboardingStartBody": "استمتع بفوائد النهج الحديث للحفاظ على نباتاتك حية ومزدهرة مع رعاية النبات.",
   "onboardingStartCta": "هل أنت مستعد لبدء رحلتك؟",
-
   "notifWaterTitle": "اسقِ {name}",
   "notifFeedTitle": "أطعِم {name}",
   "notifWaterBody": "{name} يحتاج إلى الماء الآن.",
   "notifFeedBody": "{name} جاهز للحصول على الغذاء.",
-  "notifActionMarkDone": "تم الإنجاز"
+  "notifActionMarkDone": "تم الإنجاز",
+  "tourSettingsTitle": "المظهر واللغة ⚙️",
+  "tourSettingsDesc": "بدّل بين الوضع الفاتح والداكن، أو غيّر لغة التطبيق من هنا.",
+  "tourBannerTitle": "ملاذك الأخضر 🌿",
+  "tourBannerDesc": "نظرة سريعة على الحالة العامة لحديقتك.",
+  "tourStatsTitle": "إحصائيات حية 📊",
+  "tourStatsDesc": "تابع إجمالي نباتاتك وعدد الأصحاء واحتياجات الري والتغذية.",
+  "tourSectionTitle": "نباتاتي 🪴",
+  "tourSectionDesc": "استعرض القائمة الكاملة لجميع نباتاتك المسجلة.",
+  "tourEmptyTitle": "الحديقة فارغة 🌱",
+  "tourEmptyDesc": "لا نباتات بعد! أضف نباتك الأول لبدء جدول الرعاية.",
+  "tourFabTitle": "إضافة نبات ✨",
+  "tourFabDesc": "اضغط هنا لتسجيل نبات جديد وإعداد تذكيرات رعايته."
 }

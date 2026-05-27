@@ -470,4 +470,43 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get notifActionMarkDone => 'تم الإنجاز';
+
+  @override
+  String get tourSettingsTitle => 'المظهر واللغة ⚙️';
+
+  @override
+  String get tourSettingsDesc =>
+      'بدّل بين الوضع الفاتح والداكن، أو غيّر لغة التطبيق من هنا.';
+
+  @override
+  String get tourBannerTitle => 'ملاذك الأخضر 🌿';
+
+  @override
+  String get tourBannerDesc => 'نظرة سريعة على الحالة العامة لحديقتك.';
+
+  @override
+  String get tourStatsTitle => 'إحصائيات حية 📊';
+
+  @override
+  String get tourStatsDesc =>
+      'تابع إجمالي نباتاتك وعدد الأصحاء واحتياجات الري والتغذية.';
+
+  @override
+  String get tourSectionTitle => 'نباتاتي 🪴';
+
+  @override
+  String get tourSectionDesc => 'استعرض القائمة الكاملة لجميع نباتاتك المسجلة.';
+
+  @override
+  String get tourEmptyTitle => 'الحديقة فارغة 🌱';
+
+  @override
+  String get tourEmptyDesc =>
+      'لا نباتات بعد! أضف نباتك الأول لبدء جدول الرعاية.';
+
+  @override
+  String get tourFabTitle => 'إضافة نبات ✨';
+
+  @override
+  String get tourFabDesc => 'اضغط هنا لتسجيل نبات جديد وإعداد تذكيرات رعايته.';
 }

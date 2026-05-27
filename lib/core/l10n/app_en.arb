@@ -7,7 +7,9 @@
   "failedToSavePlant": "Failed to save plant: {error}",
   "@failedToSavePlant": {
     "placeholders": {
-      "error": { "type": "String" }
+      "error": {
+        "type": "String"
+      }
     }
   },
   "wellcome": "Wellcome",
@@ -19,7 +21,9 @@
   "removePlantConfirm": "Remove \"{name}\" from your garden?",
   "@removePlantConfirm": {
     "placeholders": {
-      "name": { "type": "String" }
+      "name": {
+        "type": "String"
+      }
     }
   },
   "cancel": "Cancel",
@@ -32,7 +36,9 @@
   "heroBannerUrgent": "🔔 {count} {count, plural, one{plant needs} other{plants need}} attention",
   "@heroBannerUrgent": {
     "placeholders": {
-      "count": { "type": "int" }
+      "count": {
+        "type": "int"
+      }
     }
   },
   "heroBannerAllGood": "✅ All plants are happy",
@@ -40,7 +46,9 @@
   "urgentBannerTitle": "{count} {count, plural, one{plant} other{plants}} need care",
   "@urgentBannerTitle": {
     "placeholders": {
-      "count": { "type": "int" }
+      "count": {
+        "type": "int"
+      }
     }
   },
   "urgentBannerSubtitle": "Tap a plant card to take action",
@@ -88,32 +96,42 @@
   "lastWatered": "Last watered {time}",
   "@lastWatered": {
     "placeholders": {
-      "time": { "type": "String" }
+      "time": {
+        "type": "String"
+      }
     }
   },
   "lastFed": "Last fed {time}",
   "@lastFed": {
     "placeholders": {
-      "time": { "type": "String" }
+      "time": {
+        "type": "String"
+      }
     }
   },
   "everyNDays": "Every {n}d",
   "@everyNDays": {
     "placeholders": {
-      "n": { "type": "int" }
+      "n": {
+        "type": "int"
+      }
     }
   },
   "justNow": "just now",
   "hoursAgo": "{h}h ago",
   "@hoursAgo": {
     "placeholders": {
-      "h": { "type": "int" }
+      "h": {
+        "type": "int"
+      }
     }
   },
   "daysAgo": "{d}d ago",
   "@daysAgo": {
     "placeholders": {
-      "d": { "type": "int" }
+      "d": {
+        "type": "int"
+      }
     }
   },
   "careTipsHeading": "💡 Care Tips",
@@ -123,13 +141,17 @@
   "tipWaterInterval": "Water every {n} {n, plural, one{day} other{days}} for best results.",
   "@tipWaterInterval": {
     "placeholders": {
-      "n": { "type": "int" }
+      "n": {
+        "type": "int"
+      }
     }
   },
   "tipFeedInterval": "Feed every {n} {n, plural, one{day} other{days}} to keep it growing strong.",
   "@tipFeedInterval": {
     "placeholders": {
-      "n": { "type": "int" }
+      "n": {
+        "type": "int"
+      }
     }
   },
   "scheduleCardIntervals": "🔁 Care Intervals",
@@ -144,7 +166,9 @@
   "scheduleEveryNDays": "Every {n} {n, plural, one{day} other{days}}",
   "@scheduleEveryNDays": {
     "placeholders": {
-      "n": { "type": "int" }
+      "n": {
+        "type": "int"
+      }
     }
   },
   "overdue": "Overdue!",
@@ -158,13 +182,17 @@
   "snackWatered": "💧 {name} has been watered!",
   "@snackWatered": {
     "placeholders": {
-      "name": { "type": "String" }
+      "name": {
+        "type": "String"
+      }
     }
   },
   "snackFed": "🌿 {name} has been fed!",
   "@snackFed": {
     "placeholders": {
-      "name": { "type": "String" }
+      "name": {
+        "type": "String"
+      }
     }
   },
   "pushReminders": "Push Reminders",
@@ -173,13 +201,17 @@
   "snackRemindersOn": "🔔 Reminders turned ON for {name}",
   "@snackRemindersOn": {
     "placeholders": {
-      "name": { "type": "String" }
+      "name": {
+        "type": "String"
+      }
     }
   },
   "snackRemindersOff": "🔕 Reminders turned OFF for {name}",
   "@snackRemindersOff": {
     "placeholders": {
-      "name": { "type": "String" }
+      "name": {
+        "type": "String"
+      }
     }
   },
   "editCareSchedule": "Edit Care Schedule",
@@ -203,22 +235,49 @@
   "onboardingInfoBody2": "Your data stays on your device.\nHigh performance tracking allows you to get the most out of your plant.",
   "onboardingStartBody": "Enjoy the benefits of a modern approach to keeping your plants alive and thriving with Plant Care.",
   "onboardingStartCta": "Ready to start your journey?",
-
   "notifWaterTitle": "Water {name}",
   "@notifWaterTitle": {
-    "placeholders": { "name": { "type": "String" } }
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "notifFeedTitle": "Feed {name}",
   "@notifFeedTitle": {
-    "placeholders": { "name": { "type": "String" } }
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "notifWaterBody": "{name} needs water now.",
   "@notifWaterBody": {
-    "placeholders": { "name": { "type": "String" } }
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "notifFeedBody": "{name} is ready for plant food.",
   "@notifFeedBody": {
-    "placeholders": { "name": { "type": "String" } }
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
-  "notifActionMarkDone": "Mark Done"
+  "notifActionMarkDone": "Mark Done",
+  "tourSettingsTitle": "Theme & Language ⚙️",
+  "tourSettingsDesc": "Switch between light and dark mode, or change the app language from here.",
+  "tourBannerTitle": "Your Green Sanctuary 🌿",
+  "tourBannerDesc": "A quick overview of your garden's current status at a glance.",
+  "tourStatsTitle": "Live Statistics 📊",
+  "tourStatsDesc": "Track your total plants, healthy count, and upcoming watering and feeding needs.",
+  "tourSectionTitle": "My Plants 🪴",
+  "tourSectionDesc": "Browse the full list of all your registered plants right here.",
+  "tourEmptyTitle": "Empty Garden 🌱",
+  "tourEmptyDesc": "No plants yet! Add your first plant to start your care schedule.",
+  "tourFabTitle": "Add a Plant ✨",
+  "tourFabDesc": "Tap here to register a new plant and set up its care reminders."
 }

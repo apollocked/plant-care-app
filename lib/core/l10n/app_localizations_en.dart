@@ -470,4 +470,46 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get notifActionMarkDone => 'Mark Done';
+
+  @override
+  String get tourSettingsTitle => 'Theme & Language ⚙️';
+
+  @override
+  String get tourSettingsDesc =>
+      'Switch between light and dark mode, or change the app language from here.';
+
+  @override
+  String get tourBannerTitle => 'Your Green Sanctuary 🌿';
+
+  @override
+  String get tourBannerDesc =>
+      'A quick overview of your garden\'s current status at a glance.';
+
+  @override
+  String get tourStatsTitle => 'Live Statistics 📊';
+
+  @override
+  String get tourStatsDesc =>
+      'Track your total plants, healthy count, and upcoming watering and feeding needs.';
+
+  @override
+  String get tourSectionTitle => 'My Plants 🪴';
+
+  @override
+  String get tourSectionDesc =>
+      'Browse the full list of all your registered plants right here.';
+
+  @override
+  String get tourEmptyTitle => 'Empty Garden 🌱';
+
+  @override
+  String get tourEmptyDesc =>
+      'No plants yet! Add your first plant to start your care schedule.';
+
+  @override
+  String get tourFabTitle => 'Add a Plant ✨';
+
+  @override
+  String get tourFabDesc =>
+      'Tap here to register a new plant and set up its care reminders.';
 }

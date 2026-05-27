@@ -443,4 +443,45 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get notifActionMarkDone => 'تەواو';
+
+  @override
+  String get tourSettingsTitle => 'ڕووکار و زمان ⚙️';
+
+  @override
+  String get tourSettingsDesc =>
+      'لێرەوە دەتوانیت ڕووکاری ئەپەکە گۆڕی بدەیت یان زمانی ئەپەکە بگۆڕیت.';
+
+  @override
+  String get tourBannerTitle => 'پەناگە سەوزەکەت 🌿';
+
+  @override
+  String get tourBannerDesc => 'لێرەدا کورتەیەک لە دۆخی گشتی باخچەکەت دەبینیت.';
+
+  @override
+  String get tourStatsTitle => 'ئامارە زیندوەکان 📊';
+
+  @override
+  String get tourStatsDesc =>
+      'چاودێری کۆی گشتی ڕووەکەکان، ئاودان، و پێدانی کود بکە بە شێوەیەکی خێرا.';
+
+  @override
+  String get tourSectionTitle => 'ڕووەکەکانم 🪴';
+
+  @override
+  String get tourSectionDesc =>
+      'لێرەوە دەتوانیت سەیری لیستی تەواوی ڕووەکە تۆمارکراوەکانت بکەیت.';
+
+  @override
+  String get tourEmptyTitle => 'باخچەکەت خاڵییە 🌱';
+
+  @override
+  String get tourEmptyDesc =>
+      'ئێستا هیچ ڕووەکێک لێرە نییە. یەکەم ڕووەکت زیادبکە بۆ دەستپێکردنی خشتەی چاودێری.';
+
+  @override
+  String get tourFabTitle => 'زیادکردنی ڕووەک ✨';
+
+  @override
+  String get tourFabDesc =>
+      'لەم دوگمەیەوە دەتوانیت جۆرە جیاوازەکانی ڕووەک لای خۆت تۆمار بکەیت.';
 }

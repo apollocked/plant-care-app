@@ -13,12 +13,11 @@ class DeletePlantDialog extends StatelessWidget {
 
   void _performDelete(BuildContext context) async {
     final NotificationService notificationService = NotificationService();
-    Navigator.pop(context);
     await vm.deletePlant(plant.id);
 
     await WidgetManager.updateHomeScreenWidget(vm.plants);
     notificationService.cancelPlantReminders(plant.id);
-    if (context.mounted) Navigator.pop(context);
+    if (context.mounted) Navigator.pop(context, true);
   }
 
   @override

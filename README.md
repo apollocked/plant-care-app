@@ -1,86 +1,91 @@
-# Plant Care 🌿
+# Plant Care
 
-A modern, beautifully designed Flutter application to help you keep your plants alive and thriving. This app allows users to track their plants, set watering/care reminders, and manage their plant collection efficiently.
-i developed this app as a practical for my learning journey in flutter and mobile development
+Plant Care is a modern Flutter app for tracking houseplants, care schedules,
+and daily reminders. It was built as a practical learning project for Flutter
+and mobile development, with a focus on local-first data, polished UI, and
+multi-language support.
 
-## 🌟 Features
+## Features
 
-- **Plant Collection:** Add and manage your personal plant collection.
-- **Custom Reminders:** Schedule watering, fertilizing, and other care notifications.
-- **Beautiful UI:** A clean, modern, theme-aware user interface with smooth animations and glassmorphism design elements.
-- **Local Storage:** Fast and secure offline data persistence.
-- **Push Notifications:** Reliable local notifications to ensure you never miss a care schedule.
-- **Dark/Light Mode:** Seamless theme synchronization.
+- Plant collection management with name, optional species, watering interval,
+  feeding interval, reminder times, and per-plant reminder toggles.
+- Home dashboard with live totals for all plants, healthy plants, plants that
+  need water, and plants that need food.
+- Urgent care states that highlight plants needing attention and provide quick
+  water/feed actions from the home list and details page.
+- Plant details screen with care status cards, schedule progress indicators,
+  care tips, editable intervals, upcoming dates, and notification controls.
+- Local notifications for watering and feeding reminders, with notification
+  actions and permission prompting.
+- Home screen widget support that mirrors the garden summary in the selected
+  language.
+- First-run onboarding plus a guided home-page showcase tour.
+- Light and dark themes with a theme toggle in the app bar.
+- Localization for English, Arabic, and Kurdish, including RTL layout support.
+- Offline persistence using Hive, so plant data stays on the device.
 
-## 🛠 Tech Stack
+## Tech Stack
 
-- **Framework:** [Flutter](https://flutter.dev/)
-- **State Management:** Provider
-- **Local Database:** Hive
-- **Notifications:** Awesome Notifications
-- **Architecture:** MVVM (Model-View-ViewModel)
+- Flutter and Dart
+- Provider for state management
+- Hive and hive_flutter for local storage
+- Awesome Notifications for local reminders
+- home_widget for Android/iOS home screen widgets
+- flutter_localizations and generated ARB-based l10n
+- Lottie and smooth_page_indicator for onboarding
+- showcaseview for the guided app tour
 
-## 📁 Project Structure
-
-The codebase is structured following the MVVM architecture for better scalability and separation of concerns:
+## Project Structure
 
 ```text
 lib/
-├── main.dart                         # Main application entry point
-├── core/                             # Core application configuration
-│   ├── notifications/                # Notification setup and handlers
-│   └── theme/                        # Theme configuration and constants
-├── data/                             # Data layer
-│   ├── model/                        # Data classes and entities
-│   └── services/                     # External services (storage, APIs)
-├── logic/                            # Business logic layer
-│   ├── plant_viewmodel.dart          # Plant management logic
-│   └── theme_viewmodel.dart          # Theme management logic
-└── presentation/                     # UI layer
-    ├── pages/                        # Application pages/screens
-    └── widgets/                      # Reusable UI components
++-- main.dart                         # App bootstrap, providers, theme, l10n
++-- core/
+|   +-- l10n/                         # ARB files and generated localizations
+|   +-- notifications/                # Notification helpers and callbacks
+|   +-- theme/                        # Light/dark app themes
++-- data/
+|   +-- model/                        # Plant model
+|   +-- services/                     # Storage and notification services
++-- logic/                            # View models and widget sync logic
++-- presentation/
+    +-- pages/                        # Onboarding, home, add, details screens
+    +-- widgets/                      # Reusable UI components
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
-Ensure you have the following installed on your machine:
-
-- [Flutter SDK](https://flutter.dev/docs/get-started/install)
-- Appropriate IDE (Visual Studio Code, Android Studio, etc.)
+- Flutter SDK
+- Android Studio, Visual Studio Code, or another Flutter-ready editor
+- A configured Android emulator/device or iOS simulator/device
 
 ### Installation
 
-1. **Clone the project:**
+```bash
+git clone https://github.com/apollocked/plant-care-mock-app.git
+cd plant-care-mock-app
+flutter pub get
+flutter run
+```
 
-   ```bash
-   git clone https://github.com/apollocked/plant-care-mock-app.git
-   ```
+## Useful Commands
 
-2. **Navigate to the project directory:**
+```bash
+flutter pub get
+flutter gen-l10n
+flutter analyze
+flutter test
+```
 
-   ```bash
-   cd plant-care-mock-app
-   ```
+## Notes
 
-3. **Install required dependencies:**
+- The app starts in Kurdish by default through `LanguageService`.
+- Plant and preference data are stored locally with Hive.
+- Notification behavior depends on platform permissions and emulator/device
+  notification support.
 
-   ```bash
-   flutter pub get
-   ```
+## Author
 
-4. **Run the application:**
-   ```bash
-   flutter run
-   ```
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome! Feel free to submit a pull request or open an issue if you'd like to improve the app.
-
-## 📝 License
-
-This project is licensed under the MIT License.
-
-**Developed by : Muhammed Jameel **
+Developed by Muhammed Jameel.

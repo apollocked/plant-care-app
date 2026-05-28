@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 import 'package:mock_plant_care_app/data/model/plant_model.dart';
@@ -114,10 +116,14 @@ class _PlantDetailsPageState extends State<PlantDetailsPage>
     BuildContext context,
     PlantModel plant,
     PlantViewModel vm,
-  ) {
-    showDialog(
+  ) async {
+    final bool? isDeleted = await showDialog<bool>(
       context: context,
       builder: (ctx) => DeletePlantDialog(plant: plant, vm: vm),
     );
+
+    if (isDeleted == true && mounted) {
+      Navigator.pop(context);
+    }
   }
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
+import 'package:mock_plant_care_app/presentation/widgets/home/settings_icon.dart';
+import 'package:mock_plant_care_app/presentation/widgets/home/theme_lang_controls.dart';
 import 'package:mock_plant_care_app/presentation/widgets/onboarding/build_showcase.dart';
 
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -7,6 +9,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
     super.key,
     required this.isDark,
     required this.onSurface,
+    this.onToggleTheme,
     this.showcaseKey,
     this.showcaseTitle,
     this.showcaseDesc,
@@ -15,8 +18,8 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   final bool isDark;
   final Color onSurface;
+  final VoidCallback? onToggleTheme;
   final VoidCallback? onSettingsTap;
-
   final GlobalKey? showcaseKey;
   final String? showcaseTitle;
   final String? showcaseDesc;
@@ -27,23 +30,6 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context)!;
-    final Widget settingsIcon = GestureDetector(
-      onTap: onSettingsTap,
-      child: Container(
-        padding: const EdgeInsets.all(8),
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: isDark
-              ? Colors.white.withValues(alpha: 0.1)
-              : Colors.black.withValues(alpha: 0.06),
-        ),
-        child: Icon(
-          Icons.settings_outlined,
-          size: 20,
-          color: onSurface.withValues(alpha: 0.8),
-        ),
-      ),
-    );
 
     return AppBar(
       backgroundColor: Colors.transparent,
@@ -55,10 +41,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                loc.plantCare,
-                style: TextStyle(fontSize: 17, color: onSurface),
-              ),
+              Text(loc.plantCare, style: TextStyle(fontSize: 17, color: onSurface)),
               Text(
                 loc.appSubtitle,
                 style: TextStyle(
@@ -72,19 +55,35 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         ],
       ),
       actions: [
-        Padding(
-          padding: const EdgeInsetsDirectional.only(end: 8),
-          child: showcaseKey != null
-              ? buildShowcase(
-                  key: showcaseKey!,
-                  title: showcaseTitle ?? '',
-                  description: showcaseDesc ?? '',
-                  isDark: isDark,
-                  targetBorderRadius: BorderRadius.circular(32),
-                  child: settingsIcon,
-                )
-              : settingsIcon,
-        ),
+        if (onToggleTheme != null)
+          ThemeLangControls(
+            isDark: isDark,
+            onSurface: onSurface,
+            onToggleTheme: onToggleTheme!,
+          )
+        else ...[
+          Padding(
+            padding: const EdgeInsetsDirectional.only(end: 8),
+            child: showcaseKey != null
+                ? buildShowcase(
+                    key: showcaseKey!,
+                    title: showcaseTitle ?? '',
+                    description: showcaseDesc ?? '',
+                    isDark: isDark,
+                    targetBorderRadius: BorderRadius.circular(32),
+                    child: SettingsIcon(
+                      isDark: isDark,
+                      onSurface: onSurface,
+                      onTap: onSettingsTap,
+                    ),
+                  )
+                : SettingsIcon(
+                    isDark: isDark,
+                    onSurface: onSurface,
+                    onTap: onSettingsTap,
+                  ),
+          ),
+        ],
       ],
     );
   }

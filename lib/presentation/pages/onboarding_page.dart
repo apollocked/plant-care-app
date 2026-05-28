@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 import 'package:mock_plant_care_app/logic/theme_viewmodel.dart';
@@ -9,6 +8,8 @@ import 'package:mock_plant_care_app/presentation/widgets/onboarding/start_onboar
 import 'package:mock_plant_care_app/presentation/widgets/onboarding/wellcome_onboarding_widget.dart';
 import 'package:mock_plant_care_app/presentation/widgets/onboarding/onboarding_bottom_controls.dart';
 import 'package:mock_plant_care_app/presentation/widgets/onboarding/onboarding_get_started_button.dart';
+import 'package:mock_plant_care_app/presentation/widgets/onboarding/gradint_onboarding.dart';
+
 import 'package:provider/provider.dart';
 
 class OnboardingPage extends StatefulWidget {
@@ -71,12 +72,13 @@ class _OnboardingPageState extends State<OnboardingPage> {
       extendBodyBehindAppBar: true,
       appBar: HomeAppBar(
         isDark: isDark,
+        onToggleTheme: themeVm.toggleTheme,
         onSurface: theme.colorScheme.onSurface,
       ),
       body: Stack(
         children: [
-          _buildGradient(context, theme),
-          _buildDecorativeCircle(theme),
+          onBoaerdingGradient(context, theme),
+          onboardingDecorativeCircle(theme),
           Positioned(
             top: 130,
             left: 0,
@@ -119,38 +121,6 @@ class _OnboardingPageState extends State<OnboardingPage> {
             theme: theme,
           ),
         ],
-      ),
-    );
-  }
-
-  Widget _buildGradient(BuildContext context, ThemeData theme) {
-    return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          stops: const <double>[0.0, 0.4, 1.0],
-          colors: [
-            theme.colorScheme.primary.withValues(alpha: 0.25),
-            theme.colorScheme.primary.withValues(alpha: 0.08),
-            Theme.of(context).scaffoldBackgroundColor,
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildDecorativeCircle(ThemeData theme) {
-    return Positioned(
-      top: -100,
-      right: -50,
-      child: Container(
-        width: 300,
-        height: 300,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: theme.colorScheme.primary.withValues(alpha: 0.08),
-        ),
       ),
     );
   }

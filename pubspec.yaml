@@ -1,6 +1,7 @@
 name: mock_plant_care_app
 description: "A modern plant care assistant."
 publish_to: "none"
+version: 1.0.0+1
 
 environment:
   sdk: ^3.11.4

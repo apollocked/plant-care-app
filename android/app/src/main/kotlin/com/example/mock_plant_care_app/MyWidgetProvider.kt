@@ -1,4 +1,4 @@
-package com.example.mock_plant_care_app
+package com.apollo.plant_care
 
 import android.appwidget.AppWidgetManager
 import android.content.Context

@@ -16,13 +16,19 @@ import 'package:mock_plant_care_app/presentation/widgets/notfication_handler.dar
 import 'package:mock_plant_care_app/logic/plant_viewmodel.dart';
 import 'package:mock_plant_care_app/logic/theme_viewmodel.dart';
 import 'package:mock_plant_care_app/data/services/storage_service.dart';
+import 'package:mock_plant_care_app/presentation/pages/settings_page.dart';
 import 'package:mock_plant_care_app/presentation/widgets/onboarding/build_showcase.dart';
 import 'package:provider/provider.dart';
 import 'package:showcaseview/showcaseview.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key, required this.storageService});
+  const HomePage({
+    super.key,
+    required this.storageService,
+    this.onShowcaseFinished,
+  });
   final StorageService storageService;
+  final VoidCallback? onShowcaseFinished;
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -31,6 +37,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
   late AnimationController _fabAnim;
+  late final ShowcaseView _showcaseView;
 
   final GlobalKey _settingsKey = GlobalKey();
   final GlobalKey _bannerKey = GlobalKey();
@@ -42,6 +49,9 @@ class _HomePageState extends State<HomePage>
   @override
   void initState() {
     super.initState();
+    _showcaseView = ShowcaseView.register(
+      onFinish: widget.onShowcaseFinished,
+    );
     _fabAnim = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 600),
@@ -62,6 +72,13 @@ class _HomePageState extends State<HomePage>
     );
   }
 
+  @override
+  void dispose() {
+    _showcaseView.unregister();
+    _fabAnim.dispose();
+    super.dispose();
+  }
+
   void _startTourOrRequestPermission() {
     if (!mounted) return;
     if (!widget.storageService.hasSeenHomeTour()) {
@@ -76,7 +93,7 @@ class _HomePageState extends State<HomePage>
     if (!mounted) return;
     final PlantViewModel plantVm = context.read<PlantViewModel>();
 
-    ShowCaseWidget.of(context).startShowCase([
+    _showcaseView.startShowCase([
       _settingsKey,
       _bannerKey,
       _statsKey,
@@ -98,12 +115,6 @@ class _HomePageState extends State<HomePage>
   }
 
   @override
-  void dispose() {
-    _fabAnim.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     final PlantViewModel plantVm = context.watch<PlantViewModel>();
     final ThemeViewModel themeVm = context.watch<ThemeViewModel>();
@@ -120,11 +131,14 @@ class _HomePageState extends State<HomePage>
 
       appBar: HomeAppBar(
         isDark: isDark,
-        onToggleTheme: themeVm.toggleTheme,
         onSurface: scheme.onSurface,
         showcaseKey: _settingsKey,
         showcaseTitle: loc.tourSettingsTitle,
         showcaseDesc: loc.tourSettingsDesc,
+        onSettingsTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => const SettingsPage()),
+        ),
       ),
 
       body: Container(

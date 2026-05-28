@@ -445,11 +445,11 @@ class AppLocalizationsKu extends AppLocalizations {
   String get notifActionMarkDone => 'تەواو';
 
   @override
-  String get tourSettingsTitle => 'ڕووکار و زمان ⚙️';
+  String get tourSettingsTitle => 'ڕێکخستنەکان ⚙️';
 
   @override
   String get tourSettingsDesc =>
-      'لێرەوە دەتوانیت ڕووکاری ئەپەکە گۆڕی بدەیت یان زمانی ئەپەکە بگۆڕیت.';
+      'لێرەدا کرتە بکە بۆ کردنەوەی ڕێکخستنەکان و گۆڕینی ڕووکار و زمان.';
 
   @override
   String get tourBannerTitle => 'پەناگە سەوزەکەت 🌿';
@@ -484,4 +484,83 @@ class AppLocalizationsKu extends AppLocalizations {
   @override
   String get tourFabDesc =>
       'لەم دوگمەیەوە دەتوانیت جۆرە جیاوازەکانی ڕووەک لای خۆت تۆمار بکەیت.';
+
+  @override
+  String get settings => 'ڕێکخستنەکان';
+
+  @override
+  String get privacyPolicy => 'سیاسەی تایبەتی';
+
+  @override
+  String get privacyPolicyTitle => 'سیاسەی تایبەتی';
+
+  @override
+  String get privacyPolicyLastUpdated => 'دوایین نوێکردنەوە: ئایاری 2026';
+
+  @override
+  String get settingsAppearance => 'ڕووکار';
+
+  @override
+  String get settingsLanguage => 'زمان';
+
+  @override
+  String get settingsAbout => 'دەربارە';
+
+  @override
+  String get settingsVersion => 'وەشانی 1.0.0';
+
+  @override
+  String get darkMode => 'ڕووکاری تاریک';
+
+  @override
+  String get lightMode => 'ڕووکاری ڕووناک';
+
+  @override
+  String get privacySection1Title => '1. زانیارییەکانی کۆیان دەکەینەوە';
+
+  @override
+  String get privacySection1Body =>
+      'Plant Care هیچ داتایەکی تایبەتی کۆناکاتەوە، هەڵی ناگرێت، یان بۆ سێرڤەری دەرەکی نانێرێت. هەموو ئەو زانیارییانەی کە دابینی دەکەیت — لەوانە ناوی ڕووەک، جۆرەکانی، خشتەکانی چاودێری و هەڵبژاردەی بیرخستنەوە — تەنها لەسەر ئامێرەکەت هەڵدەگیرێت بە بەکارهێنانی Hive.\n\nئێمە هیچ SDK شیکاری، ئامرازی ڕاپۆرتی کێشە، یان هیچ خزمەتگوزارییەکی دەرەکی کە زانیاری تایبەتی کۆدەکەنەوە بەکارناهێنین.';
+
+  @override
+  String get privacySection2Title => '2. ئاگادارکردنەوەکان';
+
+  @override
+  String get privacySection2Body =>
+      'ئەگەر ڕێگەپێدانی بدەیت، Plant Care ئاگادارکردنەوەی ناوخۆیی بەکاردەهێنێت بۆ بیرخستنەوەت لە کاتی ئاودان و خۆراکدان. هیچ داتایەکی ئاگادارکردنەوە بۆ سێرڤەری دەرەکی نانێردرێت. هەموو خشتەکانی ئاگادارکردنەوە بە تەواوی لەسەر ئامێرەکەت جێبەجێ دەبن.\n\nدەتوانی لە هەر کاتێکدا ڕێگەپێدانی ئاگادارکردنەوەکان هەڵبوەشێنیتەوە لە ڕێکخستنەکانی ئامێرەکەت یان لەناو ئەپەکە.';
+
+  @override
+  String get privacySection3Title => '3. هەڵگرتنی داتا و ئاسایش';
+
+  @override
+  String get privacySection3Body =>
+      'داتاکەت بە شێوەیەکی ناوخۆیی هەڵدەگیرێت بە بەکارهێنانی Hive، کە بنکەدراوەیەکی ناوخۆیی و ڕمزکراوە. بەهۆی ئەوەی هیچ داتایەک ئامێرەکەت بەرنەدەوێت، مەترسی دزینی داتا لەلایەن ئێمەوە نییە.\n\nئەگەر ئەپەکەت سڕییەوە، هەموو داتا هەڵگیراوەکان بە شێوەیەکی هەرەمەکی دەسڕدرێنەوە.';
+
+  @override
+  String get privacySection4Title => '4. خزمەتگوزارییەکانی لایەنی سێیەم';
+
+  @override
+  String get privacySection4Body =>
+      'ئەم ئەپە هیچ خزمەتگوزارییەکی شیکاری، ڕێکلام، یان شوێنکەوتنی لایەنی سێیەم تێدا نییە. ئەپەکە تەنها پاکێجەکانی خوارەوە بەکاردەهێنێت بۆ کارە ناوخۆییەکان:\n  • Hive — بنکەدراوەی ناوخۆیی\n  • Awesome Notifications — خشتەکردنی ئاگادارکردنەوەی ناوخۆیی\n  • Provider — بەڕێوەبردنی دۆخی ئەپ\n\nهیچ کام لەم پاکێجانە داتاکەت بۆ دەرەوە نانێرن.';
+
+  @override
+  String get privacySection5Title => '5. تایبەتی منداڵان';
+
+  @override
+  String get privacySection5Body =>
+      'Plant Care بۆ هەموو تەمەنەکان سەلامەتە. ئێمە هیچ زانیارییەکی تایبەتی کەسێک کۆناکەینەوە، لەوانە منداڵانی خوار ١٣ ساڵ. هەموو داتاکان لەسەر ئامێری بەکارهێنەر دەمێننەوە.';
+
+  @override
+  String get privacySection6Title => '6. گۆڕانکارییەکانی ئەم سیاسەتە';
+
+  @override
+  String get privacySection6Body =>
+      'لەوانەیە ئەم سیاسەی تایبەتییە لە کات بۆ کات نوێ بکەینەوە. هەر گۆڕانکارییەک لەناو ئەپەکەدا دەردەکەوێت. بەردەوامبوون لە بەکارهێنانی ئەپەکە دوای گۆڕانکارییەکان بە مانای قبوڵکردنی سیاسەتی نوێکراوە دێت.';
+
+  @override
+  String get privacySection7Title => '7. پەیوەندی';
+
+  @override
+  String get privacySection7Body =>
+      'ئەگەر پرسیارێکت هەبێت دەربارەی ئەم سیاسەی تایبەتییە، تکایە پەیوەندیمان پێوە بکە لە:\nplantcare@support.app';
 }

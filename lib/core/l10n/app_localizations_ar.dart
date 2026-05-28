@@ -472,11 +472,11 @@ class AppLocalizationsAr extends AppLocalizations {
   String get notifActionMarkDone => 'تم الإنجاز';
 
   @override
-  String get tourSettingsTitle => 'المظهر واللغة ⚙️';
+  String get tourSettingsTitle => 'الإعدادات ⚙️';
 
   @override
   String get tourSettingsDesc =>
-      'بدّل بين الوضع الفاتح والداكن، أو غيّر لغة التطبيق من هنا.';
+      'اضغط هنا لفتح الإعدادات وتخصيص المظهر واللغة والمزيد.';
 
   @override
   String get tourBannerTitle => 'ملاذك الأخضر 🌿';
@@ -509,4 +509,83 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get tourFabDesc => 'اضغط هنا لتسجيل نبات جديد وإعداد تذكيرات رعايته.';
+
+  @override
+  String get settings => 'الإعدادات';
+
+  @override
+  String get privacyPolicy => 'سياسة الخصوصية';
+
+  @override
+  String get privacyPolicyTitle => 'سياسة الخصوصية';
+
+  @override
+  String get privacyPolicyLastUpdated => 'آخر تحديث: مايو 2026';
+
+  @override
+  String get settingsAppearance => 'المظهر';
+
+  @override
+  String get settingsLanguage => 'اللغة';
+
+  @override
+  String get settingsAbout => 'حول';
+
+  @override
+  String get settingsVersion => 'الإصدار 1.0.0';
+
+  @override
+  String get darkMode => 'الوضع الداكن';
+
+  @override
+  String get lightMode => 'الوضع الفاتح';
+
+  @override
+  String get privacySection1Title => '1. المعلومات التي نجمعها';
+
+  @override
+  String get privacySection1Body =>
+      'تطبيق Plant Care لا يجمع أو يخزن أو ينقل أي بيانات شخصية إلى خوادم خارجية. جميع المعلومات التي تقدمها — بما في ذلك أسماء النباتات وأنواعها وجداول الرعاية وتفضيلات التذكير — تُخزن حصراً على جهازك باستخدام التخزين المحلي (Hive).\n\nنحن لا نستخدم أدوات تحليلات أو تقارير الأعطال أو أي خدمات طرف ثالث تجمع معلومات تعريف شخصية.';
+
+  @override
+  String get privacySection2Title => '2. الإشعارات';
+
+  @override
+  String get privacySection2Body =>
+      'إذا منحت الإذن، يستخدم Plant Care الإشعارات المحلية لتذكيرك بمواعيد الري والتغذية. لا يتم إرسال أي بيانات إشعارات إلى خوادم خارجية. جميع جداول الإشعارات تتم بالكامل على جهازك.\n\nيمكنك إلغاء إذن الإشعارات في أي وقت من إعدادات جهازك أو من داخل التطبيق.';
+
+  @override
+  String get privacySection3Title => '3. تخزين البيانات وأمنها';
+
+  @override
+  String get privacySection3Body =>
+      'بياناتك مخزنة محلياً باستخدام Hive، وهي قاعدة بيانات محلية مشفرة. نظراً لعدم مغادرة أي بيانات لجهازك، فلا يوجد خطر اختراق للبيانات من جهتنا.\n\nإذا قمت بإلغاء تثبيت التطبيق، سيتم حذف جميع البيانات المخزنة نهائياً.';
+
+  @override
+  String get privacySection4Title => '4. خدمات الطرف الثالث';
+
+  @override
+  String get privacySection4Body =>
+      'هذا التطبيق لا يدمج أي خدمات تحليلات أو إعلانات أو تتبع من طرف ثالث. يستخدم التطبيق الحزم التالية فقط للوظائف المحلية:\n  • Hive — قاعدة بيانات محلية\n  • Awesome Notifications — جدولة الإشعارات المحلية\n  • Provider — إدارة حالة التطبيق\n\nلا تقوم أي من هذه الحزم بنقل بياناتك خارجياً.';
+
+  @override
+  String get privacySection5Title => '5. خصوصية الأطفال';
+
+  @override
+  String get privacySection5Body =>
+      'Plant Care آمن لجميع الأعمار. نحن لا نجمع أي معلومات شخصية من أي شخص، بما في ذلك الأطفال دون سن 13. جميع البيانات تبقى على جهاز المستخدم.';
+
+  @override
+  String get privacySection6Title => '6. التغييرات على هذه السياسة';
+
+  @override
+  String get privacySection6Body =>
+      'قد نقوم بتحديث سياسة الخصوصية هذه من وقت لآخر. ستنعكس أي تغييرات داخل التطبيق. الاستمرار في استخدام التطبيق بعد التغييرات يعني قبولك للسياسة المحدثة.';
+
+  @override
+  String get privacySection7Title => '7. الاتصال بنا';
+
+  @override
+  String get privacySection7Body =>
+      'إذا كان لديك أي أسئلة حول سياسة الخصوصية هذه، يرجى الاتصال بنا على:\nplantcare@support.app';
 }

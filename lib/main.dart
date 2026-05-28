@@ -13,7 +13,6 @@ import 'package:mock_plant_care_app/logic/theme_viewmodel.dart';
 import 'package:mock_plant_care_app/presentation/pages/onboarding_page.dart';
 import 'package:mock_plant_care_app/presentation/widgets/notfication_handler.dart';
 import 'package:provider/provider.dart';
-import 'package:showcaseview/showcaseview.dart';
 
 final GlobalKey<ScaffoldMessengerState> snackbarKey =
     GlobalKey<ScaffoldMessengerState>();
@@ -103,9 +102,9 @@ class AppWidget extends StatelessWidget {
       supportedLocales: AppLocalizations.supportedLocales,
       home: isFirstTime
           ? const OnboardingPage()
-          : ShowCaseWidget(
-              onFinish: _onShowcaseFinished,
-              builder: (context) => HomePage(storageService: storageService),
+          : HomePage(
+              storageService: storageService,
+              onShowcaseFinished: _onShowcaseFinished,
             ),
     );
   }

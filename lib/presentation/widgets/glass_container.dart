@@ -8,20 +8,23 @@ class GlassContainer extends StatelessWidget {
     required this.child,
     this.borderRadius = 20,
     this.padding,
+    this.margin,
   });
 
   final Widget child;
   final double borderRadius;
   final EdgeInsetsGeometry? padding;
+  final EdgeInsetsGeometry? margin;
 
   @override
   Widget build(BuildContext context) {
     final bool isDark = Theme.of(context).brightness == Brightness.dark;
     return isDark
-        ? _DarkGlass(borderRadius: borderRadius, padding: padding, child: child)
+        ? _DarkGlass(borderRadius: borderRadius, padding: padding, margin: margin, child: child)
         : _LightCard(
             borderRadius: borderRadius,
             padding: padding,
+            margin: margin,
             child: child,
           );
   }
@@ -31,10 +34,12 @@ class _DarkGlass extends StatelessWidget {
   const _DarkGlass({
     required this.borderRadius,
     this.padding,
+    this.margin,
     required this.child,
   });
   final double borderRadius;
   final EdgeInsetsGeometry? padding;
+  final EdgeInsetsGeometry? margin;
   final Widget child;
 
   @override
@@ -44,6 +49,7 @@ class _DarkGlass extends StatelessWidget {
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
         child: Container(
+          margin: margin,
           padding: padding,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(borderRadius),
@@ -78,16 +84,19 @@ class _LightCard extends StatelessWidget {
   const _LightCard({
     required this.borderRadius,
     this.padding,
+    this.margin,
     required this.child,
   });
 
   final double borderRadius;
   final EdgeInsetsGeometry? padding;
+  final EdgeInsetsGeometry? margin;
   final Widget child;
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: margin,
       padding: padding,
       decoration: BoxDecoration(
         color: Colors.white,

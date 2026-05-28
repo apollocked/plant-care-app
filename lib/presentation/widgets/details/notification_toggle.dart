@@ -90,7 +90,7 @@ class NotificationToggleCard extends StatelessWidget {
           ),
           Switch(
             value: on,
-            activeColor: scheme.primary,
+            activeThumbColor: scheme.primary,
             onChanged: (_) => _toggle(context),
           ),
         ],

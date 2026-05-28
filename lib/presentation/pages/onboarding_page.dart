@@ -71,7 +71,6 @@ class _OnboardingPageState extends State<OnboardingPage> {
       extendBodyBehindAppBar: true,
       appBar: HomeAppBar(
         isDark: isDark,
-        onToggleTheme: themeVm.toggleTheme,
         onSurface: theme.colorScheme.onSurface,
       ),
       body: Stack(
@@ -150,7 +149,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
         height: 300,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: theme.colorScheme.primary.withOpacity(0.08),
+          color: theme.colorScheme.primary.withValues(alpha: 0.08),
         ),
       ),
     );

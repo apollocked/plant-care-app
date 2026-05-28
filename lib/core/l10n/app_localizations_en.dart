@@ -472,11 +472,11 @@ class AppLocalizationsEn extends AppLocalizations {
   String get notifActionMarkDone => 'Mark Done';
 
   @override
-  String get tourSettingsTitle => 'Theme & Language ⚙️';
+  String get tourSettingsTitle => 'Settings ⚙️';
 
   @override
   String get tourSettingsDesc =>
-      'Switch between light and dark mode, or change the app language from here.';
+      'Tap here to open Settings and customize theme, language, and more.';
 
   @override
   String get tourBannerTitle => 'Your Green Sanctuary 🌿';
@@ -512,4 +512,83 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get tourFabDesc =>
       'Tap here to register a new plant and set up its care reminders.';
+
+  @override
+  String get settings => 'Settings';
+
+  @override
+  String get privacyPolicy => 'Privacy Policy';
+
+  @override
+  String get privacyPolicyTitle => 'Privacy Policy';
+
+  @override
+  String get privacyPolicyLastUpdated => 'Last updated: May 2026';
+
+  @override
+  String get settingsAppearance => 'Appearance';
+
+  @override
+  String get settingsLanguage => 'Language';
+
+  @override
+  String get settingsAbout => 'About';
+
+  @override
+  String get settingsVersion => 'Version 1.0.0';
+
+  @override
+  String get darkMode => 'Dark Mode';
+
+  @override
+  String get lightMode => 'Light Mode';
+
+  @override
+  String get privacySection1Title => '1. Information We Collect';
+
+  @override
+  String get privacySection1Body =>
+      'Plant Care does not collect, store, or transmit any personal data to external servers. All information you provide — including plant names, species, care schedules, and reminder preferences — is stored exclusively on your device using local storage (Hive).\n\nWe do not use analytics SDKs, crash reporting tools, or any third-party services that collect personally identifiable information.';
+
+  @override
+  String get privacySection2Title => '2. Notifications';
+
+  @override
+  String get privacySection2Body =>
+      'If you grant permission, Plant Care uses local push notifications to remind you about watering and feeding schedules. No notification data is sent to external servers. All notification scheduling happens entirely on your device.\n\nYou can revoke notification permission at any time through your device settings or within the app.';
+
+  @override
+  String get privacySection3Title => '3. Data Storage & Security';
+
+  @override
+  String get privacySection3Body =>
+      'Your data is stored locally using Hive, a lightweight and encrypted local database. Since no data leaves your device, there is no risk of data breach from our side.\n\nIf you uninstall the app, all stored data is permanently deleted.';
+
+  @override
+  String get privacySection4Title => '4. Third-Party Services';
+
+  @override
+  String get privacySection4Body =>
+      'This app does not integrate any third-party analytics, advertising, or tracking services. The app uses the following packages solely for local functionality:\n  • Hive — local database\n  • Awesome Notifications — local notification scheduling\n  • Provider — in-app state management\n\nNone of these packages transmit your data externally.';
+
+  @override
+  String get privacySection5Title => '5. Children\'s Privacy';
+
+  @override
+  String get privacySection5Body =>
+      'Plant Care is safe for all ages. We do not collect any personal information from anyone, including children under 13. All data remains on the user\'s device.';
+
+  @override
+  String get privacySection6Title => '6. Changes to This Policy';
+
+  @override
+  String get privacySection6Body =>
+      'We may update this privacy policy from time to time. Any changes will be reflected within the app. Continued use of the app after changes constitutes acceptance of the updated policy.';
+
+  @override
+  String get privacySection7Title => '7. Contact';
+
+  @override
+  String get privacySection7Body =>
+      'If you have any questions about this privacy policy, please contact us at:\nplantcare@support.app';
 }

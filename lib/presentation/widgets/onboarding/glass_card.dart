@@ -10,8 +10,8 @@ Widget myGlassCard(BuildContext context, {required Widget child}) {
       child: Container(
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.surface.withOpacity(0.1),
-          border: Border.all(color: Colors.white.withOpacity(0.2)),
+          color: Theme.of(context).colorScheme.surface.withValues(alpha: 0.1),
+          border: Border.all(color: Colors.white.withValues(alpha: 0.2)),
           borderRadius: BorderRadius.circular(24),
         ),
         child: child,

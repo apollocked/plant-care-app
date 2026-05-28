@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 import 'package:mock_plant_care_app/data/services/storage_service.dart';
 import 'package:mock_plant_care_app/presentation/pages/home_page.dart';
-import 'package:showcaseview/showcaseview.dart';
 
 class OnboardingGetStartedButton extends StatelessWidget {
   const OnboardingGetStartedButton({super.key, required this.theme});
@@ -15,9 +14,7 @@ class OnboardingGetStartedButton extends StatelessWidget {
       Navigator.pushAndRemoveUntil(
         context,
         MaterialPageRoute(
-          builder: (context) => ShowCaseWidget(
-            builder: (context) => HomePage(storageService: StorageService()),
-          ),
+          builder: (context) => HomePage(storageService: StorageService()),
         ),
         (route) => false,
       );

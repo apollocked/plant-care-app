@@ -871,13 +871,13 @@ abstract class AppLocalizations {
   /// No description provided for @tourSettingsTitle.
   ///
   /// In en, this message translates to:
-  /// **'Theme & Language ⚙️'**
+  /// **'Settings ⚙️'**
   String get tourSettingsTitle;
 
   /// No description provided for @tourSettingsDesc.
   ///
   /// In en, this message translates to:
-  /// **'Switch between light and dark mode, or change the app language from here.'**
+  /// **'Tap here to open Settings and customize theme, language, and more.'**
   String get tourSettingsDesc;
 
   /// No description provided for @tourBannerTitle.
@@ -939,6 +939,150 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Tap here to register a new plant and set up its care reminders.'**
   String get tourFabDesc;
+
+  /// No description provided for @settings.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get settings;
+
+  /// No description provided for @privacyPolicy.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy Policy'**
+  String get privacyPolicy;
+
+  /// No description provided for @privacyPolicyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy Policy'**
+  String get privacyPolicyTitle;
+
+  /// No description provided for @privacyPolicyLastUpdated.
+  ///
+  /// In en, this message translates to:
+  /// **'Last updated: May 2026'**
+  String get privacyPolicyLastUpdated;
+
+  /// No description provided for @settingsAppearance.
+  ///
+  /// In en, this message translates to:
+  /// **'Appearance'**
+  String get settingsAppearance;
+
+  /// No description provided for @settingsLanguage.
+  ///
+  /// In en, this message translates to:
+  /// **'Language'**
+  String get settingsLanguage;
+
+  /// No description provided for @settingsAbout.
+  ///
+  /// In en, this message translates to:
+  /// **'About'**
+  String get settingsAbout;
+
+  /// No description provided for @settingsVersion.
+  ///
+  /// In en, this message translates to:
+  /// **'Version 1.0.0'**
+  String get settingsVersion;
+
+  /// No description provided for @darkMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Dark Mode'**
+  String get darkMode;
+
+  /// No description provided for @lightMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Light Mode'**
+  String get lightMode;
+
+  /// No description provided for @privacySection1Title.
+  ///
+  /// In en, this message translates to:
+  /// **'1. Information We Collect'**
+  String get privacySection1Title;
+
+  /// No description provided for @privacySection1Body.
+  ///
+  /// In en, this message translates to:
+  /// **'Plant Care does not collect, store, or transmit any personal data to external servers. All information you provide — including plant names, species, care schedules, and reminder preferences — is stored exclusively on your device using local storage (Hive).\n\nWe do not use analytics SDKs, crash reporting tools, or any third-party services that collect personally identifiable information.'**
+  String get privacySection1Body;
+
+  /// No description provided for @privacySection2Title.
+  ///
+  /// In en, this message translates to:
+  /// **'2. Notifications'**
+  String get privacySection2Title;
+
+  /// No description provided for @privacySection2Body.
+  ///
+  /// In en, this message translates to:
+  /// **'If you grant permission, Plant Care uses local push notifications to remind you about watering and feeding schedules. No notification data is sent to external servers. All notification scheduling happens entirely on your device.\n\nYou can revoke notification permission at any time through your device settings or within the app.'**
+  String get privacySection2Body;
+
+  /// No description provided for @privacySection3Title.
+  ///
+  /// In en, this message translates to:
+  /// **'3. Data Storage & Security'**
+  String get privacySection3Title;
+
+  /// No description provided for @privacySection3Body.
+  ///
+  /// In en, this message translates to:
+  /// **'Your data is stored locally using Hive, a lightweight and encrypted local database. Since no data leaves your device, there is no risk of data breach from our side.\n\nIf you uninstall the app, all stored data is permanently deleted.'**
+  String get privacySection3Body;
+
+  /// No description provided for @privacySection4Title.
+  ///
+  /// In en, this message translates to:
+  /// **'4. Third-Party Services'**
+  String get privacySection4Title;
+
+  /// No description provided for @privacySection4Body.
+  ///
+  /// In en, this message translates to:
+  /// **'This app does not integrate any third-party analytics, advertising, or tracking services. The app uses the following packages solely for local functionality:\n  • Hive — local database\n  • Awesome Notifications — local notification scheduling\n  • Provider — in-app state management\n\nNone of these packages transmit your data externally.'**
+  String get privacySection4Body;
+
+  /// No description provided for @privacySection5Title.
+  ///
+  /// In en, this message translates to:
+  /// **'5. Children\'s Privacy'**
+  String get privacySection5Title;
+
+  /// No description provided for @privacySection5Body.
+  ///
+  /// In en, this message translates to:
+  /// **'Plant Care is safe for all ages. We do not collect any personal information from anyone, including children under 13. All data remains on the user\'s device.'**
+  String get privacySection5Body;
+
+  /// No description provided for @privacySection6Title.
+  ///
+  /// In en, this message translates to:
+  /// **'6. Changes to This Policy'**
+  String get privacySection6Title;
+
+  /// No description provided for @privacySection6Body.
+  ///
+  /// In en, this message translates to:
+  /// **'We may update this privacy policy from time to time. Any changes will be reflected within the app. Continued use of the app after changes constitutes acceptance of the updated policy.'**
+  String get privacySection6Body;
+
+  /// No description provided for @privacySection7Title.
+  ///
+  /// In en, this message translates to:
+  /// **'7. Contact'**
+  String get privacySection7Title;
+
+  /// No description provided for @privacySection7Body.
+  ///
+  /// In en, this message translates to:
+  /// **'If you have any questions about this privacy policy, please contact us at:\nplantcare@support.app'**
+  String get privacySection7Body;
 }
 
 class _AppLocalizationsDelegate

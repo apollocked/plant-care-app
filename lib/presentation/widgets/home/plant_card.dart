@@ -3,7 +3,7 @@ import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 import 'package:mock_plant_care_app/data/model/plant_model.dart';
 import 'package:mock_plant_care_app/logic/plant_viewmodel.dart';
 import 'package:mock_plant_care_app/presentation/widgets/details/delete_plant_dialog.dart';
-import 'package:mock_plant_care_app/presentation/widgets/glass_container.dart';
+import 'package:mock_plant_care_app/presentation/widgets/settings/glass_container.dart';
 import 'package:mock_plant_care_app/presentation/widgets/home/plant_card_components.dart';
 import 'package:provider/provider.dart';
 

@@ -12,7 +12,7 @@ import 'package:mock_plant_care_app/presentation/widgets/home/plant_card.dart';
 import 'package:mock_plant_care_app/presentation/widgets/home/stats_row.dart';
 import 'package:mock_plant_care_app/presentation/widgets/home/urgent_banner.dart';
 import 'package:mock_plant_care_app/presentation/widgets/home/section_header.dart';
-import 'package:mock_plant_care_app/presentation/widgets/notfication_handler.dart';
+import 'package:mock_plant_care_app/presentation/widgets/permission/notfication_handler.dart';
 import 'package:mock_plant_care_app/logic/plant_viewmodel.dart';
 import 'package:mock_plant_care_app/logic/theme_viewmodel.dart';
 import 'package:mock_plant_care_app/data/services/storage_service.dart';
@@ -49,9 +49,7 @@ class _HomePageState extends State<HomePage>
   @override
   void initState() {
     super.initState();
-    _showcaseView = ShowcaseView.register(
-      onFinish: widget.onShowcaseFinished,
-    );
+    _showcaseView = ShowcaseView.register(onFinish: widget.onShowcaseFinished);
     _fabAnim = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 600),

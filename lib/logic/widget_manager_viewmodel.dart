@@ -4,7 +4,7 @@ import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 import 'package:mock_plant_care_app/data/model/plant_model.dart';
 import 'package:mock_plant_care_app/logic/language_viewmodel.dart';
 import 'package:mock_plant_care_app/main.dart';
-import 'package:mock_plant_care_app/presentation/widgets/plant_widget_canvas.dart';
+import 'package:mock_plant_care_app/presentation/widgets/home_screen_widget/plant_widget_canvas.dart';
 import 'package:provider/provider.dart';
 
 class WidgetManager {

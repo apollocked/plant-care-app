@@ -4,8 +4,8 @@ import 'package:mock_plant_care_app/core/l10n/l10n.dart';
 import 'package:mock_plant_care_app/logic/language_viewmodel.dart';
 import 'package:mock_plant_care_app/logic/theme_viewmodel.dart';
 import 'package:mock_plant_care_app/presentation/pages/privacy_policy_page.dart';
-import 'package:mock_plant_care_app/presentation/widgets/glass_container.dart';
-import 'package:mock_plant_care_app/presentation/widgets/gradient_scaffold.dart';
+import 'package:mock_plant_care_app/presentation/widgets/settings/glass_container.dart';
+import 'package:mock_plant_care_app/presentation/widgets/settings/gradient_scaffold.dart';
 import 'package:provider/provider.dart';
 
 class SettingsPage extends StatelessWidget {
@@ -40,17 +40,24 @@ class SettingsPage extends StatelessWidget {
                 GlassContainer(
                   borderRadius: 16,
                   padding: EdgeInsets.zero,
-                  child: Column(
-                    children: [
-                      _SettingsSwitchTile(
-                        icon: themeVm.isDarkMode
-                            ? Icons.dark_mode_outlined
-                            : Icons.light_mode_outlined,
-                        title: themeVm.isDarkMode ? loc.darkMode : loc.lightMode,
-                        value: themeVm.isDarkMode,
-                        onChanged: (_) => themeVm.toggleTheme(),
-                      ),
-                    ],
+                  child: Material(
+                    type: MaterialType.transparency,
+                    clipBehavior: Clip.antiAlias,
+                    borderRadius: BorderRadius.circular(16),
+                    child: Column(
+                      children: [
+                        _SettingsSwitchTile(
+                          icon: themeVm.isDarkMode
+                              ? Icons.dark_mode_outlined
+                              : Icons.light_mode_outlined,
+                          title: themeVm.isDarkMode
+                              ? loc.darkMode
+                              : loc.lightMode,
+                          value: themeVm.isDarkMode,
+                          onChanged: (_) => themeVm.toggleTheme(),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 const SizedBox(height: 24),
@@ -63,28 +70,39 @@ class SettingsPage extends StatelessWidget {
                 GlassContainer(
                   borderRadius: 16,
                   padding: EdgeInsets.zero,
-                  child: Column(
-                    children: L10n.all.map((Locale locale) {
-                      final bool isSelected = langService.locale == locale;
-                      return ListTile(
-                        leading: Icon(
-                          isSelected ? Icons.check_circle : Icons.language_outlined,
-                          color: isSelected ? scheme.primary : null,
-                          size: 22,
-                        ),
-                        title: Text(
-                          L10n.getNativeName(locale.languageCode),
-                          style: TextStyle(
-                            fontWeight: isSelected ? FontWeight.w600 : null,
+                  child: Material(
+                    type: MaterialType.transparency,
+                    clipBehavior: Clip.antiAlias,
+                    borderRadius: BorderRadius.circular(16),
+                    child: Column(
+                      children: L10n.all.map((Locale locale) {
+                        final bool isSelected = langService.locale == locale;
+                        return ListTile(
+                          leading: Icon(
+                            isSelected
+                                ? Icons.check_circle
+                                : Icons.language_outlined,
                             color: isSelected ? scheme.primary : null,
+                            size: 22,
                           ),
-                        ),
-                        trailing: isSelected
-                            ? Icon(Icons.check, size: 18, color: scheme.primary)
-                            : null,
-                        onTap: () => langService.setLocale(locale),
-                      );
-                    }).toList(),
+                          title: Text(
+                            L10n.getNativeName(locale.languageCode),
+                            style: TextStyle(
+                              fontWeight: isSelected ? FontWeight.w600 : null,
+                              color: isSelected ? scheme.primary : null,
+                            ),
+                          ),
+                          trailing: isSelected
+                              ? Icon(
+                                  Icons.check,
+                                  size: 18,
+                                  color: scheme.primary,
+                                )
+                              : null,
+                          onTap: () => langService.setLocale(locale),
+                        );
+                      }).toList(),
+                    ),
                   ),
                 ),
                 const SizedBox(height: 24),
@@ -97,27 +115,42 @@ class SettingsPage extends StatelessWidget {
                 GlassContainer(
                   borderRadius: 16,
                   padding: EdgeInsets.zero,
-                  child: Column(
-                    children: [
-                      ListTile(
-                        leading: Icon(Icons.privacy_tip_outlined, color: scheme.primary, size: 22),
-                        title: Text(loc.privacyPolicy),
-                        trailing: Icon(
-                          Icons.chevron_right,
-                          size: 20,
-                          color: scheme.onSurface.withValues(alpha: 0.5),
+                  child: Material(
+                    type: MaterialType.transparency,
+                    clipBehavior: Clip.antiAlias,
+                    borderRadius: BorderRadius.circular(16),
+                    child: Column(
+                      children: [
+                        ListTile(
+                          leading: Icon(
+                            Icons.privacy_tip_outlined,
+                            color: scheme.primary,
+                            size: 22,
+                          ),
+                          title: Text(loc.privacyPolicy),
+                          trailing: Icon(
+                            Icons.chevron_right,
+                            size: 20,
+                            color: scheme.onSurface.withValues(alpha: 0.5),
+                          ),
+                          onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const PrivacyPolicyPage(),
+                            ),
+                          ),
                         ),
-                        onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (_) => const PrivacyPolicyPage()),
+                        const Divider(height: 1, indent: 56, endIndent: 16),
+                        ListTile(
+                          leading: Icon(
+                            Icons.info_outline,
+                            color: scheme.primary,
+                            size: 22,
+                          ),
+                          title: Text(loc.settingsVersion),
                         ),
-                      ),
-                      const Divider(height: 1, indent: 56, endIndent: 16),
-                      ListTile(
-                        leading: Icon(Icons.info_outline, color: scheme.primary, size: 22),
-                        title: Text(loc.settingsVersion),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
                 const SizedBox(height: 32),
@@ -197,7 +230,9 @@ class _SettingsSwitchTile extends StatelessWidget {
       onChanged: onChanged,
       activeThumbColor: scheme.primary,
       inactiveThumbColor: Theme.of(context).disabledColor,
-      inactiveTrackColor: Theme.of(context).disabledColor.withValues(alpha: 0.3),
+      inactiveTrackColor: Theme.of(
+        context,
+      ).disabledColor.withValues(alpha: 0.3),
     );
   }
 }

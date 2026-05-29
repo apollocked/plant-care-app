@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mock_plant_care_app/presentation/widgets/details/care_status_components.dart';
-import 'package:mock_plant_care_app/presentation/widgets/glass_container.dart';
+import 'package:mock_plant_care_app/presentation/widgets/settings/glass_container.dart';
 
 class CareStatusCard extends StatelessWidget {
   const CareStatusCard({

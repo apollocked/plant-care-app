@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 import 'package:mock_plant_care_app/data/model/plant_model.dart';
-import 'package:mock_plant_care_app/presentation/widgets/glass_container.dart';
+import 'package:mock_plant_care_app/presentation/widgets/settings/glass_container.dart';
 
 class PlantHeroCard extends StatelessWidget {
   const PlantHeroCard({super.key, required this.plant});

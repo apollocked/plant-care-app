@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
-import 'package:mock_plant_care_app/presentation/widgets/gradient_scaffold.dart';
+import 'package:mock_plant_care_app/presentation/widgets/settings/gradient_scaffold.dart';
 
 class PrivacyPolicyPage extends StatelessWidget {
   const PrivacyPolicyPage({super.key});
@@ -9,7 +9,6 @@ class PrivacyPolicyPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context)!;
     final ColorScheme scheme = Theme.of(context).colorScheme;
-
     return Scaffold(
       appBar: AppBar(
         title: Text(loc.privacyPolicyTitle),
@@ -50,7 +49,10 @@ class PrivacyPolicyPage extends StatelessWidget {
                 const SizedBox(height: 6),
                 Center(
                   child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 12,
+                      vertical: 4,
+                    ),
                     decoration: BoxDecoration(
                       color: scheme.primary.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(12),
@@ -105,10 +107,7 @@ class PrivacyPolicyPage extends StatelessWidget {
 }
 
 class _PolicySection extends StatelessWidget {
-  const _PolicySection({
-    required this.title,
-    required this.body,
-  });
+  const _PolicySection({required this.title, required this.body});
 
   final String title;
   final String body;
@@ -143,7 +142,9 @@ class _PolicySection extends StatelessWidget {
                 Expanded(
                   child: Text(
                     title,
-                    style: textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w700),
+                    style: textTheme.titleSmall?.copyWith(
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ),
               ],

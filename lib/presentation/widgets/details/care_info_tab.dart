@@ -3,7 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 import 'package:mock_plant_care_app/data/model/plant_model.dart';
 import 'package:mock_plant_care_app/presentation/widgets/details/care_status_card.dart';
-import 'package:mock_plant_care_app/presentation/widgets/glass_container.dart';
+import 'package:mock_plant_care_app/presentation/widgets/settings/glass_container.dart';
 
 class CareInfoTab extends StatelessWidget {
   const CareInfoTab({super.key, required this.plant});
@@ -70,10 +70,7 @@ class CareInfoTab extends StatelessWidget {
             lastActionLabel: loc.lastFed(_timeAgo(plant.lastFedAt, loc)),
             lastActionAt: plant.lastFedAt,
             nextDueAt: plant.nextFoodDue,
-            nextDueLabel: _dueLabel(
-              loc.scheduleNextFeeding,
-              plant.nextFoodDue,
-            ),
+            nextDueLabel: _dueLabel(loc.scheduleNextFeeding, plant.nextFoodDue),
             intervalLabel: loc.everyNDays(plant.feedIntervalDays),
             onSurface: onSurface,
           ),

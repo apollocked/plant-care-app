@@ -11,7 +11,7 @@ import 'package:mock_plant_care_app/presentation/pages/home_page.dart';
 import 'package:mock_plant_care_app/logic/plant_viewmodel.dart';
 import 'package:mock_plant_care_app/logic/theme_viewmodel.dart';
 import 'package:mock_plant_care_app/presentation/pages/onboarding_page.dart';
-import 'package:mock_plant_care_app/presentation/widgets/notfication_handler.dart';
+import 'package:mock_plant_care_app/presentation/widgets/permission/notfication_handler.dart';
 import 'package:provider/provider.dart';
 
 final GlobalKey<ScaffoldMessengerState> snackbarKey =
@@ -32,6 +32,7 @@ Future<void> main() async {
     storageService,
     notificationService,
   );
+
   final ThemeViewModel themeViewModel = ThemeViewModel(storageService);
   final LanguageService languageService = LanguageService();
 

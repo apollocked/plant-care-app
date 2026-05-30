@@ -1,4 +1,3 @@
-import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
@@ -11,7 +10,6 @@ import 'package:mock_plant_care_app/presentation/pages/home_page.dart';
 import 'package:mock_plant_care_app/logic/plant_viewmodel.dart';
 import 'package:mock_plant_care_app/logic/theme_viewmodel.dart';
 import 'package:mock_plant_care_app/presentation/pages/onboarding_page.dart';
-import 'package:mock_plant_care_app/presentation/widgets/permission/notfication_handler.dart';
 import 'package:provider/provider.dart';
 
 final GlobalKey<ScaffoldMessengerState> snackbarKey =
@@ -69,18 +67,6 @@ class AppWidget extends StatelessWidget {
   final bool isFirstTime;
   final StorageService storageService;
 
-  void _onShowcaseFinished() {
-    Future.delayed(const Duration(seconds: 5), () {
-      final BuildContext? ctx = navigatorKey.currentContext;
-      if (ctx == null) return;
-      AwesomeNotifications().isNotificationAllowed().then((bool allowed) {
-        if (!allowed && ctx.mounted) {
-          NotificationPermissionHandler.showPermissionDialog(ctx);
-        }
-      });
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     final ThemeViewModel themeVm = context.watch<ThemeViewModel>();
@@ -106,7 +92,6 @@ class AppWidget extends StatelessWidget {
           ? const OnboardingPage()
           : HomePage(
               storageService: storageService,
-              onShowcaseFinished: _onShowcaseFinished,
             ),
     );
   }

@@ -12,9 +12,10 @@ class EmptyPlantState extends StatelessWidget {
 
     return Center(
       child: Padding(
-        padding: const EdgeInsets.all(32),
+        padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 10),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
               width: 120,
@@ -40,7 +41,7 @@ class EmptyPlantState extends StatelessWidget {
                 cacheHeight: 240,
               ),
             ),
-            const SizedBox(height: 24),
+            const SizedBox(height: 18),
             Text(
               loc.noPlantsYet,
               style: TextStyle(
@@ -49,7 +50,7 @@ class EmptyPlantState extends StatelessWidget {
                 color: isDark ? Colors.white : const Color(0xFF14312C),
               ),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 8),
             Text(
               loc.noPlantsDesc,
               textAlign: TextAlign.center,
@@ -61,7 +62,7 @@ class EmptyPlantState extends StatelessWidget {
                     : Colors.black.withValues(alpha: 0.45),
               ),
             ),
-            const SizedBox(height: 28),
+            const SizedBox(height: 18),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
               decoration: BoxDecoration(

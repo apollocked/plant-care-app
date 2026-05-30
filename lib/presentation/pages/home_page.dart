@@ -12,7 +12,6 @@ import 'package:mock_plant_care_app/presentation/widgets/home/plant_card.dart';
 import 'package:mock_plant_care_app/presentation/widgets/home/stats_row.dart';
 import 'package:mock_plant_care_app/presentation/widgets/home/urgent_banner.dart';
 import 'package:mock_plant_care_app/presentation/widgets/home/section_header.dart';
-import 'package:mock_plant_care_app/presentation/widgets/permission/notfication_handler.dart';
 import 'package:mock_plant_care_app/logic/plant_viewmodel.dart';
 import 'package:mock_plant_care_app/logic/theme_viewmodel.dart';
 import 'package:mock_plant_care_app/data/services/storage_service.dart';
@@ -25,10 +24,8 @@ class HomePage extends StatefulWidget {
   const HomePage({
     super.key,
     required this.storageService,
-    this.onShowcaseFinished,
   });
   final StorageService storageService;
-  final VoidCallback? onShowcaseFinished;
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -49,7 +46,7 @@ class _HomePageState extends State<HomePage>
   @override
   void initState() {
     super.initState();
-    _showcaseView = ShowcaseView.register(onFinish: widget.onShowcaseFinished);
+    _showcaseView = ShowcaseView.register(onFinish: () {});
     _fabAnim = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 600),
@@ -82,8 +79,6 @@ class _HomePageState extends State<HomePage>
     if (!widget.storageService.hasSeenHomeTour()) {
       _startShowcaseTour();
       widget.storageService.setSeenHomeTour();
-    } else {
-      _scheduleNotificationPermissionCheck(delay: const Duration(seconds: 2));
     }
   }
 
@@ -99,17 +94,6 @@ class _HomePageState extends State<HomePage>
       if (plantVm.plants.isEmpty) _emptyStateKey,
       _fabKey,
     ]);
-  }
-
-  void _scheduleNotificationPermissionCheck({Duration delay = Duration.zero}) {
-    Future.delayed(delay, () {
-      if (!mounted) return;
-      AwesomeNotifications().isNotificationAllowed().then((bool allowed) {
-        if (!allowed && mounted) {
-          NotificationPermissionHandler.showPermissionDialog(context);
-        }
-      });
-    });
   }
 
   @override

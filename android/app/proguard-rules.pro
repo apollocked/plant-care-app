@@ -1,0 +1,2 @@
+-keep class com.awesome_notifications.** { *; }
+-keep class awesome_notifications.** { *; }

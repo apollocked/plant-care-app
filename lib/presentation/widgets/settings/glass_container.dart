@@ -95,6 +95,7 @@ class _LightCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ColorScheme scheme = Theme.of(context).colorScheme;
     return Container(
       margin: margin,
       padding: padding,
@@ -102,12 +103,12 @@ class _LightCard extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(borderRadius),
         border: Border.all(
-          color: const Color(0xFF2E7D52).withValues(alpha: 0.08),
+          color: scheme.primary.withValues(alpha: 0.08),
           width: 1,
         ),
         boxShadow: [
           BoxShadow(
-            color: const Color(0xFF2E7D52).withValues(alpha: 0.07),
+            color: scheme.primary.withValues(alpha: 0.07),
             blurRadius: 16,
             offset: const Offset(0, 4),
           ),

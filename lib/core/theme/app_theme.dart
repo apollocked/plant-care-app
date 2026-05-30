@@ -51,7 +51,7 @@ class AppTheme {
       labelSmall: TextStyle(color: _lightSubtext),
     ),
     cardColor: _lightSurface,
-    dividerColor: const Color(0xFF2E7D52).withValues(alpha: 0.12),
+    dividerColor: _primaryGreen.withValues(alpha: 0.12),
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
       fillColor: _lightSurface,

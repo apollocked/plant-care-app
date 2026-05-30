@@ -39,19 +39,31 @@ flutter_launcher_icons:
   adaptive_icon_background: "#008080"
   adaptive_icon_foreground: "assets/images/plant_image.png"
 
-# 2. Native Splash Configuration (Root Level - Moved out of the flutter block)
+# 2. Native Splash Configuration (Root Level)
 flutter_native_splash:
+  # Light Mode Setup
   color: "#F2F7F4"
-  image: assets/icons/plant_icon.png
-  ios_content_mode: scaleAspectFill
+  image: assets/icons/splash_icon.png
+
+  # Dark Mode Setup (Falls back to this on older platforms if system dark mode is enabled)
+  color_dark: "#0B1A16"
+  image_dark: assets/icons/splash_icon.png
+
+  # Native UI scaling alignment (Keeps aspect ratios intact)
+  ios_content_mode: center
+  android_gravity: center
+  fullscreen: true
+
+  # Android 12+ Splash Screen API Specifics
   android_12:
-    image: assets/icons/plant_icon.png
+    image: assets/icons/splash_icon.png
     color: "#F2F7F4"
     icon_background_color: "#F2F7F4"
-    image_dark: assets/icons/plant_icon.png
+
+    # Android 12+ Dark Mode
+    image_dark: assets/icons/splash_icon.png
     color_dark: "#0B1A16"
     icon_background_color_dark: "#0B1A16"
-  fullscreen: true
 
 flutter:
   generate: true

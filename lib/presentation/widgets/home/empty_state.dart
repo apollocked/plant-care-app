@@ -12,7 +12,7 @@ class EmptyPlantState extends StatelessWidget {
 
     return Center(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 6),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -24,8 +24,8 @@ class EmptyPlantState extends StatelessWidget {
                 shape: BoxShape.circle,
                 gradient: RadialGradient(
                   colors: [
-                    scheme.primary.withValues(alpha: 0.15),
-                    scheme.primary.withValues(alpha: 0.03),
+                    scheme.primary.withValues(alpha: 0.35),
+                    scheme.primary.withValues(alpha: 0.12),
                   ],
                 ),
                 border: Border.all(
@@ -33,9 +33,9 @@ class EmptyPlantState extends StatelessWidget {
                   width: 1.5,
                 ),
               ),
-              padding: const EdgeInsets.all(28),
+              padding: const EdgeInsets.all(12),
               child: Image.asset(
-                'assets/icons/plant_icon.png',
+                'assets/images/plant_image.png',
                 fit: BoxFit.contain,
                 cacheWidth: 240,
                 cacheHeight: 240,

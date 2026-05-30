@@ -7,13 +7,14 @@ import 'allow_button.dart';
 import 'later_button.dart';
 
 class NotificationPermissionHandler {
-  static void showPermissionDialog(BuildContext context) {
-    showDialog(
+  static Future<bool> showPermissionDialog(BuildContext context) async {
+    final result = await showDialog<bool>(
       context: context,
       barrierDismissible: false,
       barrierColor: Colors.black.withValues(alpha: 0.55),
       builder: (_) => const _PermissionDialog(),
     );
+    return result ?? false;
   }
 }
 

@@ -23,7 +23,7 @@ class LaterButton extends StatelessWidget {
             side: BorderSide(color: subtextColor.withValues(alpha: 0.25)),
           ),
         ),
-        onPressed: () => Navigator.of(context).pop(),
+        onPressed: () => Navigator.of(context).pop(false),
         child: Text(
           loc.maybeLater,
           style: TextStyle(

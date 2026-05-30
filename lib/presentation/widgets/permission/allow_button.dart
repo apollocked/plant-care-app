@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 
 class AllowButton extends StatelessWidget {
@@ -38,10 +37,7 @@ class AllowButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(16),
             ),
           ),
-          onPressed: () {
-            Navigator.of(context).pop();
-            AwesomeNotifications().requestPermissionToSendNotifications();
-          },
+          onPressed: () => Navigator.of(context).pop(true),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

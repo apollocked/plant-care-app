@@ -28,14 +28,20 @@ class _AddPlantButtonState extends State<AddPlantButton> {
       if (mounted) {
         final PlantViewModel plantVm = context.read<PlantViewModel>();
         final bool isFirstPlant = plantVm.plants.isEmpty;
-        await plantVm.addPlant(plant, context);
-        final NavigatorState nav = Navigator.of(context);
-        nav.pop();
+
         if (isFirstPlant && mounted) {
-          final bool allowed = await AwesomeNotifications().isNotificationAllowed();
-          if (!allowed && nav.context.mounted) {
-            NotificationPermissionHandler.showPermissionDialog(nav.context);
+          bool allowed = await AwesomeNotifications().isNotificationAllowed();
+          if (!allowed && mounted) {
+            final bool wantsAllow = await NotificationPermissionHandler.showPermissionDialog(context);
+            if (wantsAllow && mounted) {
+              allowed = await AwesomeNotifications().requestPermissionToSendNotifications();
+            }
           }
+        }
+
+        await plantVm.addPlant(plant, context);
+        if (mounted) {
+          Navigator.of(context).pop();
         }
       }
     } catch (e) {

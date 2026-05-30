@@ -90,9 +90,7 @@ class AppWidget extends StatelessWidget {
       supportedLocales: AppLocalizations.supportedLocales,
       home: isFirstTime
           ? const OnboardingPage()
-          : HomePage(
-              storageService: storageService,
-            ),
+          : HomePage(storageService: storageService),
     );
   }
 }

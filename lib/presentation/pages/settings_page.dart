@@ -153,14 +153,18 @@ class SettingsPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: 32),
+                const SizedBox(height: 24),
                 Center(
                   child: Text(
-                    'Plant Care v1.0.0',
+                    '2026 - Apollo © - All rights reserved \n Made with ❤️ in Kurdistan',
                     style: TextStyle(
                       fontSize: 12,
-                      color: scheme.onSurface.withValues(alpha: 0.35),
+                      color: scheme.onSurface.withValues(alpha: 0.5),
+                      fontWeight: FontWeight.w400,
+                      height: 1.4,
+                      letterSpacing: 0.2,
                     ),
+                    textAlign: TextAlign.center,
                   ),
                 ),
                 const SizedBox(height: 16),

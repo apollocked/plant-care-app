@@ -80,7 +80,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
           onBoaerdingGradient(context, theme),
           onboardingDecorativeCircle(theme),
           Positioned(
-            top: 130,
+            top: 135,
             left: 0,
             right: 0,
             child: TweenAnimationBuilder<double>(

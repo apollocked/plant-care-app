@@ -29,7 +29,7 @@ Future<void> main() async {
   final PlantViewModel plantViewModel = PlantViewModel(
     storageService,
     notificationService,
-  );
+  ); 
 
   final ThemeViewModel themeViewModel = ThemeViewModel(storageService);
   final LanguageService languageService = LanguageService(storageService);

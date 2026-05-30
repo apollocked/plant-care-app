@@ -35,7 +35,7 @@ class _InfoOnboardingWidgetState extends State<InfoOnboardingWidget>
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Spacer(flex: 4),
+          const Spacer(flex: 5),
           SizedBox(
             height: 250,
             child: Lottie.asset(

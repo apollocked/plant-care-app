@@ -985,7 +985,7 @@ abstract class AppLocalizations {
   /// No description provided for @settingsVersion.
   ///
   /// In en, this message translates to:
-  /// **'Version 1.0.0'**
+  /// **'Version 1.0.1'**
   String get settingsVersion;
 
   /// No description provided for @darkMode.
@@ -1081,7 +1081,7 @@ abstract class AppLocalizations {
   /// No description provided for @privacySection7Body.
   ///
   /// In en, this message translates to:
-  /// **'If you have any questions about this privacy policy, please contact us at:\nplantcare@support.app'**
+  /// **'If you have any questions about this privacy policy, please contact us at:\nmahamadbarznji712@gmail.com'**
   String get privacySection7Body;
 }
 

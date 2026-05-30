@@ -664,7 +664,7 @@ class _MockLoc extends AppLocalizations {
   String get settingsAbout => 'About';
 
   @override
-  String get settingsVersion => 'Version 1.0.0';
+  String get settingsVersion => 'Version 1.0.1';
 
   @override
   String get darkMode => 'Dark Mode';

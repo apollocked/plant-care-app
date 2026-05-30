@@ -535,7 +535,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsAbout => 'About';
 
   @override
-  String get settingsVersion => 'Version 1.0.0';
+  String get settingsVersion => 'Version 1.0.1';
 
   @override
   String get darkMode => 'Dark Mode';
@@ -590,5 +590,5 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get privacySection7Body =>
-      'If you have any questions about this privacy policy, please contact us at:\nplantcare@support.app';
+      'If you have any questions about this privacy policy, please contact us at:\nmahamadbarznji712@gmail.com';
 }

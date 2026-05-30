@@ -532,7 +532,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get settingsAbout => 'حول';
 
   @override
-  String get settingsVersion => 'الإصدار 1.0.0';
+  String get settingsVersion => 'الإصدار 1.0.1';
 
   @override
   String get darkMode => 'الوضع الداكن';
@@ -587,5 +587,5 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get privacySection7Body =>
-      'إذا كان لديك أي أسئلة حول سياسة الخصوصية هذه، يرجى الاتصال بنا على:\nplantcare@support.app';
+      'إذا كان لديك أي أسئلة حول سياسة الخصوصية هذه، يرجى الاتصال بنا على:\nmahamadbarznji712@gmail.com';
 }

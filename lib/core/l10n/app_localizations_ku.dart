@@ -507,7 +507,7 @@ class AppLocalizationsKu extends AppLocalizations {
   String get settingsAbout => 'دەربارە';
 
   @override
-  String get settingsVersion => 'وەشانی 1.0.0';
+  String get settingsVersion => 'وەشانی 1.0.1';
 
   @override
   String get darkMode => 'ڕووکاری تاریک';
@@ -562,5 +562,5 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get privacySection7Body =>
-      'ئەگەر پرسیارێکت هەبێت دەربارەی ئەم سیاسەی تایبەتییە، تکایە پەیوەندیمان پێوە بکە لە:\nplantcare@support.app';
+      'ئەگەر پرسیارێکت هەبێت دەربارەی ئەم سیاسەی تایبەتییە، تکایە پەیوەندیمان پێوە بکە لە:\nmahamadbarznji712@gmail.com';
 }

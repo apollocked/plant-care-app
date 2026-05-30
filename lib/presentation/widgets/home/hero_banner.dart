@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
 
 class HeroBanner extends StatelessWidget {
-  const HeroBanner({super.key, required this.urgentCount});
+  const HeroBanner({super.key, required this.urgentCount, required this.plantCount});
 
   final int urgentCount;
+  final int plantCount;
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +57,11 @@ class HeroBanner extends StatelessWidget {
                   child: Text(
                     urgentCount > 0
                         ? loc.heroBannerUrgent(urgentCount)
-                        : loc.heroBannerAllGood,
+                        : plantCount > 0
+                            ? loc.heroBannerAllGood
+                            : loc.noPlantsYet,
+                        
+                      
                     style: const TextStyle(
                       color: Colors.white,
                       fontSize: 12,

@@ -75,6 +75,12 @@ class StorageService {
     await _settingsBox.put(themeKey, modeName);
   }
 
+  String? getLanguage() => _settingsBox.get('language_code') as String?;
+
+  Future<void> saveLanguage(String languageCode) async {
+    await _settingsBox.put('language_code', languageCode);
+  }
+
   Future<void> setIsFirstTime(bool value) async {
     await _settingsBox.put(firstTimeKey, value);
   }

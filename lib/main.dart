@@ -34,10 +34,11 @@ Future<void> main() async {
   );
 
   final ThemeViewModel themeViewModel = ThemeViewModel(storageService);
-  final LanguageService languageService = LanguageService();
+  final LanguageService languageService = LanguageService(storageService);
 
   await plantViewModel.loadPlants();
   await themeViewModel.loadThemeMode();
+  languageService.loadLocale();
   FlutterNativeSplash.remove();
 
   final bool isFirstTime = storageService.getIsFirstTime();

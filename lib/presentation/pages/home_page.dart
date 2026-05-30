@@ -115,10 +115,12 @@ class _HomePageState extends State<HomePage>
   @override
   Widget build(BuildContext context) {
     final PlantViewModel plantVm = context.watch<PlantViewModel>();
+
     final ThemeViewModel themeVm = context.watch<ThemeViewModel>();
     final bool isDark = themeVm.isDarkMode;
     final ColorScheme scheme = Theme.of(context).colorScheme;
     final loc = AppLocalizations.of(context)!;
+    final int plantCount = plantVm.plants.length;
 
     final int urgent = plantVm.plants
         .where((p) => p.needsWaterNow || p.needsFoodNow)
@@ -165,7 +167,10 @@ class _HomePageState extends State<HomePage>
                     description: loc.tourBannerDesc,
                     isDark: isDark,
                     targetBorderRadius: BorderRadius.circular(24),
-                    child: HeroBanner(urgentCount: urgent),
+                    child: HeroBanner(
+                      urgentCount: urgent,
+                      plantCount: plantCount,
+                    ),
                   ),
                 ),
               ),

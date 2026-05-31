@@ -94,7 +94,7 @@ Get Plant Care on your device:
 
 ```bash
 # Clone the repository
-git clone https://github.com/apollocked/plant-care-mock-app.git
+git clone https://github.com/apollocked/plant-care-app.git
 cd plant-care-mock-app
 
 # Install dependencies

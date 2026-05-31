@@ -2,10 +2,10 @@
 
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
-import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
-import 'package:mock_plant_care_app/logic/add_plant_viewmodel.dart';
-import 'package:mock_plant_care_app/logic/plant_viewmodel.dart';
-import 'package:mock_plant_care_app/presentation/widgets/permission/notfication_handler.dart';
+import 'package:plant_care_app/core/l10n/app_localizations.dart';
+import 'package:plant_care_app/logic/add_plant_viewmodel.dart';
+import 'package:plant_care_app/logic/plant_viewmodel.dart';
+import 'package:plant_care_app/presentation/widgets/permission/notfication_handler.dart';
 import 'package:provider/provider.dart';
 
 class AddPlantButton extends StatefulWidget {
@@ -32,9 +32,13 @@ class _AddPlantButtonState extends State<AddPlantButton> {
         if (isFirstPlant && mounted) {
           bool allowed = await AwesomeNotifications().isNotificationAllowed();
           if (!allowed && mounted) {
-            final bool wantsAllow = await NotificationPermissionHandler.showPermissionDialog(context);
+            final bool wantsAllow =
+                await NotificationPermissionHandler.showPermissionDialog(
+                  context,
+                );
             if (wantsAllow && mounted) {
-              allowed = await AwesomeNotifications().requestPermissionToSendNotifications();
+              allowed = await AwesomeNotifications()
+                  .requestPermissionToSendNotifications();
             }
           }
         }

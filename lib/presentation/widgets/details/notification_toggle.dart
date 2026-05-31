@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
-import 'package:mock_plant_care_app/data/model/plant_model.dart';
-import 'package:mock_plant_care_app/presentation/widgets/settings/glass_container.dart';
-import 'package:mock_plant_care_app/logic/plant_viewmodel.dart';
+import 'package:plant_care_app/core/l10n/app_localizations.dart';
+import 'package:plant_care_app/data/model/plant_model.dart';
+import 'package:plant_care_app/presentation/widgets/settings/glass_container.dart';
+import 'package:plant_care_app/logic/plant_viewmodel.dart';
 
 class NotificationToggleCard extends StatelessWidget {
   const NotificationToggleCard({

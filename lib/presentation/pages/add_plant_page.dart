@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
-import 'package:mock_plant_care_app/presentation/widgets/add/identity_section.dart';
-import 'package:mock_plant_care_app/presentation/widgets/add/schedule_section.dart';
-import 'package:mock_plant_care_app/presentation/widgets/add/reminder_section.dart';
-import 'package:mock_plant_care_app/presentation/widgets/add/add_plant_button.dart';
-import 'package:mock_plant_care_app/logic/add_plant_viewmodel.dart';
-import 'package:mock_plant_care_app/logic/plant_viewmodel.dart';
+import 'package:plant_care_app/core/l10n/app_localizations.dart';
+import 'package:plant_care_app/presentation/widgets/add/identity_section.dart';
+import 'package:plant_care_app/presentation/widgets/add/schedule_section.dart';
+import 'package:plant_care_app/presentation/widgets/add/reminder_section.dart';
+import 'package:plant_care_app/presentation/widgets/add/add_plant_button.dart';
+import 'package:plant_care_app/logic/add_plant_viewmodel.dart';
+import 'package:plant_care_app/logic/plant_viewmodel.dart';
 import 'package:provider/provider.dart';
 
 class AddPlantPage extends StatelessWidget {

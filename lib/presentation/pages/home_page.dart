@@ -1,30 +1,27 @@
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
-import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
-import 'package:mock_plant_care_app/data/model/plant_model.dart';
-import 'package:mock_plant_care_app/core/notifications/notification_controller.dart';
-import 'package:mock_plant_care_app/presentation/pages/plant_details_page.dart';
-import 'package:mock_plant_care_app/presentation/widgets/home/add_plant_fab.dart';
-import 'package:mock_plant_care_app/presentation/widgets/home/empty_state.dart';
-import 'package:mock_plant_care_app/presentation/widgets/home/hero_banner.dart';
-import 'package:mock_plant_care_app/presentation/widgets/home/home_header.dart';
-import 'package:mock_plant_care_app/presentation/widgets/home/plant_card.dart';
-import 'package:mock_plant_care_app/presentation/widgets/home/stats_row.dart';
-import 'package:mock_plant_care_app/presentation/widgets/home/urgent_banner.dart';
-import 'package:mock_plant_care_app/presentation/widgets/home/section_header.dart';
-import 'package:mock_plant_care_app/logic/plant_viewmodel.dart';
-import 'package:mock_plant_care_app/logic/theme_viewmodel.dart';
-import 'package:mock_plant_care_app/data/services/storage_service.dart';
-import 'package:mock_plant_care_app/presentation/pages/settings_page.dart';
-import 'package:mock_plant_care_app/presentation/widgets/onboarding/build_showcase.dart';
+import 'package:plant_care_app/core/l10n/app_localizations.dart';
+import 'package:plant_care_app/data/model/plant_model.dart';
+import 'package:plant_care_app/core/notifications/notification_controller.dart';
+import 'package:plant_care_app/presentation/pages/plant_details_page.dart';
+import 'package:plant_care_app/presentation/widgets/home/add_plant_fab.dart';
+import 'package:plant_care_app/presentation/widgets/home/empty_state.dart';
+import 'package:plant_care_app/presentation/widgets/home/hero_banner.dart';
+import 'package:plant_care_app/presentation/widgets/home/home_header.dart';
+import 'package:plant_care_app/presentation/widgets/home/plant_card.dart';
+import 'package:plant_care_app/presentation/widgets/home/stats_row.dart';
+import 'package:plant_care_app/presentation/widgets/home/urgent_banner.dart';
+import 'package:plant_care_app/presentation/widgets/home/section_header.dart';
+import 'package:plant_care_app/logic/plant_viewmodel.dart';
+import 'package:plant_care_app/logic/theme_viewmodel.dart';
+import 'package:plant_care_app/data/services/storage_service.dart';
+import 'package:plant_care_app/presentation/pages/settings_page.dart';
+import 'package:plant_care_app/presentation/widgets/onboarding/build_showcase.dart';
 import 'package:provider/provider.dart';
 import 'package:showcaseview/showcaseview.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({
-    super.key,
-    required this.storageService,
-  });
+  const HomePage({super.key, required this.storageService});
   final StorageService storageService;
 
   @override

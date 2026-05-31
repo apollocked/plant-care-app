@@ -1,9 +1,9 @@
 // ignore_for_file: unused_field
 
 import 'package:flutter/material.dart';
-import 'package:mock_plant_care_app/data/model/plant_model.dart';
-import 'package:mock_plant_care_app/data/services/notification_service.dart';
-import 'package:mock_plant_care_app/data/services/storage_service.dart';
+import 'package:plant_care_app/data/model/plant_model.dart';
+import 'package:plant_care_app/data/services/notification_service.dart';
+import 'package:plant_care_app/data/services/storage_service.dart';
 
 class AddPlantViewModel extends ChangeNotifier {
   AddPlantViewModel(this._storageService, this._notificationService);

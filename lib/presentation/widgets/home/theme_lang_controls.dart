@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mock_plant_care_app/core/l10n/l10n.dart';
-import 'package:mock_plant_care_app/logic/language_viewmodel.dart';
+import 'package:plant_care_app/core/l10n/l10n.dart';
+import 'package:plant_care_app/logic/language_viewmodel.dart';
 import 'package:provider/provider.dart';
 
 class ThemeLangControls extends StatelessWidget {

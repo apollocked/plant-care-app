@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
-import 'package:mock_plant_care_app/core/l10n/l10n.dart';
-import 'package:mock_plant_care_app/core/theme/app_theme.dart';
-import 'package:mock_plant_care_app/data/services/notification_service.dart';
-import 'package:mock_plant_care_app/data/services/storage_service.dart';
-import 'package:mock_plant_care_app/logic/language_viewmodel.dart';
-import 'package:mock_plant_care_app/presentation/pages/home_page.dart';
-import 'package:mock_plant_care_app/logic/plant_viewmodel.dart';
-import 'package:mock_plant_care_app/logic/theme_viewmodel.dart';
-import 'package:mock_plant_care_app/presentation/pages/onboarding_page.dart';
+import 'package:plant_care_app/core/l10n/app_localizations.dart';
+import 'package:plant_care_app/core/l10n/l10n.dart';
+import 'package:plant_care_app/core/theme/app_theme.dart';
+import 'package:plant_care_app/data/services/notification_service.dart';
+import 'package:plant_care_app/data/services/storage_service.dart';
+import 'package:plant_care_app/logic/language_viewmodel.dart';
+import 'package:plant_care_app/presentation/pages/home_page.dart';
+import 'package:plant_care_app/logic/plant_viewmodel.dart';
+import 'package:plant_care_app/logic/theme_viewmodel.dart';
+import 'package:plant_care_app/presentation/pages/onboarding_page.dart';
 import 'package:provider/provider.dart';
 
 final GlobalKey<ScaffoldMessengerState> snackbarKey =

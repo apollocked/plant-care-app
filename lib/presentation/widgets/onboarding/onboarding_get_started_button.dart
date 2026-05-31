@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
-import 'package:mock_plant_care_app/data/services/storage_service.dart';
-import 'package:mock_plant_care_app/presentation/pages/home_page.dart';
+import 'package:plant_care_app/core/l10n/app_localizations.dart';
+import 'package:plant_care_app/data/services/storage_service.dart';
+import 'package:plant_care_app/presentation/pages/home_page.dart';
 
 class OnboardingGetStartedButton extends StatelessWidget {
   const OnboardingGetStartedButton({super.key, required this.theme});

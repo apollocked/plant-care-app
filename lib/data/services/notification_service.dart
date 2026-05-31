@@ -1,7 +1,7 @@
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
-import 'package:mock_plant_care_app/data/model/plant_model.dart';
-import 'package:mock_plant_care_app/core/notifications/notification_helper.dart';
+import 'package:plant_care_app/data/model/plant_model.dart';
+import 'package:plant_care_app/core/notifications/notification_helper.dart';
 
 class NotificationService {
   Future<void> initialize() async {

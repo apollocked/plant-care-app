@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
-import 'package:mock_plant_care_app/core/l10n/l10n.dart';
-import 'package:mock_plant_care_app/data/model/plant_model.dart';
-import 'package:mock_plant_care_app/presentation/pages/privacy_policy_page.dart';
-import 'package:mock_plant_care_app/presentation/widgets/add/form_helpers.dart';
+import 'package:plant_care_app/core/l10n/app_localizations.dart';
+import 'package:plant_care_app/core/l10n/l10n.dart';
+import 'package:plant_care_app/data/model/plant_model.dart';
+import 'package:plant_care_app/presentation/pages/privacy_policy_page.dart';
+import 'package:plant_care_app/presentation/widgets/add/form_helpers.dart';
 
 void main() {
   group('PlantModel', () {

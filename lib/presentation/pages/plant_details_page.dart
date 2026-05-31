@@ -1,16 +1,16 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:flutter/material.dart';
-import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
-import 'package:mock_plant_care_app/data/model/plant_model.dart';
-import 'package:mock_plant_care_app/presentation/widgets/details/action_bar.dart';
-import 'package:mock_plant_care_app/presentation/widgets/details/care_info_tab.dart';
-import 'package:mock_plant_care_app/presentation/widgets/details/plant_hero_card.dart';
-import 'package:mock_plant_care_app/presentation/widgets/details/schedule_tab.dart';
-import 'package:mock_plant_care_app/presentation/widgets/details/plant_details_appbar.dart';
-import 'package:mock_plant_care_app/presentation/widgets/details/details_tabbar.dart';
-import 'package:mock_plant_care_app/presentation/widgets/details/delete_plant_dialog.dart';
-import 'package:mock_plant_care_app/logic/plant_viewmodel.dart';
+import 'package:plant_care_app/core/l10n/app_localizations.dart';
+import 'package:plant_care_app/data/model/plant_model.dart';
+import 'package:plant_care_app/presentation/widgets/details/action_bar.dart';
+import 'package:plant_care_app/presentation/widgets/details/care_info_tab.dart';
+import 'package:plant_care_app/presentation/widgets/details/plant_hero_card.dart';
+import 'package:plant_care_app/presentation/widgets/details/schedule_tab.dart';
+import 'package:plant_care_app/presentation/widgets/details/plant_details_appbar.dart';
+import 'package:plant_care_app/presentation/widgets/details/details_tabbar.dart';
+import 'package:plant_care_app/presentation/widgets/details/delete_plant_dialog.dart';
+import 'package:plant_care_app/logic/plant_viewmodel.dart';
 import 'package:provider/provider.dart';
 
 class PlantDetailsPage extends StatefulWidget {

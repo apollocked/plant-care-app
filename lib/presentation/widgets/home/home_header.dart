@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
-import 'package:mock_plant_care_app/presentation/widgets/home/settings_icon.dart';
-import 'package:mock_plant_care_app/presentation/widgets/home/theme_lang_controls.dart';
-import 'package:mock_plant_care_app/presentation/widgets/onboarding/build_showcase.dart';
+import 'package:plant_care_app/core/l10n/app_localizations.dart';
+import 'package:plant_care_app/presentation/widgets/home/settings_icon.dart';
+import 'package:plant_care_app/presentation/widgets/home/theme_lang_controls.dart';
+import 'package:plant_care_app/presentation/widgets/onboarding/build_showcase.dart';
 
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   const HomeAppBar({
@@ -41,7 +41,10 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(loc.plantCare, style: TextStyle(fontSize: 17, color: onSurface)),
+              Text(
+                loc.plantCare,
+                style: TextStyle(fontSize: 17, color: onSurface),
+              ),
               Text(
                 loc.appSubtitle,
                 style: TextStyle(

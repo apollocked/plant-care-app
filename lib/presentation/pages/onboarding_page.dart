@@ -1,14 +1,14 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
-import 'package:mock_plant_care_app/logic/theme_viewmodel.dart';
-import 'package:mock_plant_care_app/presentation/widgets/home/home_header.dart';
-import 'package:mock_plant_care_app/presentation/widgets/onboarding/info_onboarding_widget.dart';
-import 'package:mock_plant_care_app/presentation/widgets/onboarding/start_onboarding_widget.dart';
-import 'package:mock_plant_care_app/presentation/widgets/onboarding/wellcome_onboarding_widget.dart';
-import 'package:mock_plant_care_app/presentation/widgets/onboarding/onboarding_bottom_controls.dart';
-import 'package:mock_plant_care_app/presentation/widgets/onboarding/onboarding_get_started_button.dart';
-import 'package:mock_plant_care_app/presentation/widgets/onboarding/gradint_onboarding.dart';
+import 'package:plant_care_app/core/l10n/app_localizations.dart';
+import 'package:plant_care_app/logic/theme_viewmodel.dart';
+import 'package:plant_care_app/presentation/widgets/home/home_header.dart';
+import 'package:plant_care_app/presentation/widgets/onboarding/info_onboarding_widget.dart';
+import 'package:plant_care_app/presentation/widgets/onboarding/start_onboarding_widget.dart';
+import 'package:plant_care_app/presentation/widgets/onboarding/wellcome_onboarding_widget.dart';
+import 'package:plant_care_app/presentation/widgets/onboarding/onboarding_bottom_controls.dart';
+import 'package:plant_care_app/presentation/widgets/onboarding/onboarding_get_started_button.dart';
+import 'package:plant_care_app/presentation/widgets/onboarding/gradint_onboarding.dart';
 
 import 'package:provider/provider.dart';
 

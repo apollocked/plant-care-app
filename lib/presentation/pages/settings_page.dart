@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
-import 'package:mock_plant_care_app/core/l10n/l10n.dart';
-import 'package:mock_plant_care_app/logic/language_viewmodel.dart';
-import 'package:mock_plant_care_app/logic/theme_viewmodel.dart';
-import 'package:mock_plant_care_app/presentation/pages/privacy_policy_page.dart';
-import 'package:mock_plant_care_app/presentation/widgets/settings/glass_container.dart';
-import 'package:mock_plant_care_app/presentation/widgets/settings/gradient_scaffold.dart';
+import 'package:plant_care_app/core/l10n/app_localizations.dart';
+import 'package:plant_care_app/core/l10n/l10n.dart';
+import 'package:plant_care_app/logic/language_viewmodel.dart';
+import 'package:plant_care_app/logic/theme_viewmodel.dart';
+import 'package:plant_care_app/presentation/pages/privacy_policy_page.dart';
+import 'package:plant_care_app/presentation/widgets/settings/glass_container.dart';
+import 'package:plant_care_app/presentation/widgets/settings/gradient_scaffold.dart';
 import 'package:provider/provider.dart';
 
 class SettingsPage extends StatelessWidget {

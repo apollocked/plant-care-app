@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mock_plant_care_app/data/model/plant_model.dart';
-import 'package:mock_plant_care_app/logic/plant_viewmodel.dart';
+import 'package:plant_care_app/data/model/plant_model.dart';
+import 'package:plant_care_app/logic/plant_viewmodel.dart';
 
 class PlantDetailsAppBar extends StatelessWidget
     implements PreferredSizeWidget {

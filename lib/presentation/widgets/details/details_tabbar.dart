@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
+import 'package:plant_care_app/core/l10n/app_localizations.dart';
 
 class DetailsTabBar extends StatelessWidget {
   const DetailsTabBar({

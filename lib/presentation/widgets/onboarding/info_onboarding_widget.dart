@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
-import 'package:mock_plant_care_app/presentation/widgets/onboarding/glass_card.dart';
+import 'package:plant_care_app/core/l10n/app_localizations.dart';
+import 'package:plant_care_app/presentation/widgets/onboarding/glass_card.dart';
 
 class InfoOnboardingWidget extends StatefulWidget {
   const InfoOnboardingWidget({super.key});

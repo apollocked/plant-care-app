@@ -1,6 +1,6 @@
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
-import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
+import 'package:plant_care_app/core/l10n/app_localizations.dart';
 
 const String basicChannelKey = 'basic_channel';
 const String scheduledChannelKey = 'scheduled_channel';

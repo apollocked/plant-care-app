@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:mock_plant_care_app/core/l10n/app_localizations.dart';
+import 'package:plant_care_app/core/l10n/app_localizations.dart';
 
 class ScheduleRow extends StatelessWidget {
   const ScheduleRow({

@@ -1,7 +1,7 @@
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:mock_plant_care_app/data/model/plant_model.dart';
-import 'package:mock_plant_care_app/data/services/notification_service.dart';
-import 'package:mock_plant_care_app/logic/widget_manager_viewmodel.dart';
+import 'package:plant_care_app/data/model/plant_model.dart';
+import 'package:plant_care_app/data/services/notification_service.dart';
+import 'package:plant_care_app/logic/widget_manager_viewmodel.dart';
 
 class StorageService {
   static final StorageService _instance = StorageService._internal();

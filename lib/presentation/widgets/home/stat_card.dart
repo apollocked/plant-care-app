@@ -8,48 +8,53 @@ class StatCard extends StatelessWidget {
     required this.label,
     required this.icon,
     required this.color,
+    this.onLongPress,
   });
 
   final String value;
   final String label;
   final IconData icon;
   final Color color;
+  final VoidCallback? onLongPress;
 
   @override
   Widget build(BuildContext context) {
     final bool isDark = Theme.of(context).brightness == Brightness.dark;
     final Color onSurface = Theme.of(context).colorScheme.onSurface;
 
-    return GlassContainer(
-      borderRadius: 16,
-      padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
-      child: Column(
-        children: [
-          Container(
-            padding: const EdgeInsets.all(6),
-            decoration: BoxDecoration(
-              color: color.withValues(alpha: isDark ? 0.2 : 0.12),
-              borderRadius: BorderRadius.circular(10),
+    return GestureDetector(
+      onLongPress: onLongPress,
+      child: GlassContainer(
+        borderRadius: 16,
+        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
+        child: Column(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(6),
+              decoration: BoxDecoration(
+                color: color.withValues(alpha: isDark ? 0.2 : 0.12),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Icon(icon, size: 16, color: color),
             ),
-            child: Icon(icon, size: 16, color: color),
-          ),
-          const SizedBox(height: 6),
-          Text(
-            value,
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.w800,
-              color: onSurface,
+            const SizedBox(height: 6),
+            Text(
+              value,
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w800,
+                color: onSurface,
+              ),
             ),
-          ),
-          Text(
-            label,
-            style: TextStyle(
-              fontSize: 10,
-              color: onSurface.withValues(alpha: 0.5),
+            Text(
+              label,
+              style: TextStyle(
+                fontSize: 10,
+                color: onSurface.withValues(alpha: 0.5),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

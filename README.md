@@ -15,7 +15,9 @@ Whether you're a plant parent caring for a few favorites or managing a lush indo
 ### 📊 Intelligent Dashboard
 
 - **Home Summary** – Live dashboard showing total plants, healthy plants, and plants needing water or food
+- **Interactive Statistics** – Long-press on any stat card to view detailed information with helpful tips
 - **Urgent Care Alerts** – Instantly identify plants that need immediate attention
+- **Smart Scrolling** – Click the urgent banner to automatically scroll to and highlight plants needing care
 - **Quick Action Controls** – Water or feed plants directly from the home screen or details page
 
 ### 🔔 Smart Notifications

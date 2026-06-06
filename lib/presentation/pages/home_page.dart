@@ -32,6 +32,8 @@ class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
   late AnimationController _fabAnim;
   late final ShowcaseView _showcaseView;
+  late ScrollController _scrollController;
+  bool _highlightUrgent = false;
 
   final GlobalKey _settingsKey = GlobalKey();
   final GlobalKey _bannerKey = GlobalKey();
@@ -39,11 +41,13 @@ class _HomePageState extends State<HomePage>
   final GlobalKey _sectionHeaderKey = GlobalKey();
   final GlobalKey _emptyStateKey = GlobalKey();
   final GlobalKey _fabKey = GlobalKey();
+  final GlobalKey _urgentPlantKey = GlobalKey();
 
   @override
   void initState() {
     super.initState();
     _showcaseView = ShowcaseView.register(onFinish: () {});
+    _scrollController = ScrollController();
     _fabAnim = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 600),
@@ -68,6 +72,7 @@ class _HomePageState extends State<HomePage>
   void dispose() {
     _showcaseView.unregister();
     _fabAnim.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -88,9 +93,30 @@ class _HomePageState extends State<HomePage>
       _bannerKey,
       _statsKey,
       _sectionHeaderKey,
-      if (plantVm.plants.isEmpty) _emptyStateKey,
+      if (plantVm.plants.isEmpty) _emptyStateKey else _urgentPlantKey,
       _fabKey,
     ]);
+  }
+
+  void _scrollToUrgentPlants() {
+    if (!mounted) return;
+    setState(() => _highlightUrgent = true);
+
+    Future.delayed(const Duration(milliseconds: 300), () {
+      if (mounted) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent * 0.6,
+          duration: const Duration(milliseconds: 600),
+          curve: Curves.easeInOut,
+        );
+      }
+    });
+
+    Future.delayed(const Duration(seconds: 3), () {
+      if (mounted) {
+        setState(() => _highlightUrgent = false);
+      }
+    });
   }
 
   @override
@@ -106,6 +132,7 @@ class _HomePageState extends State<HomePage>
     final int urgent = plantVm.plants
         .where((p) => p.needsWaterNow || p.needsFoodNow)
         .length;
+    bool showUrgentBanner = urgent > 0;
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -137,6 +164,7 @@ class _HomePageState extends State<HomePage>
         ),
         child: SafeArea(
           child: CustomScrollView(
+            controller: _scrollController,
             physics: const BouncingScrollPhysics(),
             slivers: [
               SliverToBoxAdapter(
@@ -174,7 +202,10 @@ class _HomePageState extends State<HomePage>
                 SliverToBoxAdapter(
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(16, 14, 16, 0),
-                    child: UrgentBanner(urgentCount: urgent),
+                    child: InkWell(
+                      child: UrgentBanner(urgentCount: urgent),
+                      onTap: () => _scrollToUrgentPlants(),
+                    ),
                   ),
                 ),
 
@@ -207,23 +238,42 @@ class _HomePageState extends State<HomePage>
                 SliverPadding(
                   padding: const EdgeInsets.fromLTRB(16, 0, 16, 100),
                   sliver: SliverList.separated(
+                    key: _urgentPlantKey,
                     itemCount: plantVm.plants.length,
                     itemBuilder: (BuildContext ctx, int i) {
                       final PlantModel p = plantVm.plants[i];
-                      return PlantCard(
-                        plant: p,
-                        onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (_) => PlantDetailsPage(plantId: p.id),
+                      final bool isUrgent = p.needsWaterNow || p.needsFoodNow;
+                      final bool shouldHighlight = _highlightUrgent && isUrgent;
+
+                      return AnimatedContainer(
+                        duration: const Duration(milliseconds: 300),
+                        decoration: shouldHighlight
+                            ? BoxDecoration(
+                                borderRadius: BorderRadius.circular(12),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: scheme.error.withValues(alpha: 0.4),
+                                    blurRadius: 12,
+                                    spreadRadius: 2,
+                                  ),
+                                ],
+                              )
+                            : null,
+                        child: PlantCard(
+                          plant: p,
+                          onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => PlantDetailsPage(plantId: p.id),
+                            ),
                           ),
+                          onWaterTap: () => context
+                              .read<PlantViewModel>()
+                              .markPlantWatered(p.id, context),
+                          onFeedTap: () => context
+                              .read<PlantViewModel>()
+                              .markPlantFed(p.id, context),
                         ),
-                        onWaterTap: () => context
-                            .read<PlantViewModel>()
-                            .markPlantWatered(p.id, context),
-                        onFeedTap: () => context
-                            .read<PlantViewModel>()
-                            .markPlantFed(p.id, context),
                       );
                     },
                     separatorBuilder: (_, _) => const SizedBox(height: 12),

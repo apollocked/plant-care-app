@@ -538,6 +538,19 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsVersion => 'Version 1.0.1';
 
   @override
+  String get settingsWidget => 'Home Screen Widget';
+
+  @override
+  String get settingsWidgetDesc =>
+      'Create a widget on your home screen to see your plant stats at a glance';
+
+  @override
+  String get createWidget => 'Create Widget';
+
+  @override
+  String get widgetCreatedSuccess => 'Widget created successfully! 🎉';
+
+  @override
   String get darkMode => 'Dark Mode';
 
   @override

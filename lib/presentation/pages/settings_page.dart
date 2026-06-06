@@ -6,6 +6,9 @@ import 'package:plant_care_app/logic/theme_viewmodel.dart';
 import 'package:plant_care_app/presentation/pages/privacy_policy_page.dart';
 import 'package:plant_care_app/presentation/widgets/settings/glass_container.dart';
 import 'package:plant_care_app/presentation/widgets/settings/gradient_scaffold.dart';
+import 'package:plant_care_app/presentation/widgets/settings/widget_creation_section.dart';
+import 'package:plant_care_app/presentation/widgets/settings/settings_section_header.dart';
+import 'package:plant_care_app/presentation/widgets/settings/settings_switch_tile.dart';
 import 'package:provider/provider.dart';
 
 class SettingsPage extends StatelessWidget {
@@ -31,7 +34,7 @@ class SettingsPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _SettingsSectionHeader(
+                SettingsSectionHeader(
                   label: loc.settingsAppearance,
                   icon: Icons.palette_outlined,
                   scheme: scheme,
@@ -46,7 +49,7 @@ class SettingsPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(16),
                     child: Column(
                       children: [
-                        _SettingsSwitchTile(
+                        SettingsSwitchTile(
                           icon: themeVm.isDarkMode
                               ? Icons.dark_mode_outlined
                               : Icons.light_mode_outlined,
@@ -61,7 +64,7 @@ class SettingsPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 24),
-                _SettingsSectionHeader(
+                SettingsSectionHeader(
                   label: loc.settingsLanguage,
                   icon: Icons.translate_rounded,
                   scheme: scheme,
@@ -106,7 +109,9 @@ class SettingsPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 24),
-                _SettingsSectionHeader(
+                WidgetCreationSection(scheme: scheme),
+                const SizedBox(height: 24),
+                SettingsSectionHeader(
                   label: loc.settingsAbout,
                   icon: Icons.info_outline_rounded,
                   scheme: scheme,
@@ -173,70 +178,6 @@ class SettingsPage extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class _SettingsSectionHeader extends StatelessWidget {
-  const _SettingsSectionHeader({
-    required this.label,
-    required this.icon,
-    required this.scheme,
-  });
-
-  final String label;
-  final IconData icon;
-  final ColorScheme scheme;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
-      child: Row(
-        children: [
-          Icon(icon, size: 16, color: scheme.primary),
-          const SizedBox(width: 8),
-          Text(
-            label.toUpperCase(),
-            style: TextStyle(
-              fontSize: 12,
-              fontWeight: FontWeight.w700,
-              letterSpacing: 1,
-              color: scheme.primary,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _SettingsSwitchTile extends StatelessWidget {
-  const _SettingsSwitchTile({
-    required this.icon,
-    required this.title,
-    required this.value,
-    required this.onChanged,
-  });
-
-  final IconData icon;
-  final String title;
-  final bool value;
-  final ValueChanged<bool> onChanged;
-
-  @override
-  Widget build(BuildContext context) {
-    final ColorScheme scheme = Theme.of(context).colorScheme;
-    return SwitchListTile(
-      secondary: Icon(icon, color: scheme.primary, size: 22),
-      title: Text(title),
-      value: value,
-      onChanged: onChanged,
-      activeThumbColor: scheme.primary,
-      inactiveThumbColor: Theme.of(context).disabledColor,
-      inactiveTrackColor: Theme.of(
-        context,
-      ).disabledColor.withValues(alpha: 0.3),
     );
   }
 }

@@ -988,6 +988,30 @@ abstract class AppLocalizations {
   /// **'Version 1.0.1'**
   String get settingsVersion;
 
+  /// No description provided for @settingsWidget.
+  ///
+  /// In en, this message translates to:
+  /// **'Home Screen Widget'**
+  String get settingsWidget;
+
+  /// No description provided for @settingsWidgetDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Create a widget on your home screen to see your plant stats at a glance'**
+  String get settingsWidgetDesc;
+
+  /// No description provided for @createWidget.
+  ///
+  /// In en, this message translates to:
+  /// **'Create Widget'**
+  String get createWidget;
+
+  /// No description provided for @widgetCreatedSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Widget created successfully! 🎉'**
+  String get widgetCreatedSuccess;
+
   /// No description provided for @darkMode.
   ///
   /// In en, this message translates to:

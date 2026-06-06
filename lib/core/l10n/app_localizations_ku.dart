@@ -510,6 +510,19 @@ class AppLocalizationsKu extends AppLocalizations {
   String get settingsVersion => 'وەشانی 1.0.1';
 
   @override
+  String get settingsWidget => 'وێجەتی شاشە';
+
+  @override
+  String get settingsWidgetDesc =>
+      'وێجەتی لەسەر شاشە دروست بکە بۆ بینینی ئامار ڕووەکانت بە خێرا';
+
+  @override
+  String get createWidget => 'دروستکردنی وێجەت';
+
+  @override
+  String get widgetCreatedSuccess => 'وێجەت بە سەرکەوتویی دروست کرا! 🎉';
+
+  @override
   String get darkMode => 'ڕووکاری تاریک';
 
   @override

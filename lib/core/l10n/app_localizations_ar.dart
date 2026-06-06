@@ -535,6 +535,19 @@ class AppLocalizationsAr extends AppLocalizations {
   String get settingsVersion => 'الإصدار 1.0.1';
 
   @override
+  String get settingsWidget => 'عنصر شاشة البداية';
+
+  @override
+  String get settingsWidgetDesc =>
+      'أنشئ عنصراً على شاشة البداية لرؤية إحصائيات نباتاتك بسرعة';
+
+  @override
+  String get createWidget => 'إنشاء عنصر';
+
+  @override
+  String get widgetCreatedSuccess => 'تم إنشاء العنصر بنجاح! 🎉';
+
+  @override
   String get darkMode => 'الوضع الداكن';
 
   @override

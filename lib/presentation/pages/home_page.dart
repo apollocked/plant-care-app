@@ -132,7 +132,6 @@ class _HomePageState extends State<HomePage>
     final int urgent = plantVm.plants
         .where((p) => p.needsWaterNow || p.needsFoodNow)
         .length;
-    bool showUrgentBanner = urgent > 0;
 
     return Scaffold(
       extendBodyBehindAppBar: true,

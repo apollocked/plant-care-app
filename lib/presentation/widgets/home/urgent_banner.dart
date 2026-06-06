@@ -61,7 +61,7 @@ class UrgentBanner extends StatelessWidget {
           ),
           InkWell(
             child: const Icon(
-              Icons.close_rounded,
+              Icons.arrow_forward_ios_rounded,
               color: Colors.orange,
               size: 20,
             ),

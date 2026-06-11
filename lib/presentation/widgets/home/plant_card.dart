@@ -72,49 +72,65 @@ class _PlantCardState extends State<PlantCard>
     final loc = AppLocalizations.of(context)!;
     final viewModel = context.read<PlantViewModel>();
     final ColorScheme scheme = Theme.of(context).colorScheme;
-    return AnimatedBuilder(
-      animation: _controller,
-      builder: (_, child) =>
-          Transform.scale(scale: _controller.value, child: child),
-      child: GlassContainer(
-        borderRadius: 20,
-        child: InkWell(
+    return Dismissible(
+      key: Key(widget.plant.id.toString()),
+      direction: DismissDirection.endToStart,
+      onDismissed: (_) => viewModel.deletePlant(widget.plant.id),
+      background: Container(
+        decoration: BoxDecoration(
+          color: Colors.red.withAlpha(40),
           borderRadius: BorderRadius.circular(20),
+        ),
+        alignment: Alignment.centerRight,
 
-          onLongPress: () => _controller.reverse(),
+        padding: const EdgeInsets.only(right: 16),
+        child: Icon(Icons.delete, color: scheme.error),
+      ),
 
-          onLongPressUp: () {
-            _controller.forward();
-            showDialog(
-              context: context,
-              builder: (_) =>
-                  DeletePlantDialog(plant: widget.plant, vm: viewModel),
-            );
-          },
-          onTap: widget.onTap,
-          onTapDown: (_) => _controller.reverse(),
-          onTapUp: (_) => _controller.forward(),
-          onTapCancel: () => _controller.forward(),
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                CardHeader(
-                  plant: widget.plant,
-                  healthScore: _healthScore(),
-                  healthColor: _healthColor(),
-                  healthLabel: _healthLabel(loc),
-                  onSurface: scheme.onSurface,
-                ),
-                const SizedBox(height: 14),
-                CardActions(
-                  plant: widget.plant,
-                  scheme: scheme,
-                  onWaterTap: widget.onWaterTap,
-                  onFeedTap: widget.onFeedTap,
-                ),
-              ],
+      child: AnimatedBuilder(
+        animation: _controller,
+        builder: (_, child) =>
+            Transform.scale(scale: _controller.value, child: child),
+        child: GlassContainer(
+          borderRadius: 20,
+          child: InkWell(
+            borderRadius: BorderRadius.circular(20),
+
+            onLongPress: () => _controller.reverse(),
+
+            onLongPressUp: () {
+              _controller.forward();
+              showDialog(
+                context: context,
+                builder: (_) =>
+                    DeletePlantDialog(plant: widget.plant, vm: viewModel),
+              );
+            },
+            onTap: widget.onTap,
+            onTapDown: (_) => _controller.reverse(),
+            onTapUp: (_) => _controller.forward(),
+            onTapCancel: () => _controller.forward(),
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  CardHeader(
+                    plant: widget.plant,
+                    healthScore: _healthScore(),
+                    healthColor: _healthColor(),
+                    healthLabel: _healthLabel(loc),
+                    onSurface: scheme.onSurface,
+                  ),
+                  const SizedBox(height: 14),
+                  CardActions(
+                    plant: widget.plant,
+                    scheme: scheme,
+                    onWaterTap: widget.onWaterTap,
+                    onFeedTap: widget.onFeedTap,
+                  ),
+                ],
+              ),
             ),
           ),
         ),

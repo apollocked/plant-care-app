@@ -184,6 +184,12 @@ abstract class AppLocalizations {
   /// **'Remove'**
   String get remove;
 
+  /// No description provided for @undo.
+  ///
+  /// In en, this message translates to:
+  /// **'Undo'**
+  String get undo;
+
   /// No description provided for @getStarted.
   ///
   /// In en, this message translates to:

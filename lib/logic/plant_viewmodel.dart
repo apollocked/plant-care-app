@@ -64,6 +64,34 @@ class PlantViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// Removes the plant from the in-memory list and storage without cancelling
+  /// reminders. Returns the removed [PlantModel] so callers can undo.
+  Future<PlantModel?> deletePlantWithUndo(String plantId) async {
+    final int index = _plants.indexWhere((PlantModel p) => p.id == plantId);
+    if (index == -1) return null;
+    final PlantModel removed = _plants.removeAt(index);
+    await _storageService.removePlantData(plantId);
+    notifyListeners();
+    return removed;
+  }
+
+  /// Re-inserts a plant that was previously removed via [deletePlantWithUndo].
+  Future<void> undoDeletePlant(
+    PlantModel plant,
+    BuildContext context,
+  ) async {
+    _plants.add(plant);
+    await _storageService.savePlant(plant);
+    await _reschedulePlant(plant, context);
+    await WidgetManager.updateHomeScreenWidget(_plants);
+    notifyListeners();
+  }
+
+  /// Cancels notifications for a plant that was deleted without undo.
+  Future<void> confirmDeletePlant(String plantId) async {
+    await _notificationService.cancelPlantReminders(plantId);
+  }
+
   Future<void> markPlantWatered(String plantId, BuildContext context) async {
     final PlantModel? plant = getPlantById(plantId);
     if (plant == null) {

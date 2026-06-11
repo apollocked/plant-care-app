@@ -55,6 +55,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get remove => 'Remove';
 
   @override
+  String get undo => 'Undo';
+
+  @override
   String get getStarted => 'Get Started';
 
   @override

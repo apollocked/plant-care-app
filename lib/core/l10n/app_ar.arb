@@ -14,6 +14,7 @@
   "removePlantConfirm": "هل تريد إزالة \"{name}\" من حديقتك؟",
   "cancel": "إلغاء",
   "remove": "إزالة",
+  "undo": "تراجع",
   "getStarted": "ابدأ الآن",
   "skip": "تخطي",
   "next": "التالي",

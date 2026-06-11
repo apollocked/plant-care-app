@@ -55,6 +55,9 @@ class AppLocalizationsKu extends AppLocalizations {
   String get remove => 'سڕینەوە';
 
   @override
+  String get undo => 'پووچاندنەوە';
+
+  @override
   String get getStarted => 'دەستپێکردن';
 
   @override

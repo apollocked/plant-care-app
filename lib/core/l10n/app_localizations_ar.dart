@@ -55,6 +55,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get remove => 'إزالة';
 
   @override
+  String get undo => 'تراجع';
+
+  @override
   String get getStarted => 'ابدأ الآن';
 
   @override

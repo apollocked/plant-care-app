@@ -69,6 +69,17 @@ class StorageService {
     await WidgetManager.updateHomeScreenWidget(getPlants());
   }
 
+  /// Deletes plant data from storage without cancelling notifications
+  /// or updating the widget. Used for swipe-to-delete with undo flow.
+  Future<void> removePlantData(String plantId) async {
+    await _plantsBox.delete(plantId);
+    _operationCount++;
+    if (_operationCount >= _compactThreshold) {
+      await _plantsBox.compact();
+      _operationCount = 0;
+    }
+  }
+
   String? getThemeMode() => _settingsBox.get(themeKey) as String?;
 
   Future<void> saveThemeMode(String modeName) async {

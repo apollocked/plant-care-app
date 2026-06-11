@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:plant_care_app/core/l10n/app_localizations.dart';
 import 'package:plant_care_app/data/model/plant_model.dart';
 import 'package:plant_care_app/logic/plant_viewmodel.dart';
+import 'package:plant_care_app/main.dart' as app;
 import 'package:plant_care_app/presentation/widgets/details/delete_plant_dialog.dart';
 import 'package:plant_care_app/presentation/widgets/settings/glass_container.dart';
 import 'package:plant_care_app/presentation/widgets/home/plant_card_components.dart';
@@ -67,6 +68,38 @@ class _PlantCardState extends State<PlantCard>
     return loc.healthUrgent;
   }
 
+  Future<void> _handleSwipeDelete() async {
+    final scaffold = ScaffoldMessenger.of(context);
+    final viewModel = context.read<PlantViewModel>();
+
+    final PlantModel? removed = await viewModel.deletePlantWithUndo(
+      widget.plant.id,
+    );
+    if (removed == null || !mounted) return;
+
+    scaffold
+      ..hideCurrentSnackBar()
+      ..showSnackBar(
+        SnackBar(
+          content: Text(removed.name),
+          action: SnackBarAction(
+            label: AppLocalizations.of(context)!.undo,
+            onPressed: () {
+              final ctx = app.navigatorKey.currentContext;
+              if (ctx != null) {
+                viewModel.undoDeletePlant(removed, ctx);
+              }
+            },
+          ),
+          duration: const Duration(seconds: 4),
+        ),
+      ).closed.then((SnackBarClosedReason reason) {
+        if (reason == SnackBarClosedReason.timeout) {
+          viewModel.confirmDeletePlant(removed.id);
+        }
+      });
+  }
+
   @override
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context)!;
@@ -75,15 +108,14 @@ class _PlantCardState extends State<PlantCard>
     return Dismissible(
       key: Key(widget.plant.id.toString()),
       direction: DismissDirection.endToStart,
-      onDismissed: (_) => viewModel.deletePlant(widget.plant.id),
+      onDismissed: (_) => _handleSwipeDelete(),
       background: Container(
         decoration: BoxDecoration(
           color: Colors.red.withAlpha(40),
           borderRadius: BorderRadius.circular(20),
         ),
-        alignment: Alignment.centerRight,
-
-        padding: const EdgeInsets.only(right: 16),
+        alignment: AlignmentDirectional.centerEnd,
+        padding: const EdgeInsetsDirectional.only(end: 16),
         child: Icon(Icons.delete, color: scheme.error),
       ),
 

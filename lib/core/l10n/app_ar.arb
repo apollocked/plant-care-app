@@ -28,6 +28,60 @@
   "statHealthy": "صحي",
   "statWater": "ماء",
   "statFeed": "غذاء",
+  "statTotalDesc": "مجموعة نباتاتك",
+  "statTotalDetailHealthy": "{count} نباتات سليمة",
+  "@statTotalDetailHealthy": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "statTotalDetailWater": "{count} تحتاج ماء",
+  "@statTotalDetailWater": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "statTotalDetailFood": "{count} تحتاج غذاء",
+  "@statTotalDetailFood": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "statHealthyDesc": "{p}% من نباتاتك مزدهرة",
+  "@statHealthyDesc": {
+    "placeholders": {
+      "p": {
+        "type": "String"
+      }
+    }
+  },
+  "statHealthyDetail": "عمل رائع! استمر في العناية!",
+  "statWaterDesc": "{p}% من النباتات تحتاج ماء",
+  "@statWaterDesc": {
+    "placeholders": {
+      "p": {
+        "type": "String"
+      }
+    }
+  },
+  "statWaterDetailTap": "اضغط على النباتات لسقيها",
+  "statWaterDetailConsider": "فكر في الري الآن",
+  "statFeedDesc": "{p}% من النباتات تحتاج سماد",
+  "@statFeedDesc": {
+    "placeholders": {
+      "p": {
+        "type": "String"
+      }
+    }
+  },
+  "statFeedDetailWeakened": "أطعم النباتات الضعيفة",
+  "statFeedDetailFollow": "اتبع تعليمات التغذية لكل نبات",
   "noPlantsYet": "لا نباتات بعد",
   "noPlantsDesc": "أضف نباتك الأول وابدأ في تتبع جدول رعايته مع تذكيرات يومية.",
   "noPlantsHint": "🌱 اضغط على \"إضافة نبات\" للبدء",

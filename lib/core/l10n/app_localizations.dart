@@ -268,6 +268,78 @@ abstract class AppLocalizations {
   /// **'Feed'**
   String get statFeed;
 
+  /// No description provided for @statTotalDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Your plant collection'**
+  String get statTotalDesc;
+
+  /// No description provided for @statTotalDetailHealthy.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} healthy plants'**
+  String statTotalDetailHealthy(int count);
+
+  /// No description provided for @statTotalDetailWater.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} need water'**
+  String statTotalDetailWater(int count);
+
+  /// No description provided for @statTotalDetailFood.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} need food'**
+  String statTotalDetailFood(int count);
+
+  /// No description provided for @statHealthyDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'{p}% of your plants are thriving'**
+  String statHealthyDesc(String p);
+
+  /// No description provided for @statHealthyDetail.
+  ///
+  /// In en, this message translates to:
+  /// **'Great job! Keep up the care!'**
+  String get statHealthyDetail;
+
+  /// No description provided for @statWaterDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'{p}% of plants need water'**
+  String statWaterDesc(String p);
+
+  /// No description provided for @statWaterDetailTap.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap on plants to water them'**
+  String get statWaterDetailTap;
+
+  /// No description provided for @statWaterDetailConsider.
+  ///
+  /// In en, this message translates to:
+  /// **'Consider watering now'**
+  String get statWaterDetailConsider;
+
+  /// No description provided for @statFeedDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'{p}% of plants need fertilizer'**
+  String statFeedDesc(String p);
+
+  /// No description provided for @statFeedDetailWeakened.
+  ///
+  /// In en, this message translates to:
+  /// **'Feed plants that are weakened'**
+  String get statFeedDetailWeakened;
+
+  /// No description provided for @statFeedDetailFollow.
+  ///
+  /// In en, this message translates to:
+  /// **'Follow feeding instructions per plant'**
+  String get statFeedDetailFollow;
+
   /// No description provided for @noPlantsYet.
   ///
   /// In en, this message translates to:

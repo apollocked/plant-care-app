@@ -28,6 +28,60 @@
   "statHealthy": "تەندروست",
   "statWater": "ئاو",
   "statFeed": "خۆراک",
+  "statTotalDesc": "کۆمەڵە ڕووەکەکانت",
+  "statTotalDetailHealthy": "{count} ڕووەکی تەندروست",
+  "@statTotalDetailHealthy": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "statTotalDetailWater": "{count} پێویستیان بە ئاوە",
+  "@statTotalDetailWater": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "statTotalDetailFood": "{count} پێویستیان بە خۆراکە",
+  "@statTotalDetailFood": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "statHealthyDesc": "{p}% لە ڕووەکەکانت گەشاوەن",
+  "@statHealthyDesc": {
+    "placeholders": {
+      "p": {
+        "type": "String"
+      }
+    }
+  },
+  "statHealthyDetail": "زۆر باشە! بەردەوام بە لە چاودێری!",
+  "statWaterDesc": "{p}% لە ڕووەکەکان پێویستیان بە ئاوە",
+  "@statWaterDesc": {
+    "placeholders": {
+      "p": {
+        "type": "String"
+      }
+    }
+  },
+  "statWaterDetailTap": "کرتە لە ڕووەکەکان بکە بۆ ئاودانیان",
+  "statWaterDetailConsider": "بیربکەرەوە لە ئاودانی ئێستا",
+  "statFeedDesc": "{p}% لە ڕووەکەکان پێویستیان بە پەینە",
+  "@statFeedDesc": {
+    "placeholders": {
+      "p": {
+        "type": "String"
+      }
+    }
+  },
+  "statFeedDetailWeakened": "خۆراک بە ڕووەکە لاوازەکان ببەخشە",
+  "statFeedDetailFollow": "ڕێنماییەکانی خۆراکدان بۆ هەر ڕووەکێک پەیڕەو بکە",
   "noPlantsYet": "هیچ ڕووەکێک نییە",
   "noPlantsDesc": "یەکەم ڕووەکت زیاد بکە و بەدواداچوون بۆ خشتەی چاودێرییەکەی بکە لەگەڵ بیرخستنەوەی ڕۆژانە.",
   "noPlantsHint": "🌱 کرتە لە \"زیادکردنی ڕووەک\" بکە بۆ دەستپێکردن",

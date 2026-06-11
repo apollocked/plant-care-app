@@ -101,6 +101,55 @@ class AppLocalizationsKu extends AppLocalizations {
   String get statFeed => 'خۆراک';
 
   @override
+  String get statTotalDesc => 'کۆمەڵە ڕووەکەکانت';
+
+  @override
+  String statTotalDetailHealthy(int count) {
+    return '$count ڕووەکی تەندروست';
+  }
+
+  @override
+  String statTotalDetailWater(int count) {
+    return '$count پێویستیان بە ئاوە';
+  }
+
+  @override
+  String statTotalDetailFood(int count) {
+    return '$count پێویستیان بە خۆراکە';
+  }
+
+  @override
+  String statHealthyDesc(String p) {
+    return '$p% لە ڕووەکەکانت گەشاوەن';
+  }
+
+  @override
+  String get statHealthyDetail => 'زۆر باشە! بەردەوام بە لە چاودێری!';
+
+  @override
+  String statWaterDesc(String p) {
+    return '$p% لە ڕووەکەکان پێویستیان بە ئاوە';
+  }
+
+  @override
+  String get statWaterDetailTap => 'کرتە لە ڕووەکەکان بکە بۆ ئاودانیان';
+
+  @override
+  String get statWaterDetailConsider => 'بیربکەرەوە لە ئاودانی ئێستا';
+
+  @override
+  String statFeedDesc(String p) {
+    return '$p% لە ڕووەکەکان پێویستیان بە پەینە';
+  }
+
+  @override
+  String get statFeedDetailWeakened => 'خۆراک بە ڕووەکە لاوازەکان ببەخشە';
+
+  @override
+  String get statFeedDetailFollow =>
+      'ڕێنماییەکانی خۆراکدان بۆ هەر ڕووەکێک پەیڕەو بکە';
+
+  @override
   String get noPlantsYet => 'هیچ ڕووەکێک نییە';
 
   @override

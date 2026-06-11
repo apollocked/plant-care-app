@@ -56,6 +56,60 @@
   "statHealthy": "Healthy",
   "statWater": "Water",
   "statFeed": "Feed",
+  "statTotalDesc": "Your plant collection",
+  "statTotalDetailHealthy": "{count} healthy plants",
+  "@statTotalDetailHealthy": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "statTotalDetailWater": "{count} need water",
+  "@statTotalDetailWater": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "statTotalDetailFood": "{count} need food",
+  "@statTotalDetailFood": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "statHealthyDesc": "{p}% of your plants are thriving",
+  "@statHealthyDesc": {
+    "placeholders": {
+      "p": {
+        "type": "String"
+      }
+    }
+  },
+  "statHealthyDetail": "Great job! Keep up the care!",
+  "statWaterDesc": "{p}% of plants need water",
+  "@statWaterDesc": {
+    "placeholders": {
+      "p": {
+        "type": "String"
+      }
+    }
+  },
+  "statWaterDetailTap": "Tap on plants to water them",
+  "statWaterDetailConsider": "Consider watering now",
+  "statFeedDesc": "{p}% of plants need fertilizer",
+  "@statFeedDesc": {
+    "placeholders": {
+      "p": {
+        "type": "String"
+      }
+    }
+  },
+  "statFeedDetailWeakened": "Feed plants that are weakened",
+  "statFeedDetailFollow": "Follow feeding instructions per plant",
   "noPlantsYet": "No Plants Yet",
   "noPlantsDesc": "Add your first plant and start tracking its care schedule with daily reminders.",
   "noPlantsHint": "🌱 Tap \"Add Plant\" to get started",

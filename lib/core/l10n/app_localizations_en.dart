@@ -113,6 +113,54 @@ class AppLocalizationsEn extends AppLocalizations {
   String get statFeed => 'Feed';
 
   @override
+  String get statTotalDesc => 'Your plant collection';
+
+  @override
+  String statTotalDetailHealthy(int count) {
+    return '$count healthy plants';
+  }
+
+  @override
+  String statTotalDetailWater(int count) {
+    return '$count need water';
+  }
+
+  @override
+  String statTotalDetailFood(int count) {
+    return '$count need food';
+  }
+
+  @override
+  String statHealthyDesc(String p) {
+    return '$p% of your plants are thriving';
+  }
+
+  @override
+  String get statHealthyDetail => 'Great job! Keep up the care!';
+
+  @override
+  String statWaterDesc(String p) {
+    return '$p% of plants need water';
+  }
+
+  @override
+  String get statWaterDetailTap => 'Tap on plants to water them';
+
+  @override
+  String get statWaterDetailConsider => 'Consider watering now';
+
+  @override
+  String statFeedDesc(String p) {
+    return '$p% of plants need fertilizer';
+  }
+
+  @override
+  String get statFeedDetailWeakened => 'Feed plants that are weakened';
+
+  @override
+  String get statFeedDetailFollow => 'Follow feeding instructions per plant';
+
+  @override
   String get noPlantsYet => 'No Plants Yet';
 
   @override

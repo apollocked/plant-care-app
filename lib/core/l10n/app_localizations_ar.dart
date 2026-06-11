@@ -113,6 +113,54 @@ class AppLocalizationsAr extends AppLocalizations {
   String get statFeed => 'غذاء';
 
   @override
+  String get statTotalDesc => 'مجموعة نباتاتك';
+
+  @override
+  String statTotalDetailHealthy(int count) {
+    return '$count نباتات سليمة';
+  }
+
+  @override
+  String statTotalDetailWater(int count) {
+    return '$count تحتاج ماء';
+  }
+
+  @override
+  String statTotalDetailFood(int count) {
+    return '$count تحتاج غذاء';
+  }
+
+  @override
+  String statHealthyDesc(String p) {
+    return '$p% من نباتاتك مزدهرة';
+  }
+
+  @override
+  String get statHealthyDetail => 'عمل رائع! استمر في العناية!';
+
+  @override
+  String statWaterDesc(String p) {
+    return '$p% من النباتات تحتاج ماء';
+  }
+
+  @override
+  String get statWaterDetailTap => 'اضغط على النباتات لسقيها';
+
+  @override
+  String get statWaterDetailConsider => 'فكر في الري الآن';
+
+  @override
+  String statFeedDesc(String p) {
+    return '$p% من النباتات تحتاج سماد';
+  }
+
+  @override
+  String get statFeedDetailWeakened => 'أطعم النباتات الضعيفة';
+
+  @override
+  String get statFeedDetailFollow => 'اتبع تعليمات التغذية لكل نبات';
+
+  @override
   String get noPlantsYet => 'لا نباتات بعد';
 
   @override

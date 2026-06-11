@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:plant_care_app/core/l10n/app_localizations.dart';
 import 'package:plant_care_app/logic/plant_viewmodel.dart';
 import 'stat_card.dart';
+import 'stat_card_data.dart';
 import 'stats_details_overlay.dart';
 
 class StatsRow extends StatelessWidget {
@@ -20,126 +21,77 @@ class StatsRow extends StatelessWidget {
         plantVm.plants.where((p) => p.needsWaterNow || p.needsFoodNow).length;
     final Color primary = Theme.of(context).colorScheme.primary;
 
+    String percentageOf(int count) => total > 0
+        ? ((count / total) * 100).toStringAsFixed(0)
+        : '0';
+
+    final cards = [
+      StatCardData(
+        value: '$total',
+        label: loc.statTotal,
+        icon: Icons.local_florist_outlined,
+        color: primary,
+        description: loc.statTotalDesc,
+        details: [
+          loc.statTotalDetailHealthy(happy),
+          loc.statTotalDetailWater(needWater),
+          loc.statTotalDetailFood(needFood),
+        ],
+      ),
+      StatCardData(
+        value: '$happy',
+        label: loc.statHealthy,
+        icon: Icons.favorite_outline_rounded,
+        color: Colors.green,
+        description: loc.statHealthyDesc(percentageOf(happy)),
+        details: [loc.statHealthyDetail],
+      ),
+      StatCardData(
+        value: '$needWater',
+        label: loc.statWater,
+        icon: Icons.water_drop_outlined,
+        color: Colors.blue,
+        description: loc.statWaterDesc(percentageOf(needWater)),
+        details: [loc.statWaterDetailTap, loc.statWaterDetailConsider],
+      ),
+      StatCardData(
+        value: '$needFood',
+        label: loc.statFeed,
+        icon: Icons.grass_outlined,
+        color: Colors.orange,
+        description: loc.statFeedDesc(percentageOf(needFood)),
+        details: [loc.statFeedDetailWeakened, loc.statFeedDetailFollow],
+      ),
+    ];
+
     return Row(
       children: [
-        Expanded(
-          child: StatCard(
-            value: '$total',
-            label: loc.statTotal,
-            icon: Icons.local_florist_outlined,
-            color: primary,
-            onLongPress: () =>
-                _showTotalStats(context, total, needWater, needFood, happy),
+        for (int i = 0; i < cards.length; i++) ...[
+          if (i > 0) const SizedBox(width: 10),
+          Expanded(
+            child: StatCard(
+              value: cards[i].value,
+              label: cards[i].label,
+              icon: cards[i].icon,
+              color: cards[i].color,
+              onLongPress: () => _showStatsDetails(context, cards[i]),
+            ),
           ),
-        ),
-        const SizedBox(width: 10),
-        Expanded(
-          child: StatCard(
-            value: '$happy',
-            label: loc.statHealthy,
-            icon: Icons.favorite_outline_rounded,
-            color: Colors.green,
-            onLongPress: () => _showHealthyStats(context, happy, total),
-          ),
-        ),
-        const SizedBox(width: 10),
-        Expanded(
-          child: StatCard(
-            value: '$needWater',
-            label: loc.statWater,
-            icon: Icons.water_drop_outlined,
-            color: Colors.blue,
-            onLongPress: () => _showWaterStats(context, needWater, total),
-          ),
-        ),
-        const SizedBox(width: 10),
-        Expanded(
-          child: StatCard(
-            value: '$needFood',
-            label: loc.statFeed,
-            icon: Icons.grass_outlined,
-            color: Colors.orange,
-            onLongPress: () => _showFoodStats(context, needFood, total),
-          ),
-        ),
+        ],
       ],
     );
   }
 
-  void _showTotalStats(
-    BuildContext context,
-    int total,
-    int needWater,
-    int needFood,
-    int happy,
-  ) {
+  void _showStatsDetails(BuildContext context, StatCardData card) {
     showDialog(
       context: context,
       builder: (_) => StatsDetailsOverlay(
-        title: AppLocalizations.of(context)!.statTotal,
-        value: '$total',
-        description: 'Your plant collection',
-        icon: Icons.local_florist_outlined,
-        color: Theme.of(context).colorScheme.primary,
-        details: [
-          '$happy healthy plants',
-          '$needWater need water',
-          '$needFood need food',
-        ],
-      ),
-    );
-  }
-
-  void _showHealthyStats(BuildContext context, int happy, int total) {
-    final percentage = total > 0
-        ? ((happy / total) * 100).toStringAsFixed(0)
-        : '0';
-    showDialog(
-      context: context,
-      builder: (_) => StatsDetailsOverlay(
-        title: AppLocalizations.of(context)!.statHealthy,
-        value: '$happy',
-        description: '$percentage% of your plants are thriving',
-        icon: Icons.favorite_outline_rounded,
-        color: Colors.green,
-        details: ['Great job! Keep up the care!'],
-      ),
-    );
-  }
-
-  void _showWaterStats(BuildContext context, int needWater, int total) {
-    final percentage = total > 0
-        ? ((needWater / total) * 100).toStringAsFixed(0)
-        : '0';
-    showDialog(
-      context: context,
-      builder: (_) => StatsDetailsOverlay(
-        title: AppLocalizations.of(context)!.statWater,
-        value: '$needWater',
-        description: '$percentage% of plants need water',
-        icon: Icons.water_drop_outlined,
-        color: Colors.blue,
-        details: ['Tap on plants to water them', 'Consider watering now'],
-      ),
-    );
-  }
-
-  void _showFoodStats(BuildContext context, int needFood, int total) {
-    final percentage = total > 0
-        ? ((needFood / total) * 100).toStringAsFixed(0)
-        : '0';
-    showDialog(
-      context: context,
-      builder: (_) => StatsDetailsOverlay(
-        title: AppLocalizations.of(context)!.statFeed,
-        value: '$needFood',
-        description: '$percentage% of plants need fertilizer',
-        icon: Icons.grass_outlined,
-        color: Colors.orange,
-        details: [
-          'Feed plants that are weakened',
-          'Follow feeding instructions per plant',
-        ],
+        title: card.label,
+        value: card.value,
+        description: card.description,
+        icon: card.icon,
+        color: card.color,
+        details: card.details,
       ),
     );
   }

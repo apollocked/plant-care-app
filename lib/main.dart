@@ -25,7 +25,6 @@ Future<void> main() async {
 
   await storageService.init();
   await notificationService.initialize();
-
   final PlantViewModel plantViewModel = PlantViewModel(
     storageService,
     notificationService,

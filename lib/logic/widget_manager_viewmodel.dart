@@ -12,21 +12,33 @@ class WidgetManager {
   static const String _iosWidgetName = 'MyWidgetExtension';
   static const String _widgetKey = 'widget_image_path';
 
-  static Future<void> updateHomeScreenWidget(List<PlantModel> plants) async {
+  static Future<bool> updateHomeScreenWidget(List<PlantModel> plants) async {
     try {
+      debugPrint('🎨 Widget: Starting widget creation...');
       final context = navigatorKey.currentContext;
-      if (context == null) return;
+      if (context == null) {
+        debugPrint('❌ Widget: No context available');
+        return false;
+      }
 
       final l10n = AppLocalizations.of(context);
-      if (l10n == null) return;
+      if (l10n == null) {
+        debugPrint('❌ Widget: No localization available');
+        return false;
+      }
 
       final locale = context.read<LanguageService>().locale;
+      debugPrint('🎨 Widget: Using locale: ${locale.languageCode}');
 
       final int total = plants.length;
       final int needWater = plants.where((p) => p.needsWaterNow).length;
       final int needFood = plants.where((p) => p.needsFoodNow).length;
       final int happy =
           total - plants.where((p) => p.needsWaterNow || p.needsFoodNow).length;
+
+      debugPrint(
+        '🎨 Widget: Stats - Total: $total, Happy: $happy, Water: $needWater, Food: $needFood',
+      );
 
       await HomeWidget.renderFlutterWidget(
         Theme(
@@ -49,12 +61,19 @@ class WidgetManager {
         pixelRatio: 3.0,
       );
 
+      debugPrint('✅ Widget: Rendered successfully');
+
       await HomeWidget.updateWidget(
         androidName: _androidWidgetName,
         iOSName: _iosWidgetName,
       );
+
+      debugPrint('✅ Widget: Updated successfully on phone');
+      return true;
     } catch (e) {
-      debugPrint('Failed to sync widget: $e');
+      debugPrint('❌ Widget Error: Failed to sync widget: $e');
+      debugPrint('❌ Stack trace: ${StackTrace.current}');
+      return false;
     }
   }
 }

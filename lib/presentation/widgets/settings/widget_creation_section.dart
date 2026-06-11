@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plant_care_app/core/l10n/app_localizations.dart';
+import 'package:plant_care_app/data/services/widget_installer_service.dart';
 import 'package:plant_care_app/logic/plant_viewmodel.dart';
 import 'package:plant_care_app/logic/widget_manager_viewmodel.dart';
 import 'glass_container.dart';
@@ -58,15 +59,40 @@ class WidgetCreationSection extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
-                onPressed: () {
+                onPressed: () async {
                   final plantVm = context.read<PlantViewModel>();
-                  WidgetManager.updateHomeScreenWidget(plantVm.plants);
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text(loc.widgetCreatedSuccess),
-                      duration: const Duration(seconds: 2),
-                    ),
+                  final successMsg = loc.widgetCreatedSuccess;
+                  final scaffold = ScaffoldMessenger.of(context);
+
+                  // Step 1: Render widget
+                  final success = await WidgetManager.updateHomeScreenWidget(
+                    plantVm.plants,
                   );
+
+                  if (success) {
+                    // Step 2: Add to home screen automatically
+                    await WidgetInstallerService.addWidgetToHomeScreen();
+
+                    scaffold.showSnackBar(
+                      SnackBar(
+                        content: Text(successMsg),
+                        duration: const Duration(seconds: 3),
+                        backgroundColor: Colors.green.shade400,
+                      ),
+                    );
+                  } else {
+                    if (context.mounted) {
+                      scaffold.showSnackBar(
+                        SnackBar(
+                          content: const Text(
+                            'Widget creation failed. Try again!',
+                          ),
+                          duration: const Duration(seconds: 3),
+                          backgroundColor: Colors.red.shade400,
+                        ),
+                      );
+                    }
+                  }
                 },
                 child: Padding(
                   padding: const EdgeInsets.symmetric(

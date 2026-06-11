@@ -514,7 +514,7 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get settingsWidgetDesc =>
-      'وێجەتی لەسەر شاشە دروست بکە بۆ بینینی ئامار ڕووەکانت بە خێرا';
+      'وێجەت لەسەر شاشە دروست بکە بۆ بینینی ئامار ڕووەکانت بە خێرا';
 
   @override
   String get createWidget => 'دروستکردنی وێجەت';

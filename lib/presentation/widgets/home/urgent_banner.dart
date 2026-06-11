@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plant_care_app/core/l10n/app_localizations.dart';
+import 'package:plant_care_app/core/theme/app_colors.dart';
 
 class UrgentBanner extends StatelessWidget {
   const UrgentBanner({super.key, required this.urgentCount});
@@ -16,23 +17,23 @@ class UrgentBanner extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         gradient: LinearGradient(
           colors: [
-            Colors.orange.withValues(alpha: isDark ? 0.25 : 0.15),
-            Colors.red.withValues(alpha: isDark ? 0.15 : 0.08),
+            AppColors.warning.withValues(alpha: isDark ? 0.25 : 0.15),
+            AppColors.error.withValues(alpha: isDark ? 0.15 : 0.08),
           ],
         ),
-        border: Border.all(color: Colors.orange.withValues(alpha: 0.35)),
+        border: Border.all(color: AppColors.warning.withValues(alpha: 0.35)),
       ),
       child: Row(
         children: [
           Container(
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
-              color: Colors.orange.withValues(alpha: 0.2),
+              color: AppColors.warning.withValues(alpha: 0.2),
               borderRadius: BorderRadius.circular(10),
             ),
-            child: const Icon(
+            child: Icon(
               Icons.warning_amber_rounded,
-              color: Colors.orange,
+              color: AppColors.warning,
               size: 20,
             ),
           ),
@@ -46,23 +47,23 @@ class UrgentBanner extends StatelessWidget {
                   style: const TextStyle(
                     fontWeight: FontWeight.w600,
                     fontSize: 13,
-                    color: Colors.orange,
+                    color: AppColors.warning,
                   ),
                 ),
                 Text(
                   loc.urgentBannerSubtitle,
                   style: TextStyle(
                     fontSize: 11,
-                    color: Colors.orange.withValues(alpha: 0.7),
+                    color: AppColors.warning.withValues(alpha: 0.7),
                   ),
                 ),
               ],
             ),
           ),
           InkWell(
-            child: const Icon(
+            child: Icon(
               Icons.arrow_forward_ios_rounded,
-              color: Colors.orange,
+              color: AppColors.warning,
               size: 20,
             ),
           ),

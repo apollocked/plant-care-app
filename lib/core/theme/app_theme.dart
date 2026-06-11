@@ -1,78 +1,72 @@
 import 'package:flutter/material.dart';
+import 'app_colors.dart';
 
 class AppTheme {
-  static const Color _lightBg = Color(0xFFEBF0EC);
-  static const Color _lightSurface = Color(0xFFF7FAF8);
-  static const Color _darkBg = Color(0xFF0B1A16);
-  static const Color _primaryGreen = Color(0xFF2E7D52);
-  static const Color _lightText = Color(0xFF1A2E25);
-  static const Color _lightSubtext = Color(0xFF4A6355);
-
   static ThemeData get lightTheme => ThemeData(
     fontFamily: 'bahij',
 
     brightness: Brightness.light,
     colorScheme: ColorScheme.fromSeed(
-      seedColor: _primaryGreen,
+      seedColor: AppColors.primaryGreen,
       brightness: Brightness.light,
-      primary: _primaryGreen,
+      primary: AppColors.primaryGreen,
       onPrimary: Colors.white,
-      surface: _lightSurface,
-      onSurface: _lightText,
+      surface: AppColors.lightSurface,
+      onSurface: AppColors.lightText,
     ),
     useMaterial3: true,
-    scaffoldBackgroundColor: _lightBg,
+    scaffoldBackgroundColor: AppColors.lightBg,
     appBarTheme: const AppBarTheme(
       backgroundColor: Colors.transparent,
-      foregroundColor: _lightText,
+      foregroundColor: AppColors.lightText,
       elevation: 0,
       centerTitle: false,
       titleTextStyle: TextStyle(
-        color: _lightText,
+        color: AppColors.lightText,
         fontSize: 17,
         fontWeight: FontWeight.w700,
       ),
     ),
     textTheme: const TextTheme(
-      displayLarge: TextStyle(color: _lightText),
-      displayMedium: TextStyle(color: _lightText),
-      displaySmall: TextStyle(color: _lightText),
-      headlineLarge: TextStyle(color: _lightText),
-      headlineMedium: TextStyle(color: _lightText),
-      headlineSmall: TextStyle(color: _lightText),
-      titleLarge: TextStyle(color: _lightText, fontWeight: FontWeight.w700),
-      titleMedium: TextStyle(color: _lightText, fontWeight: FontWeight.w600),
-      titleSmall: TextStyle(color: _lightText),
-      bodyLarge: TextStyle(color: _lightText),
-      bodyMedium: TextStyle(color: _lightSubtext),
-      bodySmall: TextStyle(color: _lightSubtext),
-      labelLarge: TextStyle(color: _lightText, fontWeight: FontWeight.w600),
-      labelMedium: TextStyle(color: _lightSubtext),
-      labelSmall: TextStyle(color: _lightSubtext),
+      displayLarge: TextStyle(color: AppColors.lightText),
+      displayMedium: TextStyle(color: AppColors.lightText),
+      displaySmall: TextStyle(color: AppColors.lightText),
+      headlineLarge: TextStyle(color: AppColors.lightText),
+      headlineMedium: TextStyle(color: AppColors.lightText),
+      headlineSmall: TextStyle(color: AppColors.lightText),
+      titleLarge: TextStyle(color: AppColors.lightText, fontWeight: FontWeight.w700),
+      titleMedium: TextStyle(color: AppColors.lightText, fontWeight: FontWeight.w600),
+      titleSmall: TextStyle(color: AppColors.lightText),
+      bodyLarge: TextStyle(color: AppColors.lightText),
+      bodyMedium: TextStyle(color: AppColors.lightSubtext),
+      bodySmall: TextStyle(color: AppColors.lightSubtext),
+      labelLarge: TextStyle(color: AppColors.lightText, fontWeight: FontWeight.w600),
+      labelMedium: TextStyle(color: AppColors.lightSubtext),
+      labelSmall: TextStyle(color: AppColors.lightSubtext),
     ),
-    cardColor: _lightSurface,
-    dividerColor: _primaryGreen.withValues(alpha: 0.12),
+    cardColor: AppColors.lightSurface,
+    dividerColor: AppColors.primaryGreen.withValues(alpha: 0.12),
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
-      fillColor: _lightSurface,
+      fillColor: AppColors.lightSurface,
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(14),
-        borderSide: BorderSide(color: _primaryGreen.withValues(alpha: 0.2)),
+        borderSide: BorderSide(color: AppColors.primaryGreen.withValues(alpha: 0.2)),
       ),
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(14),
-        borderSide: BorderSide(color: _primaryGreen.withValues(alpha: 0.2)),
+        borderSide: BorderSide(color: AppColors.primaryGreen.withValues(alpha: 0.2)),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(14),
-        borderSide: const BorderSide(color: _primaryGreen, width: 1.5),
+        borderSide: const BorderSide(color: AppColors.primaryGreen, width: 1.5),
       ),
-      labelStyle: const TextStyle(color: _lightSubtext),
-      hintStyle: TextStyle(color: _lightSubtext.withValues(alpha: 0.6)),
+      labelStyle: const TextStyle(color: AppColors.lightSubtext),
+      hintStyle: TextStyle(color: AppColors.lightSubtext.withValues(alpha: 0.6)),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        backgroundColor: _primaryGreen,
+        backgroundColor: AppColors.primaryGreen,
         foregroundColor: Colors.white,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
         padding: const EdgeInsets.symmetric(vertical: 14),
@@ -82,14 +76,23 @@ class AppTheme {
     switchTheme: SwitchThemeData(
       thumbColor: WidgetStateProperty.resolveWith(
         (states) => states.contains(WidgetState.selected)
-            ? _primaryGreen
+            ? AppColors.primaryGreen
             : Colors.grey.shade400,
       ),
       trackColor: WidgetStateProperty.resolveWith(
         (states) => states.contains(WidgetState.selected)
-            ? _primaryGreen.withValues(alpha: 0.3)
+            ? AppColors.primaryGreen.withValues(alpha: 0.3)
             : Colors.grey.shade200,
       ),
+    ),
+    snackBarTheme: const SnackBarThemeData(
+      behavior: SnackBarBehavior.floating,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(12)),
+      ),
+      backgroundColor: AppColors.snackbarBg,
+      contentTextStyle: TextStyle(color: AppColors.snackbarText),
+      actionTextColor: AppColors.snackbarAction,
     ),
   );
 
@@ -97,15 +100,15 @@ class AppTheme {
     fontFamily: 'bahij',
     brightness: Brightness.dark,
     colorScheme: ColorScheme.fromSeed(
-      seedColor: _primaryGreen,
+      seedColor: AppColors.primaryGreen,
       brightness: Brightness.dark,
-      primary: const Color(0xFF4CAF82),
+      primary: AppColors.primaryGreenDark,
       onPrimary: Colors.white,
-      surface: const Color(0xFF132218),
+      surface: AppColors.darkSurface,
       onSurface: Colors.white,
     ),
     useMaterial3: true,
-    scaffoldBackgroundColor: _darkBg,
+    scaffoldBackgroundColor: AppColors.darkBg,
     appBarTheme: const AppBarTheme(
       backgroundColor: Colors.transparent,
       foregroundColor: Colors.white,
@@ -132,19 +135,26 @@ class AppTheme {
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(14),
-        borderSide: const BorderSide(color: Color(0xFF4CAF82), width: 1.5),
+        borderSide: const BorderSide(color: AppColors.primaryGreenDark, width: 1.5),
       ),
       labelStyle: TextStyle(color: Colors.white.withValues(alpha: 0.6)),
       hintStyle: TextStyle(color: Colors.white.withValues(alpha: 0.35)),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        backgroundColor: const Color(0xFF4CAF82),
+        backgroundColor: AppColors.primaryGreenDark,
         foregroundColor: Colors.white,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
         padding: const EdgeInsets.symmetric(vertical: 14),
         textStyle: const TextStyle(fontWeight: FontWeight.w600),
       ),
+    ),
+    snackBarTheme: const SnackBarThemeData(
+      behavior: SnackBarBehavior.floating,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(12)),
+      ),
+      contentTextStyle: TextStyle(color: AppColors.snackbarText),
     ),
   );
 }

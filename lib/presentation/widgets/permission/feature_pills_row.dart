@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plant_care_app/core/l10n/app_localizations.dart';
+import 'package:plant_care_app/core/theme/app_colors.dart';
 import 'feature_pill.dart';
 
 class FeaturePillsRow extends StatelessWidget {
@@ -15,21 +16,21 @@ class FeaturePillsRow extends StatelessWidget {
         FeaturePill(
           icon: Icons.water_drop_outlined,
           label: loc.pillWater,
-          color: Colors.blue,
+          color: AppColors.pillWater,
           isDark: isDark,
         ),
         const SizedBox(width: 8),
         FeaturePill(
           icon: Icons.grass_outlined,
           label: loc.pillFeed,
-          color: Colors.green,
+          color: AppColors.pillFeed,
           isDark: isDark,
         ),
         const SizedBox(width: 8),
         FeaturePill(
           icon: Icons.wb_sunny_outlined,
           label: loc.pillLight,
-          color: Colors.orange,
+          color: AppColors.pillLight,
           isDark: isDark,
         ),
       ],

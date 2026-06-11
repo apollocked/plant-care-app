@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plant_care_app/core/l10n/app_localizations.dart';
+import 'package:plant_care_app/core/theme/app_colors.dart';
 import 'package:plant_care_app/data/model/plant_model.dart';
 import 'package:plant_care_app/presentation/widgets/settings/glass_container.dart';
 
@@ -16,9 +17,9 @@ class PlantHeroCard extends StatelessWidget {
 
   Color _healthColor() {
     final double s = _healthScore();
-    if (s >= 0.9) return Colors.green;
-    if (s >= 0.5) return Colors.orange;
-    return Colors.red;
+    if (s >= 0.9) return AppColors.healthHigh;
+    if (s >= 0.5) return AppColors.healthMid;
+    return AppColors.healthLow;
   }
 
   String _healthLabel(AppLocalizations loc) {

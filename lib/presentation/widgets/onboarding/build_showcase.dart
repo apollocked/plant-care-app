@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plant_care_app/core/theme/app_colors.dart';
 import 'package:showcaseview/showcaseview.dart';
 
 Widget buildShowcase({
@@ -11,11 +12,8 @@ Widget buildShowcase({
   ShapeBorder? targetShapeBorder,
   BuildContext? context,
 }) {
-  const Color kTooltipBg = Color(0xFF1B4332);
-  const Color kTooltipBgDark = Color(0xFF0D2B1F);
-  const Color kOverlayColor = Color(0xFF000000);
   const double kOverlayOpacity = 0.78;
-  final Color bg = isDark ? kTooltipBgDark : kTooltipBg;
+  final Color bg = isDark ? AppColors.tooltipBgDark : AppColors.tooltipBg;
   return Showcase(
     key: key,
 
@@ -41,7 +39,7 @@ Widget buildShowcase({
     targetBorderRadius: targetBorderRadius ?? BorderRadius.circular(16),
     targetShapeBorder: targetShapeBorder ?? const RoundedRectangleBorder(),
 
-    overlayColor: kOverlayColor,
+    overlayColor: AppColors.overlay,
     overlayOpacity: kOverlayOpacity,
 
     movingAnimationDuration: const Duration(milliseconds: 550),

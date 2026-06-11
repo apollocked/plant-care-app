@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:plant_care_app/core/l10n/app_localizations.dart';
+import 'package:plant_care_app/core/theme/app_colors.dart';
 
 class ScheduleRow extends StatelessWidget {
   const ScheduleRow({
@@ -90,7 +91,7 @@ class UpcomingDateRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context)!;
-    final Color active = isOverdue ? Colors.red : color;
+    final Color active = isOverdue ? AppColors.error : color;
     return Row(
       children: [
         Container(
@@ -118,7 +119,7 @@ class UpcomingDateRow extends StatelessWidget {
                   loc.overdue,
                   style: const TextStyle(
                     fontSize: 11,
-                    color: Colors.red,
+                    color: AppColors.error,
                     fontWeight: FontWeight.w600,
                   ),
                 ),

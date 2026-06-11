@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:plant_care_app/core/l10n/app_localizations.dart';
+import 'package:plant_care_app/core/theme/app_colors.dart';
 import 'package:plant_care_app/data/model/plant_model.dart';
 import 'package:plant_care_app/presentation/widgets/details/care_status_card.dart';
 import 'package:plant_care_app/presentation/widgets/settings/glass_container.dart';
@@ -42,7 +43,7 @@ class CareInfoTab extends StatelessWidget {
         children: [
           CareStatusCard(
             icon: Icons.water_drop_outlined,
-            color: Colors.blue,
+            color: AppColors.water,
             title: loc.careCardWatering,
             okLabel: loc.careCardWatered,
             urgentLabel: loc.careCardWaterNow,
@@ -62,7 +63,7 @@ class CareInfoTab extends StatelessWidget {
           const SizedBox(height: 12),
           CareStatusCard(
             icon: Icons.grass_outlined,
-            color: Colors.orange,
+            color: AppColors.warning,
             title: loc.careCardFeeding,
             okLabel: loc.careCardFed,
             urgentLabel: loc.careCardFeedNow,

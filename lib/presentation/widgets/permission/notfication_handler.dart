@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:plant_care_app/core/theme/app_colors.dart';
 import 'plant_icon_circle.dart';
 import 'notif_dialog_content.dart';
 import 'feature_pills_row.dart';
@@ -25,11 +26,11 @@ class _PermissionDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     final ColorScheme scheme = Theme.of(context).colorScheme;
     final bool isDark = Theme.of(context).brightness == Brightness.dark;
-    final Color bg = isDark ? const Color(0xFF132218) : Colors.white;
-    final Color textColor = isDark ? Colors.white : const Color(0xFF1A2E25);
+    final Color bg = isDark ? AppColors.darkSurface : Colors.white;
+    final Color textColor = isDark ? Colors.white : AppColors.lightText;
     final Color subtextColor = isDark
         ? Colors.white.withValues(alpha: 0.6)
-        : const Color(0xFF4A6355);
+        : AppColors.lightSubtext;
 
     return Dialog(
       backgroundColor: Colors.transparent,

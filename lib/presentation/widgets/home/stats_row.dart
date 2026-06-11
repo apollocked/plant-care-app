@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plant_care_app/core/l10n/app_localizations.dart';
+import 'package:plant_care_app/core/theme/app_colors.dart';
 import 'package:plant_care_app/logic/plant_viewmodel.dart';
 import 'stat_card.dart';
 import 'stat_card_data.dart';
@@ -42,7 +43,7 @@ class StatsRow extends StatelessWidget {
         value: '$happy',
         label: loc.statHealthy,
         icon: Icons.favorite_outline_rounded,
-        color: Colors.green,
+        color: AppColors.success,
         description: loc.statHealthyDesc(percentageOf(happy)),
         details: [loc.statHealthyDetail],
       ),
@@ -50,7 +51,7 @@ class StatsRow extends StatelessWidget {
         value: '$needWater',
         label: loc.statWater,
         icon: Icons.water_drop_outlined,
-        color: Colors.blue,
+        color: AppColors.water,
         description: loc.statWaterDesc(percentageOf(needWater)),
         details: [loc.statWaterDetailTap, loc.statWaterDetailConsider],
       ),
@@ -58,7 +59,7 @@ class StatsRow extends StatelessWidget {
         value: '$needFood',
         label: loc.statFeed,
         icon: Icons.grass_outlined,
-        color: Colors.orange,
+        color: AppColors.warning,
         description: loc.statFeedDesc(percentageOf(needFood)),
         details: [loc.statFeedDetailWeakened, loc.statFeedDetailFollow],
       ),

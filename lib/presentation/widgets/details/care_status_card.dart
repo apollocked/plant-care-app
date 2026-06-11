@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plant_care_app/core/theme/app_colors.dart';
 import 'package:plant_care_app/presentation/widgets/details/care_status_components.dart';
 import 'package:plant_care_app/presentation/widgets/settings/glass_container.dart';
 
@@ -45,7 +46,7 @@ class CareStatusCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Color active = isUrgent ? color : Colors.green;
+    final Color active = isUrgent ? color : AppColors.success;
 
     return GlassContainer(
       borderRadius: 18,

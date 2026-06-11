@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plant_care_app/core/theme/app_colors.dart';
 import 'package:plant_care_app/data/model/plant_model.dart';
 import 'package:plant_care_app/logic/plant_viewmodel.dart';
 
@@ -43,12 +44,12 @@ class PlantDetailsAppBar extends StatelessWidget
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: Colors.red.withValues(alpha: isDark ? 0.15 : 0.08),
+              color: AppColors.error.withValues(alpha: isDark ? 0.15 : 0.08),
             ),
             child: const Icon(
               Icons.delete_outline_rounded,
               size: 20,
-              color: Colors.red,
+              color: AppColors.error,
             ),
           ),
         ),

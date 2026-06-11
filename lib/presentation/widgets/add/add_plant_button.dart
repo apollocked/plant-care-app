@@ -3,6 +3,7 @@
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
 import 'package:plant_care_app/core/l10n/app_localizations.dart';
+import 'package:plant_care_app/core/theme/app_colors.dart';
 import 'package:plant_care_app/logic/add_plant_viewmodel.dart';
 import 'package:plant_care_app/logic/plant_viewmodel.dart';
 import 'package:plant_care_app/presentation/widgets/permission/notfication_handler.dart';
@@ -76,7 +77,7 @@ class _AddPlantButtonState extends State<AddPlantButton> {
           gradient: LinearGradient(
             colors: [
               widget.scheme.primary,
-              Color.lerp(widget.scheme.primary, Colors.teal, 0.45)!,
+              Color.lerp(widget.scheme.primary, AppColors.tealAccent, 0.45)!,
             ],
           ),
           boxShadow: [

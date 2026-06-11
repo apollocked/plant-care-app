@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plant_care_app/core/l10n/app_localizations.dart';
+import 'package:plant_care_app/core/theme/app_colors.dart';
 import 'package:plant_care_app/data/services/widget_installer_service.dart';
 import 'package:plant_care_app/logic/plant_viewmodel.dart';
 import 'package:plant_care_app/logic/widget_manager_viewmodel.dart';
@@ -77,7 +78,7 @@ class WidgetCreationSection extends StatelessWidget {
                       SnackBar(
                         content: Text(successMsg),
                         duration: const Duration(seconds: 3),
-                        backgroundColor: Colors.green.shade400,
+                        backgroundColor: AppColors.widgetSuccess,
                       ),
                     );
                   } else {
@@ -88,7 +89,7 @@ class WidgetCreationSection extends StatelessWidget {
                             'Widget creation failed. Try again!',
                           ),
                           duration: const Duration(seconds: 3),
-                          backgroundColor: Colors.red.shade400,
+                          backgroundColor: AppColors.widgetFailure,
                         ),
                       );
                     }

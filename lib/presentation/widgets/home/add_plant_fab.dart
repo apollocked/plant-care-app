@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plant_care_app/core/l10n/app_localizations.dart';
+import 'package:plant_care_app/core/theme/app_colors.dart';
 import 'package:plant_care_app/presentation/pages/add_plant_page.dart';
 
 class AddPlantFAB extends StatelessWidget {
@@ -26,7 +27,7 @@ class AddPlantFAB extends StatelessWidget {
             gradient: LinearGradient(
               colors: [
                 scheme.primary,
-                Color.lerp(scheme.primary, Colors.teal, 0.5)!,
+                Color.lerp(scheme.primary, AppColors.tealAccent, 0.5)!,
               ],
             ),
             boxShadow: [

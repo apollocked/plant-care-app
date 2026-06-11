@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plant_care_app/core/l10n/app_localizations.dart';
+import 'package:plant_care_app/core/theme/app_colors.dart';
 import 'package:plant_care_app/data/model/plant_model.dart';
 import 'quick_action_button.dart';
 
@@ -134,7 +135,7 @@ class CardActions extends StatelessWidget {
           child: QuickActionButton(
             label: plant.needsWaterNow ? loc.waterNow : loc.waterOk,
             icon: Icons.water_drop_outlined,
-            color: plant.needsWaterNow ? Colors.blue : scheme.primary,
+            color: plant.needsWaterNow ? AppColors.water : scheme.primary,
             urgent: plant.needsWaterNow,
             onTap: plant.needsWaterNow ? onWaterTap : null,
           ),
@@ -144,7 +145,7 @@ class CardActions extends StatelessWidget {
           child: QuickActionButton(
             label: plant.needsFoodNow ? loc.feedNow : loc.feedOk,
             icon: Icons.grass_outlined,
-            color: plant.needsFoodNow ? Colors.orange : Colors.green,
+            color: plant.needsFoodNow ? AppColors.warning : AppColors.success,
             urgent: plant.needsFoodNow,
             onTap: plant.needsFoodNow ? onFeedTap : null,
           ),

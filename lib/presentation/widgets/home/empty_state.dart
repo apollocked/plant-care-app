@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plant_care_app/core/l10n/app_localizations.dart';
+import 'package:plant_care_app/core/theme/app_colors.dart';
 
 class EmptyPlantState extends StatelessWidget {
   const EmptyPlantState({super.key});
@@ -47,7 +48,7 @@ class EmptyPlantState extends StatelessWidget {
               style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.w700,
-                color: isDark ? Colors.white : const Color(0xFF14312C),
+                color: isDark ? Colors.white : AppColors.emptyStateText,
               ),
             ),
             const SizedBox(height: 8),

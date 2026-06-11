@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:plant_care_app/core/l10n/app_localizations.dart';
+import 'package:plant_care_app/core/theme/app_colors.dart';
 import 'package:plant_care_app/presentation/widgets/settings/glass_container.dart';
 import 'form_helpers.dart';
 import 'schedule_tips.dart';
@@ -48,7 +49,7 @@ class CareScheduleSection extends StatelessWidget {
                     suffixText: loc.suffixDays,
                     prefixIcon: Icon(
                       Icons.water_drop_outlined,
-                      color: Colors.blue.shade400,
+                      color: AppColors.formWaterIcon,
                       size: 20,
                     ),
                   ),
@@ -67,7 +68,7 @@ class CareScheduleSection extends StatelessWidget {
                     suffixText: loc.suffixDays,
                     prefixIcon: Icon(
                       Icons.grass_outlined,
-                      color: Colors.green.shade600,
+                      color: AppColors.formFeedIcon,
                       size: 20,
                     ),
                   ),

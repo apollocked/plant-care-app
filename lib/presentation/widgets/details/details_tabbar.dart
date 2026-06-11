@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plant_care_app/core/l10n/app_localizations.dart';
+import 'package:plant_care_app/core/theme/app_colors.dart';
 
 class DetailsTabBar extends StatelessWidget {
   const DetailsTabBar({
@@ -37,7 +38,7 @@ class DetailsTabBar extends StatelessWidget {
               gradient: LinearGradient(
                 colors: [
                   scheme.primary,
-                  Color.lerp(scheme.primary, Colors.teal, 0.45)!,
+                  Color.lerp(scheme.primary, AppColors.tealAccent, 0.45)!,
                 ],
               ),
               boxShadow: [

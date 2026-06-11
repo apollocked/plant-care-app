@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plant_care_app/core/l10n/app_localizations.dart';
+import 'package:plant_care_app/core/theme/app_colors.dart';
 import 'package:plant_care_app/data/model/plant_model.dart';
 import 'package:plant_care_app/presentation/widgets/settings/glass_container.dart';
 import 'package:plant_care_app/logic/plant_viewmodel.dart';
@@ -34,7 +35,7 @@ class ScheduleTab extends StatelessWidget {
             children: [
               ScheduleRow(
                 icon: Icons.water_drop_outlined,
-                color: Colors.blue,
+                color: AppColors.water,
                 label: loc.scheduleWatering,
                 value: loc.scheduleEveryNDays(plant.waterIntervalDays),
                 onSurface: onSurface,
@@ -42,7 +43,7 @@ class ScheduleTab extends StatelessWidget {
               const Divider(height: 20),
               ScheduleRow(
                 icon: Icons.grass_outlined,
-                color: Colors.orange,
+                color: AppColors.warning,
                 label: loc.scheduleFeeding,
                 value: loc.scheduleEveryNDays(plant.feedIntervalDays),
                 onSurface: onSurface,
@@ -60,7 +61,7 @@ class ScheduleTab extends StatelessWidget {
             children: [
               ScheduleRow(
                 icon: Icons.water_drop_outlined,
-                color: Colors.blue,
+                color: AppColors.water,
                 label: loc.scheduleWaterReminder,
                 value: plant.waterReminderTime.format(context),
                 onSurface: onSurface,
@@ -68,7 +69,7 @@ class ScheduleTab extends StatelessWidget {
               const Divider(height: 20),
               ScheduleRow(
                 icon: Icons.grass_outlined,
-                color: Colors.orange,
+                color: AppColors.warning,
                 label: loc.scheduleFeedReminder,
                 value: plant.feedReminderTime.format(context),
                 onSurface: onSurface,
@@ -82,7 +83,7 @@ class ScheduleTab extends StatelessWidget {
             children: [
               UpcomingDateRow(
                 icon: Icons.water_drop_outlined,
-                color: Colors.blue,
+                color: AppColors.water,
                 label: loc.scheduleNextWatering,
                 date: plant.nextWaterDue,
                 isOverdue: plant.needsWaterNow,
@@ -91,7 +92,7 @@ class ScheduleTab extends StatelessWidget {
               const Divider(height: 20),
               UpcomingDateRow(
                 icon: Icons.grass_outlined,
-                color: Colors.orange,
+                color: AppColors.warning,
                 label: loc.scheduleNextFeeding,
                 date: plant.nextFoodDue,
                 isOverdue: plant.needsFoodNow,

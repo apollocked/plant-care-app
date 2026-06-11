@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plant_care_app/core/l10n/app_localizations.dart';
+import 'package:plant_care_app/core/theme/app_colors.dart';
 import 'package:plant_care_app/data/model/plant_model.dart';
 import 'package:plant_care_app/logic/plant_viewmodel.dart';
 
@@ -27,7 +28,7 @@ class DetailsActionBar extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         color: isDark
-            ? const Color(0xFF0E1C1D).withValues(alpha: 0.96)
+            ? AppColors.darkBottomBar.withValues(alpha: 0.96)
             : Colors.white.withValues(alpha: 0.96),
         border: Border(
           top: BorderSide(
@@ -50,8 +51,8 @@ class DetailsActionBar extends StatelessWidget {
             child: GradientActionButton(
               label: loc.actionWatered,
               icon: Icons.water_drop_rounded,
-              colors: [Colors.blue.shade400, Colors.blue.shade700],
-              shadowColor: Colors.blue,
+              colors: [AppColors.actionWaterStart, AppColors.actionWaterEnd],
+              shadowColor: AppColors.water,
               onTap: () async {
                 await vm.markPlantWatered(plant.id, context);
                 if (context.mounted) {
@@ -68,8 +69,8 @@ class DetailsActionBar extends StatelessWidget {
             child: GradientActionButton(
               label: loc.actionFed,
               icon: Icons.grass_rounded,
-              colors: [Colors.green.shade500, Colors.teal.shade600],
-              shadowColor: Colors.green,
+              colors: [AppColors.actionFeedStart, AppColors.actionFeedEnd],
+              shadowColor: AppColors.success,
               onTap: () async {
                 await vm.markPlantFed(plant.id, context);
                 if (context.mounted) {

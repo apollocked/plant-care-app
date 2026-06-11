@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:plant_care_app/core/l10n/app_localizations.dart';
+import 'package:plant_care_app/core/theme/app_colors.dart';
 import 'package:plant_care_app/presentation/widgets/settings/glass_container.dart';
 import 'form_helpers.dart';
 import 'time_tile.dart';
@@ -58,7 +59,7 @@ class ReminderSection extends StatelessWidget {
               time: waterTime,
               onTap: onPickWaterTime,
               icon: Icons.water_drop_rounded,
-              color: Colors.blue.shade400,
+              color: AppColors.formWaterIcon,
               onSurface: onSurface,
             ),
             const SizedBox(height: 8),
@@ -67,7 +68,7 @@ class ReminderSection extends StatelessWidget {
               time: feedTime,
               onTap: onPickFeedTime,
               icon: Icons.grass_rounded,
-              color: Colors.green.shade500,
+              color: AppColors.reminderFeed,
               onSurface: onSurface,
             ),
           ] else

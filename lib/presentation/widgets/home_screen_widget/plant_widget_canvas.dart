@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plant_care_app/core/theme/app_colors.dart';
 
 class PlantWidgetCanvas extends StatelessWidget {
   const PlantWidgetCanvas({
@@ -32,8 +33,8 @@ class PlantWidgetCanvas extends StatelessWidget {
     final textDirection = isRTL ? TextDirection.rtl : TextDirection.ltr;
     final theme = Theme.of(context);
     final bgColor = theme.brightness == Brightness.dark
-        ? const Color(0xFF0B1A16)
-        : const Color(0xFFF7FAF8);
+        ? AppColors.darkBg
+        : AppColors.lightSurface;
     final textColor = theme.colorScheme.onSurface;
 
     return MediaQuery(
@@ -107,9 +108,9 @@ class PlantWidgetCanvas extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        _buildStatItem(happy, textHealthy, Colors.green, textColor),
-        _buildStatItem(needWater, textWater, Colors.blue, textColor),
-        _buildStatItem(needFood, textFeed, Colors.orange, textColor),
+        _buildStatItem(happy, textHealthy, AppColors.success, textColor),
+        _buildStatItem(needWater, textWater, AppColors.water, textColor),
+        _buildStatItem(needFood, textFeed, AppColors.warning, textColor),
       ],
     );
   }

@@ -1,5 +1,6 @@
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
+import 'package:plant_care_app/core/theme/app_colors.dart';
 import 'package:plant_care_app/data/model/plant_model.dart';
 import 'package:plant_care_app/core/notifications/notification_helper.dart';
 
@@ -11,7 +12,7 @@ class NotificationService {
             channelKey: basicChannelKey,
             channelName: 'Basic notifications',
             channelDescription: 'General plant notifications',
-            defaultColor: const Color(0xFF2E7D52),
+            defaultColor: AppColors.primaryGreen,
             importance: NotificationImportance.Max,
             enableVibration: true,
             playSound: true,
@@ -22,7 +23,7 @@ class NotificationService {
             channelKey: scheduledChannelKey,
             channelName: 'Scheduled notifications',
             channelDescription: 'Daily plant reminders',
-            defaultColor: const Color(0xFF2E7D52),
+            defaultColor: AppColors.primaryGreen,
             importance: NotificationImportance.Max,
             enableVibration: true,
             playSound: true,

@@ -586,7 +586,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsAbout => 'About';
 
   @override
-  String get settingsVersion => 'Version 1.0.1';
+  String get settingsVersion => 'Version 1.1.0';
 
   @override
   String get settingsWidget => 'Home Screen Widget';

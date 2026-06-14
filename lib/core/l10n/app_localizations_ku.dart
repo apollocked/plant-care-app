@@ -559,7 +559,7 @@ class AppLocalizationsKu extends AppLocalizations {
   String get settingsAbout => 'دەربارە';
 
   @override
-  String get settingsVersion => 'وەشانی 1.0.1';
+  String get settingsVersion => 'وەشانی 1.1.0';
 
   @override
   String get settingsWidget => 'وێجەتی شاشە';

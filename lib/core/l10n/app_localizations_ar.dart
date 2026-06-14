@@ -583,7 +583,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get settingsAbout => 'حول';
 
   @override
-  String get settingsVersion => 'الإصدار 1.0.1';
+  String get settingsVersion => 'الإصدار 1.1.0';
 
   @override
   String get settingsWidget => 'عنصر شاشة البداية';

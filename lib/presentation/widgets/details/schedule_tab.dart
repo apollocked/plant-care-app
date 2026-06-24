@@ -37,7 +37,9 @@ class ScheduleTab extends StatelessWidget {
                 icon: Icons.water_drop_outlined,
                 color: AppColors.water,
                 label: loc.scheduleWatering,
-                value: loc.scheduleEveryNDays(plant.waterIntervalDays),
+                value: plant.waterIntervalDays % 7 == 0
+                    ? loc.scheduleEveryNWeeks(plant.waterIntervalDays ~/ 7)
+                    : loc.scheduleEveryNDays(plant.waterIntervalDays),
                 onSurface: onSurface,
               ),
               const Divider(height: 20),
@@ -45,7 +47,9 @@ class ScheduleTab extends StatelessWidget {
                 icon: Icons.grass_outlined,
                 color: AppColors.warning,
                 label: loc.scheduleFeeding,
-                value: loc.scheduleEveryNDays(plant.feedIntervalDays),
+                value: plant.feedIntervalDays % 7 == 0
+                    ? loc.scheduleEveryNWeeks(plant.feedIntervalDays ~/ 7)
+                    : loc.scheduleEveryNDays(plant.feedIntervalDays),
                 onSurface: onSurface,
               ),
             ],

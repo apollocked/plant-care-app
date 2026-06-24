@@ -97,7 +97,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 );
               },
               child: Text(
-                loc.Welcome,
+                loc.welcome,
                 style: theme.textTheme.displaySmall?.copyWith(
                   fontWeight: FontWeight.w900,
                   color: theme.colorScheme.primary,

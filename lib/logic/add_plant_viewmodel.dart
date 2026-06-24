@@ -15,12 +15,15 @@ class AddPlantViewModel extends ChangeNotifier {
   final TextEditingController nameCtrl = TextEditingController();
   final TextEditingController speciesCtrl = TextEditingController();
   final TextEditingController waterDaysCtrl = TextEditingController(text: '2');
-  final TextEditingController feedDaysCtrl = TextEditingController(text: '7');
+  final TextEditingController feedDaysCtrl = TextEditingController(text: '1');
 
   TimeOfDay waterTime = const TimeOfDay(hour: 9, minute: 0);
   TimeOfDay feedTime = const TimeOfDay(hour: 10, minute: 0);
   bool remindersEnabled = true;
   bool isSaving = false;
+
+  bool waterUnitIsWeeks = false;
+  bool feedUnitIsWeeks = true;
 
   void updateWaterTime(TimeOfDay time) {
     waterTime = time;
@@ -37,13 +40,50 @@ class AddPlantViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
+  void setWaterUnit(bool isWeeks) {
+    if (waterUnitIsWeeks == isWeeks) return;
+    final int current = int.tryParse(waterDaysCtrl.text) ?? 0;
+    if (isWeeks) {
+      if (current > 0 && current % 7 == 0) {
+        waterDaysCtrl.text = (current ~/ 7).toString();
+      } else {
+        waterDaysCtrl.text = '';
+      }
+    } else {
+      waterDaysCtrl.text = (current * 7).toString();
+    }
+    waterUnitIsWeeks = isWeeks;
+    notifyListeners();
+  }
+
+  void setFeedUnit(bool isWeeks) {
+    if (feedUnitIsWeeks == isWeeks) return;
+    final int current = int.tryParse(feedDaysCtrl.text) ?? 0;
+    if (isWeeks) {
+      if (current > 0 && current % 7 == 0) {
+        feedDaysCtrl.text = (current ~/ 7).toString();
+      } else {
+        feedDaysCtrl.text = '';
+      }
+    } else {
+      feedDaysCtrl.text = (current * 7).toString();
+    }
+    feedUnitIsWeeks = isWeeks;
+    notifyListeners();
+  }
+
+  int _resolveInterval(String text, bool isWeeks) {
+    final int value = int.tryParse(text) ?? 1;
+    return isWeeks ? value * 7 : value;
+  }
+
   Future<PlantModel> createPlant() async {
     return PlantModel(
       id: DateTime.now().microsecondsSinceEpoch.toString(),
       name: nameCtrl.text.trim(),
       species: speciesCtrl.text.trim().isEmpty ? null : speciesCtrl.text.trim(),
-      waterIntervalDays: int.parse(waterDaysCtrl.text),
-      feedIntervalDays: int.parse(feedDaysCtrl.text),
+      waterIntervalDays: _resolveInterval(waterDaysCtrl.text, waterUnitIsWeeks),
+      feedIntervalDays: _resolveInterval(feedDaysCtrl.text, feedUnitIsWeeks),
       waterReminderHour: waterTime.hour,
       waterReminderMinute: waterTime.minute,
       feedReminderHour: feedTime.hour,

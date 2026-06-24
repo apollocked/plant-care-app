@@ -3,7 +3,7 @@ import 'app_colors.dart';
 
 class AppTheme {
   static ThemeData get lightTheme => ThemeData(
-    fontFamily: 'uni',
+    fontFamily: 'bahij',
 
     brightness: Brightness.light,
     colorScheme: ColorScheme.fromSeed(
@@ -112,7 +112,7 @@ class AppTheme {
   );
 
   static ThemeData get darkTheme => ThemeData(
-    fontFamily: 'uni',
+    fontFamily: 'bahij',
     brightness: Brightness.dark,
     colorScheme: ColorScheme.fromSeed(
       seedColor: AppColors.primaryGreen,

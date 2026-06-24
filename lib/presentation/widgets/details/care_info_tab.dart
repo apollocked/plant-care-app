@@ -57,7 +57,9 @@ class CareInfoTab extends StatelessWidget {
               loc.scheduleNextWatering,
               plant.nextWaterDue,
             ),
-            intervalLabel: loc.everyNDays(plant.waterIntervalDays),
+            intervalLabel: plant.waterIntervalDays % 7 == 0
+                ? loc.everyNWeeks(plant.waterIntervalDays ~/ 7)
+                : loc.everyNDays(plant.waterIntervalDays),
             onSurface: onSurface,
           ),
           const SizedBox(height: 12),
@@ -72,7 +74,9 @@ class CareInfoTab extends StatelessWidget {
             lastActionAt: plant.lastFedAt,
             nextDueAt: plant.nextFoodDue,
             nextDueLabel: _dueLabel(loc.scheduleNextFeeding, plant.nextFoodDue),
-            intervalLabel: loc.everyNDays(plant.feedIntervalDays),
+            intervalLabel: plant.feedIntervalDays % 7 == 0
+                ? loc.everyNWeeks(plant.feedIntervalDays ~/ 7)
+                : loc.everyNDays(plant.feedIntervalDays),
             onSurface: onSurface,
           ),
           const SizedBox(height: 20),

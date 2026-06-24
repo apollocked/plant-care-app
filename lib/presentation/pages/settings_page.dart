@@ -23,7 +23,11 @@ class SettingsPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(loc.settings),
+        title: Text(
+          loc.settings,
+          style: Theme.of(context).textTheme.titleLarge,
+        ),
+
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
@@ -90,10 +94,13 @@ class SettingsPage extends StatelessWidget {
                           ),
                           title: Text(
                             L10n.getNativeName(locale.languageCode),
-                            style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                              fontWeight: isSelected ? FontWeight.w600 : null,
-                              color: isSelected ? scheme.primary : null,
-                            ),
+                            style: Theme.of(context).textTheme.bodyLarge
+                                ?.copyWith(
+                                  fontWeight: isSelected
+                                      ? FontWeight.w600
+                                      : null,
+                                  color: isSelected ? scheme.primary : null,
+                                ),
                           ),
                           trailing: isSelected
                               ? Icon(

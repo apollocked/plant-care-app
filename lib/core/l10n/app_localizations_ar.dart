@@ -26,7 +26,7 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get Welcome => 'مرحبا بك';
+  String get welcome => 'مرحبا بك';
 
   @override
   String get plantDetails => 'تفاصيل النبات';
@@ -231,6 +231,15 @@ class AppLocalizationsAr extends AppLocalizations {
   String get suffixDays => 'أيام';
 
   @override
+  String get suffixWeeks => 'أسابيع';
+
+  @override
+  String get switchToDays => 'أيام';
+
+  @override
+  String get switchToWeeks => 'أسابيع';
+
+  @override
   String get commonCareTips => 'نصائح الرعاية الشائعة';
 
   @override
@@ -289,6 +298,22 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String everyNDays(int n) {
     return 'كل $nي';
+  }
+
+  @override
+  String everyNWeeks(int n) {
+    return 'كل $nأ';
+  }
+
+  @override
+  String scheduleEveryNWeeks(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: 'أسابيع',
+      one: 'أسبوع',
+    );
+    return 'كل $n $_temp0';
   }
 
   @override

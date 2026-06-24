@@ -96,6 +96,10 @@ class _BuilderContent extends StatelessWidget {
                     waterDaysCtrl: vm.waterDaysCtrl,
                     feedDaysCtrl: vm.feedDaysCtrl,
                     onSurface: onSurface,
+                    waterUnitIsWeeks: vm.waterUnitIsWeeks,
+                    feedUnitIsWeeks: vm.feedUnitIsWeeks,
+                    onWaterUnitChanged: vm.setWaterUnit,
+                    onFeedUnitChanged: vm.setFeedUnit,
                   ),
                   const SizedBox(height: 16),
                   ReminderSection(

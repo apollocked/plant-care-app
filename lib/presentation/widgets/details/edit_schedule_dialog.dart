@@ -18,28 +18,34 @@ class _EditScheduleDialogState extends State<EditScheduleDialog> {
   late TextEditingController _feedIntervalCtrl;
   late TimeOfDay _waterTime;
   late TimeOfDay _feedTime;
+  bool _waterInWeeks = false;
+  bool _feedInWeeks = false;
 
   @override
   void initState() {
     super.initState();
+    final int wDays = widget.plant.waterIntervalDays;
+    final int fDays = widget.plant.feedIntervalDays;
+    _waterInWeeks = wDays > 0 && wDays % 7 == 0;
+    _feedInWeeks = fDays > 0 && fDays % 7 == 0;
     _waterIntervalCtrl = TextEditingController(
-      text: widget.plant.waterIntervalDays.toString(),
+      text: _waterInWeeks ? (wDays ~/ 7).toString() : wDays.toString(),
     );
     _feedIntervalCtrl = TextEditingController(
-      text: widget.plant.feedIntervalDays.toString(),
+      text: _feedInWeeks ? (fDays ~/ 7).toString() : fDays.toString(),
     );
     _waterTime = widget.plant.waterReminderTime;
     _feedTime = widget.plant.feedReminderTime;
   }
 
   Future<void> _save() async {
-    final int waterInterval =
+    final int rawWater =
         int.tryParse(_waterIntervalCtrl.text) ?? widget.plant.waterIntervalDays;
-    final int feedInterval =
+    final int rawFeed =
         int.tryParse(_feedIntervalCtrl.text) ?? widget.plant.feedIntervalDays;
 
-    widget.plant.waterIntervalDays = waterInterval;
-    widget.plant.feedIntervalDays = feedInterval;
+    widget.plant.waterIntervalDays = _waterInWeeks ? rawWater * 7 : rawWater;
+    widget.plant.feedIntervalDays = _feedInWeeks ? rawFeed * 7 : rawFeed;
     widget.plant.waterReminderTime = _waterTime;
     widget.plant.feedReminderTime = _feedTime;
 
@@ -57,8 +63,32 @@ class _EditScheduleDialogState extends State<EditScheduleDialog> {
           mainAxisSize: MainAxisSize.min,
           children: [
             _buildIntervalField(loc.labelWateringInterval, _waterIntervalCtrl),
+            _buildUnitToggle(_waterInWeeks, (v) => setState(() {
+              if (_waterInWeeks == v) return;
+              final int cur = int.tryParse(_waterIntervalCtrl.text) ?? 0;
+              if (v) {
+                _waterIntervalCtrl.text = (cur > 0 && cur % 7 == 0)
+                    ? (cur ~/ 7).toString()
+                    : '';
+              } else {
+                _waterIntervalCtrl.text = (cur * 7).toString();
+              }
+              _waterInWeeks = v;
+            })),
             const SizedBox(height: 12),
             _buildIntervalField(loc.labelFeedingInterval, _feedIntervalCtrl),
+            _buildUnitToggle(_feedInWeeks, (v) => setState(() {
+              if (_feedInWeeks == v) return;
+              final int cur = int.tryParse(_feedIntervalCtrl.text) ?? 0;
+              if (v) {
+                _feedIntervalCtrl.text = (cur > 0 && cur % 7 == 0)
+                    ? (cur ~/ 7).toString()
+                    : '';
+              } else {
+                _feedIntervalCtrl.text = (cur * 7).toString();
+              }
+              _feedInWeeks = v;
+            })),
             const Divider(height: 32),
             _buildTimeTile(
               loc.labelWateringTime,
@@ -93,6 +123,28 @@ class _EditScheduleDialogState extends State<EditScheduleDialog> {
     );
   }
 
+  Widget _buildUnitToggle(bool isWeeks, ValueChanged<bool> onChanged) {
+    return Padding(
+      padding: const EdgeInsets.only(top: 4),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          _UnitChip(
+            label: AppLocalizations.of(context)!.switchToDays,
+            selected: !isWeeks,
+            onTap: () => onChanged(false),
+          ),
+          const SizedBox(width: 8),
+          _UnitChip(
+            label: AppLocalizations.of(context)!.switchToWeeks,
+            selected: isWeeks,
+            onTap: () => onChanged(true),
+          ),
+        ],
+      ),
+    );
+  }
+
   Widget _buildTimeTile(
     String label,
     TimeOfDay time,
@@ -109,6 +161,41 @@ class _EditScheduleDialogState extends State<EditScheduleDialog> {
         );
         if (picked != null) onPick(picked);
       },
+    );
+  }
+}
+
+class _UnitChip extends StatelessWidget {
+  const _UnitChip({
+    required this.label,
+    required this.selected,
+    required this.onTap,
+  });
+
+  final String label;
+  final bool selected;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final primary = Theme.of(context).colorScheme.primary;
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+        decoration: BoxDecoration(
+          color: selected ? primary : Colors.transparent,
+          borderRadius: BorderRadius.circular(8),
+          border: Border.all(color: primary.withValues(alpha: 0.4)),
+        ),
+        child: Text(
+          label,
+          style: Theme.of(context).textTheme.labelSmall?.copyWith(
+            color: selected ? Colors.white : primary,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
     );
   }
 }

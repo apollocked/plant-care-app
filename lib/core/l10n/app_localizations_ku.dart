@@ -26,7 +26,7 @@ class AppLocalizationsKu extends AppLocalizations {
   }
 
   @override
-  String get Welcome => 'بەخێربێیت';
+  String get welcome => 'بەخێربێیت';
 
   @override
   String get plantDetails => 'وردەکارییەکانی ڕووەک';
@@ -220,6 +220,15 @@ class AppLocalizationsKu extends AppLocalizations {
   String get suffixDays => 'ڕۆژ';
 
   @override
+  String get suffixWeeks => 'هەفتە';
+
+  @override
+  String get switchToDays => 'ڕۆژ';
+
+  @override
+  String get switchToWeeks => 'هەفتە';
+
+  @override
   String get commonCareTips => 'ئامۆژگارییە باوەکانی چاودێری';
 
   @override
@@ -279,6 +288,22 @@ class AppLocalizationsKu extends AppLocalizations {
   @override
   String everyNDays(int n) {
     return 'هەموو $n ڕۆژێک';
+  }
+
+  @override
+  String everyNWeeks(int n) {
+    return 'هەموو $n هەفتەیەک';
+  }
+
+  @override
+  String scheduleEveryNWeeks(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: 'هەفتە',
+      one: 'هەفتەیەک',
+    );
+    return 'هەموو $n $_temp0';
   }
 
   @override

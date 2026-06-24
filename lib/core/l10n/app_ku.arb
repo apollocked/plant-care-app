@@ -2,7 +2,7 @@
   "@@locale": "ku",
   "appTitle": "چاودێری ڕووەک",
   "appSubtitle": "داشبۆردە سەوزەکەت",
-  "Welcome": "بەخێربێیت",
+  "welcome": "بەخێربێیت",
   "addNewPlant": "زیادکردنی ڕووەکێکی نوێ",
   "savePlant": "هەڵگرتنی ڕووەک",
   "failedToSavePlant": "هەڵگرتنی ڕووەک سەرنەکەوت: {error}",
@@ -105,6 +105,9 @@
   "labelWaterEvery": "ئاودان هەموو",
   "labelFeedEvery": "خۆراکدان هەموو",
   "suffixDays": "ڕۆژ",
+  "suffixWeeks": "هەفتە",
+  "switchToDays": "ڕۆژ",
+  "switchToWeeks": "هەفتە",
   "commonCareTips": "ئامۆژگارییە باوەکانی چاودێری",
   "tipWater": "ئاودان: ٢-٣ ڕۆژ بۆ کاکتۆس، ٥-٧ بۆ ڕووەکە خولگەییەکان.",
   "tipFeed": "خۆراکدان: ٧-١٤ ڕۆژ لە وەرزی گەشەکردندا، دەگمەن لە زستاندا.",
@@ -123,6 +126,22 @@
   "lastWatered": "دواین ئاودان {time}",
   "lastFed": "دواین خۆراکدان {time}",
   "everyNDays": "هەموو {n} ڕۆژێک",
+  "everyNWeeks": "هەموو {n} هەفتەیەک",
+  "@everyNWeeks": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "scheduleEveryNWeeks": "هەموو {n} {n, plural, one{هەفتەیەک} other{هەفتە}}",
+  "@scheduleEveryNWeeks": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
   "justNow": "هەر ئێستا",
   "hoursAgo": "پێش {h} کاتژمێر",
   "daysAgo": "پێش {d} ڕۆژ",

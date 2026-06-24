@@ -3,7 +3,7 @@
   "appTitle": "رعاية النبات",
   "appSubtitle": "لوحة تحكم خضراء",
   "addNewPlant": "إضافة نبات جديد",
-  "Welcome": "مرحبا بك",
+  "welcome": "مرحبا بك",
   "savePlant": "حفظ النبات",
   "failedToSavePlant": "فشل حفظ النبات: {error}",
   "plantDetails": "تفاصيل النبات",
@@ -105,6 +105,9 @@
   "labelWaterEvery": "اسقِ كل",
   "labelFeedEvery": "أطعِم كل",
   "suffixDays": "أيام",
+  "suffixWeeks": "أسابيع",
+  "switchToDays": "أيام",
+  "switchToWeeks": "أسابيع",
   "commonCareTips": "نصائح الرعاية الشائعة",
   "tipWater": "الري: 2-3 أيام للنباتات العصارية، 5-7 للنباتات الاستوائية.",
   "tipFeed": "التغذية: 7-14 يوماً في موسم النمو، نادرة في الشتاء.",
@@ -123,6 +126,22 @@
   "lastWatered": "آخر ري {time}",
   "lastFed": "آخر إطعام {time}",
   "everyNDays": "كل {n}ي",
+  "everyNWeeks": "كل {n}أ",
+  "@everyNWeeks": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "scheduleEveryNWeeks": "كل {n} {n, plural, one{أسبوع} other{أسابيع}}",
+  "@scheduleEveryNWeeks": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
   "justNow": "الآن",
   "hoursAgo": "منذ {h} ساعة",
   "daysAgo": "منذ {d} يوم",

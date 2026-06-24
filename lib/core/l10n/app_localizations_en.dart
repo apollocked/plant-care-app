@@ -26,7 +26,7 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get Welcome => 'Welcome';
+  String get welcome => 'Welcome';
 
   @override
   String get plantDetails => 'Plant Details';
@@ -231,6 +231,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get suffixDays => 'days';
 
   @override
+  String get suffixWeeks => 'weeks';
+
+  @override
+  String get switchToDays => 'Days';
+
+  @override
+  String get switchToWeeks => 'Weeks';
+
+  @override
   String get commonCareTips => 'Common Care Tips';
 
   @override
@@ -289,6 +298,22 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String everyNDays(int n) {
     return 'Every ${n}d';
+  }
+
+  @override
+  String everyNWeeks(int n) {
+    return 'Every ${n}w';
+  }
+
+  @override
+  String scheduleEveryNWeeks(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: 'weeks',
+      one: 'week',
+    );
+    return 'Every $n $_temp0';
   }
 
   @override

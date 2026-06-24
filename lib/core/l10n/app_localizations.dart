@@ -130,11 +130,11 @@ abstract class AppLocalizations {
   /// **'Failed to save plant: {error}'**
   String failedToSavePlant(String error);
 
-  /// No description provided for @Welcome.
+  /// No description provided for @welcome.
   ///
   /// In en, this message translates to:
   /// **'Welcome'**
-  String get Welcome;
+  String get welcome;
 
   /// No description provided for @plantDetails.
   ///
@@ -478,6 +478,24 @@ abstract class AppLocalizations {
   /// **'days'**
   String get suffixDays;
 
+  /// No description provided for @suffixWeeks.
+  ///
+  /// In en, this message translates to:
+  /// **'weeks'**
+  String get suffixWeeks;
+
+  /// No description provided for @switchToDays.
+  ///
+  /// In en, this message translates to:
+  /// **'Days'**
+  String get switchToDays;
+
+  /// No description provided for @switchToWeeks.
+  ///
+  /// In en, this message translates to:
+  /// **'Weeks'**
+  String get switchToWeeks;
+
   /// No description provided for @commonCareTips.
   ///
   /// In en, this message translates to:
@@ -585,6 +603,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Every {n}d'**
   String everyNDays(int n);
+
+  /// No description provided for @everyNWeeks.
+  ///
+  /// In en, this message translates to:
+  /// **'Every {n}w'**
+  String everyNWeeks(int n);
+
+  /// No description provided for @scheduleEveryNWeeks.
+  ///
+  /// In en, this message translates to:
+  /// **'Every {n} {n, plural, one{week} other{weeks}}'**
+  String scheduleEveryNWeeks(int n);
 
   /// No description provided for @justNow.
   ///

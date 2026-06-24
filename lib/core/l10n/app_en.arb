@@ -12,7 +12,7 @@
       }
     }
   },
-  "Welcome": "Welcome",
+  "welcome": "Welcome",
   "plantDetails": "Plant Details",
   "plantNotFound": "Plant not found",
   "tabCareInfo": "🌿 Care Info",
@@ -133,6 +133,9 @@
   "labelWaterEvery": "Water every",
   "labelFeedEvery": "Feed every",
   "suffixDays": "days",
+  "suffixWeeks": "weeks",
+  "switchToDays": "Days",
+  "switchToWeeks": "Weeks",
   "commonCareTips": "Common Care Tips",
   "tipWater": "Water: 2-3 days for succulents, 5-7 for tropicals.",
   "tipFeed": "Feed: 7-14 days during growing season, rare in winter.",
@@ -166,6 +169,22 @@
   },
   "everyNDays": "Every {n}d",
   "@everyNDays": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "everyNWeeks": "Every {n}w",
+  "@everyNWeeks": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "scheduleEveryNWeeks": "Every {n} {n, plural, one{week} other{weeks}}",
+  "@scheduleEveryNWeeks": {
     "placeholders": {
       "n": {
         "type": "int"

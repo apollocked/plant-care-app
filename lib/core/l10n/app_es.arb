@@ -1,0 +1,385 @@
+{
+  "@@locale": "es",
+  "appTitle": "Cuidado de Plantas",
+  "appSubtitle": "Tu tablero verde",
+  "addNewPlant": "Añadir Nueva Planta",
+  "savePlant": "Guardar Planta",
+  "failedToSavePlant": "Error al guardar la planta: {error}",
+  "@failedToSavePlant": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "welcome": "Bienvenido",
+  "plantDetails": "Detalles de la Planta",
+  "plantNotFound": "Planta no encontrada",
+  "tabCareInfo": "🌿 Info de Cuidado",
+  "tabSchedule": "📋 Horario",
+  "removePlant": "Eliminar Planta",
+  "removePlantConfirm": "¿Eliminar \"{name}\" de tu jardín?",
+  "@removePlantConfirm": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "cancel": "Cancelar",
+  "remove": "Eliminar",
+  "undo": "Deshacer",
+  "getStarted": "Comenzar",
+  "skip": "Saltar",
+  "next": "Siguiente",
+  "myPlants": "Mis Plantas",
+  "plantCare": "PlantCare",
+  "heroBannerUrgent": "🔔 {count} {count, plural, one{planta necesita} other{plantas necesitan}} atención",
+  "@heroBannerUrgent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "heroBannerAllGood": "✅ Todas las plantas están felices",
+  "heroBannerHeading": "Tu Santuario\nVerde 🌿",
+  "urgentBannerTitle": "{count} {count, plural, one{planta} other{plantas}} necesitan cuidado",
+  "@urgentBannerTitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "urgentBannerSubtitle": "Toca una tarjeta para actuar",
+  "statTotal": "Total",
+  "statHealthy": "Saludables",
+  "statWater": "Agua",
+  "statFeed": "Comida",
+  "statTotalDesc": "Tu colección de plantas",
+  "statTotalDetailHealthy": "{count} plantas saludables",
+  "@statTotalDetailHealthy": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "statTotalDetailWater": "{count} necesitan agua",
+  "@statTotalDetailWater": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "statTotalDetailFood": "{count} necesitan comida",
+  "@statTotalDetailFood": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "statHealthyDesc": "El {p}% de tus plantas prosperan",
+  "@statHealthyDesc": {
+    "placeholders": {
+      "p": {
+        "type": "String"
+      }
+    }
+  },
+  "statHealthyDetail": "¡Buen trabajo! ¡Sigue así!",
+  "statWaterDesc": "El {p}% de las plantas necesitan agua",
+  "@statWaterDesc": {
+    "placeholders": {
+      "p": {
+        "type": "String"
+      }
+    }
+  },
+  "statWaterDetailTap": "Toca las plantas para regarlas",
+  "statWaterDetailConsider": "Considera regar ahora",
+  "statFeedDesc": "El {p}% de las plantas necesitan fertilizante",
+  "@statFeedDesc": {
+    "placeholders": {
+      "p": {
+        "type": "String"
+      }
+    }
+  },
+  "statFeedDetailWeakened": "Alimenta las plantas débiles",
+  "statFeedDetailFollow": "Sigue las instrucciones por planta",
+  "noPlantsYet": "Sin Plantas Aún",
+  "noPlantsDesc": "Añade tu primera planta y empieza a seguir su cuidado con recordatorios diarios.",
+  "noPlantsHint": "🌱 Toca \"Añadir Planta\" para empezar",
+  "addPlant": "Añadir Planta",
+  "unknownSpecies": "Especie desconocida",
+  "healthThriving": "Prosperando",
+  "healthNeedsCare": "Necesita cuidado",
+  "healthUrgent": "¡Urgente!",
+  "waterNow": "Regar Ahora",
+  "waterOk": "Agua bien",
+  "feedNow": "Alimentar Ahora",
+  "feedOk": "Comida bien",
+  "sectionPlantIdentity": "Identidad de la Planta",
+  "labelPlantName": "Nombre de la Planta",
+  "hintPlantName": "ej. Mi Higo Hoja",
+  "labelSpecies": "Especie (Opcional)",
+  "hintSpecies": "ej. Monstera Deliciosa",
+  "validatorEnterName": "Por favor ingresa un nombre",
+  "sectionCareSchedule": "Horario de Cuidado",
+  "labelWaterEvery": "Regar cada",
+  "labelFeedEvery": "Alimentar cada",
+  "suffixDays": "días",
+  "suffixWeeks": "semanas",
+  "switchToDays": "Días",
+  "switchToWeeks": "Semanas",
+  "commonCareTips": "Consejos de Cuidado",
+  "tipWater": "Riego: 2-3 días para suculentas, 5-7 para tropicales.",
+  "tipFeed": "Abono: 7-14 días en temporada de crecimiento, raro en invierno.",
+  "validatorRequired": "Requerido",
+  "validatorMustBePositive": "Debe ser > 0",
+  "sectionReminders": "Recordatorios",
+  "labelWateringReminder": "Recordatorio de Riego",
+  "labelFeedingReminder": "Recordatorio de Abono",
+  "remindersDisabled": "Los recordatorios están desactivados para esta planta.",
+  "careCardWatering": "Riego",
+  "careCardFeeding": "Abono",
+  "careCardWatered": "Regada ✓",
+  "careCardFed": "Alimentada ✓",
+  "careCardWaterNow": "¡Regar Ahora!",
+  "careCardFeedNow": "¡Alimentar Ahora!",
+  "lastWatered": "Último riego {time}",
+  "@lastWatered": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "lastFed": "Última alimentación {time}",
+  "@lastFed": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "everyNDays": "Cada {n}d",
+  "@everyNDays": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "everyNWeeks": "Cada {n}s",
+  "@everyNWeeks": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "scheduleEveryNWeeks": "Cada {n} {n, plural, one{semana} other{semanas}}",
+  "@scheduleEveryNWeeks": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "justNow": "justo ahora",
+  "hoursAgo": "hace {h}h",
+  "@hoursAgo": {
+    "placeholders": {
+      "h": {
+        "type": "int"
+      }
+    }
+  },
+  "daysAgo": "hace {d}d",
+  "@daysAgo": {
+    "placeholders": {
+      "d": {
+        "type": "int"
+      }
+    }
+  },
+  "careTipsHeading": "💡 Consejos de Cuidado",
+  "tipSunlight": "Asegura luz indirecta adecuada todos los días.",
+  "tipTemperature": "Mantén la temperatura estable — evita corrientes frías y calor directo.",
+  "tipPests": "Revisa plagas regularmente y limpia las hojas para mejor fotosíntesis.",
+  "tipWaterInterval": "Riega cada {n} {n, plural, one{día} other{días}} para mejores resultados.",
+  "@tipWaterInterval": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "tipFeedInterval": "Abona cada {n} {n, plural, one{día} other{días}} para mantenerlo fuerte.",
+  "@tipFeedInterval": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "scheduleCardIntervals": "🔁 Intervalos de Cuidado",
+  "scheduleCardReminders": "⏰ Horarios de Recordatorio",
+  "scheduleCardUpcoming": "📅 Próximas Fechas",
+  "scheduleWatering": "Riego",
+  "scheduleFeeding": "Abono",
+  "scheduleWaterReminder": "Recordatorio de Riego",
+  "scheduleFeedReminder": "Recordatorio de Abono",
+  "scheduleNextWatering": "Próximo riego",
+  "scheduleNextFeeding": "Próximo abono",
+  "scheduleEveryNDays": "Cada {n} {n, plural, one{día} other{días}}",
+  "@scheduleEveryNDays": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "overdue": "¡Atrasado!",
+  "healthThriving2": "Prosperando 🌟",
+  "healthNeedsCare2": "Necesita Cuidado",
+  "healthUrgent2": "¡Urgente! 🚨",
+  "remindersOn": "🔔 Recordatorios activados",
+  "remindersOff": "🔕 Desactivados",
+  "actionWatered": "¡Regada!",
+  "actionFed": "¡Alimentada!",
+  "snackWatered": "💧 ¡{name} ha sido regada!",
+  "@snackWatered": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "snackFed": "🌿 ¡{name} ha sido alimentada!",
+  "@snackFed": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "pushReminders": "Recordatorios Push",
+  "notificationsActive": "Notificaciones diarias activas",
+  "tapToEnableNotifications": "Toca para activar notificaciones",
+  "snackRemindersOn": "🔔 Recordatorios ACTIVADOS para {name}",
+  "@snackRemindersOn": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "snackRemindersOff": "🔕 Recordatorios DESACTIVADOS para {name}",
+  "@snackRemindersOff": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "editCareSchedule": "Editar Horario de Cuidado",
+  "labelWateringInterval": "Intervalo de Riego (Días)",
+  "labelFeedingInterval": "Intervalo de Abono (Días)",
+  "labelWateringTime": "Hora de Riego",
+  "labelFeedingTime": "Hora de Abono",
+  "saveChanges": "Guardar Cambios",
+  "notifDialogTitle": "¡Mantente al día con\ntus plantas! 🌿",
+  "notifDialogBody": "Activa las notificaciones para recordarte cuándo regar o abonar tus plantas.",
+  "allowNotifications": "Permitir Notificaciones",
+  "maybeLater": "Quizás Después",
+  "pillWater": "Agua",
+  "pillFeed": "Comida",
+  "pillLight": "Luz",
+  "onboardingWelcomeTitle": "Cultiva Tu\nSelva Urbana",
+  "onboardingWelcomeBody": "Un enfoque moderno para mantener tus plantas vivas y prósperas.",
+  "onboardingInfoTitle1": "Nunca Te Pierdas un Riego",
+  "onboardingInfoBody1": "Configura recordatorios personalizados para riego, abono y trasplante. Tus plantas te lo agradecerán.",
+  "onboardingInfoTitle2": "Privacidad de Datos",
+  "onboardingInfoBody2": "Tus datos permanecen en tu dispositivo.\nEl seguimiento de alto rendimiento te permite aprovechar al máximo tu planta.",
+  "onboardingStartBody": "Disfruta los beneficios de un enfoque moderno para mantener tus plantas vivas y prósperas con Plant Care.",
+  "onboardingStartCta": "¿Listo para comenzar tu viaje?",
+  "notifWaterTitle": "Regar {name}",
+  "@notifWaterTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "notifFeedTitle": "Alimentar {name}",
+  "@notifFeedTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "notifWaterBody": "{name} necesita agua ahora.",
+  "@notifWaterBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "notifFeedBody": "{name} está listo para abono.",
+  "@notifFeedBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "notifActionMarkDone": "Marcar Hecho",
+  "tourSettingsTitle": "Configuración ⚙️",
+  "tourSettingsDesc": "Toca aquí para abrir Configuración y personalizar tema, idioma y más.",
+  "tourBannerTitle": "Tu Santuario Verde 🌿",
+  "tourBannerDesc": "Una visión general rápida del estado actual de tu jardín.",
+  "tourStatsTitle": "Estadísticas en Vivo 📊",
+  "tourStatsDesc": "Sigue tu total de plantas, cantidad saludable y próximas necesidades de riego y abono.",
+  "tourSectionTitle": "Mis Plantas 🪴",
+  "tourSectionDesc": "Navega la lista completa de todas tus plantas registradas aquí.",
+  "tourEmptyTitle": "Jardín Vacío 🌱",
+  "tourEmptyDesc": "¡Sin plantas aún! Añade tu primera planta para comenzar tu horario de cuidado.",
+  "tourFabTitle": "Añadir una Planta ✨",
+  "tourFabDesc": "Toca aquí para registrar una nueva planta y configurar sus recordatorios.",
+  "settings": "Configuración",
+  "privacyPolicy": "Política de Privacidad",
+  "privacyPolicyTitle": "Política de Privacidad",
+  "privacyPolicyLastUpdated": "Última actualización: mayo 2026",
+  "settingsAppearance": "Apariencia",
+  "settingsLanguage": "Idioma",
+  "settingsAbout": "Acerca de",
+  "settingsVersion": "Versión 1.1.0",
+  "settingsWidget": "Widget de Pantalla de Inicio",
+  "settingsWidgetDesc": "Crea un widget en tu pantalla de inicio para ver tus estadísticas de un vistazo",
+  "createWidget": "Crear Widget",
+  "widgetCreatedSuccess": "¡Widget creado exitosamente! 🎉",
+  "darkMode": "Modo Oscuro",
+  "lightMode": "Modo Claro",
+  "privacySection1Title": "1. Información que Recopilamos",
+  "privacySection1Body": "Plant Care no recopila, almacena ni transmite ningún dato personal a servidores externos. Toda la información que proporcionas —incluyendo nombres de plantas, especies, horarios de cuidado y preferencias de recordatorios— se almacena exclusivamente en tu dispositivo usando almacenamiento local (Hive).\n\nNo utilizamos SDKs de análisis, herramientas de reporte de fallos ni ningún servicio de terceros que recopile información personal identificable.",
+  "privacySection2Title": "2. Notificaciones",
+  "privacySection2Body": "Si concedes permiso, Plant Care usa notificaciones push locales para recordarte los horarios de riego y abono. Ningún dato de notificación se envía a servidores externos. Toda la programación de notificaciones ocurre completamente en tu dispositivo.\n\nPuedes revocar el permiso de notificaciones en cualquier momento a través de la configuración de tu dispositivo o dentro de la app.",
+  "privacySection3Title": "3. Almacenamiento y Seguridad de Datos",
+  "privacySection3Body": "Tus datos se almacenan localmente usando Hive, una base de datos local ligera y encriptada. Como ningún dato sale de tu dispositivo, no hay riesgo de filtración de datos por nuestra parte.\n\nSi desinstalas la app, todos los datos almacenados se eliminan permanentemente.",
+  "privacySection4Title": "4. Servicios de Terceros",
+  "privacySection4Body": "Esta app no integra servicios de análisis, publicidad o seguimiento de terceros. La app utiliza los siguientes paquetes únicamente para funcionalidad local:\n  • Hive — base de datos local\n  • Awesome Notifications — programación local de notificaciones\n  • Provider — gestión de estado en la app\n\nNinguno de estos paquetes transmite tus datos externamente.",
+  "privacySection5Title": "5. Privacidad de Menores",
+  "privacySection5Body": "Plant Care es segura para todas las edades. No recopilamos información personal de nadie, incluidos niños menores de 13 años. Todos los datos permanecen en el dispositivo del usuario.",
+  "privacySection6Title": "6. Cambios a Esta Política",
+  "privacySection6Body": "Podemos actualizar esta política de privacidad de vez en cuando. Cualquier cambio se reflejará dentro de la app. El uso continuado de la app después de los cambios constituye la aceptación de la política actualizada.",
+  "privacySection7Title": "7. Contacto",
+  "privacySection7Body": "Si tienes alguna pregunta sobre esta política de privacidad, contáctanos en:\nmahamadbarznji712@gmail.com"
+}

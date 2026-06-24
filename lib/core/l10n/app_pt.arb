@@ -1,0 +1,385 @@
+{
+  "@@locale": "pt",
+  "appTitle": "Cuidado de Plantas",
+  "appSubtitle": "Seu painel verde",
+  "addNewPlant": "Adicionar Nova Planta",
+  "savePlant": "Salvar Planta",
+  "failedToSavePlant": "Erro ao salvar a planta: {error}",
+  "@failedToSavePlant": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "welcome": "Bem-vindo",
+  "plantDetails": "Detalhes da Planta",
+  "plantNotFound": "Planta não encontrada",
+  "tabCareInfo": "🌿 Info de Cuidados",
+  "tabSchedule": "📋 Agenda",
+  "removePlant": "Remover Planta",
+  "removePlantConfirm": "Remover \"{name}\" do seu jardim?",
+  "@removePlantConfirm": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "cancel": "Cancelar",
+  "remove": "Remover",
+  "undo": "Desfazer",
+  "getStarted": "Começar",
+  "skip": "Pular",
+  "next": "Próximo",
+  "myPlants": "Minhas Plantas",
+  "plantCare": "PlantCare",
+  "heroBannerUrgent": "🔔 {count} {count, plural, one{planta precisa} other{plantas precisam}} de atenção",
+  "@heroBannerUrgent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "heroBannerAllGood": "✅ Todas as plantas estão felizes",
+  "heroBannerHeading": "Seu Santuário\nVerde 🌿",
+  "urgentBannerTitle": "{count} {count, plural, one{planta} other{plantas}} precisa(m) de cuidados",
+  "@urgentBannerTitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "urgentBannerSubtitle": "Toque em um cartão para agir",
+  "statTotal": "Total",
+  "statHealthy": "Saudáveis",
+  "statWater": "Água",
+  "statFeed": "Comida",
+  "statTotalDesc": "Sua coleção de plantas",
+  "statTotalDetailHealthy": "{count} plantas saudáveis",
+  "@statTotalDetailHealthy": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "statTotalDetailWater": "{count} precisam de água",
+  "@statTotalDetailWater": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "statTotalDetailFood": "{count} precisam de comida",
+  "@statTotalDetailFood": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "statHealthyDesc": "{p}% das suas plantas estão prosperando",
+  "@statHealthyDesc": {
+    "placeholders": {
+      "p": {
+        "type": "String"
+      }
+    }
+  },
+  "statHealthyDetail": "Ótimo trabalho! Continue assim!",
+  "statWaterDesc": "{p}% das plantas precisam de água",
+  "@statWaterDesc": {
+    "placeholders": {
+      "p": {
+        "type": "String"
+      }
+    }
+  },
+  "statWaterDetailTap": "Toque nas plantas para regá-las",
+  "statWaterDetailConsider": "Considere regar agora",
+  "statFeedDesc": "{p}% das plantas precisam de fertilizante",
+  "@statFeedDesc": {
+    "placeholders": {
+      "p": {
+        "type": "String"
+      }
+    }
+  },
+  "statFeedDetailWeakened": "Alimente plantas que estão fracas",
+  "statFeedDetailFollow": "Siga as instruções de alimentação por planta",
+  "noPlantsYet": "Nenhuma Planta Ainda",
+  "noPlantsDesc": "Adicione sua primeira planta e comece a acompanhar seus cuidados com lembretes diários.",
+  "noPlantsHint": "🌱 Toque em \"Adicionar Planta\" para começar",
+  "addPlant": "Adicionar Planta",
+  "unknownSpecies": "Espécie desconhecida",
+  "healthThriving": "Prosperando",
+  "healthNeedsCare": "Precisa de cuidados",
+  "healthUrgent": "Urgente!",
+  "waterNow": "Regar Agora",
+  "waterOk": "Água ok",
+  "feedNow": "Alimentar Agora",
+  "feedOk": "Comida ok",
+  "sectionPlantIdentity": "Identidade da Planta",
+  "labelPlantName": "Nome da Planta",
+  "hintPlantName": "ex. Minha Figueira",
+  "labelSpecies": "Espécie (Opcional)",
+  "hintSpecies": "ex. Monstera Deliciosa",
+  "validatorEnterName": "Por favor insira um nome",
+  "sectionCareSchedule": "Agenda de Cuidados",
+  "labelWaterEvery": "Regar a cada",
+  "labelFeedEvery": "Alimentar a cada",
+  "suffixDays": "dias",
+  "suffixWeeks": "semanas",
+  "switchToDays": "Dias",
+  "switchToWeeks": "Semanas",
+  "commonCareTips": "Dicas de Cuidados",
+  "tipWater": "Rega: 2-3 dias para suculentas, 5-7 para tropicais.",
+  "tipFeed": "Adubo: 7-14 dias durante estação de crescimento, raro no inverno.",
+  "validatorRequired": "Obrigatório",
+  "validatorMustBePositive": "Deve ser > 0",
+  "sectionReminders": "Lembretes",
+  "labelWateringReminder": "Lembrete de Rega",
+  "labelFeedingReminder": "Lembrete de Adubo",
+  "remindersDisabled": "Os lembretes estão desativados para esta planta.",
+  "careCardWatering": "Rega",
+  "careCardFeeding": "Adubo",
+  "careCardWatered": "Regada ✓",
+  "careCardFed": "Alimentada ✓",
+  "careCardWaterNow": "Regar Agora!",
+  "careCardFeedNow": "Alimentar Agora!",
+  "lastWatered": "Última rega {time}",
+  "@lastWatered": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "lastFed": "Última alimentação {time}",
+  "@lastFed": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "everyNDays": "A cada {n}d",
+  "@everyNDays": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "everyNWeeks": "A cada {n}s",
+  "@everyNWeeks": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "scheduleEveryNWeeks": "A cada {n} {n, plural, one{semana} other{semanas}}",
+  "@scheduleEveryNWeeks": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "justNow": "agora mesmo",
+  "hoursAgo": "há {h}h",
+  "@hoursAgo": {
+    "placeholders": {
+      "h": {
+        "type": "int"
+      }
+    }
+  },
+  "daysAgo": "há {d}d",
+  "@daysAgo": {
+    "placeholders": {
+      "d": {
+        "type": "int"
+      }
+    }
+  },
+  "careTipsHeading": "💡 Dicas de Cuidados",
+  "tipSunlight": "Garanta luz indireta adequada todos os dias.",
+  "tipTemperature": "Mantenha a temperatura estável — evite correntes frias e calor direto.",
+  "tipPests": "Verifique pragas regularmente e limpe as folhas para melhor fotossíntese.",
+  "tipWaterInterval": "Regue a cada {n} {n, plural, one{dia} other{dias}} para melhores resultados.",
+  "@tipWaterInterval": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "tipFeedInterval": "Adube a cada {n} {n, plural, one{dia} other{dias}} para mantê-lo forte.",
+  "@tipFeedInterval": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "scheduleCardIntervals": "🔁 Intervalos de Cuidados",
+  "scheduleCardReminders": "⏰ Horários de Lembrete",
+  "scheduleCardUpcoming": "📅 Próximas Datas",
+  "scheduleWatering": "Rega",
+  "scheduleFeeding": "Adubo",
+  "scheduleWaterReminder": "Lembrete de Rega",
+  "scheduleFeedReminder": "Lembrete de Adubo",
+  "scheduleNextWatering": "Próxima rega",
+  "scheduleNextFeeding": "Próximo adubo",
+  "scheduleEveryNDays": "A cada {n} {n, plural, one{dia} other{dias}}",
+  "@scheduleEveryNDays": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "overdue": "Atrasado!",
+  "healthThriving2": "Prosperando 🌟",
+  "healthNeedsCare2": "Precisa de Cuidados",
+  "healthUrgent2": "Urgente! 🚨",
+  "remindersOn": "🔔 Lembretes ativados",
+  "remindersOff": "🔕 Desativados",
+  "actionWatered": "Regada!",
+  "actionFed": "Alimentada!",
+  "snackWatered": "💧 {name} foi regada!",
+  "@snackWatered": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "snackFed": "🌿 {name} foi alimentada!",
+  "@snackFed": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "pushReminders": "Lembretes Push",
+  "notificationsActive": "Notificações diárias ativas",
+  "tapToEnableNotifications": "Toque para ativar notificações",
+  "snackRemindersOn": "🔔 Lembretes ATIVADOS para {name}",
+  "@snackRemindersOn": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "snackRemindersOff": "🔕 Lembretes DESATIVADOS para {name}",
+  "@snackRemindersOff": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "editCareSchedule": "Editar Agenda de Cuidados",
+  "labelWateringInterval": "Intervalo de Rega (Dias)",
+  "labelFeedingInterval": "Intervalo de Adubo (Dias)",
+  "labelWateringTime": "Horário de Rega",
+  "labelFeedingTime": "Horário de Adubo",
+  "saveChanges": "Salvar Alterações",
+  "notifDialogTitle": "Fique por dentro\ndos cuidados! 🌿",
+  "notifDialogBody": "Ative as notificações para lembrar quando suas plantas precisam de água ou adubo.",
+  "allowNotifications": "Permitir Notificações",
+  "maybeLater": "Talvez Depois",
+  "pillWater": "Água",
+  "pillFeed": "Comida",
+  "pillLight": "Luz",
+  "onboardingWelcomeTitle": "Cultive Sua\nSelva Urbana",
+  "onboardingWelcomeBody": "Uma abordagem moderna para manter suas plantas vivas e prosperando.",
+  "onboardingInfoTitle1": "Nunca Perca uma Rega",
+  "onboardingInfoBody1": "Defina lembretes personalizados para rega, adubo e replantio. Suas plantas agradecerão.",
+  "onboardingInfoTitle2": "Privacidade de Dados",
+  "onboardingInfoBody2": "Seus dados permanecem no seu dispositivo.\nO acompanhamento de alto desempenho permite que você aproveite ao máximo sua planta.",
+  "onboardingStartBody": "Aproveite os benefícios de uma abordagem moderna para manter suas plantas vivas e prósperas com o Plant Care.",
+  "onboardingStartCta": "Pronto para começar sua jornada?",
+  "notifWaterTitle": "Regar {name}",
+  "@notifWaterTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "notifFeedTitle": "Alimentar {name}",
+  "@notifFeedTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "notifWaterBody": "{name} precisa de água agora.",
+  "@notifWaterBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "notifFeedBody": "{name} está pronto para adubo.",
+  "@notifFeedBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "notifActionMarkDone": "Marcar Concluído",
+  "tourSettingsTitle": "Configurações ⚙️",
+  "tourSettingsDesc": "Toque aqui para abrir Configurações e personalizar tema, idioma e mais.",
+  "tourBannerTitle": "Seu Santuário Verde 🌿",
+  "tourBannerDesc": "Uma visão geral rápida do estado atual do seu jardim.",
+  "tourStatsTitle": "Estatísticas ao Vivo 📊",
+  "tourStatsDesc": "Acompanhe seu total de plantas, quantidade saudável e próximas necessidades de rega e adubo.",
+  "tourSectionTitle": "Minhas Plantas 🪴",
+  "tourSectionDesc": "Navegue pela lista completa de todas as suas plantas registradas aqui.",
+  "tourEmptyTitle": "Jardim Vazio 🌱",
+  "tourEmptyDesc": "Nenhuma planta ainda! Adicione sua primeira planta para começar sua agenda de cuidados.",
+  "tourFabTitle": "Adicionar uma Planta ✨",
+  "tourFabDesc": "Toque aqui para registrar uma nova planta e configurar seus lembretes.",
+  "settings": "Configurações",
+  "privacyPolicy": "Política de Privacidade",
+  "privacyPolicyTitle": "Política de Privacidade",
+  "privacyPolicyLastUpdated": "Última atualização: maio 2026",
+  "settingsAppearance": "Aparência",
+  "settingsLanguage": "Idioma",
+  "settingsAbout": "Sobre",
+  "settingsVersion": "Versão 1.1.0",
+  "settingsWidget": "Widget da Tela Inicial",
+  "settingsWidgetDesc": "Crie um widget na tela inicial para ver suas estatísticas de relance",
+  "createWidget": "Criar Widget",
+  "widgetCreatedSuccess": "Widget criado com sucesso! 🎉",
+  "darkMode": "Modo Escuro",
+  "lightMode": "Modo Claro",
+  "privacySection1Title": "1. Informações que Coletamos",
+  "privacySection1Body": "O Plant Care não coleta, armazena ou transmite nenhum dado pessoal para servidores externos. Todas as informações que você fornece — incluindo nomes de plantas, espécies, agendas de cuidados e preferências de lembretes — são armazenadas exclusivamente no seu dispositivo usando armazenamento local (Hive).\n\nNão utilizamos SDKs de análise, ferramentas de relatório de falhas ou qualquer serviço de terceiros que colete informações pessoais identificáveis.",
+  "privacySection2Title": "2. Notificações",
+  "privacySection2Body": "Se você conceder permissão, o Plant Care usa notificações push locais para lembrá-lo sobre horários de rega e adubo. Nenhum dado de notificação é enviado para servidores externos. Todo o agendamento de notificações acontece inteiramente no seu dispositivo.\n\nVocê pode revogar a permissão de notificação a qualquer momento através das configurações do dispositivo ou dentro do aplicativo.",
+  "privacySection3Title": "3. Armazenamento e Segurança de Dados",
+  "privacySection3Body": "Seus dados são armazenados localmente usando Hive, um banco de dados local leve e criptografado. Como nenhum dado sai do seu dispositivo, não há risco de violação de dados da nossa parte.\n\nSe você desinstalar o aplicativo, todos os dados armazenados são permanentemente excluídos.",
+  "privacySection4Title": "4. Serviços de Terceiros",
+  "privacySection4Body": "Este aplicativo não integra serviços de análise, publicidade ou rastreamento de terceiros. O aplicativo utiliza os seguintes pacotes exclusivamente para funcionalidade local:\n  • Hive — banco de dados local\n  • Awesome Notifications — agendamento local de notificações\n  • Provider — gerenciamento de estado no aplicativo\n\nNenhum desses pacotes transmite seus dados externamente.",
+  "privacySection5Title": "5. Privacidade de Menores",
+  "privacySection5Body": "O Plant Care é seguro para todas as idades. Não coletamos informações pessoais de ninguém, incluindo crianças menores de 13 anos. Todos os dados permanecem no dispositivo do usuário.",
+  "privacySection6Title": "6. Alterações nesta Política",
+  "privacySection6Body": "Podemos atualizar esta política de privacidade de tempos em tempos. Quaisquer alterações serão refletidas no aplicativo. O uso continuado do aplicativo após as alterações constitui aceitação da política atualizada.",
+  "privacySection7Title": "7. Contato",
+  "privacySection7Body": "Se você tiver alguma dúvida sobre esta política de privacidade, entre em contato conosco:\nmahamadbarznji712@gmail.com"
+}

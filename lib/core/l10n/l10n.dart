@@ -8,6 +8,8 @@ class L10n {
     const Locale('ku'),
     const Locale('en'),
     const Locale('ar'),
+    const Locale('es'),
+    const Locale('pt'),
   ];
 
   static String getNativeName(String code) {
@@ -16,6 +18,10 @@ class L10n {
         return 'العربية';
       case 'ku':
         return 'کوردی';
+      case 'es':
+        return 'Español';
+      case 'pt':
+        return 'Português';
       case 'en':
       default:
         return 'English';

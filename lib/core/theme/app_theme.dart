@@ -172,7 +172,9 @@ class AppTheme {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(12)),
       ),
+      backgroundColor: AppColors.snackbarBg,
       contentTextStyle: TextStyle(color: AppColors.snackbarText),
+      actionTextColor: AppColors.snackbarAction,
     ),
   );
 }

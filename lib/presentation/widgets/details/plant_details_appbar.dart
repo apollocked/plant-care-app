@@ -30,9 +30,7 @@ class PlantDetailsAppBar extends StatelessWidget
       iconTheme: IconThemeData(color: onSurface),
       title: Text(
         plant.name,
-        style: Theme.of(context).textTheme.titleLarge?.copyWith(
-          fontSize: 18,
-        ),
+        style: Theme.of(context).textTheme.titleLarge,
       ),
       actions: [
         GestureDetector(

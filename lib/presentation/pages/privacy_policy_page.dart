@@ -11,7 +11,7 @@ class PrivacyPolicyPage extends StatelessWidget {
     final ColorScheme scheme = Theme.of(context).colorScheme;
     return Scaffold(
       appBar: AppBar(
-        title: Text(loc.privacyPolicyTitle),
+        title: Text(loc.privacyPolicyTitle, style: Theme.of(context).textTheme.titleLarge),
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),

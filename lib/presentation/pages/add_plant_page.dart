@@ -35,9 +35,7 @@ class AddPlantPage extends StatelessWidget {
               const SizedBox(width: 10),
               Text(
                 loc.addNewPlant,
-                style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  fontSize: 17,
-                ),
+                style: Theme.of(context).textTheme.titleLarge,
               ),
             ],
           ),

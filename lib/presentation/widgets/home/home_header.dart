@@ -43,9 +43,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
             children: [
               Text(
                 loc.plantCare,
-                style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  fontSize: 17,
-                ),
+                style: Theme.of(context).textTheme.titleLarge,
               ),
               Text(
                 loc.appSubtitle,

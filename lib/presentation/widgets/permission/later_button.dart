@@ -26,10 +26,8 @@ class LaterButton extends StatelessWidget {
         onPressed: () => Navigator.of(context).pop(false),
         child: Text(
           loc.maybeLater,
-          style: TextStyle(
-            fontSize: 14,
+          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
             fontWeight: FontWeight.w500,
-            color: subtextColor,
           ),
         ),
       ),

@@ -43,15 +43,13 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
             children: [
               Text(
                 loc.plantCare,
-                style: TextStyle(fontSize: 17, color: onSurface),
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                  fontSize: 17,
+                ),
               ),
               Text(
                 loc.appSubtitle,
-                style: TextStyle(
-                  fontSize: 11,
-                  color: onSurface.withValues(alpha: 0.5),
-                  fontWeight: FontWeight.w400,
-                ),
+                style: Theme.of(context).textTheme.labelSmall,
               ),
             ],
           ),

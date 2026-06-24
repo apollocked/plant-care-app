@@ -2,7 +2,7 @@
   "@@locale": "ku",
   "appTitle": "چاودێری ڕووەک",
   "appSubtitle": "داشبۆردە سەوزەکەت",
-  "wellcome": "بەخێربێیت",
+  "Welcome": "بەخێربێیت",
   "addNewPlant": "زیادکردنی ڕووەکێکی نوێ",
   "savePlant": "هەڵگرتنی ڕووەک",
   "failedToSavePlant": "هەڵگرتنی ڕووەک سەرنەکەوت: {error}",

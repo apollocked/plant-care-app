@@ -44,16 +44,14 @@ class UrgentBanner extends StatelessWidget {
               children: [
                 Text(
                   loc.urgentBannerTitle(urgentCount),
-                  style: const TextStyle(
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                     fontWeight: FontWeight.w600,
-                    fontSize: 13,
                     color: AppColors.warning,
                   ),
                 ),
                 Text(
                   loc.urgentBannerSubtitle,
-                  style: TextStyle(
-                    fontSize: 11,
+                  style: Theme.of(context).textTheme.labelSmall?.copyWith(
                     color: AppColors.warning.withValues(alpha: 0.7),
                   ),
                 ),

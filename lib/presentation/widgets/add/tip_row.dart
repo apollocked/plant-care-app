@@ -20,10 +20,8 @@ class TipRow extends StatelessWidget {
         Expanded(
           child: Text(
             text,
-            style: TextStyle(
+            style: Theme.of(context).textTheme.labelSmall?.copyWith(
               fontSize: 10,
-              color: onSurface.withValues(alpha: 0.7),
-              fontWeight: FontWeight.w400,
             ),
           ),
         ),

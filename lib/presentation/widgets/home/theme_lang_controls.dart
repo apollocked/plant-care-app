@@ -73,7 +73,7 @@ class ThemeLangControls extends StatelessWidget {
                         children: [
                           Text(
                             L10n.getNativeName(locale.languageCode),
-                            style: TextStyle(
+                            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                               fontWeight: isSelected ? FontWeight.bold : null,
                               color: isSelected
                                   ? Theme.of(context).colorScheme.primary

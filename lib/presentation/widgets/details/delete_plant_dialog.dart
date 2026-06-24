@@ -23,7 +23,7 @@ class DeletePlantDialog extends StatelessWidget {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       title: Text(
         loc.removePlant,
-        style: const TextStyle(fontWeight: FontWeight.w700),
+        style: Theme.of(context).textTheme.titleLarge,
       ),
       content: Text(loc.removePlantConfirm(plant.name)),
       actions: [

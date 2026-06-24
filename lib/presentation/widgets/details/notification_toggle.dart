@@ -72,18 +72,13 @@ class NotificationToggleCard extends StatelessWidget {
               children: [
                 Text(
                   loc.pushReminders,
-                  style: TextStyle(
-                    fontSize: 14,
+                  style: Theme.of(context).textTheme.titleSmall?.copyWith(
                     fontWeight: FontWeight.w700,
-                    color: onSurface,
                   ),
                 ),
                 Text(
                   on ? loc.notificationsActive : loc.tapToEnableNotifications,
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: onSurface.withValues(alpha: 0.55),
-                  ),
+                  style: Theme.of(context).textTheme.bodySmall,
                 ),
               ],
             ),

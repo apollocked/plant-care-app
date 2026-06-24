@@ -51,13 +51,11 @@ class DetailsTabBar extends StatelessWidget {
             ),
             labelColor: Colors.white,
             unselectedLabelColor: onSurface.withValues(alpha: 0.45),
-            labelStyle: const TextStyle(
+            labelStyle: Theme.of(context).textTheme.titleSmall?.copyWith(
               fontWeight: FontWeight.w700,
-              fontSize: 14,
             ),
-            unselectedLabelStyle: const TextStyle(
+            unselectedLabelStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
               fontWeight: FontWeight.w600,
-              fontSize: 13,
             ),
             tabs: [
               Tab(text: loc.tabCareInfo),

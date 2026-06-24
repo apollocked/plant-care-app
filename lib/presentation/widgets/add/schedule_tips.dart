@@ -34,9 +34,7 @@ class ScheduleTips extends StatelessWidget {
               const SizedBox(width: 6),
               Text(
                 loc.commonCareTips,
-                style: TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w700,
+                style: Theme.of(context).textTheme.labelLarge?.copyWith(
                   color: scheme.primary,
                 ),
               ),

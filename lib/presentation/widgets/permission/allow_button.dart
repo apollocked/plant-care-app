@@ -46,9 +46,8 @@ class AllowButton extends StatelessWidget {
               const SizedBox(width: 8),
               Text(
                 loc.allowNotifications,
-                style: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                  color: Colors.white,
                 ),
               ),
             ],

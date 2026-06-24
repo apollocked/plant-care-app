@@ -35,7 +35,9 @@ class OnboardingBottomControls extends StatelessWidget {
                     ),
                     child: Text(
                       loc.skip,
-                      style: TextStyle(color: theme.colorScheme.outline),
+                      style: theme.textTheme.bodyMedium?.copyWith(
+                        color: theme.colorScheme.outline,
+                      ),
                     ),
                   ),
           ),

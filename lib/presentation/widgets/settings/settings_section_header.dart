@@ -22,8 +22,7 @@ class SettingsSectionHeader extends StatelessWidget {
           const SizedBox(width: 8),
           Text(
             label.toUpperCase(),
-            style: TextStyle(
-              fontSize: 12,
+            style: Theme.of(context).textTheme.labelMedium?.copyWith(
               fontWeight: FontWeight.w700,
               letterSpacing: 1,
               color: scheme.primary,

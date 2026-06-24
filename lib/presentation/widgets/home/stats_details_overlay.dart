@@ -55,7 +55,6 @@ class StatsDetailsOverlay extends StatelessWidget {
               Text(
                 title,
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  color: scheme.onSurface,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -70,9 +69,7 @@ class StatsDetailsOverlay extends StatelessWidget {
               const SizedBox(height: 8),
               Text(
                 description,
-                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: scheme.onSurface.withValues(alpha: 0.6),
-                ),
+                style: Theme.of(context).textTheme.bodyMedium,
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 20),
@@ -89,8 +86,7 @@ class StatsDetailsOverlay extends StatelessWidget {
                         Expanded(
                           child: Text(
                             detail,
-                            style: Theme.of(context).textTheme.bodySmall
-                                ?.copyWith(color: scheme.onSurface),
+                            style: Theme.of(context).textTheme.bodySmall,
                           ),
                         ),
                       ],

@@ -139,10 +139,9 @@ class _EditableScheduleCard extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: TextStyle(
+                style: Theme.of(context).textTheme.titleSmall?.copyWith(
                   fontSize: 15,
                   fontWeight: FontWeight.w700,
-                  color: onSurface,
                 ),
               ),
               IconButton(
@@ -186,10 +185,9 @@ class _ScheduleInfoCard extends StatelessWidget {
         children: [
           Text(
             title,
-            style: TextStyle(
+            style: Theme.of(context).textTheme.titleSmall?.copyWith(
               fontSize: 15,
               fontWeight: FontWeight.w700,
-              color: onSurface,
             ),
           ),
           const SizedBox(height: 14),

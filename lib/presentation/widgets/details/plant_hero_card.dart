@@ -33,7 +33,6 @@ class PlantHeroCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context)!;
     final ColorScheme scheme = Theme.of(context).colorScheme;
-    final Color onSurface = scheme.onSurface;
 
     return GlassContainer(
       borderRadius: 22,
@@ -48,10 +47,8 @@ class PlantHeroCard extends StatelessWidget {
               children: [
                 Text(
                   plant.name,
-                  style: TextStyle(
-                    fontSize: 20,
+                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                     fontWeight: FontWeight.w800,
-                    color: onSurface,
                   ),
                 ),
                 const SizedBox(height: 3),
@@ -59,9 +56,8 @@ class PlantHeroCard extends StatelessWidget {
                   plant.species?.isNotEmpty == true
                       ? plant.species!
                       : loc.unknownSpecies,
-                  style: TextStyle(
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                     fontSize: 13,
-                    color: onSurface.withValues(alpha: 0.6),
                   ),
                 ),
                 const SizedBox(height: 10),
@@ -143,14 +139,13 @@ class StatusPill extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         border: Border.all(color: color.withValues(alpha: 0.3)),
       ),
-      child: Text(
-        label,
-        style: TextStyle(
-          fontSize: 11,
-          fontWeight: FontWeight.w600,
-          color: color,
+        child: Text(
+          label,
+          style: Theme.of(context).textTheme.labelSmall?.copyWith(
+            fontWeight: FontWeight.w600,
+            color: color,
+          ),
         ),
-      ),
     );
   }
 }

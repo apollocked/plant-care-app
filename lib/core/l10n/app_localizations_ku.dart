@@ -26,7 +26,7 @@ class AppLocalizationsKu extends AppLocalizations {
   }
 
   @override
-  String get wellcome => 'بەخێربێیت';
+  String get Welcome => 'بەخێربێیت';
 
   @override
   String get plantDetails => 'وردەکارییەکانی ڕووەک';

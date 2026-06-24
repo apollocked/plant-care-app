@@ -60,19 +60,12 @@ class CardHeader extends StatelessWidget {
             children: [
               Text(
                 plant.name,
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w700,
-                  color: onSurface,
-                ),
+                style: Theme.of(context).textTheme.titleMedium,
               ),
               const SizedBox(height: 2),
               Text(
                 plant.species ?? loc.unknownSpecies,
-                style: TextStyle(
-                  fontSize: 12,
-                  color: onSurface.withValues(alpha: 0.6),
-                ),
+                style: Theme.of(context).textTheme.bodySmall,
               ),
             ],
           ),
@@ -98,8 +91,7 @@ class CardHeader extends StatelessWidget {
               const SizedBox(width: 5),
               Text(
                 healthLabel,
-                style: TextStyle(
-                  fontSize: 11,
+                style: Theme.of(context).textTheme.labelSmall?.copyWith(
                   fontWeight: FontWeight.w600,
                   color: healthColor,
                 ),

@@ -41,15 +41,14 @@ class ScheduleRow extends StatelessWidget {
             const SizedBox(width: 12),
             Text(
               label,
-              style: TextStyle(
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                 fontSize: 13,
-                color: onSurface.withValues(alpha: 0.7),
               ),
             ),
             const Spacer(),
             Text(
               value,
-              style: TextStyle(
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                 fontSize: 13,
                 fontWeight: FontWeight.w600,
                 color: color,
@@ -109,16 +108,14 @@ class UpcomingDateRow extends StatelessWidget {
             children: [
               Text(
                 label,
-                style: TextStyle(
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   fontSize: 13,
-                  color: onSurface.withValues(alpha: 0.7),
                 ),
               ),
               if (isOverdue)
                 Text(
                   loc.overdue,
-                  style: const TextStyle(
-                    fontSize: 11,
+                  style: Theme.of(context).textTheme.labelSmall?.copyWith(
                     color: AppColors.error,
                     fontWeight: FontWeight.w600,
                   ),
@@ -128,8 +125,7 @@ class UpcomingDateRow extends StatelessWidget {
         ),
         Text(
           DateFormat('MMM d, h:mm a').format(date),
-          style: TextStyle(
-            fontSize: 12,
+          style: Theme.of(context).textTheme.bodySmall?.copyWith(
             fontWeight: FontWeight.w600,
             color: active,
           ),

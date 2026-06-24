@@ -30,9 +30,7 @@ class PlantDetailsAppBar extends StatelessWidget
       iconTheme: IconThemeData(color: onSurface),
       title: Text(
         plant.name,
-        style: TextStyle(
-          color: onSurface,
-          fontWeight: FontWeight.w700,
+        style: Theme.of(context).textTheme.titleLarge?.copyWith(
           fontSize: 18,
         ),
       ),

@@ -78,11 +78,7 @@ class CareInfoTab extends StatelessWidget {
           const SizedBox(height: 20),
           Text(
             loc.careTipsHeading,
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w700,
-              color: onSurface,
-            ),
+            style: Theme.of(context).textTheme.titleMedium,
           ),
           const SizedBox(height: 10),
           ...tips.map(
@@ -101,10 +97,9 @@ class CareInfoTab extends StatelessWidget {
                     Expanded(
                       child: Text(
                         t['text']!,
-                        style: TextStyle(
+                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                           fontSize: 13,
                           height: 1.4,
-                          color: onSurface.withValues(alpha: 0.75),
                         ),
                       ),
                     ),

@@ -76,10 +76,9 @@ class CareStatusCard extends StatelessWidget {
             nextDueLabel,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
-            style: TextStyle(
-              fontSize: 12,
+            style: Theme.of(context).textTheme.bodySmall?.copyWith(
               fontWeight: isUrgent ? FontWeight.w600 : FontWeight.w400,
-              color: isUrgent ? color : onSurface.withValues(alpha: 0.5),
+              color: isUrgent ? color : null,
             ),
           ),
         ],

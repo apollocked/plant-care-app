@@ -20,7 +20,6 @@ class StatCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bool isDark = Theme.of(context).brightness == Brightness.dark;
-    final Color onSurface = Theme.of(context).colorScheme.onSurface;
 
     return GestureDetector(
       onLongPress: onLongPress,
@@ -40,17 +39,15 @@ class StatCard extends StatelessWidget {
             const SizedBox(height: 6),
             Text(
               value,
-              style: TextStyle(
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(
                 fontSize: 18,
                 fontWeight: FontWeight.w800,
-                color: onSurface,
               ),
             ),
             Text(
               label,
-              style: TextStyle(
+              style: Theme.of(context).textTheme.labelSmall?.copyWith(
                 fontSize: 10,
-                color: onSurface.withValues(alpha: 0.5),
               ),
             ),
           ],

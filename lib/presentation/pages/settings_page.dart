@@ -90,7 +90,7 @@ class SettingsPage extends StatelessWidget {
                           ),
                           title: Text(
                             L10n.getNativeName(locale.languageCode),
-                            style: TextStyle(
+                            style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                               fontWeight: isSelected ? FontWeight.w600 : null,
                               color: isSelected ? scheme.primary : null,
                             ),
@@ -162,10 +162,7 @@ class SettingsPage extends StatelessWidget {
                 Center(
                   child: Text(
                     '2026 - Apollo © - All rights reserved \n Made with ❤️ in Kurdistan',
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: scheme.onSurface.withValues(alpha: 0.5),
-                      fontWeight: FontWeight.w400,
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
                       height: 1.4,
                       letterSpacing: 0.2,
                     ),

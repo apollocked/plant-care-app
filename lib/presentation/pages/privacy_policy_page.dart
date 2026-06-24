@@ -59,8 +59,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                     ),
                     child: Text(
                       loc.privacyPolicyLastUpdated,
-                      style: TextStyle(
-                        fontSize: 12,
+                      style: Theme.of(context).textTheme.labelSmall?.copyWith(
                         color: scheme.primary,
                         fontWeight: FontWeight.w500,
                       ),

@@ -37,17 +37,12 @@ class WidgetCreationSection extends StatelessWidget {
                   children: [
                     Text(
                       loc.createWidget,
-                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                        color: scheme.onSurface,
-                        fontWeight: FontWeight.w600,
-                      ),
+                      style: Theme.of(context).textTheme.titleMedium,
                     ),
                     const SizedBox(height: 4),
                     Text(
                       loc.settingsWidgetDesc,
-                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: scheme.onSurface.withValues(alpha: 0.6),
-                      ),
+                      style: Theme.of(context).textTheme.bodySmall,
                     ),
                   ],
                 ),

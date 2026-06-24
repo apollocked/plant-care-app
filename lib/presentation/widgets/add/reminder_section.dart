@@ -74,14 +74,12 @@ class ReminderSection extends StatelessWidget {
           ] else
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 8),
-              child: Text(
-                loc.remindersDisabled,
-                style: TextStyle(
-                  fontSize: 12,
-                  color: onSurface.withValues(alpha: 0.4),
-                  fontStyle: FontStyle.italic,
+                child: Text(
+                  loc.remindersDisabled,
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                    fontStyle: FontStyle.italic,
+                  ),
                 ),
-              ),
             ),
         ],
       ),

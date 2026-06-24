@@ -18,10 +18,8 @@ class NotifDialogContent extends StatelessWidget {
         Text(
           loc.notifDialogTitle,
           textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 22,
+          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
             fontWeight: FontWeight.w700,
-            color: textColor,
             height: 1.3,
           ),
         ),
@@ -29,7 +27,9 @@ class NotifDialogContent extends StatelessWidget {
         Text(
           loc.notifDialogBody,
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 14, color: subtextColor, height: 1.5),
+          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+            height: 1.5,
+          ),
         ),
       ],
     );

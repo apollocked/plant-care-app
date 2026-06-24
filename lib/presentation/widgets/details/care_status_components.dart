@@ -36,10 +36,9 @@ class CareStatusHeader extends StatelessWidget {
             title,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            style: TextStyle(
+            style: Theme.of(context).textTheme.titleSmall?.copyWith(
               fontSize: 15,
               fontWeight: FontWeight.w700,
-              color: onSurface,
             ),
           ),
         ),
@@ -71,8 +70,7 @@ class StatusBadge extends StatelessWidget {
           label,
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
-          style: TextStyle(
-            fontSize: 11,
+          style: Theme.of(context).textTheme.labelSmall?.copyWith(
             fontWeight: FontWeight.w600,
             color: color,
           ),

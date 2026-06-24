@@ -29,7 +29,7 @@ class FeaturePill extends StatelessWidget {
           const SizedBox(width: 4),
           Text(
             label,
-            style: TextStyle(
+            style: Theme.of(context).textTheme.labelSmall?.copyWith(
               fontSize: 12,
               color: color,
               fontWeight: FontWeight.w500,

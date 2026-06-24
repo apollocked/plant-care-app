@@ -38,23 +38,20 @@ class TimeTile extends StatelessWidget {
             Icon(icon, size: 18, color: color),
             const SizedBox(width: 12),
             Expanded(
-              child: Text(
-                label,
-                style: TextStyle(
-                  fontSize: 13,
-                  fontWeight: FontWeight.w500,
-                  color: onSurface,
+                child: Text(
+                  label,
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
               ),
-            ),
-            Text(
-              time.format(context),
-              style: TextStyle(
-                fontSize: 13,
-                fontWeight: FontWeight.w700,
-                color: color,
+              Text(
+                time.format(context),
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                  fontWeight: FontWeight.w700,
+                  color: color,
+                ),
               ),
-            ),
             const SizedBox(width: 4),
             Icon(
               Icons.edit_calendar_rounded,

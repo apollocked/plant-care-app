@@ -25,7 +25,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
   Timer? _timer;
 
   final List<Widget> pages = [
-    const WellcomeWidget(),
+    const WelcomeWidget(),
     const InfoOnboardingWidget(),
     const StartOnboardingWidget(),
   ];
@@ -97,7 +97,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 );
               },
               child: Text(
-                loc.wellcome,
+                loc.Welcome,
                 style: theme.textTheme.displaySmall?.copyWith(
                   fontWeight: FontWeight.w900,
                   color: theme.colorScheme.primary,

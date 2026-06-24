@@ -3,7 +3,7 @@ import 'app_colors.dart';
 
 class AppTheme {
   static ThemeData get lightTheme => ThemeData(
-    fontFamily: 'bahij',
+    fontFamily: 'uni',
 
     brightness: Brightness.light,
     colorScheme: ColorScheme.fromSeed(
@@ -34,13 +34,22 @@ class AppTheme {
       headlineLarge: TextStyle(color: AppColors.lightText),
       headlineMedium: TextStyle(color: AppColors.lightText),
       headlineSmall: TextStyle(color: AppColors.lightText),
-      titleLarge: TextStyle(color: AppColors.lightText, fontWeight: FontWeight.w700),
-      titleMedium: TextStyle(color: AppColors.lightText, fontWeight: FontWeight.w600),
+      titleLarge: TextStyle(
+        color: AppColors.lightText,
+        fontWeight: FontWeight.w700,
+      ),
+      titleMedium: TextStyle(
+        color: AppColors.lightText,
+        fontWeight: FontWeight.w600,
+      ),
       titleSmall: TextStyle(color: AppColors.lightText),
       bodyLarge: TextStyle(color: AppColors.lightText),
       bodyMedium: TextStyle(color: AppColors.lightSubtext),
       bodySmall: TextStyle(color: AppColors.lightSubtext),
-      labelLarge: TextStyle(color: AppColors.lightText, fontWeight: FontWeight.w600),
+      labelLarge: TextStyle(
+        color: AppColors.lightText,
+        fontWeight: FontWeight.w600,
+      ),
       labelMedium: TextStyle(color: AppColors.lightSubtext),
       labelSmall: TextStyle(color: AppColors.lightSubtext),
     ),
@@ -51,18 +60,24 @@ class AppTheme {
       fillColor: AppColors.lightSurface,
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(14),
-        borderSide: BorderSide(color: AppColors.primaryGreen.withValues(alpha: 0.2)),
+        borderSide: BorderSide(
+          color: AppColors.primaryGreen.withValues(alpha: 0.2),
+        ),
       ),
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(14),
-        borderSide: BorderSide(color: AppColors.primaryGreen.withValues(alpha: 0.2)),
+        borderSide: BorderSide(
+          color: AppColors.primaryGreen.withValues(alpha: 0.2),
+        ),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(14),
         borderSide: const BorderSide(color: AppColors.primaryGreen, width: 1.5),
       ),
       labelStyle: const TextStyle(color: AppColors.lightSubtext),
-      hintStyle: TextStyle(color: AppColors.lightSubtext.withValues(alpha: 0.6)),
+      hintStyle: TextStyle(
+        color: AppColors.lightSubtext.withValues(alpha: 0.6),
+      ),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
@@ -97,7 +112,7 @@ class AppTheme {
   );
 
   static ThemeData get darkTheme => ThemeData(
-    fontFamily: 'bahij',
+    fontFamily: 'uni',
     brightness: Brightness.dark,
     colorScheme: ColorScheme.fromSeed(
       seedColor: AppColors.primaryGreen,
@@ -135,7 +150,10 @@ class AppTheme {
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(14),
-        borderSide: const BorderSide(color: AppColors.primaryGreenDark, width: 1.5),
+        borderSide: const BorderSide(
+          color: AppColors.primaryGreenDark,
+          width: 1.5,
+        ),
       ),
       labelStyle: TextStyle(color: Colors.white.withValues(alpha: 0.6)),
       hintStyle: TextStyle(color: Colors.white.withValues(alpha: 0.35)),

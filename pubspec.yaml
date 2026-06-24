@@ -81,6 +81,9 @@ flutter:
     - family: bahij
       fonts:
         - asset: assets/fonts/bahij.ttf
+    - family: uni
+      fonts:
+        - asset: assets/fonts/uni12.ttf
 
 dependency_overrides:
   path_provider_android: "2.2.23"

@@ -22,10 +22,8 @@ class SectionHeader extends StatelessWidget {
         children: [
           Text(
             loc.myPlants,
-            style: TextStyle(
+            style: Theme.of(context).textTheme.titleLarge?.copyWith(
               fontSize: 18,
-              fontWeight: FontWeight.w700,
-              color: onSurface,
             ),
           ),
           const SizedBox(width: 8),
@@ -37,9 +35,7 @@ class SectionHeader extends StatelessWidget {
             ),
             child: Text(
               '$count',
-              style: TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.w600,
+              style: Theme.of(context).textTheme.labelMedium?.copyWith(
                 color: scheme.primary,
               ),
             ),

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:plant_care_app/core/l10n/app_localizations.dart';
 import 'package:plant_care_app/presentation/widgets/onboarding/glass_card.dart';
 
-class WellcomeWidget extends StatelessWidget {
-  const WellcomeWidget({super.key});
+class WelcomeWidget extends StatelessWidget {
+  const WelcomeWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

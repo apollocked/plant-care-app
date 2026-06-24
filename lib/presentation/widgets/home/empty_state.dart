@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:plant_care_app/core/l10n/app_localizations.dart';
-import 'package:plant_care_app/core/theme/app_colors.dart';
 
 class EmptyPlantState extends StatelessWidget {
   const EmptyPlantState({super.key});
@@ -8,7 +7,6 @@ class EmptyPlantState extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context)!;
-    final bool isDark = Theme.of(context).brightness == Brightness.dark;
     final ColorScheme scheme = Theme.of(context).colorScheme;
 
     return Center(
@@ -45,22 +43,16 @@ class EmptyPlantState extends StatelessWidget {
             const SizedBox(height: 12),
             Text(
               loc.noPlantsYet,
-              style: TextStyle(
-                fontSize: 22,
+              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                 fontWeight: FontWeight.w700,
-                color: isDark ? Colors.white : AppColors.emptyStateText,
               ),
             ),
             const SizedBox(height: 8),
             Text(
               loc.noPlantsDesc,
               textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 14,
+              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                 height: 1.5,
-                color: isDark
-                    ? Colors.white.withValues(alpha: 0.5)
-                    : Colors.black.withValues(alpha: 0.45),
               ),
             ),
             const SizedBox(height: 12),
@@ -80,7 +72,7 @@ class EmptyPlantState extends StatelessWidget {
               ),
               child: Text(
                 loc.noPlantsHint,
-                style: TextStyle(
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   color: scheme.primary,
                   fontWeight: FontWeight.w500,
                   fontSize: 13,

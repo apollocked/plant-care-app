@@ -42,8 +42,7 @@ class QuickActionButton extends StatelessWidget {
             Flexible(
               child: Text(
                 label,
-                style: TextStyle(
-                  fontSize: 11,
+                style: Theme.of(context).textTheme.labelSmall?.copyWith(
                   fontWeight: urgent ? FontWeight.w600 : FontWeight.w400,
                   color: color,
                 ),

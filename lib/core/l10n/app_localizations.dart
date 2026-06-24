@@ -130,11 +130,11 @@ abstract class AppLocalizations {
   /// **'Failed to save plant: {error}'**
   String failedToSavePlant(String error);
 
-  /// No description provided for @wellcome.
+  /// No description provided for @Welcome.
   ///
   /// In en, this message translates to:
-  /// **'Wellcome'**
-  String get wellcome;
+  /// **'Welcome'**
+  String get Welcome;
 
   /// No description provided for @plantDetails.
   ///
